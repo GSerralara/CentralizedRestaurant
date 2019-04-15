@@ -1,5 +1,8 @@
 package Controller;
 
+import Controller.SubController.BillController;
+import Controller.SubController.MenuController;
+import Controller.SubController.OrderController;
 import View.MainTable;
 
 
@@ -30,6 +33,7 @@ public class MainTableController {
     public void setMainTable(MainTable mainTable) {
         this.mainTable = mainTable;
     }
+
     public void giveCommand(String command, String data){
         //Take menu items, request time, give data ...
         switch (command){

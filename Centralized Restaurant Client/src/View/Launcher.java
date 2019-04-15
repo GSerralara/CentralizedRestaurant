@@ -16,7 +16,7 @@ import java.awt.*;
  * @version 1.3
  * @since 1.3
  */
-//ToDO: Hacer que quede bonito la view
+
 //ToDo: Funciones que den la informcion de los campos
 public class Launcher extends JPanel{
     // instance variables
@@ -145,7 +145,7 @@ public class Launcher extends JPanel{
         // List of available views from this one
         switch (windowName){
             case "SIGN_IN":
-                this.listener.progressFrom(ProgressListener.AppState.MAINTABLE);
+                this.listener.progressFrom(ProgressListener.AppState.MENU);
                 break;
             case "REGISTER":
                 this.listener.progressFrom(ProgressListener.AppState.REGISTER);

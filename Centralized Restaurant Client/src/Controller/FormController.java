@@ -11,8 +11,9 @@ public class FormController {
 
     private LauncherController launcherController;
     private RegisterController registerController;
-    private MainController mainController;
+    private BookController bookController;
     private MainTableController mainTableController;
+    private MainMenuController mainMenuController;
 
     public FormController(MyForm view, ModelClient model, Network network) {
         this.view = view;
@@ -21,16 +22,17 @@ public class FormController {
 
         launcherController = new LauncherController(this);
         registerController = new RegisterController(this);
-        mainController = new MainController(this);
         mainTableController = new MainTableController(this);
+        mainMenuController = new MainMenuController(this);
+        bookController = new BookController(this);
     }
 
     public MainTableController getMainTableController() {
         return mainTableController;
     }
 
-    public MainController getMainController() {
-        return mainController;
+    public BookController getBookController() {
+        return bookController;
     }
 
     public RegisterController getRegisterController() {
@@ -39,5 +41,9 @@ public class FormController {
 
     public LauncherController getLauncherController() {
         return launcherController;
+    }
+
+    public MainMenuController getMainMenuController() {
+        return mainMenuController;
     }
 }

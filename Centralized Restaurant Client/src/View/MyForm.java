@@ -23,8 +23,9 @@ public class MyForm implements Runnable, ProgressListener {
      */
     private Launcher launcher;
     private Register register;
-    private Main main;
+    private Book book;
     private MainTable mainTable;
+    private MainMenu mainMenu;
     /**
      * Constructor of the main frame.
      * Uses a UIManager.
@@ -51,8 +52,9 @@ public class MyForm implements Runnable, ProgressListener {
 
         launcher = new Launcher(this, controller.getLauncherController());
         register = new Register(this, controller.getRegisterController());
-        main = new Main(this,controller.getMainController());
+        book = new Book(this,controller.getBookController());
         mainTable = new MainTable(this,controller.getMainTableController());
+        mainMenu = new MainMenu(this,controller.getMainMenuController());
 
         frame = new JFrame("Centralized Restaurant");
         ImageIcon img = new ImageIcon("images/Logo.png");
@@ -85,16 +87,19 @@ public class MyForm implements Runnable, ProgressListener {
                 frame.setContentPane(register);
                 frame.pack();
                 return;
-            case MAIN:
-                frame.setContentPane(main);
-                frame.pack();
-                return;
             case MAINTABLE:
                 frame.setContentPane(mainTable);
                 frame.pack();
                 frame.setSize(new Dimension(300,250));
                 return;
-
+            case MENU:
+                frame.setContentPane(mainMenu);
+                frame.pack();
+                return;
+            case BOOK:
+                frame.setContentPane(book);
+                frame.pack();
+                return;
             default:
                 System.out.println("Not Existing Window");
                 //ToDo: Crear ventana para este error

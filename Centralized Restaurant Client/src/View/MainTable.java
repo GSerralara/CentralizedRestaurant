@@ -1,9 +1,12 @@
 package View;
 
-import Controller.BillController;
+import Controller.SubController.BillController;
 import Controller.MainTableController;
-import Controller.MenuController;
-import Controller.OrderController;
+import Controller.SubController.MenuController;
+import Controller.SubController.OrderController;
+import View.SubView.Bill;
+import View.SubView.Menu;
+import View.SubView.Order;
 
 import javax.swing.*;
 import java.awt.*;
@@ -38,21 +41,23 @@ public class MainTable extends JPanel {
     private void windowConfiguration(){
         // We configure the window.
         setLayout(new BorderLayout());
-
+        // instance label of time of the view
         time = new JLabel("HH:MM");
+        // instance JPanels that will from the tabs of the panel
         bill = new Bill(new BillController(controller));
         menu = new Menu(new MenuController(controller));
-        menu.init();
+        menu.init();//We init the menu to have the contents
         order = new Order(new OrderController(controller));
+        // instance JTabbedPane options that will have JPanels as tabs
         JTabbedPane options = new JTabbedPane();
-        //JPanel content = new JPanel(new BorderLayout());
+
         JPanel top = new JPanel(new FlowLayout());
         top.add(time);
         add(top,BorderLayout.NORTH);
 
         options.addTab("Menu", menu);
         options.addTab("Order", order);
-        options.addTab("Bill",bill);
+        options.addTab("Bill", bill);
         add(options,BorderLayout.CENTER);
 
     }
