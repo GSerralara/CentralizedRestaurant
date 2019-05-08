@@ -1,8 +1,0 @@
-{
-  "PortBBDD":3306,
-  "DireccioIPBBDD":"localhost",
-  "NomBBDD":"restaurant",
-  "UsuariBBDD":"root",
-  "ContrasenyaBBDD":"Admin",
-  "PortClients":55555
-}

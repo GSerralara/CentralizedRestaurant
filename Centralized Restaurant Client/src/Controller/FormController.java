@@ -4,6 +4,8 @@ import Model.ModelClient;
 import Network.Network;
 import View.MyForm;
 
+import java.io.IOException;
+
 public class FormController {
     private MyForm view;
     private ModelClient model;
@@ -19,6 +21,8 @@ public class FormController {
         this.view = view;
         this.model = model;
         this.network = network;
+        this.network.registerController(this);
+        network.connect();
 
         launcherController = new LauncherController(this);
         registerController = new RegisterController(this);
