@@ -48,22 +48,22 @@ public class Network implements Runnable {
     @Override
     public void run() {
         while (active) {
-            if(!paused){
+
+            try {
+                ClientManager client = new ClientManager(serverSocket.accept());
+                System.out.println("add client to the list");
+                clients.add(client);
+                System.out.println(clients.size());
+            } catch (IOException e) {
+                System.out.println("Communication error");
+                active = false;
                 try {
-                    ClientManager client = new ClientManager(serverSocket.accept());
-                    System.out.println("add client to the list");
-                    clients.add(client);
-                    System.out.println(clients.size());
-                } catch (IOException e) {
-                    System.out.println("Communication error");
-                    active = false;
-                    try {
-                        serverSocket.close();
-                    } catch (IOException e1) {
-                        System.out.println("ERROR clossing comunication channel");
-                    }
+                    serverSocket.close();
+                } catch (IOException e1) {
+                    System.out.println("ERROR clossing comunication channel");
                 }
             }
+
         }
     }
 

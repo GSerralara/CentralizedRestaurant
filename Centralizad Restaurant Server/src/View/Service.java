@@ -1,6 +1,7 @@
 package View;
 
 import Controller.ServiceController;
+import Model.Time;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,5 +21,9 @@ public class Service extends JPanel {
         // We configure the window.
         setLayout(new BorderLayout());
         JTabbedPane clients = new JTabbedPane();
+        // instance label of time of the view
+        time = new JLabel("HH:MM");
+        Time t = new Time(time);
+        new Thread(t).start();
     }
 }

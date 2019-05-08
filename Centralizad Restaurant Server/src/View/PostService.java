@@ -1,6 +1,7 @@
 package View;
 
 import Controller.PostServiceController;
+import Model.Time;
 
 import javax.swing.*;
 import java.awt.*;
@@ -23,6 +24,8 @@ public class PostService extends JPanel {
         setLayout(new BorderLayout());
         // instance label of time of the view
         time = new JLabel("HH:MM");
+        Time t = new Time(time);
+        new Thread(t).start();
         // instance JPanels that will from the tabs of the panel
         //bill = new Bill(new BillController(controller));
         //menu = new Menu(new MenuController(controller));
