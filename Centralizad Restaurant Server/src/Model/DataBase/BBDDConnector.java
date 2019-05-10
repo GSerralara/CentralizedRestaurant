@@ -71,4 +71,15 @@ public class BBDDConnector {
             e.printStackTrace();
         }
     }
+    public ResultSet selectQuery(String query){
+        ResultSet rs = null;
+        try {
+            s =(Statement) conn.createStatement();
+            rs = s.executeQuery (query);
+
+        } catch (SQLException ex) {
+            System.out.println("Problema al Recuperar les dades --> " + ex.getSQLState());
+        }
+        return rs;
+    }
 }
