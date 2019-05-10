@@ -1,5 +1,7 @@
 package Model;
 
+import Model.DataBase.BBDDHelper;
+
 public class Model {
     private BBDDHelper database;
     private String serverState;

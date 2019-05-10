@@ -1,4 +1,5 @@
-package Model;
+package Model.DataBase;
+import Model.Model;
 import com.google.gson.*;
 
 import java.io.FileNotFoundException;
