@@ -7,7 +7,7 @@ import java.net.Socket;
 
 public class ClientManager extends Thread {
     private Socket cSocket;
-
+    private boolean serverStoped;// true -> paused, false -> active
     private ObjectInputStream is;
     private ObjectOutputStream os;
 
@@ -15,12 +15,16 @@ public class ClientManager extends Thread {
     private Object clientAnswer;
     public ClientManager(Socket cSocket) throws IOException {
         System.out.println("new Client");
+        this.serverStoped = false;
         this.cSocket = cSocket;
         os = new ObjectOutputStream(cSocket.getOutputStream());
         is = new ObjectInputStream(cSocket.getInputStream());
 
         System.out.println("run dedicated server");
         new Thread(this).start();
+    }
+    public void setSatus(boolean statusState){
+        this.serverStoped = statusState;
     }
 
     @Override

@@ -77,8 +77,14 @@ public class Network implements Runnable {
     public void pause() {
         System.out.println("System paused");
         paused = true;
+        for (ClientManager i : clients) {
+            i.setSatus(true);
+        }
     }
     public void resume() {
+        for (ClientManager i : clients) {
+            i.setSatus(false);
+        }
         paused = false;
     }
 }
