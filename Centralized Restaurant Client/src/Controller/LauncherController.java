@@ -31,6 +31,7 @@ public class LauncherController implements ActionListener {
                     listener.sendObject(user);
                     launcher.goToWindow("SIGN_IN");
                 }else{
+                    launcher.goToWindow("SIGN_IN");
                     Pop popup = new Pop("No connection Possible");
                     //launcher.addWarning("NO Connection Possible");
                 }

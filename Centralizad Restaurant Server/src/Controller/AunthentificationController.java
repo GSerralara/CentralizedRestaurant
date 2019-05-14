@@ -2,7 +2,10 @@ package Controller;
 
 import View.Aunthentification;
 
-public class AunthentificationController {
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class AunthentificationController implements ActionListener {
     private Aunthentification aunthentification;
     private FormController listener;
 
@@ -12,5 +15,10 @@ public class AunthentificationController {
 
     public void setAunthentification(Aunthentification aunthentification) {
         this.aunthentification = aunthentification;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
     }
 }

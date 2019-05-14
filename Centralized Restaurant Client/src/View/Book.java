@@ -12,7 +12,7 @@ public class Book extends JPanel {
     private BookController controller;
     private JTextField reserveName;
     private JLabel reserveState;
-    private JButton back;
+    private JButton back,book;
     public Book(ProgressListener listener, BookController controller) {
         this.listener = listener;
         this.controller = controller;
@@ -20,32 +20,36 @@ public class Book extends JPanel {
         windowConfiguration();
     }
     public void windowConfiguration(){
-// We configure the window.
+        // We configure the window.
         new BorderLayout();
         // We instance the title of the window
         JLabel title = new JLabel("Make your booking");
         JLabel bookLabel = new JLabel("Introduce your Reserve name");
         JLabel reserveStateLabel = new JLabel("Your Reserve has been:");
         // We instance the panel body of the window
-        JPanel content = new JPanel(new BorderLayout());
+        JPanel content = new JPanel();
+        content.setLayout(new BoxLayout(content,BoxLayout.Y_AXIS));
         // We create the different parts of the window.
-        content.add(title,BorderLayout.NORTH);
-        JPanel form = new JPanel();
-        form.setLayout(new BoxLayout(form,BoxLayout.Y_AXIS));
-        form.add(bookLabel);
+        content.add(title);
+        content.add(Box.createVerticalStrut(20));
+        content.add(bookLabel);
         reserveName = new JTextField();
-        form.add(reserveName);
-        form.add(reserveStateLabel);
+        content.add(reserveName);
+        content.add(reserveStateLabel);
+        book = new JButton("BOOK");
+        book.setActionCommand("BOOK");
+        book.addActionListener(controller);
+        content.add(book);
+        content.add(Box.createVerticalStrut(20));
         reserveState = new JLabel("...");
+        reserveState.setSize(150,150);
         reserveState.setBorder(BorderFactory.createLineBorder(Color.black));
-        form.add(reserveState);
-        content.add(form,BorderLayout.CENTER);
-        add(title,BorderLayout.NORTH);
-        add(content,BorderLayout.CENTER);
+        content.add(reserveState);
         back = new JButton("Go back");
-        add(back, BorderLayout.SOUTH);
         back.setActionCommand("BACK");
         back.addActionListener(controller);
+        content.add(back);
+        add(content,BorderLayout.CENTER);
     }
     /**
      * Method that will create all the components of the panel.

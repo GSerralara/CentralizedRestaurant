@@ -1,7 +1,8 @@
 package View;
 
 import Controller.AunthentificationController;
-import View.Items.ReserveItem;
+import Model.DataBase.Entity.User;
+import View.Items.AuthItem;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,7 +10,7 @@ import java.util.ArrayList;
 
 public class Aunthentification extends JPanel {
     private JPanel items;
-    private ArrayList<ReserveItem> reserves;
+    private ArrayList<AuthItem> reserves;
     private AunthentificationController controller;
     private final ProgressListener listener;
 
@@ -33,15 +34,22 @@ public class Aunthentification extends JPanel {
     public void init(){
         reserves = new ArrayList<>();
         items.removeAll();
-        //get add data
-
         items.revalidate();
         repaint();
     }
-    public void addItem(String name){
-        //this.reserves.add(new MenuItem(name,controller));
-        //this.list.add(menu.get(menu.size()-1));
-        //this.items.add(reserves.get(reserves.size()-1));
+    public void addItem(User user, String name){
+        this.reserves.add(new AuthItem(user,name,controller,reserves.size()));
+        this.items.add(reserves.get(reserves.size()-1));
+        items.revalidate();
+        repaint();
+    }
+    public void CancelItem(String pos){
+        int index = Integer.parseInt(pos);
+        reserves.remove(index);
+        items.remove(index);
+        for(int i =0; i< reserves.size();i++){
+            reserves.get(i).updatePos(i);
+        }
         items.revalidate();
         repaint();
     }

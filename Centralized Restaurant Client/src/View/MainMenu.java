@@ -27,11 +27,14 @@ public class MainMenu extends JPanel {
         // We instance the title of the window
         JLabel title = new JLabel(WINDOW_TITLE);
         // We instance the panel body of the window
-        JPanel content = new JPanel(new BorderLayout());
+        JPanel content = new JPanel();
+        content.setLayout(new BoxLayout(content,BoxLayout.Y_AXIS));
         // We create the different parts of the window.
-        content.add(title,BorderLayout.NORTH);
-        content.add(bottomPart(),BorderLayout.SOUTH);
-        content.add(mainPart(),BorderLayout.CENTER);
+        content.add(title,Box.createHorizontalBox());
+        content.add(Box.createVerticalStrut(20));
+        content.add(mainPart());
+        content.add(Box.createVerticalStrut(20));
+        content.add(bottomPart());
         // We add the content to the window.
         add(content,BorderLayout.CENTER);
     }
@@ -40,11 +43,8 @@ public class MainMenu extends JPanel {
      * It's responsible for creating the components of the center of the Layout.
      */
     private JPanel mainPart(){
-        // instance JPanel that will be return
-        JPanel main = new JPanel(new BorderLayout());
-        // instance JPanels that will from the main panel
+        // instance JPanels that will from the main panel and then returned
         JPanel form = new JPanel();
-
         // set Layout to a box Form for the content
         form.setLayout(new BoxLayout(form,BoxLayout.Y_AXIS));
         // instance labels of the view
@@ -56,18 +56,18 @@ public class MainMenu extends JPanel {
         // add user camp to the from
         form.add(bookLabel);
         form.add(book);
+        form.add(Box.createVerticalStrut(20));
         // add password camp to the fom
         form.add(cancelLabel);
         form.add(cancelBooking);
+        form.add(Box.createVerticalStrut(20));
         // add Sing In button to the bottom
         book.setActionCommand("BOOK");//set action command that will get the ActionListener
         book.addActionListener(controller);//set which ActionListener
         cancelBooking.setActionCommand("CANCEL");//set action command that will get the ActionListener
         cancelBooking.addActionListener(controller);//set which ActionListener
-        // add secondary panels (from & bottom) to the main panel
-        main.add(form,BorderLayout.CENTER);
         // return Statement
-        return main;
+        return form;
     }
     /**
      * Function that will return a JPanel.

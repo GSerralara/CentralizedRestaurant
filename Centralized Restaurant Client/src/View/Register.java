@@ -172,4 +172,17 @@ public class Register extends JPanel{
                 break;
         }
     }
+
+    public String getPwd(){
+        // instance String that will be return
+        String pwd = new String(pw.getPassword());
+        // return Statement
+        return pwd;
+    }
+
+    public boolean samePwd(){
+        String firstPwd = new String(pw.getPassword());
+        String secondPwd = new String(rpw.getPassword());
+        return firstPwd.equals(secondPwd);
+    }
 }
