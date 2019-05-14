@@ -43,6 +43,7 @@ public class Register extends JPanel{
     // General constants
     private static final String USER_LABEL_TEXT = "Username";
     private static final String PW_LABEL_TEXT = "Password";
+    private static final String RPW_LABEL_TEXT = "Repeat Password";
     private static final String MAIL_LABEL_TEXT = "E-Mail";
     private static final String QUESTION_UX_TEXT = "Already have an account?";
 
@@ -50,6 +51,7 @@ public class Register extends JPanel{
      * Attributes of the UI
      */
     private JPasswordField pw;
+    private JPasswordField rpw;
     private JTextField username,mail;
     private JButton signUp, logIn;
     private JLabel title;
@@ -99,9 +101,11 @@ public class Register extends JPanel{
         // instance labels of the view
         JLabel userLabel = new JLabel(USER_LABEL_TEXT);
         JLabel pwLabel = new JLabel(PW_LABEL_TEXT);
+        JLabel rpwLabel = new JLabel(RPW_LABEL_TEXT);
         JLabel mailLabel = new JLabel(MAIL_LABEL_TEXT);
         // instance attributes
         mail = new JTextField();
+        rpw = new JPasswordField();
         pw = new JPasswordField();
         username = new JTextField();
         // add user camp to the from
@@ -113,6 +117,9 @@ public class Register extends JPanel{
         // add password camp to the fom
         form.add(pwLabel);
         form.add(pw);
+        // add repeat password camp to the form
+        form.add(rpwLabel);
+        form.add(rpw);
         // add Sing Up button to the bottom
         signUp = new JButton(JB_SINGUP);
         signUp.setActionCommand(AC_REGISTER);//set action command that will get the ActionListener

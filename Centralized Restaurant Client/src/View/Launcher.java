@@ -46,6 +46,7 @@ public class Launcher extends JPanel{
     /**
      * Attributes of the UI
      */
+    private JLabel msg;
     private JPasswordField pw;
     private JTextField username;
     private JButton signIn,register;
@@ -121,11 +122,9 @@ public class Launcher extends JPanel{
     private JPanel bottomPart(){
         // instance JPanel that will be return
         JPanel bottom = new JPanel(new FlowLayout());//For UX positioning will have a FlowLayout
-
         // Main question
         JLabel question = new JLabel(QUESTION_UX_TEXT);
         bottom.add(question,FlowLayout.LEFT);
-
         // Register option Button
         register = new JButton(JB_REGISTER);
         register.setBorderPainted(false);
@@ -155,5 +154,20 @@ public class Launcher extends JPanel{
                 break;
         }
     }
-
+    /**
+     * Function that will return the String of the username TextField.
+     */
+    public String getUserField(){
+        // return Statement
+        return username.getText();
+    }
+    /**
+     * Function that will return the String of the pw PasswordField.
+     */
+    public String getPwField(){
+        // instance String that will be return
+        String pwd = new String(pw.getPassword());
+        // return Statement
+        return pwd;
+    }
 }

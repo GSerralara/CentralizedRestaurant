@@ -2,7 +2,7 @@ package Network;
 
 import Controller.FormController;
 
-import javax.imageio.IIOException;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -22,8 +22,15 @@ public class Network {
     private  Object serverAnswer = new Object();
 
     private FormController controller;
+    /**
+     * Empty constructor by default of the class.
+     * */
     public Network() { }
-    public void connect() {
+    /**
+     * Function that will return 1 if it connection was successful. 0 if not.
+     * It's responsible for creating a connection with the server.
+     */
+    public int connect() {
 
         try {
             System.out.println("Iniciar conexion");
@@ -32,10 +39,12 @@ public class Network {
             is = new ObjectInputStream(socket.getInputStream());
             os =  new ObjectOutputStream(socket.getOutputStream());
         }catch (IOException e){
-            e.printStackTrace();
+            //e.printStackTrace();
+            return 0;
         }
-
+        return 1;
     }
+
     public void registerController(FormController c){
         this.controller = c;
     }

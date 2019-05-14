@@ -2,10 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bb069b7-f142-4429-8d46-9d30b44c1cc8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Model/DataBase/Entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/DataBase/dao/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Model/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Resources/Pop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Network/ClientManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network/ClientManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Network/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network/Network.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/SubView/CharBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/SubView/CharBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/Network/ClientManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/Network/ClientManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/Network/Network.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/Network/Network.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/View/SubView/CharBar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/View/SubView/CharBar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/Controller/FormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/Controller/FormController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/Controller/LauncherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/Controller/LauncherController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/Network/Network.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/Network/Network.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/View/Launcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/View/Launcher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/View/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/View/Register.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Controller/FormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Controller/FormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Controller/LauncherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Controller/LauncherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Network/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Network/Network.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/View/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/View/Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/View/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/View/Register.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -118,100 +133,49 @@
     <session id="-744021064">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1392" />
+          <entry key="java" value="1481" />
+          <entry key="txt" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1392" />
+          <entry key="JAVA" value="1481" />
+          <entry key="PLAIN_TEXT" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="18" />
+          <entry key="iml" value="1" />
+          <entry key="java" value="20" />
+          <entry key="json" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="18" />
+          <entry key="IDEA_MODULE" value="1" />
+          <entry key="JAVA" value="20" />
+          <entry key="JSON" value="4" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Model/DataBase/BBDDHelper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
               <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/DataBase/BBDDConnector.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#connect#0;class#BBDDConnector#0" />
-                <element signature="method#disconnect#0;class#BBDDConnector#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/DataBase/Entity/Table.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="30" selection-start-column="30" selection-end-column="30" />
-              <folding>
-                <element signature="e#262#263#0" expanded="true" />
-                <element signature="e#292#293#0" expanded="true" />
-                <element signature="e#335#336#0" expanded="true" />
-                <element signature="e#373#374#0" expanded="true" />
-                <element signature="e#410#411#0" expanded="true" />
-                <element signature="e#446#447#0" expanded="true" />
-                <element signature="e#501#502#0" expanded="true" />
-                <element signature="e#551#552#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Network/Network.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="85" column="28" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="28" />
-              <folding>
-                <element signature="e#790#791#0" expanded="true" />
-                <element signature="e#825#826#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/View/SubView/CharBar.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1234">
-              <caret line="107" column="68" selection-start-line="107" selection-start-column="68" selection-end-line="107" selection-end-column="68" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -237,7 +201,7 @@
         <entry file="file://$PROJECT_DIR$/src/Model/DataBase/Entity/Dish.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
+              <caret line="5" column="41" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -314,6 +278,7 @@
         <option value="$PROJECT_DIR$/src/Network/ClientManager.java" />
         <option value="$PROJECT_DIR$/src/Network/Network.java" />
         <option value="$PROJECT_DIR$/src/View/SubView/CharBar.java" />
+        <option value="$PROJECT_DIR$/src/Model/DataBase/Entity/User.java" />
       </list>
     </option>
   </component>
@@ -335,6 +300,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -356,28 +322,43 @@
               <item name="Centralizad Restaurant Server" type="b2602c69:ProjectViewProjectNode" />
               <item name="Centralizad Restaurant Server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="View" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Centralizad Restaurant Server" type="b2602c69:ProjectViewProjectNode" />
               <item name="Centralizad Restaurant Server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="View" type="462c0819:PsiDirectoryNode" />
-              <item name="SubView" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Centralizad Restaurant Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Centralizad Restaurant Server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Centralizad Restaurant Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Centralizad Restaurant Server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="Entity" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557487748584" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../BBDD/JDBCExample/JDBCExample/JDBCExample.iml" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557762269507" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Centralized Restaurant Client/Centralized Restaurant.iml" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -444,6 +425,14 @@
       <updated>1553962555748</updated>
       <workItem from="1555338471485" duration="6553000" />
     </task>
+    <task id="LOCAL-00001" summary="chart added">
+      <created>1557760918299</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1557760918299</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -453,7 +442,7 @@
     <frame x="-6" y="-6" width="1293" height="693" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.35060728" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.36194333" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -462,7 +451,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32740214" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32740214" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -489,8 +478,11 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="chart added" />
+    <option name="LAST_COMMIT_MESSAGE" value="chart added" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/Model/CentralizedRestaurantServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -681,9 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Centralized Restaurant Client/Centralized Restaurant.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Model.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -705,13 +694,6 @@
             <element signature="e#2415#2416#0" expanded="true" />
             <element signature="e#2460#2461#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -803,15 +785,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
           <caret line="29" column="55" selection-start-line="29" selection-start-column="55" selection-end-line="29" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/DataBase/BBDDHelper.java">
+    <entry file="file://$PROJECT_DIR$/src/View/SubView/CharBar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+        <state relative-caret-position="1693">
+          <caret line="107" column="68" selection-start-line="107" selection-start-column="68" selection-end-line="107" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Network/Network.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="85" column="28" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="28" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#790#791#0" expanded="true" />
+            <element signature="e#825#826#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -833,6 +826,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/DataBase/BBDDConnector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#connect#0;class#BBDDConnector#0" />
+            <element signature="method#disconnect#0;class#BBDDConnector#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Centralized Restaurant Client/Centralized Restaurant.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Centralizad Restaurant Server.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Network/ClientManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -848,59 +866,31 @@
     <entry file="file://$PROJECT_DIR$/src/Model/DataBase/Entity/Dish.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
+          <caret line="5" column="41" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#477#478#0" expanded="true" />
-            <element signature="e#508#509#0" expanded="true" />
-            <element signature="e#553#554#0" expanded="true" />
-            <element signature="e#593#594#0" expanded="true" />
-            <element signature="e#624#625#0" expanded="true" />
-            <element signature="e#652#653#0" expanded="true" />
-            <element signature="e#693#694#0" expanded="true" />
-            <element signature="e#727#728#0" expanded="true" />
-            <element signature="e#758#759#0" expanded="true" />
-            <element signature="e#785#786#0" expanded="true" />
-            <element signature="e#825#826#0" expanded="true" />
-            <element signature="e#857#858#0" expanded="true" />
-            <element signature="e#886#887#0" expanded="true" />
-            <element signature="e#913#914#0" expanded="true" />
-            <element signature="e#951#952#0" expanded="true" />
-            <element signature="e#983#984#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Centralizad Restaurant Server.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/DataBase/BBDDConnector.java">
+    <entry file="file://$PROJECT_DIR$/src/Model/DataBase/Entity/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#connect#0;class#BBDDConnector#0" />
-            <element signature="method#disconnect#0;class#BBDDConnector#0" />
-          </folding>
+        <state relative-caret-position="238">
+          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Network/Network.java">
+    <entry file="file://$PROJECT_DIR$/src/Model/DataBase/dao/UserDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="85" column="28" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="28" />
-          <folding>
-            <element signature="e#790#791#0" expanded="true" />
-            <element signature="e#825#826#0" expanded="true" />
-          </folding>
+        <state>
+          <caret column="3" selection-start-column="3" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/SubView/CharBar.java">
+    <entry file="file://$PROJECT_DIR$/src/Model/DataBase/BBDDHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1234">
-          <caret line="107" column="68" selection-start-line="107" selection-start-column="68" selection-end-line="107" selection-end-column="68" />
+        <state relative-caret-position="255">
+          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

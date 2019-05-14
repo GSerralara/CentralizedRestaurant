@@ -1,5 +1,7 @@
 package Controller;
 
+import Model.entity.User;
+import Resources.Pop;
 import View.Launcher;
 
 import java.awt.event.ActionEvent;
@@ -22,7 +24,14 @@ public class LauncherController implements ActionListener {
         // All went well, notify listener to progress.
         switch (e.getActionCommand()){
             case "SIGN_IN":
-                launcher.goToWindow("SIGN_IN");
+                if(listener.tryConnection()){
+                    User user = new User(launcher.getUserField(),launcher.getPwField());
+                    //ToDo: send Object
+                    launcher.goToWindow("SIGN_IN");
+                }else{
+                    Pop popup = new Pop("No connection Possible");
+                    //launcher.addWarning("NO Connection Possible");
+                }
                 break;
             case "REGISTER":
                 launcher.goToWindow("REGISTER");
