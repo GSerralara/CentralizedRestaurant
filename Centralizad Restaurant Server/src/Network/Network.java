@@ -51,9 +51,7 @@ public class Network implements Runnable {
 
             try {
                 ClientManager client = new ClientManager(serverSocket.accept());
-                System.out.println("add client to the list");
                 clients.add(client);
-                System.out.println(clients.size());
             } catch (IOException e) {
                 System.out.println("Communication error");
                 active = false;

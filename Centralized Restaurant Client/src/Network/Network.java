@@ -45,6 +45,33 @@ public class Network {
         return 1;
     }
 
+    public void disconnect(){
+        try {
+            if (!socket.isClosed()) socket.close();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    public void sendObject(Object toSend){
+        try {
+          os.writeObject(toSend);
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    public Object readObject(){
+        try {
+            return is.readObject();
+        } catch (IOException e){
+            e.printStackTrace();
+        } catch (ClassNotFoundException e1){
+            e1.getMessage();
+        }
+       return null;
+    }
+
     public void registerController(FormController c){
         this.controller = c;
     }

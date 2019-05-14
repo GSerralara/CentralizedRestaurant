@@ -1,6 +1,6 @@
 package Controller;
 
-import Model.entity.User;
+import Model.Database.Entity.User;
 import Resources.Pop;
 import View.Launcher;
 
@@ -27,6 +27,8 @@ public class LauncherController implements ActionListener {
                 if(listener.tryConnection()){
                     User user = new User(launcher.getUserField(),launcher.getPwField());
                     //ToDo: send Object
+
+                    listener.sendObject(user);
                     launcher.goToWindow("SIGN_IN");
                 }else{
                     Pop popup = new Pop("No connection Possible");

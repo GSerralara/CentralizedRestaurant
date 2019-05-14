@@ -1,5 +1,7 @@
 package Network;
 
+import Model.DataBase.Entity.*;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -31,15 +33,24 @@ public class ClientManager extends Thread {
     public void run() {
         super.run();
         try {
+            System.out.println("Reading obj");
             clientRequest = is.readObject();
             //manage petition
+            System.out.println(clientRequest.getClass().getName());
+            //treatObject(clientRequest);
+            clientAnswer = "OK";
             os.writeObject(clientAnswer);
 
             //finally
             cSocket.close();
 
         }catch (IOException | ClassNotFoundException e){
-            e.printStackTrace();
+           System.err.println("Error en la comunicacion");
+        }
+    }
+    private void treatObject(Object obj){
+        if(obj instanceof User){
+            System.out.println("Got user");
         }
     }
     public void dropClient(){

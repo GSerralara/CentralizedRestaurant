@@ -1,7 +1,7 @@
 package Model.DataBase;
 
 import Model.DataBase.BBDDConnector;
-import Model.Model;
+
 
 import java.sql.ResultSet;
 

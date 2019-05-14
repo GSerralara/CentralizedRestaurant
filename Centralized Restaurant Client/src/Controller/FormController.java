@@ -85,7 +85,12 @@ public class FormController {
         // return Statement
         return connectionDone;
     }
-
+    public void sendObject(Object obj){
+        System.out.println(obj.getClass().getName());
+        network.sendObject(obj);
+        Object answer = network.readObject();
+        network.disconnect();
+    }
     public void startSession(String username){
         model.setLogin(username);
     }

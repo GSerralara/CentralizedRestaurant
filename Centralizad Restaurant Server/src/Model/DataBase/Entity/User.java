@@ -3,15 +3,30 @@ package Model.DataBase.Entity;
 import java.io.Serializable;
 
 public class User implements Serializable {
-    private String userName;
-    private String firstName;
-    private String lastName;
-    private String password;
+    private String user;//It can be username or mail
     private String mail;
+    private String password;
 
-    public User(String userName,String password, String mail) {
-        this.userName = userName;
-        this.password = password;
+    public User(String user, String mail, String password) {
+        this.user = user;
         this.mail = mail;
+        this.password = password;
+    }
+    public User(String user, String password) {
+        this.user = user;
+        this.mail = "";
+        this.password = password;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public String getPassword() {
+        return password;
     }
 }
