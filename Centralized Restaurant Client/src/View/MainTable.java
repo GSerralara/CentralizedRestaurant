@@ -16,8 +16,18 @@ public class MainTable extends JPanel {
     private final ProgressListener listener;
     private MainTableController controller;
     /**
+     * Constants for the UI
+     */
+    // General constants
+    private static final String TIME_LABEL_TEXT = "HH:MM";
+    private static final String MENU_TAB_TEXT = "Menu";
+    private static final String ORDER_TAB_TEXT = "Order";
+    private static final String BILL_TAB_TEXT = "Bill";
+
+    /**
      * Attributes of the UI
      */
+    private String strTime;
     private JLabel time;
     private Bill bill;
     private Menu menu;
@@ -42,7 +52,8 @@ public class MainTable extends JPanel {
         // We configure the window.
         setLayout(new BorderLayout());
         // instance label of time of the view
-        time = new JLabel("HH:MM");
+        this.strTime = TIME_LABEL_TEXT;
+        time = new JLabel(strTime);
         // instance JPanels that will from the tabs of the panel
         bill = new Bill(new BillController(controller));
         menu = new Menu(new MenuController(controller));
@@ -50,14 +61,14 @@ public class MainTable extends JPanel {
         order = new Order(new OrderController(controller));
         // instance JTabbedPane options that will have JPanels as tabs
         JTabbedPane options = new JTabbedPane();
-
+        // instance JPanel that will go to the top of the view
         JPanel top = new JPanel(new FlowLayout());
         top.add(time);
         add(top,BorderLayout.NORTH);
-
-        options.addTab("Menu", menu);
-        options.addTab("Order", order);
-        options.addTab("Bill", bill);
+        // adding JPanels as tabs
+        options.addTab(MENU_TAB_TEXT, menu);
+        options.addTab(ORDER_TAB_TEXT, order);
+        options.addTab(BILL_TAB_TEXT, bill);
         add(options,BorderLayout.CENTER);
 
     }
@@ -75,6 +86,14 @@ public class MainTable extends JPanel {
                 System.err.println("Unknown window name MainTable");
                 break;
         }
+    }
+
+    /**
+     * Method that will update time String of the view
+     * @param currentTime string that represents being the current time HH:MM format
+     */
+    public void updateTime(String currentTime){
+        this.strTime = currentTime;
     }
 
 }

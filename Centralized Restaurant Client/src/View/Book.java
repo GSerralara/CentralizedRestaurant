@@ -8,17 +8,31 @@ import javax.swing.border.BevelBorder;
 import java.awt.*;
 
 public class Book extends JPanel {
+    // instance variables
     private final ProgressListener listener;
     private BookController controller;
+    /**
+     * Attributes of the UI
+     */
     private JTextField reserveName;
     private JLabel reserveState;
     private JButton back,book;
+    /**
+     * Constructor by default of the class.
+     * @param listener it's a ProgressListener that the class will use to move to other views
+     * @param controller it's the respective controller of this view
+     * */
     public Book(ProgressListener listener, BookController controller) {
+        // instance attributes with passed parameters
         this.listener = listener;
         this.controller = controller;
         this.controller.setBook(this);
+        // UI configuration of the panel
         windowConfiguration();
     }
+    /**
+     * Method that will create all the components of the panel.
+     */
     public void windowConfiguration(){
         // We configure the window.
         new BorderLayout();

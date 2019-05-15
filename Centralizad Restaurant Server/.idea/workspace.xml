@@ -2,27 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bb069b7-f142-4429-8d46-9d30b44c1cc8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/SubController/ClientOrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/SubView/ClientOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/Controller/ServiceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/Controller/ServiceController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/View/Items/OrderedItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/View/Items/OrderedItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/View/Service.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/View/Service.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AunthentificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AunthentificationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ServiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Resources/Pop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Resources/Pop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Aunthentification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Aunthentification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Items/AuthItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Items/AuthItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Items/OrderedItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Items/OrderedItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Items/ReserveItem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Service.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/Controller/LauncherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/Controller/LauncherController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/View/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/View/Book.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/View/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/View/MainMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Controller/LauncherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Controller/LauncherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/View/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/View/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/View/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/View/MainMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/View/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/View/Register.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -136,7 +116,7 @@
     <session id="-744021064">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.4" value="1" />
@@ -160,14 +140,14 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="iml" value="1" />
-          <entry key="java" value="41" />
+          <entry key="java" value="42" />
           <entry key="json" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="41" />
+          <entry key="JAVA" value="42" />
           <entry key="JSON" value="4" />
         </counts>
       </usages-collector>
@@ -175,69 +155,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/Aunthentification.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="463">
-              <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/Items/AuthItem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Controller/FormController.java">
+        <entry file="file://$PROJECT_DIR$/src/View/Launcher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-438">
-              <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1172#1173#0" expanded="true" />
-                <element signature="e#1216#1217#0" expanded="true" />
-                <element signature="e#1794#1795#0" expanded="true" />
-                <element signature="e#1842#1843#0" expanded="true" />
-                <element signature="e#2044#2045#0" expanded="true" />
-                <element signature="e#2106#2107#0" expanded="true" />
-                <element signature="e#2200#2201#0" expanded="true" />
-                <element signature="e#2227#2228#0" expanded="true" />
-                <element signature="e#2259#2260#0" expanded="true" />
-                <element signature="e#2287#2288#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/AunthentificationController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/SubView/ClientOrder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="100">
+              <caret line="9" column="17" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -365,20 +287,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="View" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Centralizad Restaurant Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Centralizad Restaurant Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="View" type="462c0819:PsiDirectoryNode" />
-              <item name="Items" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Centralizad Restaurant Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Centralizad Restaurant Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="View" type="462c0819:PsiDirectoryNode" />
-              <item name="SubView" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -389,7 +297,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557871232427" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557871698436" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Centralized Restaurant Client/Centralized Restaurant.iml" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -472,9 +380,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1293" height="693" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.37408906" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.37408906" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -483,7 +390,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3291815" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32740214" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32740214" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -535,13 +442,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Launcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -846,20 +746,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/AunthentificationController.java">
+    <entry file="file://$PROJECT_DIR$/src/View/SubView/ClientOrder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="187">
+          <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/SubView/ClientOrder.java">
+    <entry file="file://$PROJECT_DIR$/src/Controller/AunthentificationController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
+        <state relative-caret-position="323">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -885,7 +785,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/FormController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-438">
+        <state relative-caret-position="73">
           <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -900,6 +800,13 @@
             <element signature="e#2259#2260#0" expanded="true" />
             <element signature="e#2287#2288#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Launcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="17" />
         </state>
       </provider>
     </entry>

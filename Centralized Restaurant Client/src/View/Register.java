@@ -4,8 +4,6 @@ import Controller.RegisterController;
 
 import javax.swing.*;
 import java.awt.*;
-//ToDO: Hacer que quede bonito la view
-//ToDo: Funciones que den la informcion de los campos
 /**
  * View Register class
  * Extends from JPanel
@@ -15,8 +13,6 @@ import java.awt.*;
  * @author David Diego
  * @author Pablo Nogueras
  * @author Victor Salvador
- * @version 1.3
- * @since 1.3
  */
 public class Register extends JPanel{
     // instance variables
@@ -172,14 +168,20 @@ public class Register extends JPanel{
                 break;
         }
     }
-
+    /**
+     * Function that will return the String contained in the password field.
+     */
     public String getPwd(){
         // instance String that will be return
         String pwd = new String(pw.getPassword());
         // return Statement
         return pwd;
     }
-
+    /**
+     * Function that will return:
+     *      -->True: in case both password fields matches
+     *      -->False:in case both password fields are different
+     */
     public boolean samePwd(){
         String firstPwd = new String(pw.getPassword());
         String secondPwd = new String(rpw.getPassword());

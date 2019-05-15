@@ -6,16 +6,47 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MainMenu extends JPanel {
+    // instance variables
     private final ProgressListener listener;
     private MainMenuController controller;
-    private JButton cancelBooking,book,logout;
+
+    /**
+     * Constants for the Buttons and Action Commands
+     */
+    // Constants of the buttons
+    private static final String JB_BOOK = "Book";
+    private static final String JB_CANCEL ="Cancel";
+    private static final String JB_LOGOUT = "Log Out";
+
+    // Constants of the Action Commands
+    private static final String AC_BOOK = "BOOK";
+    private static final String AC_CANCEL = "CANCEL";
+    private static final String AC_LOGOUT = "LOGOUT";
+    /**
+     * Constants for the UI
+     */
     // Name of the view
     private static final String WINDOW_TITLE = "WELCOME";
 
+    // General constants
+    private static final String BOOK_LABEL_TEXT = "Book a Table";
+    private static final String CANCEL_LABEL_TEXT = "Cancel your Reserve";
+    /**
+     * Attributes of the UI
+     */
+    private JButton cancelBooking,book,logout;
+
+    /**
+     * Constructor by default of the class.
+     * @param listener it's a ProgressListener that the class will use to move to other views
+     * @param controller it's the respective controller of this view
+     * */
     public MainMenu(ProgressListener listener, MainMenuController controller) {
+        // instance attributes with passed parameters
         this.listener = listener;
         this.controller = controller;
         this.controller.setMainMenu(this);
+        // UI configuration of the panel
         windowConfiguration();
     }
     /**
@@ -48,11 +79,11 @@ public class MainMenu extends JPanel {
         // set Layout to a box Form for the content
         form.setLayout(new BoxLayout(form,BoxLayout.Y_AXIS));
         // instance labels of the view
-        JLabel bookLabel = new JLabel("Book a Table");
-        JLabel cancelLabel = new JLabel("Cancel your Reserve");
+        JLabel bookLabel = new JLabel(BOOK_LABEL_TEXT);
+        JLabel cancelLabel = new JLabel(CANCEL_LABEL_TEXT);
         // instance attributes
-        book = new JButton("Book");
-        cancelBooking = new JButton("Cancel");
+        book = new JButton(JB_BOOK);
+        cancelBooking = new JButton(JB_CANCEL);
         // add user camp to the from
         form.add(bookLabel);
         form.add(book);
@@ -62,9 +93,9 @@ public class MainMenu extends JPanel {
         form.add(cancelBooking);
         form.add(Box.createVerticalStrut(20));
         // add Sing In button to the bottom
-        book.setActionCommand("BOOK");//set action command that will get the ActionListener
+        book.setActionCommand(AC_BOOK);//set action command that will get the ActionListener
         book.addActionListener(controller);//set which ActionListener
-        cancelBooking.setActionCommand("CANCEL");//set action command that will get the ActionListener
+        cancelBooking.setActionCommand(AC_CANCEL);//set action command that will get the ActionListener
         cancelBooking.addActionListener(controller);//set which ActionListener
         // return Statement
         return form;
@@ -76,11 +107,10 @@ public class MainMenu extends JPanel {
     private JPanel bottomPart(){
         // instance JPanel that will be return
         JPanel bottom = new JPanel(new FlowLayout());//For UX positioning will have a FlowLayout
-
         // Register option Button
-        logout = new JButton("Log Out");
+        logout = new JButton(JB_LOGOUT);
         // controller command
-        logout.setActionCommand("LOGOUT");//set action command that will get the ActionListener
+        logout.setActionCommand(AC_LOGOUT);//set action command that will get the ActionListener
         logout.addActionListener(controller);//set which ActionListener
         bottom.add(logout);//set Flow position for UX purposes
         // return Statement
