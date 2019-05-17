@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.Database.Entity.User;
 import Model.Model;
 import Network.Network;
 import View.WindowForm;
@@ -16,6 +17,7 @@ public class FormController {
     private AunthentificationController aunthentificationController;
     private PreServiceController preServiceController;
     private PostServiceController postServiceController;
+    private ServiceController serviceController;
     public FormController(WindowForm view, Model model, Network net) {
         this.view = view;
         this.model = model;
@@ -27,7 +29,12 @@ public class FormController {
         aunthentificationController = new AunthentificationController(this);
         preServiceController = new PreServiceController(this);
         postServiceController = new PostServiceController(this);
+        serviceController = new ServiceController(this);
 
+    }
+
+    public ServiceController getServiceController() {
+        return serviceController;
     }
 
     public PostServiceController getPostServiceController() {
@@ -74,5 +81,20 @@ public class FormController {
     }
     public void resumeServer(){
         net.resume();
+    }
+    public void addReserve(User u){
+        aunthentificationController.addAuth(u);
+    }
+    public void authResponse(String msg ,User u){
+        net.sendMissage(msg, u);
+    }
+    public void changeService(){
+        sideMenuController.changeWindowState();
+    }
+    public String reserveState(User u){
+        return this.aunthentificationController.getIfWasAccepted(u);
+    }
+    public void reserveCancelation(User u){
+        aunthentificationController.dropReserve(u);
     }
 }

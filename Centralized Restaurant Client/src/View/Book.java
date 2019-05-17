@@ -11,12 +11,33 @@ public class Book extends JPanel {
     // instance variables
     private final ProgressListener listener;
     private BookController controller;
+
+    /**
+     * Constants for the Buttons and Action Commands
+     */
+    // Constants of the buttons
+    private static final String JB_BOOK = "Book";
+    private static final String JB_BACK ="Go back";
+
+    // Constants of the Action Commands
+    private static final String AC_BOOK = "BOOK";
+    private static final String AC_BACK = "BACK";
+    /**
+     * Constants for the UI
+     */
+    // Name of the view
+    private static final String WINDOW_TITLE = "Make your booking";
+
+    // General constants
+    private static final String BOOK_LABEL_TEXT = "Introduce your Reserve name";
+    private static final String RESERVE_LABEL_TEXT = "Your Reserve has been:";
     /**
      * Attributes of the UI
      */
     private JTextField reserveName;
     private JLabel reserveState;
     private JButton back,book;
+
     /**
      * Constructor by default of the class.
      * @param listener it's a ProgressListener that the class will use to move to other views
@@ -37,9 +58,9 @@ public class Book extends JPanel {
         // We configure the window.
         new BorderLayout();
         // We instance the title of the window
-        JLabel title = new JLabel("Make your booking");
-        JLabel bookLabel = new JLabel("Introduce your Reserve name");
-        JLabel reserveStateLabel = new JLabel("Your Reserve has been:");
+        JLabel title = new JLabel(WINDOW_TITLE);
+        JLabel bookLabel = new JLabel(BOOK_LABEL_TEXT);
+        JLabel reserveStateLabel = new JLabel(RESERVE_LABEL_TEXT);
         // We instance the panel body of the window
         JPanel content = new JPanel();
         content.setLayout(new BoxLayout(content,BoxLayout.Y_AXIS));
@@ -50,8 +71,8 @@ public class Book extends JPanel {
         reserveName = new JTextField();
         content.add(reserveName);
         content.add(reserveStateLabel);
-        book = new JButton("BOOK");
-        book.setActionCommand("BOOK");
+        book = new JButton(JB_BOOK);
+        book.setActionCommand(AC_BOOK);
         book.addActionListener(controller);
         content.add(book);
         content.add(Box.createVerticalStrut(20));
@@ -59,8 +80,8 @@ public class Book extends JPanel {
         reserveState.setSize(150,150);
         reserveState.setBorder(BorderFactory.createLineBorder(Color.black));
         content.add(reserveState);
-        back = new JButton("Go back");
-        back.setActionCommand("BACK");
+        back = new JButton(JB_BACK);
+        back.setActionCommand(AC_BACK);
         back.addActionListener(controller);
         content.add(back);
         add(content,BorderLayout.CENTER);
@@ -81,6 +102,8 @@ public class Book extends JPanel {
         }
     }
 
-
+    public String getReserveName(){
+        return reserveName.getText();
+    }
 
 }

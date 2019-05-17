@@ -2,31 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bb069b7-f142-4429-8d46-9d30b44c1cc8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Model/Time.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/Network/ClientManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/Network/ClientManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AunthentificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AunthentificationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/FormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SideMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SideMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Database/Entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Database/Entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Network/ClientManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network/ClientManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Network/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network/Network.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Aunthentification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Aunthentification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Items/AuthItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Items/AuthItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/WindowForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/WindowForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/Controller/FormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/Controller/FormController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/Controller/LauncherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/Controller/LauncherController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/Controller/MainTableController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/Controller/MainTableController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/Controller/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/Controller/RegisterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/Model/CentralizedRestaurant.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/Model/CentralizedRestaurant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/Model/Database/Entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/Model/Database/Entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/Model/ModelClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/Model/ModelClient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/Network/Network.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/Network/Network.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/View/Launcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/View/Launcher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/View/MainTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/View/MainTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/View/MyForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/View/MyForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/View/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/View/Register.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/View/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/View/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/View/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/View/MainMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Controller/BookController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Controller/FormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Controller/FormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Controller/LauncherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Controller/LauncherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Controller/MainTableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Controller/MainTableController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Controller/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Model/CentralizedRestaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Model/CentralizedRestaurant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Controller/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Controller/MainMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Model/Database/Entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Model/Database/Entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Model/ModelClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Model/ModelClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Network/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Network/Network.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/View/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/View/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/View/MainTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/View/MainTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/View/MyForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/View/MyForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/View/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/View/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/View/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/View/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/View/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/View/MainMenu.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,6 +37,11 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Centralizad_Restaurant_Server$CentralizedRestaurantServer.ic" NAME="CentralizedRestaurantServer Coverage Results" MODIFIED="1558117030852" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Model.DataBase.DAO.Entity.*</FILTER>
+    </SUITE>
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="1962049178">
@@ -151,27 +159,27 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="3615" />
+          <entry key="java" value="5471" />
           <entry key="txt" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3615" />
+          <entry key="JAVA" value="5471" />
           <entry key="PLAIN_TEXT" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="iml" value="1" />
-          <entry key="java" value="59" />
+          <entry key="java" value="101" />
           <entry key="json" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="59" />
+          <entry key="JAVA" value="101" />
           <entry key="JSON" value="4" />
         </counts>
       </usages-collector>
@@ -182,37 +190,39 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Network/ClientManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="98" column="20" selection-start-line="98" selection-start-column="20" selection-end-line="98" selection-end-column="20" />
+            <state relative-caret-position="41">
+              <caret line="90" column="40" selection-start-line="90" selection-start-column="40" selection-end-line="90" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#dropClient#0;class#ClientManager#0" />
+                <element signature="method#treatObject#0;class#ClientManager#0" />
+                <element signature="e#4268#4269#0" expanded="true" />
+                <element signature="e#4297#4298#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/PreService.java">
+        <entry file="file://$PROJECT_DIR$/src/Network/Network.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+            <state relative-caret-position="251">
+              <caret line="109" column="39" selection-start-line="109" selection-start-column="39" selection-end-line="109" selection-end-column="39" />
+              <folding>
+                <element signature="e#825#826#0" expanded="true" />
+                <element signature="e#860#861#0" expanded="true" />
+                <element signature="method#run#0;class#Network#0" />
+                <element signature="method#stopService#0;class#Network#0" />
+                <element signature="method#pause#0;class#Network#0" />
+                <element signature="method#resume#0;class#Network#0" />
+                <element signature="e#2593#2594#0" expanded="true" />
+                <element signature="e#2649#2650#0" expanded="true" />
+                <element signature="e#2692#2693#0" expanded="true" />
+                <element signature="e#2746#2747#0" expanded="true" />
+                <element signature="e#2784#2785#0" expanded="true" />
+                <element signature="e#2810#2811#0" expanded="true" />
+              </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Time.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="19" column="64" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Centralizad Restaurant Server.iml">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -236,15 +246,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/View/ProgressListener.java" />
         <option value="$PROJECT_DIR$/src/Controller/LauncherController.java" />
         <option value="$PROJECT_DIR$/src/Model/CentralizedRestaurantServer.java" />
         <option value="$PROJECT_DIR$/src/View/SplitPlane.java" />
         <option value="$PROJECT_DIR$/src/Controller/PreService.java" />
-        <option value="$PROJECT_DIR$/src/Controller/SideMenuController.java" />
         <option value="$PROJECT_DIR$/src/View/SideMenu.java" />
         <option value="$PROJECT_DIR$/src/Controller/PostServiceController.java" />
-        <option value="$PROJECT_DIR$/src/View/WindowForm.java" />
         <option value="$PROJECT_DIR$/src/Controller/TableManagementController.java" />
         <option value="$PROJECT_DIR$/src/View/Items/TableItem.java" />
         <option value="$PROJECT_DIR$/src/Controller/SubController/TableManagementController.java" />
@@ -257,7 +264,6 @@
         <option value="$PROJECT_DIR$/src/Model/BBDDHelper.java" />
         <option value="$PROJECT_DIR$/src/Model/Model.java" />
         <option value="$PROJECT_DIR$/src/View/ServiceState.java" />
-        <option value="$PROJECT_DIR$/src/Controller/FormController.java" />
         <option value="$PROJECT_DIR$/src/View/PreService.java" />
         <option value="$PROJECT_DIR$/src/Model/Time.java" />
         <option value="$PROJECT_DIR$/src/View/PostService.java" />
@@ -269,7 +275,6 @@
         <option value="$PROJECT_DIR$/src/Model/DataBase/dao/TableDAO.java" />
         <option value="$PROJECT_DIR$/src/Model/DataBase/dao/DishDAO.java" />
         <option value="$PROJECT_DIR$/src/View/SubView/CharBar.java" />
-        <option value="$PROJECT_DIR$/src/Network/Network.java" />
         <option value="$PROJECT_DIR$/src/Model/DataBase/BBDDHelper.java" />
         <option value="$PROJECT_DIR$/src/Resources/Pop.java" />
         <option value="$PROJECT_DIR$/src/View/Items/OrderedItem.java" />
@@ -277,15 +282,20 @@
         <option value="$PROJECT_DIR$/src/Controller/ServiceController.java" />
         <option value="$PROJECT_DIR$/src/View/Service.java" />
         <option value="$PROJECT_DIR$/src/View/SubView/ClientOrder.java" />
-        <option value="$PROJECT_DIR$/src/Controller/AunthentificationController.java" />
-        <option value="$PROJECT_DIR$/src/View/Aunthentification.java" />
-        <option value="$PROJECT_DIR$/src/View/Items/AuthItem.java" />
         <option value="$PROJECT_DIR$/src/Model/DataBase/Entity/User.java" />
         <option value="$PROJECT_DIR$/src/Model/DataBase/Entity/Table.java" />
         <option value="$PROJECT_DIR$/src/Model/DataBase/Entity/Dish.java" />
         <option value="$PROJECT_DIR$/src/Controller/ServiceStateController.java" />
         <option value="$PROJECT_DIR$/src/View/Launcher.java" />
         <option value="$PROJECT_DIR$/src/Model/Database/dao/UserDAO.java" />
+        <option value="$PROJECT_DIR$/src/Model/Database/Entity/User.java" />
+        <option value="$PROJECT_DIR$/src/Controller/SideMenuController.java" />
+        <option value="$PROJECT_DIR$/src/View/WindowForm.java" />
+        <option value="$PROJECT_DIR$/src/View/Items/AuthItem.java" />
+        <option value="$PROJECT_DIR$/src/View/Aunthentification.java" />
+        <option value="$PROJECT_DIR$/src/Controller/AunthentificationController.java" />
+        <option value="$PROJECT_DIR$/src/Controller/FormController.java" />
+        <option value="$PROJECT_DIR$/src/Network/Network.java" />
         <option value="$PROJECT_DIR$/src/Network/ClientManager.java" />
       </list>
     </option>
@@ -337,35 +347,6 @@
               <item name="Centralizad Restaurant Server" type="b2602c69:ProjectViewProjectNode" />
               <item name="Centralizad Restaurant Server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Centralizad Restaurant Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Centralizad Restaurant Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="Database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Centralizad Restaurant Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Centralizad Restaurant Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="Database" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Centralizad Restaurant Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Centralizad Restaurant Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="Database" type="462c0819:PsiDirectoryNode" />
-              <item name="Entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Centralizad Restaurant Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Centralizad Restaurant Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Network" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -373,13 +354,6 @@
               <item name="Centralizad Restaurant Server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="View" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Centralizad Restaurant Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Centralizad Restaurant Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="View" type="462c0819:PsiDirectoryNode" />
-              <item name="Items" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -390,7 +364,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558112335189" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558130646544" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Centralized Restaurant Client/Centralized Restaurant.iml" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -473,6 +447,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1293" height="693" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.39352226" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -493,6 +468,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3291815" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.32955465" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -515,18 +491,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="chart added" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/View/SubView.java" />
     <entry file="file://$PROJECT_DIR$/src/Controller/PostServiceController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/ProgressListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -541,20 +509,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
           <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/SideMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="60" column="18" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/WindowForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="37" column="22" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -600,6 +554,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
+          <folding>
+            <element signature="e#598#599#0" expanded="true" />
+            <element signature="e#632#633#0" expanded="true" />
+            <element signature="e#672#673#0" expanded="true" />
+            <element signature="e#727#728#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -729,40 +689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/AunthentificationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Aunthentification.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/FormController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1172#1173#0" expanded="true" />
-            <element signature="e#1216#1217#0" expanded="true" />
-            <element signature="e#1794#1795#0" expanded="true" />
-            <element signature="e#1842#1843#0" expanded="true" />
-            <element signature="e#2044#2045#0" expanded="true" />
-            <element signature="e#2106#2107#0" expanded="true" />
-            <element signature="e#2200#2201#0" expanded="true" />
-            <element signature="e#2227#2228#0" expanded="true" />
-            <element signature="e#2259#2260#0" expanded="true" />
-            <element signature="e#2287#2288#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Database/Entity/Dish.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -802,32 +728,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Items/AuthItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="13" column="25" lean-forward="true" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Centralizad Restaurant Server.iml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Launcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="23" column="30" lean-forward="true" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Database/Entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Database/dao/UserDAO.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -846,17 +748,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Network/Network.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
-          <folding>
-            <element signature="e#790#791#0" expanded="true" />
-            <element signature="e#825#826#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Time.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -866,18 +757,135 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/PreService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
+        <state relative-caret-position="212">
           <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Database/Entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+          <folding>
+            <element signature="e#800#801#0" expanded="true" />
+            <element signature="e#830#831#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/ProgressListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Launcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-191">
+          <caret line="23" column="30" lean-forward="true" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/SideMenuController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="43" column="24" lean-forward="true" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/SideMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="67" column="17" selection-start-line="67" selection-start-column="17" selection-end-line="67" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/WindowForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="71" column="26" lean-forward="true" selection-start-line="71" selection-start-column="26" selection-end-line="71" selection-end-column="26" />
+          <folding>
+            <element signature="method#run#0;class#WindowForm#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Items/AuthItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1034#1035#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Aunthentification.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="75" column="18" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/AunthentificationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="35" column="39" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
+          <folding>
+            <element signature="e#1152#1153#0" expanded="true" />
+            <element signature="e#1196#1197#0" expanded="true" />
+            <element signature="method#getIfWasAccepted#0;class#AunthentificationController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/FormController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="97" column="51" lean-forward="true" selection-start-line="97" selection-start-column="51" selection-end-line="97" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#FormController#0;class#FormController#0" />
+            <element signature="e#2829#2830#0" expanded="true" />
+            <element signature="e#2855#2856#0" expanded="true" />
+            <element signature="e#2948#2949#0" expanded="true" />
+            <element signature="e#3005#3006#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Network/Network.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="109" column="39" selection-start-line="109" selection-start-column="39" selection-end-line="109" selection-end-column="39" />
+          <folding>
+            <element signature="e#825#826#0" expanded="true" />
+            <element signature="e#860#861#0" expanded="true" />
+            <element signature="method#run#0;class#Network#0" />
+            <element signature="method#stopService#0;class#Network#0" />
+            <element signature="method#pause#0;class#Network#0" />
+            <element signature="method#resume#0;class#Network#0" />
+            <element signature="e#2593#2594#0" expanded="true" />
+            <element signature="e#2649#2650#0" expanded="true" />
+            <element signature="e#2692#2693#0" expanded="true" />
+            <element signature="e#2746#2747#0" expanded="true" />
+            <element signature="e#2784#2785#0" expanded="true" />
+            <element signature="e#2810#2811#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Network/ClientManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="98" column="20" selection-start-line="98" selection-start-column="20" selection-end-line="98" selection-end-column="20" />
+        <state relative-caret-position="41">
+          <caret line="90" column="40" selection-start-line="90" selection-start-column="40" selection-end-line="90" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#dropClient#0;class#ClientManager#0" />
+            <element signature="method#treatObject#0;class#ClientManager#0" />
+            <element signature="e#4268#4269#0" expanded="true" />
+            <element signature="e#4297#4298#0" expanded="true" />
           </folding>
         </state>
       </provider>

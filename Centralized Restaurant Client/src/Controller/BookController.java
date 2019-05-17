@@ -4,10 +4,12 @@ import View.Book;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class BookController implements ActionListener {
 
-
+    private boolean serviceState = true;
     private Book book;
     private FormController listener;
 
@@ -21,6 +23,36 @@ public class BookController implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        book.goToWindow(e.getActionCommand());
+        switch (e.getActionCommand()){
+            case "BACK":
+                book.goToWindow(e.getActionCommand());
+                break;
+            case "BOOK":
+                listener.sendReserve(book.getReserveName());
+                serviceState = true;
+                Timer timer = new Timer();
+                TimerTask task = new TimerTask() {
+                    @Override
+                    public void run() {
+                        if(serviceState){
+                            reserveState();
+                        }else{
+                            this.cancel();
+                        }
+                    }
+                };
+                timer.schedule(task,0,25000);
+                break;
+            default:
+                System.err.println("Unknown window name Book");
+                break;
+        }
+    }
+    public void reserveState(){
+        serviceState = listener.askForReserveState("STATE");
+    }
+    public void cancelReserve(){
+        serviceState = false;
+
     }
 }

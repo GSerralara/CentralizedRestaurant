@@ -17,6 +17,7 @@ public class WindowForm implements Runnable, ProgressListener {
     private Aunthentification aunthentification;
     private PreService preService;
     private PostService postService;
+    private Service service;
     /**
      * Constructor of the main frame.
      * Uses a UIManager.
@@ -46,6 +47,7 @@ public class WindowForm implements Runnable, ProgressListener {
         aunthentification = new Aunthentification(this,controller.getAunthentificationController());
         preService = new PreService(this,controller.getPreServiceController());
         postService = new PostService(this,controller.getPostServiceController());
+        service = new Service(this,controller.getServiceController());
 
         splitPlane = new SplitPlane(sideMenu,launcher);
         frame = new JFrame("Centralized Restaurant Server");
@@ -76,6 +78,7 @@ public class WindowForm implements Runnable, ProgressListener {
                 frame.pack();
                 return;
             case SERVICE:
+                splitPlane.changeCurrentView(service);
                 return;
             case POSTSERVICE:
                 splitPlane.changeCurrentView(postService);

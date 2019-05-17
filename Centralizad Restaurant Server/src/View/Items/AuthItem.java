@@ -10,13 +10,16 @@ public class AuthItem extends JPanel {
     private User user;
     private String reserve;
     private JButton accept, negate;
-    public AuthItem(User user, String reserve, ActionListener listener, int pos) {
+
+
+    public AuthItem(User user, ActionListener listener, int pos) {
+        System.out.println("Auth item");
         this.user = user;
-        this.reserve = reserve;
+        this.reserve = user.getReserve();
         accept = new JButton("Accept");
         negate = new JButton("Negate");
-        accept.setActionCommand(""+pos);
-        negate.setActionCommand(""+pos);
+        accept.setActionCommand("A:"+pos);
+        negate.setActionCommand("N:"+pos);
         accept.addActionListener(listener);
         negate.addActionListener(listener);
         setLayout(new FlowLayout());
@@ -28,5 +31,9 @@ public class AuthItem extends JPanel {
     public void updatePos(int pos){
         negate.setActionCommand(""+pos);
         accept.setActionCommand(""+pos);
+    }
+
+    public User getUser() {
+        return user;
     }
 }

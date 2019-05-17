@@ -30,6 +30,7 @@ public class Aunthentification extends JPanel {
         JScrollPane list = new JScrollPane(items);
         list.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         add(list, BorderLayout.CENTER);
+        init();
     }
     public void init(){
         reserves = new ArrayList<>();
@@ -37,14 +38,22 @@ public class Aunthentification extends JPanel {
         items.revalidate();
         repaint();
     }
-    public void addItem(User user, String name){
-        this.reserves.add(new AuthItem(user,name,controller,reserves.size()));
+    public void addItem(User user){
+
+        //AuthItem item2 = new AuthItem(user);
+        //item2.prepareUI(controller,reserves.size());
+        AuthItem item = new AuthItem(user,controller,reserves.size());
+        this.reserves.add(item);
         this.items.add(reserves.get(reserves.size()-1));
         items.revalidate();
         repaint();
     }
-    public void CancelItem(String pos){
-        int index = Integer.parseInt(pos);
+    public void cancelItem(String pos){
+        String num ="";
+        for(int i =2; i< pos.length();i++){
+           num += ""+pos.charAt(i);
+        }
+        int index = Integer.parseInt(num);
         reserves.remove(index);
         items.remove(index);
         for(int i =0; i< reserves.size();i++){
@@ -52,5 +61,34 @@ public class Aunthentification extends JPanel {
         }
         items.revalidate();
         repaint();
+    }
+    public void dropUser(User user){
+        for(int i=0;i<reserves.size();i++){
+            if(reserves.get(i).getUser()==user){
+                reserves.remove(i);
+                items.remove(i);
+            }
+        }
+        for(int i =0; i< reserves.size();i++){
+            reserves.get(i).updatePos(i);
+        }
+        items.revalidate();
+        repaint();
+    }
+    public User getUser(String pos){
+        String num ="";
+        for(int i =2; i< pos.length();i++){
+            num += ""+pos.charAt(i);
+        }
+        int index = Integer.parseInt(num);
+        return reserves.get(index).getUser();
+    }
+    public boolean userIsOnWainting(User u){
+        for(int i=0;i<reserves.size();i++){
+            if(reserves.get(i).getUser()==u){
+                return true;
+            }
+        }
+        return false;
     }
 }

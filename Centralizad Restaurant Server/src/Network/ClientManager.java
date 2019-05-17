@@ -16,17 +16,18 @@ public class ClientManager extends Thread {
     private boolean serverStoped;// true -> paused, false -> active
     private ObjectInputStream is;
     private ObjectOutputStream os;
+    private Network listener;
+    private User client;
 
     private Object clientRequest;
     private Object clientAnswer;
-    public ClientManager(Socket cSocket) throws IOException {
-        System.out.println("new Client");
+    public ClientManager(Socket cSocket , Network listener) throws IOException {
+        this.listener = listener;
         this.serverStoped = false;
         this.cSocket = cSocket;
         os = new ObjectOutputStream(cSocket.getOutputStream());
         is = new ObjectInputStream(cSocket.getInputStream());
 
-        System.out.println("run dedicated server");
         new Thread(this).start();
     }
     public void setSatus(boolean statusState){
@@ -40,10 +41,10 @@ public class ClientManager extends Thread {
             try {
                 clientRequest = is.readObject();
                 //manage petition
-                System.out.println(clientRequest.getClass().getName());
+                System.out.println("Recibido:"+clientRequest.getClass().getName());
 
                 clientAnswer = treatObject(clientRequest);
-                System.out.println(clientRequest.getClass().getName());
+                System.out.println("Enviando:"+clientAnswer.getClass().getName());
                 os.writeObject(clientAnswer);
                 if(clientAnswer=="null") cSocket.close();
                     //finally
@@ -75,27 +76,53 @@ public class ClientManager extends Thread {
             SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
             return sdf.format(d);
         }
+        if(msg.equals("STATE")){
+            String response = this.listener.getReserveState(client);
+            switch (response){
+                case "YES":
+                    return "Your reserve was Accepted";
+                case "NO":
+                    return "Your reserve was Declined";
+                case "UNKNOWN":
+                    return "Is still being processed";
+            }
+        }
+        if(msg.equals("CANCEL")){
+            listener.cancelResere(client);
+            return "OK";
+        }
         return "null";
     }
     private String treatUser(User obj){
         UserDAO dao = new UserDAO();
         //Es un login
-        if(obj.getMail().equals("")){
-            System.out.println("LOGIN");
-            //ToDo: Cuando tengas queries descomenta para agregar
-            /*
-            LinkedList<User> users = dao.getAllUsers();
-            for(User i: users){
-                if (i.getUser().equals(obj.getUser()) && i.getPassword().equals(obj.getPassword())){
-                    System.out.println("Nombres iguales");
-                    return "OK";
-                }
-            */
-        }else{//es un register
-            System.out.println("REGISTER");
-            //dao.addUser(obj);
-            return "OK";
+        System.out.println(obj.getReserve());
+        if(obj.getReserve().equals("")){
+            if(obj.getMail().equals("")){
+                System.out.println("LOGIN");
+                //ToDo: Cuando tengas queries descomenta para agregar
+                /*
+                LinkedList<User> users = dao.getAllUsers();
+                for(User i: users){
+                    if (i.getUser().equals(obj.getUser()) && i.getPassword().equals(obj.getPassword())){
+                        System.out.println("Nombres iguales");
+                        return "OK";
+                    }
+                */
+                this.client = obj;
+                //int puerto = 5555+1+listener.findUser(obj);
+                //return ""+puerto;
+            }else{//es un register
+                System.out.println("REGISTER");
+                //dao.addUser(obj);
+                return "OK";
+            }
+        }else{
+            client.setReserve(obj.getReserve());
+            System.out.println("Got Reserve");
+            listener.sendReserve(client);
         }
+
         return "OK";
         //return "null";
     }
@@ -106,6 +133,17 @@ public class ClientManager extends Thread {
             is.close();
             cSocket.close();
         } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public User getClient() {
+        return client;
+    }
+    public void sendObject(Object toSend){
+        try {
+            os.writeObject(toSend);
+        } catch (IOException e){
             e.printStackTrace();
         }
     }

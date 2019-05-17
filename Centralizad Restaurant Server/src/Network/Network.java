@@ -1,6 +1,7 @@
 package Network;
 
 import Controller.FormController;
+import Model.Database.Entity.User;
 
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -50,7 +51,7 @@ public class Network implements Runnable {
         while (active) {
 
             try {
-                ClientManager client = new ClientManager(serverSocket.accept());
+                ClientManager client = new ClientManager(serverSocket.accept(), this);
                 clients.add(client);
             } catch (IOException e) {
                 System.out.println("Communication error");
@@ -84,5 +85,28 @@ public class Network implements Runnable {
             i.setSatus(false);
         }
         paused = false;
+    }
+
+    public void sendReserve(User u){
+        controller.addReserve(u);
+    }
+
+    public int findUser(User u){
+        for(int i=0;i< clients.size();i++){
+            if(clients.get(i).getClient() == u){
+                return i;
+            }
+        }
+        return 0;
+    }
+
+    public void sendMissage(String msg,User u){
+        clients.get(findUser(u)).sendObject(msg);
+    }
+    public String getReserveState(User u){
+        return this.controller.reserveState(u);
+    }
+    public void cancelResere(User u){
+        controller.reserveCancelation(u);
     }
 }

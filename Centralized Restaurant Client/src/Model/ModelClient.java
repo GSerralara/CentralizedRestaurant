@@ -34,4 +34,8 @@ public class ModelClient {
     public void setLogin(String login) {
         this.login = login;
     }
+
+    public User getUser() {
+        return user;
+    }
 }

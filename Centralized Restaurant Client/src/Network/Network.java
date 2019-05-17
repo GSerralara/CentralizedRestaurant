@@ -40,6 +40,7 @@ public class Network{
             System.out.println("Connectado");
             is = new ObjectInputStream(socket.getInputStream());
             os =  new ObjectOutputStream(socket.getOutputStream());
+
         }catch (IOException e){
             Pop popup = new Pop("Error trying to connect");
             return 0;
@@ -55,6 +56,11 @@ public class Network{
         }
     }
 
+    public void treatResponse(Object obj){
+        if(obj instanceof String){
+            Pop pop=new Pop((String) obj);
+        }
+    }
     public void sendObject(Object toSend){
         try {
           os.writeObject(toSend);
@@ -77,6 +83,7 @@ public class Network{
     public void registerController(FormController c){
         this.controller = c;
     }
+
 
 
 }

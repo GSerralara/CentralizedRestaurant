@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 public class SideMenuController implements ActionListener {
     private SideMenu sideMenu;
     private FormController listener;
+    private String windowName ="PRE-SERVICE";
 
     public SideMenuController(FormController listener) {
         this.listener = listener;
@@ -15,6 +16,14 @@ public class SideMenuController implements ActionListener {
 
     public void setSideMenu(SideMenu sideMenu) {
         this.sideMenu = sideMenu;
+    }
+
+    public void changeWindowState() {
+        if(this.windowName.equals("PRE-SERVICE")){
+            this.windowName = "SERVICE";
+        }else{
+            this.windowName ="PRE-SERVICE";
+        }
     }
 
     @Override
@@ -29,7 +38,7 @@ public class SideMenuController implements ActionListener {
                 if(listener.getState().equals("END")) sideMenu.goToWindow("WELCOME");
                 if(listener.getState().equals("INIT")){
                     //ToDo: Check if people are already authorithed
-                    sideMenu.goToWindow("PRE-SERVICE");
+                    sideMenu.goToWindow(windowName);
                 }
                 break;
             case "AUTH":

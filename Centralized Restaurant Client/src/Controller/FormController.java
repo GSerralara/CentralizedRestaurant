@@ -106,6 +106,32 @@ public class FormController {
         }
     }
 
+    public void sendReserve(String reseveName){
+        User u = new User(model.getUser().getUser(),model.getUser().getPassword());
+        System.out.println(u.getReserve());
+        u.setReserve(reseveName);
+        System.out.println(u.getReserve());
+        network.sendObject(u);
+        Object answer = network.readObject();
+    }
+
+    public boolean askForReserveState(String reason){
+        network.sendObject(reason);
+        Object answer = network.readObject();
+        String response = (String) answer;
+        Pop pop = new Pop(response);
+        if(response.equals("Is still being processed")){
+            return true;
+        }
+        return false;
+    }
+
+    public void cancelReserve(){
+        bookController.cancelReserve();
+        network.sendObject("CANCEL");
+        Object answer = network.readObject();
+    }
+
     public void login(User user){
         network.sendObject(user);
         Object answer = network.readObject();

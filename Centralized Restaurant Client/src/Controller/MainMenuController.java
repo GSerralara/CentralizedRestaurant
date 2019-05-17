@@ -1,5 +1,6 @@
 package Controller;
 
+import Resources.Pop;
 import View.MainMenu;
 
 import java.awt.event.ActionEvent;
@@ -21,13 +22,15 @@ public class MainMenuController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()){
             case "LOGOUT":
+                listener.closeSession();
                 mainMenu.goToWindow("LOGOUT");
                 break;
             case "BOOK":
                 mainMenu.goToWindow("BOOK");
                 break;
             case "CANCEL":
-                mainMenu.goToWindow("CANCEL");
+                Pop pop = new Pop("Your reserve was cancelled");
+                listener.cancelReserve();
                 break;
         }
     }

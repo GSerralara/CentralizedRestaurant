@@ -129,9 +129,6 @@ public class MainMenu extends JPanel {
             case "BOOK":
                 this.listener.progressFrom(ProgressListener.AppState.BOOK);
                 break;
-            case "CANCEL":
-                this.listener.progressFrom(ProgressListener.AppState.CANCEL);
-                break;
             default:
                 System.err.println("Unknown window name MainMenu");
                 break;
