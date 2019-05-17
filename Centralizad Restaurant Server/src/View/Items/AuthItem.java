@@ -1,6 +1,6 @@
 package View.Items;
 
-import Model.DataBase.Entity.User;
+import Model.Database.Entity.User;
 
 import javax.swing.*;
 import java.awt.*;

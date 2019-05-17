@@ -1,4 +1,7 @@
 package Model;
+
+import Model.Database.Entity.User;
+
 /**
  * @author Guillermo Serraclara
  * @author Aleix Olle
@@ -10,7 +13,7 @@ package Model;
  */
 public class ModelClient {
     private String login;
-
+    private User user;
     public ModelClient() {
         login = "LogOut";
     }
@@ -18,6 +21,11 @@ public class ModelClient {
 
     public String getLogin() {
         return login;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+        setLogin(user.getUser());
     }
 
     public void setLogin(String login) {

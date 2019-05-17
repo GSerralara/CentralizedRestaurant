@@ -1,7 +1,7 @@
 package View;
 
 import Controller.AunthentificationController;
-import Model.DataBase.Entity.User;
+import Model.Database.Entity.User;
 import View.Items.AuthItem;
 
 import javax.swing.*;

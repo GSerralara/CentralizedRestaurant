@@ -1,6 +1,4 @@
-package Model.DataBase;
-
-import Model.DataBase.BBDDConnector;
+package Model.Database;
 
 
 import java.sql.ResultSet;

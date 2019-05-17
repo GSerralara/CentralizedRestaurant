@@ -1,6 +1,6 @@
 package View.Items;
 
-import Model.DataBase.Entity.Dish;
+import Model.Database.Entity.Dish;
 
 import javax.swing.*;
 import java.awt.*;

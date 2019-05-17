@@ -1,6 +1,4 @@
-package Model.DataBase;
-
-import Model.Model;
+package Model.Database;
 
 import java.sql.*;
 

@@ -1,7 +1,9 @@
 package Controller;
 
+import Model.Database.Entity.User;
 import Model.ModelClient;
 import Network.Network;
+import Resources.Pop;
 import View.MyForm;
 
 import java.io.IOException;
@@ -85,13 +87,28 @@ public class FormController {
         // return Statement
         return connectionDone;
     }
+
     public void sendObject(Object obj){
         System.out.println(obj.getClass().getName());
         network.sendObject(obj);
         Object answer = network.readObject();
         network.disconnect();
     }
-    public void startSession(String username){
-        model.setLogin(username);
+    public void login(User user){
+        network.sendObject(user);
+        Object answer = network.readObject();
+    }
+    public void register(User user){
+        //enviamos el user con los 3 campos
+        network.sendObject(user);
+        Object answer = network.readObject();
+        if(answer == "OK"){
+            Pop pop = new Pop("Registered Succesfully");
+            network.sendObject("CLOSE");//cerramos la conexion
+        }
+        network.disconnect();
+    }
+    public void startSession(User user){
+        model.setUser(user);
     }
 }

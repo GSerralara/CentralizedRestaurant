@@ -31,11 +31,6 @@ public class Launcher extends JPanel {
         new BorderLayout();
         // We instance the title of the window
         JLabel welcome = new JLabel("Welcome to the Server");
-        // We instance the panel body of the window
-
-
-        // We create the different parts of the window.
-
         // We add the content to the window.
         add(welcome,BorderLayout.CENTER);
     }

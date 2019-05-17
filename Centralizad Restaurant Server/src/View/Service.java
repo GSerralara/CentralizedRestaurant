@@ -1,7 +1,7 @@
 package View;
 
 import Controller.ServiceController;
-import Model.DataBase.Entity.User;
+import Model.Database.Entity.User;
 import Model.Time;
 import View.SubView.ClientOrder;
 

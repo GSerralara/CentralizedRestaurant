@@ -1,6 +1,8 @@
-package Model.DataBase.Entity;
+package Model.Database.Entity;
 
 public class Table {
+    private static final long serialVersionUID = 2L;
+
     private int idTable;
     private int numberClients;
 

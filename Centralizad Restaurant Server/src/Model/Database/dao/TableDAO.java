@@ -1,8 +1,7 @@
-package Model.DataBase.dao;
+package Model.Database.dao;
 
-import Model.DataBase.BBDDConnector;
-import Model.DataBase.BBDDHelper;
-import Model.DataBase.Entity.Table;
+import Model.Database.BBDDHelper;
+import Model.Database.Entity.Table;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

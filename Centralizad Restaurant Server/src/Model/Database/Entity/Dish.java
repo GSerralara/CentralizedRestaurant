@@ -1,9 +1,11 @@
-package Model.DataBase.Entity;
+package Model.Database.Entity;
 
 import java.io.Serializable;
 import java.util.Date;
 
 public class Dish implements Serializable {
+    private static final long serialVersionUID = 3L;
+
    private int quantety;
    private float price;
    private String name;

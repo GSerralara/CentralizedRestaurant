@@ -1,8 +1,8 @@
 package View.SubView;
 
 import Controller.SubController.ClientOrderController;
-import Model.DataBase.Entity.Dish;
-import Model.DataBase.Entity.User;
+import Model.Database.Entity.Dish;
+import Model.Database.Entity.User;
 import View.Items.OrderedItem;
 
 import javax.swing.*;

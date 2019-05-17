@@ -17,7 +17,11 @@ public class LauncherController implements ActionListener {
     public void setLauncher(Launcher launcher) {
         this.launcher = launcher;
     }
-
+    /**
+     * Override Method from ActionListener that activates when a Swing element,
+     * with this class as an ActionListener, is interacted with.
+     * @param e ActionEvent that will get the method.
+     * */
     @Override
     public void actionPerformed(ActionEvent e) {
         // Validate login, or whatever.
@@ -26,12 +30,11 @@ public class LauncherController implements ActionListener {
             case "SIGN_IN":
                 if(listener.tryConnection()){
                     User user = new User(launcher.getUserField(),launcher.getPwField());
-                    //ToDo: send Object
-
                     listener.sendObject(user);
+
                     launcher.goToWindow("SIGN_IN");
                 }else{
-                    launcher.goToWindow("SIGN_IN");
+                    //launcher.goToWindow("SIGN_IN");
                     Pop popup = new Pop("No connection Possible");
                     //launcher.addWarning("NO Connection Possible");
                 }

@@ -185,6 +185,16 @@ public class Register extends JPanel{
     public boolean samePwd(){
         String firstPwd = new String(pw.getPassword());
         String secondPwd = new String(rpw.getPassword());
-        return firstPwd.equals(secondPwd);
+        if(firstPwd.equals(secondPwd)){
+            if(firstPwd.length() != 0) return true;
+        }
+        return false;
+    }
+
+    public String getUser(){
+        return username.getText();
+    }
+    public String getMail(){
+        return mail.getText();
     }
 }

@@ -1,6 +1,7 @@
 package Network;
 
 import Controller.FormController;
+import Resources.Pop;
 
 
 import java.io.IOException;
@@ -39,7 +40,7 @@ public class Network {
             is = new ObjectInputStream(socket.getInputStream());
             os =  new ObjectOutputStream(socket.getOutputStream());
         }catch (IOException e){
-            //e.printStackTrace();
+            Pop popup = new Pop("Error trying to connect");
             return 0;
         }
         return 1;

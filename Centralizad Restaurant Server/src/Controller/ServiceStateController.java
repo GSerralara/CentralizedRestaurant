@@ -25,7 +25,6 @@ public class ServiceStateController implements ActionListener {
                 }else{
                     this.listener.runServer();
                 }
-
                 serviceState.changeCurrentState("Now is active the Server");
                 break;
             case "STOP":

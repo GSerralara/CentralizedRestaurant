@@ -1,6 +1,6 @@
 package Model;
 
-import Model.DataBase.BBDDHelper;
+import Model.Database.BBDDHelper;
 
 public class Model {
     private BBDDHelper database;
