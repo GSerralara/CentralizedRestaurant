@@ -6,14 +6,35 @@ import View.Launcher;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+/**
+ * LauncherController class
+ * Implements ActionListener
+ * It's function is to manage what happens in the Register view
+ *
+ * @author Guillermo Serraclara
+ * @author Aleix Olle
+ * @author David Diego
+ * @author Pablo Nogueras
+ * @author Victor Salvador
+ */
 public class LauncherController implements ActionListener {
+
+    // attributes of the class
     private Launcher launcher;
     private FormController listener;
+    //indicates if it goes to the MainMenu(false) or MainTable(true)
+    private boolean logType;
+    /**
+     * Constructor by default of the class.
+     * @param listener it's the controller father that manages all petitions
+     * */
     public LauncherController(FormController listener) {
         this.listener = listener;
     }
-
+    /**
+     * Setter that sets the view that will retrieve data from.
+     * @param launcher the view corresponding to this controller
+     * */
     public void setLauncher(Launcher launcher) {
         this.launcher = launcher;
     }
@@ -28,15 +49,17 @@ public class LauncherController implements ActionListener {
         // All went well, notify listener to progress.
         switch (e.getActionCommand()){
             case "SIGN_IN":
-                if(listener.tryConnection()){
-                    User user = new User(launcher.getUserField(),launcher.getPwField());
-                    listener.sendObject(user);
-
-                    launcher.goToWindow("SIGN_IN");
-                }else{
-                    //launcher.goToWindow("SIGN_IN");
-                    Pop popup = new Pop("No connection Possible");
-                    //launcher.addWarning("NO Connection Possible");
+                //first we check that all camps are filled
+                if(launcher.allFieldsFilled()){
+                    //after that we try to connect to the server
+                    if(listener.tryConnection()){
+                        User user = new User(launcher.getUserField(),launcher.getPwField());
+                        listener.login(user);
+                        //ToDo: check if log was successful and kind of log
+                        this.logType = true;
+                        listener.startSession(user);
+                        launcher.goToWindow("SIGN_IN");
+                    }
                 }
                 break;
             case "REGISTER":
@@ -47,5 +70,12 @@ public class LauncherController implements ActionListener {
                 break;
         }
         //this.listener.progressFrom(ProgressListener.AppState.LAUNCHER);
+    }
+    /**
+     * Getter that returns the Log Type
+     * @return a bool that indicates the kind of log will do
+     */
+    public boolean isLogType() {
+        return logType;
     }
 }

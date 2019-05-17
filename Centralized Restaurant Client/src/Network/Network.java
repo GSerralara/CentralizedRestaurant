@@ -8,8 +8,9 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.util.Date;
 
-public class Network {
+public class Network{
 
     private static final int PORT = 55555;
     private static final String IP = "localhost";
@@ -76,4 +77,6 @@ public class Network {
     public void registerController(FormController c){
         this.controller = c;
     }
+
+
 }

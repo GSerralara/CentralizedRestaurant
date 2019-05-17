@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.LinkedList;
 
 public class ClientManager extends Thread {
@@ -36,50 +38,68 @@ public class ClientManager extends Thread {
         super.run();
         while (true){
             try {
-                System.out.println("Reading obj");
                 clientRequest = is.readObject();
                 //manage petition
                 System.out.println(clientRequest.getClass().getName());
 
                 clientAnswer = treatObject(clientRequest);
+                System.out.println(clientRequest.getClass().getName());
                 os.writeObject(clientAnswer);
                 if(clientAnswer=="null") cSocket.close();
                     //finally
 
 
             }catch (IOException | ClassNotFoundException e){
-                System.err.println("Error en la comunicacion");
+                //System.err.println("Error en la comunicacion");
             }
         }
 
     }
     private Object treatObject(Object obj){
-        switch (obj.getClass().toString()){
-            case "Model.Database.Entity.User":
-                System.out.println("Got user");
-                User obect = (User) obj;
-                UserDAO dao = new UserDAO();
-                //Es un login
-                if(obect.getMail() == ""){
-                    LinkedList<User> users = dao.getAllUsers();
-                    for(User i: users){
-                        //System.out.println(i.getUser() + obect.getUser());
-                        if (i.getUser().equals(obect.getUser()) && i.getPassword().equals(obect.getPassword())){
-                            System.out.println("Nombres iguales");
-                            return "OK";
-                        }
-                    }
-                }else{//es un register
-                    dao.addUser(obect);
-                    return "OK";
-                }
-                return "ERROR";
-            default:
+        String answer = "";
 
-                break;
+        if(obj instanceof User){
+           answer =  treatUser((User) obj);
+        }
+        if(obj instanceof String){
+            answer = treatString((String) obj);
+        }
+        System.out.println(answer);
+
+        return answer;
+    }
+    private String treatString(String msg){
+        System.out.println(msg);
+        if(msg.equals("time")){
+            Date d = new Date();
+            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+            return sdf.format(d);
         }
         return "null";
     }
+    private String treatUser(User obj){
+        UserDAO dao = new UserDAO();
+        //Es un login
+        if(obj.getMail().equals("")){
+            System.out.println("LOGIN");
+            //ToDo: Cuando tengas queries descomenta para agregar
+            /*
+            LinkedList<User> users = dao.getAllUsers();
+            for(User i: users){
+                if (i.getUser().equals(obj.getUser()) && i.getPassword().equals(obj.getPassword())){
+                    System.out.println("Nombres iguales");
+                    return "OK";
+                }
+            */
+        }else{//es un register
+            System.out.println("REGISTER");
+            //dao.addUser(obj);
+            return "OK";
+        }
+        return "OK";
+        //return "null";
+    }
+
     public void dropClient(){
         try {
             os.close();

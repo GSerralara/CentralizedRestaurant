@@ -1,6 +1,7 @@
 package View;
 
 import Controller.LauncherController;
+import Resources.Pop;
 
 import javax.swing.*;
 import java.awt.*;
@@ -144,7 +145,11 @@ public class Launcher extends JPanel{
         // List of available views from this one
         switch (windowName){
             case "SIGN_IN":
-                this.listener.progressFrom(ProgressListener.AppState.MENU);
+                if(controller.isLogType()){
+                    this.listener.progressFrom(ProgressListener.AppState.MAINTABLE);
+                }else{
+                    this.listener.progressFrom(ProgressListener.AppState.MENU);
+                }
                 break;
             case "REGISTER":
                 this.listener.progressFrom(ProgressListener.AppState.REGISTER);
@@ -169,5 +174,15 @@ public class Launcher extends JPanel{
         String pwd = new String(pw.getPassword());
         // return Statement
         return pwd;
+    }
+    /**
+     * Function that will return:
+     *      -->True: in case all fields are filled
+     *      -->False:in case not all fields are filled
+     */
+    public boolean allFieldsFilled(){
+        if(username.getText().length() != 0 && pw.getPassword().length != 0) return true;
+        Pop popup = new Pop("All fields must be filled");
+        return false;
     }
 }

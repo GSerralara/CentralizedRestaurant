@@ -38,10 +38,17 @@ public class MainTableController {
         //Take menu items, request time, give data ...
         switch (command){
             case "PAY":
+                //close session
+                listener.closeSession();
                 mainTable.goToWindow("LAUNCHER");
                 break;
             case "ADD_TO_ORDER":
                 this.orderController.addToOrder(data,"MM:SS");
         }
+    }
+
+    public void currentTime(String time){
+        mainTable.updateTime(listener.runTime(time));
+
     }
 }

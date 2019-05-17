@@ -1,6 +1,7 @@
 package View;
 
 import Controller.RegisterController;
+import Resources.Pop;
 
 import javax.swing.*;
 import java.awt.*;
@@ -190,10 +191,27 @@ public class Register extends JPanel{
         }
         return false;
     }
-
+    /**
+     * Function that will return:
+     *      -->True: in case all fields are filled
+     *      -->False:in case not all fields are filled
+     */
+    public boolean allfilled(){
+        if(username.getText().length() != 0 && mail.getText().length() != 0 && pw.getPassword().length !=0) return true;
+        Pop popup = new Pop("All fields must be filled");
+        return false;
+    }
+    /**
+     * Function that will return the String contained in the username field.
+     * @return the text in the attribute username
+     */
     public String getUser(){
         return username.getText();
     }
+    /**
+     * Function that will return the String contained in the mail field.
+     * @return the text in the attribute mail
+     */
     public String getMail(){
         return mail.getText();
     }

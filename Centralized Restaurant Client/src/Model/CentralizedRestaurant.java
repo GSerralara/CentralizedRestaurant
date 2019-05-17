@@ -3,6 +3,16 @@ package Model;
 import Controller.FormController;
 import Network.Network;
 import View.MyForm;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import static java.lang.Thread.sleep;
+
 /**
  * @author Guillermo Serraclara
  * @author Aleix Olle
@@ -18,6 +28,7 @@ import View.MyForm;
 public class CentralizedRestaurant {
 
     public static void main(String[] args){
+
         //We create the view
         MyForm view = new MyForm();
         //We create the model
@@ -32,5 +43,6 @@ public class CentralizedRestaurant {
         net.registerController(c);
         //We init the view
         view.go();
+
     }
 }

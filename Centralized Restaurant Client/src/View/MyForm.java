@@ -89,6 +89,7 @@ public class MyForm implements Runnable, ProgressListener {
                 return;
             case MAINTABLE:
                 frame.setContentPane(mainTable);
+                mainTable.initTime();
                 frame.pack();
                 frame.setSize(new Dimension(300,250));
                 return;

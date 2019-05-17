@@ -27,7 +27,10 @@ public class ModelClient {
         this.user = user;
         setLogin(user.getUser());
     }
-
+    public void close(){
+        setLogin("LogOut");
+        user = null;
+    }
     public void setLogin(String login) {
         this.login = login;
     }

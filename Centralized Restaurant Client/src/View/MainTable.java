@@ -4,6 +4,7 @@ import Controller.SubController.BillController;
 import Controller.MainTableController;
 import Controller.SubController.MenuController;
 import Controller.SubController.OrderController;
+import Model.Time;
 import View.SubView.Bill;
 import View.SubView.Menu;
 import View.SubView.Order;
@@ -11,7 +12,7 @@ import View.SubView.Order;
 import javax.swing.*;
 import java.awt.*;
 
-public class MainTable extends JPanel {
+public class MainTable extends JPanel{
     // instance variables
     private final ProgressListener listener;
     private MainTableController controller;
@@ -94,6 +95,12 @@ public class MainTable extends JPanel {
      */
     public void updateTime(String currentTime){
         this.strTime = currentTime;
+        this.time.setText(strTime);
     }
 
+    public void initTime(){
+        controller.currentTime(strTime);
+        Time t = new Time(this.time);
+        new Thread(t).start();
+    }
 }

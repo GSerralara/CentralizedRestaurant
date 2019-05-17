@@ -2,6 +2,7 @@ package Controller;
 
 import Model.Database.Entity.User;
 import Model.ModelClient;
+import Model.Time;
 import Network.Network;
 import Resources.Pop;
 import View.MyForm;
@@ -94,10 +95,23 @@ public class FormController {
         Object answer = network.readObject();
         network.disconnect();
     }
+
+    public void closeSession(){
+        network.sendObject("CLOSE");
+        Object answer = network.readObject();
+        network.disconnect();
+        model.close();
+        if(answer.equals("null")) {
+            Pop pop = new Pop("Closed Session");
+        }
+    }
+
     public void login(User user){
         network.sendObject(user);
         Object answer = network.readObject();
+        System.out.println(answer.getClass().toString());
     }
+
     public void register(User user){
         //enviamos el user con los 3 campos
         network.sendObject(user);
@@ -108,7 +122,15 @@ public class FormController {
         }
         network.disconnect();
     }
+
     public void startSession(User user){
         model.setUser(user);
+    }
+
+    public String runTime(String t){
+        network.sendObject("time");
+        Object ans = network.readObject();
+        t =(String) ans;
+        return t;
     }
 }
