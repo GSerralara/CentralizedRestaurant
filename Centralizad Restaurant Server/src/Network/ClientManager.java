@@ -77,6 +77,7 @@ public class ClientManager extends Thread {
             return sdf.format(d);
         }
         if(msg.equals("STATE")){
+            //ToDO: que se genere una pwd para el user y se vea algo en el service
             String response = this.listener.getReserveState(client);
             switch (response){
                 case "YES":
@@ -87,9 +88,14 @@ public class ClientManager extends Thread {
                     return "Is still being processed";
             }
         }
-        if(msg.equals("CANCEL")){
+        if(msg.equals("CANCEL")) {
             listener.cancelResere(client);
             return "OK";
+        }
+        if(msg.equals("BILLED")){
+            //ToDo: that billed remove actually the reserve
+            listener.billedReserve(client);
+            return "BILLED";
         }
         return "null";
     }
@@ -99,9 +105,16 @@ public class ClientManager extends Thread {
         System.out.println(obj.getReserve());
         if(obj.getReserve().equals("")){
             if(obj.getMail().equals("")){
-                System.out.println("LOGIN");
+
                 //ToDo: Cuando tengas queries descomenta para agregar
-                /*
+
+                this.client = obj;
+                if(listener.isAReserve(obj)){
+                    System.out.println("Reserve-LOGIN");
+                    return "Reserve";
+                }else {
+                    System.out.println("LOGIN");
+                    /*
                 LinkedList<User> users = dao.getAllUsers();
                 for(User i: users){
                     if (i.getUser().equals(obj.getUser()) && i.getPassword().equals(obj.getPassword())){
@@ -109,9 +122,10 @@ public class ClientManager extends Thread {
                         return "OK";
                     }
                 */
-                this.client = obj;
+                }
                 //int puerto = 5555+1+listener.findUser(obj);
                 //return ""+puerto;
+                return "Login";
             }else{//es un register
                 System.out.println("REGISTER");
                 //dao.addUser(obj);

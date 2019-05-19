@@ -23,13 +23,14 @@ public class LauncherController implements ActionListener {
     private Launcher launcher;
     private FormController listener;
     //indicates if it goes to the MainMenu(false) or MainTable(true)
-    private boolean logType;
+    private String logType;
     /**
      * Constructor by default of the class.
      * @param listener it's the controller father that manages all petitions
      * */
     public LauncherController(FormController listener) {
         this.listener = listener;
+        logType = new String();
     }
     /**
      * Setter that sets the view that will retrieve data from.
@@ -56,7 +57,6 @@ public class LauncherController implements ActionListener {
                         User user = new User(launcher.getUserField(),launcher.getPwField());
                         listener.login(user);
                         //ToDo: check if log was successful and kind of log
-                        this.logType = false;
                         listener.startSession(user);
                         launcher.goToWindow("SIGN_IN");
                     }
@@ -75,7 +75,10 @@ public class LauncherController implements ActionListener {
      * Getter that returns the Log Type
      * @return a bool that indicates the kind of log will do
      */
-    public boolean isLogType() {
+    public String isLogType() {
         return logType;
+    }
+    public void setLogType(String state){
+        this.logType = state;
     }
 }

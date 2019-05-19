@@ -39,6 +39,7 @@ public class MainTableController {
         switch (command){
             case "PAY":
                 //close session
+                listener.billed();
                 listener.closeSession();
                 mainTable.goToWindow("LAUNCHER");
                 break;

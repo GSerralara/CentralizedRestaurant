@@ -33,7 +33,19 @@ public class AunthentificationController implements ActionListener {
         }
     }
     public void dropReserve(User user){
-        aunthentification.dropUser(user);
+        boolean flag= false;
+        for(User i: accepted){
+            if(i.getReserve().equals(user.getUser())){
+                accepted.remove(user);
+                flag = true;
+            }
+        }
+        if(flag) {
+            aunthentification.dropUser(user);
+        }
+    }
+    public LinkedList<User> getAccepted(){
+        return accepted;
     }
     public void addAuth(User user){
         aunthentification.addItem(user);

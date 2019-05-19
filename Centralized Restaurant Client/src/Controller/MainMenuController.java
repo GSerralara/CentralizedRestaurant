@@ -22,6 +22,7 @@ public class MainMenuController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()){
             case "LOGOUT":
+                //listener.cancelReserve();
                 listener.closeSession();
                 mainMenu.goToWindow("LOGOUT");
                 break;

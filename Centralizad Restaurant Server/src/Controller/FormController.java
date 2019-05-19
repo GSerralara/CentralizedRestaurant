@@ -5,6 +5,7 @@ import Model.Model;
 import Network.Network;
 import View.WindowForm;
 
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class FormController {
@@ -96,5 +97,8 @@ public class FormController {
     }
     public void reserveCancelation(User u){
         aunthentificationController.dropReserve(u);
+    }
+    public LinkedList<User> getReserved(){
+        return aunthentificationController.getAccepted();
     }
 }

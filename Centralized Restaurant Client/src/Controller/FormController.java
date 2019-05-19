@@ -135,7 +135,14 @@ public class FormController {
     public void login(User user){
         network.sendObject(user);
         Object answer = network.readObject();
-        System.out.println(answer.getClass().toString());
+        System.out.println((String)answer);
+        launcherController.setLogType((String)answer);
+    }
+
+    public void billed(){
+        network.sendObject("BILLED");
+        Object answer = network.readObject();
+        System.out.println((String)answer);
     }
 
     public void register(User user){
