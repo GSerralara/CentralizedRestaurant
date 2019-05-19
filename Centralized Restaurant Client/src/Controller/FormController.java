@@ -184,4 +184,8 @@ public class FormController {
         t =(String) ans;
         return t;
     }
+
+    public LinkedList<Dish> getDishesState(){
+        return null;
+    }
 }

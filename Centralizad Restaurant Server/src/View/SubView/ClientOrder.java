@@ -18,8 +18,14 @@ public class ClientOrder extends JPanel {
     public ClientOrder(User user, ClientOrderController controller) {
         this.user = user;
         this.controller = controller;
+        this.controller.setClientOrder(this);
         windowConfiguration();
     }
+
+    public User getUser() {
+        return user;
+    }
+
     public void windowConfiguration(){
         // We configure the window.
         setLayout(new BorderLayout());
@@ -40,6 +46,7 @@ public class ClientOrder extends JPanel {
         repaint();
     }
     public void addToOrder(Dish dish){
+        System.out.println("Hola");
         this.currentOrder.add(new OrderedItem(dish,controller,currentOrder.size()));
         this.clientOrders.add(currentOrder.get(currentOrder.size()-1));
         clientOrders.revalidate();

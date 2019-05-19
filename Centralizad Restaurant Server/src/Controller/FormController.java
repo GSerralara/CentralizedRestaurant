@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.Database.Entity.Dish;
 import Model.Database.Entity.User;
 import Model.Model;
 import Network.Network;
@@ -101,5 +102,8 @@ public class FormController {
 
     public void addClientToService(User u){
         serviceController.addClient(u);
+    }
+    public void addDishToService(User u, Dish d){
+        serviceController.addDishToCommand(d,u);
     }
 }

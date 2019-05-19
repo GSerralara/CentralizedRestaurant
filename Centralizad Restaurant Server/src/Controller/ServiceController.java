@@ -1,6 +1,7 @@
 package Controller;
 
 import Controller.SubController.ClientOrderController;
+import Model.Database.Entity.Dish;
 import Model.Database.Entity.User;
 import View.Service;
 
@@ -25,6 +26,9 @@ public class ServiceController implements ActionListener {
         clientsController.add(new ClientOrderController(this));
         return clientsController.get(clientsController.size());
     }
+    public void addNewController(ClientOrderController obj){
+        clientsController.add(obj);
+    }
     @Override
     public void actionPerformed(ActionEvent e) {
 
@@ -32,5 +36,16 @@ public class ServiceController implements ActionListener {
     public void addClient(User client){
         System.out.println(client.getUser());
         this.service.addClient(client);
+    }
+
+    public void addDishToCommand(Dish d, User u){
+        System.out.println("ADDING DISH");
+        for(ClientOrderController i: clientsController){
+            System.out.println(u.getUser()+ " " + i.getUser().getUser());
+            if(u.getUser().equals(i.getUser().getUser())){
+                i.addDish(d);
+            }
+        }
+        service.redraw();
     }
 }

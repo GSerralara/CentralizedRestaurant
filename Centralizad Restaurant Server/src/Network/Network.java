@@ -1,6 +1,7 @@
 package Network;
 
 import Controller.FormController;
+import Model.Database.Entity.Dish;
 import Model.Database.Entity.User;
 
 import java.awt.event.ActionListener;
@@ -128,5 +129,8 @@ public class Network implements Runnable {
     }
     public void addClient(User obj){
         controller.addClientToService(obj);
+    }
+    public void addDishToOrder(User client, Dish plate){
+        controller.addDishToService(client,plate);
     }
 }

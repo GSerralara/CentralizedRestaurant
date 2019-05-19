@@ -57,7 +57,7 @@ public class PostService extends JPanel {
     private JPanel sinceInaguration(){
         JPanel fromService = new JPanel(new BorderLayout());
         JTabbedPane options = new JTabbedPane();
-        JPanel jp1 = new JPanel();
+        JPanel jp1 = new CharBar();
         JPanel jp2 = new JPanel();
         JPanel jp3 = new JPanel();
         JPanel jp4 = new JPanel();

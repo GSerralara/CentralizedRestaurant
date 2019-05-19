@@ -29,13 +29,22 @@ public class Service extends JPanel {
         // instance label of time of the view
         time = new JLabel("HH:MM");
         Time t = new Time(time);
+        add(clients,BorderLayout.CENTER);
         new Thread(t).start();
+        JPanel top = new JPanel(new FlowLayout());
+        top.add(time);
+        add(top,BorderLayout.NORTH);
     }
 
     public void addClient(User user){
-        ClientOrderController obj = controller.getNewClientController();
+        ClientOrderController obj = new ClientOrderController(controller);
+        controller.addNewController(obj);
         JPanel client = new ClientOrder(user,obj);
         clients.addTab(user.getUser(),client);
+        revalidate();
+        repaint();
+    }
+    public void redraw(){
         revalidate();
         repaint();
     }

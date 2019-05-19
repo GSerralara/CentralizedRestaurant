@@ -79,6 +79,7 @@ public class WindowForm implements Runnable, ProgressListener {
                 return;
             case SERVICE:
                 splitPlane.changeCurrentView(service);
+                frame.pack();
                 return;
             case POSTSERVICE:
                 splitPlane.changeCurrentView(postService);

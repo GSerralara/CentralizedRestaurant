@@ -41,7 +41,7 @@ public class BookController implements ActionListener {
                         }
                     }
                 };
-                timer.schedule(task,0,25000);
+                timer.schedule(task,0,10000);
                 break;
             default:
                 System.err.println("Unknown window name Book");

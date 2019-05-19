@@ -90,6 +90,9 @@ public class ClientManager extends Thread {
     }
     private String treatDish(Dish obj){
         //ToDo: TAKE OUT DISHES AND PUT IT IN SERVICE
+        for(int i=0; i<obj.getQuantety();i++){
+            listener.addDishToOrder(client,obj);
+        }
         return "OK";
     }
     private String treatString(String msg){

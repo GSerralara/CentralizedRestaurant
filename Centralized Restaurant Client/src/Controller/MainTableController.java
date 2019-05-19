@@ -7,7 +7,10 @@ import Model.Database.Entity.Dish;
 import View.MainTable;
 
 import java.net.Inet4Address;
+import java.security.spec.DSAGenParameterSpec;
 import java.util.LinkedList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 public class MainTableController {
@@ -73,7 +76,9 @@ public class MainTableController {
                     qOrder.add(1);
                 }
                 this.orderController.addToOrder(dish.getName(),dish.getTime().toString());
+                break;
         }
+
     }
 
     public void currentTime(String time){
@@ -105,5 +110,23 @@ public class MainTableController {
         for(Dish i:currentMenu){
             menuController.addDishes(i);
         }
+    }
+    public void initTimerService(){
+        boolean state = false;
+        Timer timer = new Timer();
+        TimerTask task = new TimerTask() {
+            @Override
+            public void run() {
+                if(state){
+                    requestDishesState();
+                }else{
+                    this.cancel();
+                }
+            }
+        };
+        timer.schedule(task,0,5000);
+    }
+    public void requestDishesState(){
+        LinkedList<Dish> dishes = listener.getDishesState();
     }
 }
