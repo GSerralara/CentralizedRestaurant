@@ -1,8 +1,13 @@
 package View.Items;
 
+import Model.Countdown;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class OrderedItem extends JPanel {
     private JLabel dish,status, time;
@@ -39,5 +44,16 @@ public class OrderedItem extends JPanel {
     public void updateStatus(String dishState){
         status.setText(dishState);
         if(!dishState.equals("Pedido"))  hideButton();
+    }
+    public void initCountDown(){
+
+        try {
+            Date date = new Date();
+            date = new SimpleDateFormat("mm:ss").parse(time.getText());
+            Countdown countdown = new Countdown(time,date,status);
+            new Thread(countdown).start();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 }

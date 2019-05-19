@@ -34,8 +34,8 @@ public class ClientOrderController implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println(e.getActionCommand());
         clientOrder.initDish(Integer.parseInt(e.getActionCommand()));
+        cooking.set(Integer.parseInt(e.getActionCommand()),true);
     }
 
 }

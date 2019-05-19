@@ -70,4 +70,9 @@ public class Order extends JPanel {
         orderedItems.revalidate();
         repaint();
     }
+
+    public void updateDishState(int index){
+        currentOrder.get(index).updateStatus("Cocinando");
+        currentOrder.get(index).initCountDown();
+    }
 }

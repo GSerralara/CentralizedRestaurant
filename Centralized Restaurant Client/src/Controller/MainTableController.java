@@ -23,6 +23,7 @@ public class MainTableController {
     private LinkedList<Dish> currentMenu;
     private LinkedList<Dish> order;
     private LinkedList<Integer> qOrder;
+    private boolean sendRequest;
 
     public MainTableController(FormController controller) {
         this.listener = controller;
@@ -73,10 +74,11 @@ public class MainTableController {
                     }
                 }else{
                     System.out.println("First add");
+                    initTimerService();
                     order.add(dish);
                     qOrder.add(1);
                 }
-                SimpleDateFormat df = new SimpleDateFormat("HH:mm");
+                SimpleDateFormat df = new SimpleDateFormat("mm:ss");
 
                 this.orderController.addToOrder(dish.getName(),df.format(dish.getTime()));
                 break;
@@ -115,13 +117,16 @@ public class MainTableController {
         }
     }
     public void initTimerService(){
-        boolean state = false;
+        sendRequest = true;
         Timer timer = new Timer();
         TimerTask task = new TimerTask() {
             @Override
             public void run() {
-                if(state){
-                    requestDishesState();
+                LinkedList<Boolean> states;
+                if(sendRequest){
+                    states = requestDishesState();
+                    orderController.treatOrder(states);
+                    billController.addToPay(states,order);
                 }else{
                     this.cancel();
                 }
@@ -129,7 +134,9 @@ public class MainTableController {
         };
         timer.schedule(task,0,5000);
     }
-    public void requestDishesState(){
-        LinkedList<Dish> dishes = listener.getDishesState();
+    public LinkedList<Boolean> requestDishesState(){
+        LinkedList<Boolean> dishes = listener.getDishesState();
+        return dishes;
     }
+
 }

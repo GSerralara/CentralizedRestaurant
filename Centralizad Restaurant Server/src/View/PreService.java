@@ -8,12 +8,22 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+
+
+
 public class PreService extends JPanel {
     private final ProgressListener listener;
     private PreServiceController controller;
     private JLabel time;
     private TableMangement tableMangement;
     private Menu menu;
+
+    /**
+     * Constructor by default of the class.
+     * @param listener it's a ProgressListener that the class will use to move to other views.
+     * @param controller it's the respective controller of this view.
+     */
+
     public PreService(ProgressListener listener, PreServiceController controller) {
         this.listener = listener;
         this.controller = controller;

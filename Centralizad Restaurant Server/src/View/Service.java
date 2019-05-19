@@ -15,12 +15,23 @@ public class Service extends JPanel {
     private JLabel time;
     private JTabbedPane clients;
 
+    /**
+     * Constructor by default of the class.
+     * @param listener it's a ProgressListener that the class will use to move to other views.
+     * @param controller it's the respective controller of this view.
+     */
+
+
     public Service(ProgressListener listener, ServiceController controller) {
         this.listener = listener;
         this.controller = controller;
         this.controller.setService(this);
         windowConfiguration();
     }
+
+    /**
+     * Method that will create all the components of the panel.
+     */
 
     public void windowConfiguration(){
         // We configure the window.
@@ -35,6 +46,10 @@ public class Service extends JPanel {
         top.add(time);
         add(top,BorderLayout.NORTH);
     }
+    /**
+     *This method makes that the different clients are being cumulated.
+     * @param user it's a parameter that have all the facts of each client.
+     */
 
     public void addClient(User user){
         ClientOrderController obj = new ClientOrderController(controller);

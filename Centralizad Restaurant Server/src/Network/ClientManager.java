@@ -85,7 +85,14 @@ public class ClientManager extends Thread {
             return empty;//dao.getAllDishes();
         }
         if(answer.equals("STATE")){
-            return listener.getDishStates(client);
+
+            LinkedList<Boolean> cooks = listener.getDishStates(client);
+            String array = "";
+            for(Boolean c :cooks){
+                System.out.println(c);
+                array += c+""+":";
+            }
+            return array;
         }
 
         return answer;

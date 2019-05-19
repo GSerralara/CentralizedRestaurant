@@ -37,7 +37,7 @@ public class ClientOrder extends JPanel {
         orderList.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);//For UX set scrollbar vertical
         // We init the different items of the window.
         init();
-        add(clientOrders,BorderLayout.CENTER);
+        add(orderList,BorderLayout.CENTER);
     }
     public void init(){
         currentOrder = new ArrayList<>();
@@ -46,7 +46,6 @@ public class ClientOrder extends JPanel {
         repaint();
     }
     public void addToOrder(Dish dish){
-        System.out.println("Hola");
         this.currentOrder.add(new OrderedItem(dish,controller,currentOrder.size()));
         this.clientOrders.add(currentOrder.get(currentOrder.size()-1));
         clientOrders.revalidate();

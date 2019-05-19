@@ -185,7 +185,20 @@ public class FormController {
         return t;
     }
 
-    public LinkedList<Dish> getDishesState(){
-        return null;
+    public LinkedList<Boolean> getDishesState(){
+        network.sendObject("CLOCK");
+        Object answer = network.readObject();
+        String obj = (String) answer;
+        String []array = obj.split(":");
+        LinkedList<Boolean> bools = new LinkedList<>();
+        for(int i=0;i<array.length;i++){
+            if(array[i].equals("true")){
+                bools.add(true);
+            }else {
+                bools.add(false);
+            }
+
+        }
+        return bools;
     }
 }

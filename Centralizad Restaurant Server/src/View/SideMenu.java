@@ -48,6 +48,11 @@ public class SideMenu extends JPanel {
         listScrollPane.add(authentication);
         add(listScrollPane);
     }
+    /**
+     * Method that will create all the components of the panel.
+     * @param windowName that indicate which window will target and change into.
+     */
+
     public void goToWindow(String windowName){
         // List of available views from this one
         switch (windowName){

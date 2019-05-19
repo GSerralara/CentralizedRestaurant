@@ -1,10 +1,12 @@
 package Controller.SubController;
 
 import Controller.MainTableController;
+import Model.Database.Entity.Dish;
 import View.SubView.Bill;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.LinkedList;
 
 public class BillController implements ActionListener {
     private MainTableController listener;
@@ -28,6 +30,13 @@ public class BillController implements ActionListener {
             default:
                 System.err.println("Unknown Button Bill");
                 break;
+        }
+    }
+    public void addToPay(LinkedList<Boolean> bools, LinkedList<Dish> order){
+        for(int i=0; i<order.size();i++){
+            if(bools.get(i)){
+                bill.addBill(order.get(i));
+            }
         }
     }
 }

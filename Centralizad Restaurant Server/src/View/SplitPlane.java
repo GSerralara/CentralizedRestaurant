@@ -7,6 +7,11 @@ public class SplitPlane extends JPanel {
     private JPanel sidebar;
     private JPanel currentView;
     private JSplitPane splitPane;
+    /**
+     * Constructor by default of the class. This method make the line that separate the different JPanel of Server.
+     * @param sidebar it's a JPanel variable.
+     * @param currentView it's the other JPanel that have the Server program.
+     */
     public SplitPlane(JPanel sidebar,JPanel currentView) {
         this.currentView = currentView;
         this.sidebar = sidebar;
@@ -16,6 +21,7 @@ public class SplitPlane extends JPanel {
         splitPane.setDividerLocation(0);
         add(splitPane);
     }
+
     public void changeCurrentView(JPanel newView){
         splitPane.remove(currentView);
         this.currentView = newView;

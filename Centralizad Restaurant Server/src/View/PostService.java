@@ -11,6 +11,11 @@ public class PostService extends JPanel {
     private final ProgressListener listener;
     private PostServiceController controller;
     private JLabel time;
+    /**
+     * Constructor by default of the class.
+     * @param listener it's a ProgressListener that the class will use to move to other views.
+     * @param controller it's the respective controller of this view.
+     */
     public PostService(ProgressListener listener, PostServiceController controller) {
         this.listener = listener;
         this.controller = controller;
@@ -38,6 +43,10 @@ public class PostService extends JPanel {
         add(options,BorderLayout.CENTER);
 
     }
+    /**
+     * This method it's about from Service.
+     * @return a JPanel with the diffrents options that user will can choose.
+     */
     private JPanel fromService(){
         JPanel fromService = new JPanel(new BorderLayout());
         JTabbedPane options = new JTabbedPane();
@@ -54,6 +63,10 @@ public class PostService extends JPanel {
         fromService.add(options,BorderLayout.CENTER);
         return fromService;
     }
+    /**
+     * This method it's about since Inaguration
+     * @return a JPanel with the diffrents options that user will can choose.
+     */
     private JPanel sinceInaguration(){
         JPanel fromService = new JPanel(new BorderLayout());
         JTabbedPane options = new JTabbedPane();

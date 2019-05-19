@@ -47,9 +47,7 @@ public class ServiceController implements ActionListener {
     }
 
     public void addDishToCommand(Dish d, User u){
-        System.out.println("ADDING DISH");
         for(ClientOrderController i: clientsController){
-            System.out.println(u.getUser()+ " " + i.getUser().getUser());
             if(u.getUser().equals(i.getUser().getUser())){
                 i.addDish(d);
             }

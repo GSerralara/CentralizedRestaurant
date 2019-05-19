@@ -22,7 +22,7 @@ public class OrderedItem extends JPanel {
         startCooking.addActionListener(listener);
         new FlowLayout();
         JLabel name = new JLabel(dish.getName());
-        SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("mm:ss");
         this.time = new JLabel(dateFormat.format(dish.getTime()));
         add(name);
         add(time);
