@@ -99,7 +99,9 @@ public class FormController {
     public LinkedList<User> getReserved(){
         return aunthentificationController.getAccepted();
     }
-
+    public LinkedList<Boolean> dishState(User user){
+        return serviceController.isDishCooked(user);
+    }
     public void addClientToService(User u){
         serviceController.addClient(u);
     }

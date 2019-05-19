@@ -8,6 +8,7 @@ import View.MainTable;
 
 import java.net.Inet4Address;
 import java.security.spec.DSAGenParameterSpec;
+import java.text.SimpleDateFormat;
 import java.util.LinkedList;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -75,7 +76,9 @@ public class MainTableController {
                     order.add(dish);
                     qOrder.add(1);
                 }
-                this.orderController.addToOrder(dish.getName(),dish.getTime().toString());
+                SimpleDateFormat df = new SimpleDateFormat("HH:mm");
+
+                this.orderController.addToOrder(dish.getName(),df.format(dish.getTime()));
                 break;
         }
 

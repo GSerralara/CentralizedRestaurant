@@ -33,6 +33,14 @@ public class ServiceController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
     }
+    public LinkedList<Boolean> isDishCooked(User user){
+        for (ClientOrderController i: clientsController){
+            if(user.getUser().equals(i.getUser().getUser())){
+               return i.dishesState();
+            }
+        }
+        return null;
+    }
     public void addClient(User client){
         System.out.println(client.getUser());
         this.service.addClient(client);

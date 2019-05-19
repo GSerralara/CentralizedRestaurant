@@ -10,6 +10,7 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.function.DoubleUnaryOperator;
@@ -75,15 +76,16 @@ public class ClientManager extends Thread {
         if(answer.equals("MENU")){
             DishDAO dao = new DishDAO();
             LinkedList<Dish> empty = new LinkedList<>();
+            Calendar c = Calendar.getInstance();
             Date time = new Date();
-            SimpleDateFormat df =  new SimpleDateFormat("HH:mm");
-            try {
-                time = df.parse("00:12");
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
+            c.setTime(time);
+            c.set(Calendar.MINUTE,1);
+            c.set(Calendar.SECOND,13);
             empty.add(new Dish(30,3.5f,"Kebab",time));
             return empty;//dao.getAllDishes();
+        }
+        if(answer.equals("STATE")){
+            return listener.getDishStates(client);
         }
 
         return answer;
@@ -125,6 +127,9 @@ public class ClientManager extends Thread {
         }
         if(msg.equals("DISHES")){
             return "MENU";
+        }
+        if(msg.equals("CLOCK")){
+            return "STATE";
         }
         return "null";
     }

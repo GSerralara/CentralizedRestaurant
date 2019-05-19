@@ -21,12 +21,9 @@ public class Time extends Thread {
             etiqueta.setText(sdf.format(hoy));
 
             try{
-
                 sleep(1000); //Segundo a segundo...
-
             }catch(Exception e){
                 e.getMessage();
-
             }
         }
     }

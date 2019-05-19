@@ -52,4 +52,8 @@ public class ClientOrder extends JPanel {
         clientOrders.revalidate();
         repaint();
     }
+    public void initDish(int pos){
+        currentOrder.get(pos).hideButton();
+        currentOrder.get(pos).setFlag(true);
+    }
 }

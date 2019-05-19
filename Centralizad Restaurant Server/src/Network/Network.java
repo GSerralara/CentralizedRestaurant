@@ -133,4 +133,7 @@ public class Network implements Runnable {
     public void addDishToOrder(User client, Dish plate){
         controller.addDishToService(client,plate);
     }
+    public LinkedList<Boolean> getDishStates(User client){
+        return controller.dishState(client);
+    }
 }
