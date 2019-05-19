@@ -1,6 +1,7 @@
 package View;
 
 import Controller.ServiceController;
+import Controller.SubController.ClientOrderController;
 import Model.Database.Entity.User;
 import Model.Time;
 import View.SubView.ClientOrder;
@@ -32,7 +33,10 @@ public class Service extends JPanel {
     }
 
     public void addClient(User user){
-        JPanel client = new ClientOrder(user,controller.getNewClientController());
+        ClientOrderController obj = controller.getNewClientController();
+        JPanel client = new ClientOrder(user,obj);
         clients.addTab(user.getUser(),client);
+        revalidate();
+        repaint();
     }
 }

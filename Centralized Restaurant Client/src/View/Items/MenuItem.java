@@ -7,9 +7,9 @@ import java.awt.event.ActionListener;
 public class MenuItem extends JPanel {
     private JLabel dish;
     private JButton order;
-    private JTextField quantity;
+    private JComboBox quantity;
 
-    public MenuItem(String name, ActionListener listener) {
+    public MenuItem(String name, ActionListener listener, int quantety) {
         //We create the JPanel.
         super();
 
@@ -20,7 +20,10 @@ public class MenuItem extends JPanel {
         dish = new JLabel(name);
         dish.setHorizontalAlignment(JLabel.CENTER);
         JLabel qLabel = new JLabel("Quantity: ");
-        quantity = new JTextField();
+        quantity = new JComboBox();
+        for(int i=1; i<=quantety;i++){
+            quantity.addItem(i);
+        }
         order = new JButton("Order");
         order.setActionCommand(name);//the name of the dishes will be primary key
         order.addActionListener(listener);
@@ -45,7 +48,7 @@ public class MenuItem extends JPanel {
     }
 
     public int getQuantity() {
-        String aux = quantity.getText();
+        String aux = quantity.getSelectedItem().toString();
         if (!aux.matches("^[0-9]*$")){
             //it does not contains numbers
             return 0;

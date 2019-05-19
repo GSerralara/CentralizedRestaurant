@@ -1,10 +1,12 @@
 package Controller.SubController;
 
 import Controller.MainTableController;
+import Model.Database.Entity.Dish;
 import View.SubView.Menu;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.LinkedList;
 
 public class MenuController  implements ActionListener {
     private Menu menu;
@@ -21,8 +23,24 @@ public class MenuController  implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         int times = menu.getCuantity(e.getActionCommand());
-        for(int i=0;i<times;i++){
-            this.listener.giveCommand("ADD_TO_ORDER",e.getActionCommand());
+        LinkedList<Dish> dishes = listener.getCurrentMenu();
+        System.out.println("Order");
+        for(Dish i: dishes){
+            if(i.getQuantety() >= times){
+                System.out.println("ADD");
+                for(int j=0;j<times;j++){
+                    this.listener.giveCommand("ADD_TO_ORDER",i);
+                }
+            }
         }
+        listener.updateMenuState(e.getActionCommand());
+    }
+
+    public void addDishes(Dish dish){
+           menu.addItem(dish.getName(),dish.getQuantety());
+    }
+
+    public void removeDishes(){
+        menu.init();
     }
 }

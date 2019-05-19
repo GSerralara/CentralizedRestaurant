@@ -1,15 +1,18 @@
 package Network;
 
 import Model.Database.Entity.*;
+import Model.Database.dao.DishDAO;
 import Model.Database.dao.UserDAO;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.LinkedList;
+import java.util.function.DoubleUnaryOperator;
 
 public class ClientManager extends Thread {
     private Socket cSocket;
@@ -62,12 +65,32 @@ public class ClientManager extends Thread {
         if(obj instanceof User){
            answer =  treatUser((User) obj);
         }
+        if(obj instanceof Dish){
+            answer = treatDish((Dish) obj);
+        }
         if(obj instanceof String){
             answer = treatString((String) obj);
         }
         System.out.println(answer);
+        if(answer.equals("MENU")){
+            DishDAO dao = new DishDAO();
+            LinkedList<Dish> empty = new LinkedList<>();
+            Date time = new Date();
+            SimpleDateFormat df =  new SimpleDateFormat("HH:mm");
+            try {
+                time = df.parse("00:12");
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            empty.add(new Dish(30,3.5f,"Kebab",time));
+            return empty;//dao.getAllDishes();
+        }
 
         return answer;
+    }
+    private String treatDish(Dish obj){
+        //ToDo: TAKE OUT DISHES AND PUT IT IN SERVICE
+        return "OK";
     }
     private String treatString(String msg){
         System.out.println(msg);
@@ -97,6 +120,9 @@ public class ClientManager extends Thread {
             listener.billedReserve(client);
             return "BILLED";
         }
+        if(msg.equals("DISHES")){
+            return "MENU";
+        }
         return "null";
     }
     private String treatUser(User obj){
@@ -111,6 +137,7 @@ public class ClientManager extends Thread {
                 this.client = obj;
                 if(listener.isAReserve(obj)){
                     System.out.println("Reserve-LOGIN");
+                    listener.addClient(client);
                     return "Reserve";
                 }else {
                     System.out.println("LOGIN");

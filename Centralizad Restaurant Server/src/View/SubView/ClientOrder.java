@@ -18,6 +18,7 @@ public class ClientOrder extends JPanel {
     public ClientOrder(User user, ClientOrderController controller) {
         this.user = user;
         this.controller = controller;
+        windowConfiguration();
     }
     public void windowConfiguration(){
         // We configure the window.

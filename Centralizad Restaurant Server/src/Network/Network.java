@@ -126,4 +126,7 @@ public class Network implements Runnable {
             }
         }
     }
+    public void addClient(User obj){
+        controller.addClientToService(obj);
+    }
 }

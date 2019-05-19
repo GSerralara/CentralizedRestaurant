@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.Database.Entity.Dish;
 import Model.Database.Entity.User;
 import Model.ModelClient;
 import Model.Time;
@@ -8,6 +9,7 @@ import Resources.Pop;
 import View.MyForm;
 
 import java.io.IOException;
+import java.util.LinkedList;
 
 public class FormController {
     private MyForm view;
@@ -132,11 +134,27 @@ public class FormController {
         Object answer = network.readObject();
     }
 
+    public LinkedList<Dish> getCurrentMenu(){
+        network.sendObject("DISHES");
+        Object list = network.readObject();
+        return (LinkedList<Dish>)list;
+    }
+
+    public void updateMenu(Dish dish){
+        network.sendObject(dish);
+        Object answer = network.readObject();
+    }
+
     public void login(User user){
         network.sendObject(user);
         Object answer = network.readObject();
         System.out.println((String)answer);
         launcherController.setLogType((String)answer);
+        if(answer.equals("Reserve")){
+            network.sendObject("DISHES");
+            Object list = network.readObject();
+            mainTableController.updateMenu((LinkedList<Dish>) list);
+        }
     }
 
     public void billed(){

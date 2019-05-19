@@ -68,9 +68,6 @@ public class FormController {
         return this.model.getServerState();
     }
 
-    public int getCommuncicationPort(){
-        return model.getCommuncicationPort();
-    }
     public void runServer(){
         net.startServer(model.getCommuncicationPort());
     }
@@ -100,5 +97,9 @@ public class FormController {
     }
     public LinkedList<User> getReserved(){
         return aunthentificationController.getAccepted();
+    }
+
+    public void addClientToService(User u){
+        serviceController.addClient(u);
     }
 }

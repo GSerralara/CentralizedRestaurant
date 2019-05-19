@@ -41,21 +41,16 @@ public class Menu extends JPanel {
         menu = new ArrayList<>();
         menuItems.removeAll();
         //add data
-        addItem("Chicken Poke");
-        addItem("Pancake");
-        addItem("Soho Mule");
-        addItem("burger");
-        addItem("risotto");
-        addItem("steamed buns");
-        addItem("hot dog");
-        addItem("fried potatoes");
+
         menuItems.revalidate();
         repaint();
     }
-    public void addItem(String name){
-        this.menu.add(new MenuItem(name,controller));
+    public void addItem(String name, int q){
+        this.menu.add(new MenuItem(name,controller,q));
         //this.list.add(menu.get(menu.size()-1));
         this.menuItems.add(menu.get(menu.size()-1));
+        menuItems.revalidate();
+        repaint();
     }
     public int getCuantity(String name){
         for(int i=0;i<menu.size();i++){

@@ -3,8 +3,11 @@ package Controller;
 import Controller.SubController.BillController;
 import Controller.SubController.MenuController;
 import Controller.SubController.OrderController;
+import Model.Database.Entity.Dish;
 import View.MainTable;
 
+import java.net.Inet4Address;
+import java.util.LinkedList;
 
 
 public class MainTableController {
@@ -13,9 +16,14 @@ public class MainTableController {
     private MenuController menuController;
     private OrderController orderController;
     private BillController billController;
+    private LinkedList<Dish> currentMenu;
+    private LinkedList<Dish> order;
+    private LinkedList<Integer> qOrder;
 
     public MainTableController(FormController controller) {
         this.listener = controller;
+        order =  new LinkedList<>();
+        qOrder = new LinkedList<>();
     }
 
     public void setBillController(BillController billController) {
@@ -34,7 +42,7 @@ public class MainTableController {
         this.mainTable = mainTable;
     }
 
-    public void giveCommand(String command, String data){
+    public void giveCommand(String command, Dish dish){
         //Take menu items, request time, give data ...
         switch (command){
             case "PAY":
@@ -44,12 +52,58 @@ public class MainTableController {
                 mainTable.goToWindow("LAUNCHER");
                 break;
             case "ADD_TO_ORDER":
-                this.orderController.addToOrder(data,"MM:SS");
+                boolean pasive = false;
+                if(order.size() != 0){
+                    System.out.println("N add");
+                    for(int i=0;i<order.size(); i++){
+                        if(order.get(i).getName()==dish.getName()){
+                            int q = qOrder.get(i).intValue()+1;
+                            qOrder.set(i,q);
+                            i =order.size();
+                            pasive = true;
+                        }
+                    }
+                    if(!pasive){
+                        order.add(dish);
+                        qOrder.add(1);
+                    }
+                }else{
+                    System.out.println("First add");
+                    order.add(dish);
+                    qOrder.add(1);
+                }
+                this.orderController.addToOrder(dish.getName(),dish.getTime().toString());
         }
     }
 
     public void currentTime(String time){
         mainTable.updateTime(listener.runTime(time));
+    }
+    public LinkedList<Dish> getCurrentMenu(){
+        this.currentMenu = listener.getCurrentMenu();
+        return this.currentMenu;
+    }
+    public void updateMenu(LinkedList<Dish> menu){
+        this.currentMenu = menu;
+        menuController.removeDishes();
+        for(Dish i:menu){
+            menuController.addDishes(i);
+        }
 
+    }
+    public void updateMenuState(String name){
+        Dish dishAdded;
+        System.out.println(order.size());
+        for(int i=0;i<order.size(); i++){
+            if(order.get(i).getName().equals(name)){
+                dishAdded = order.get(i);
+                dishAdded.setQuantety(qOrder.get(i));
+                listener.updateMenu(dishAdded);
+            }
+        }
+        menuController.removeDishes();
+        for(Dish i:currentMenu){
+            menuController.addDishes(i);
+        }
     }
 }

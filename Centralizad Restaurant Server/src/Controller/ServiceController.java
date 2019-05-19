@@ -1,6 +1,7 @@
 package Controller;
 
 import Controller.SubController.ClientOrderController;
+import Model.Database.Entity.User;
 import View.Service;
 
 import java.awt.event.ActionEvent;
@@ -27,5 +28,9 @@ public class ServiceController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
+    }
+    public void addClient(User client){
+        System.out.println(client.getUser());
+        this.service.addClient(client);
     }
 }
