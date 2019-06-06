@@ -37,7 +37,7 @@ public class SideMenuController implements ActionListener {
                 if(listener.getState().equals("STOP")) sideMenu.goToWindow("POST-SERVICE");
                 if(listener.getState().equals("END")) sideMenu.goToWindow("WELCOME");
                 if(listener.getState().equals("INIT")){
-                    //ToDo: Check if people are already authorithed
+                    //ToDo: init at this point the network as open
                     sideMenu.goToWindow(windowName);
                 }
                 break;

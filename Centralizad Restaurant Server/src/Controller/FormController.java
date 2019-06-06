@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.Database.Entity.Dish;
+import Model.Database.Entity.Restaurant;
 import Model.Database.Entity.User;
 import Model.Model;
 import Network.Network;
@@ -20,19 +21,34 @@ public class FormController {
     private PreServiceController preServiceController;
     private PostServiceController postServiceController;
     private ServiceController serviceController;
+    private WelcomeController welcomeController;
+    private RegisterController registerController;
     public FormController(WindowForm view, Model model, Network net) {
         this.view = view;
         this.model = model;
         this.net = net;
 
-        launcherController = new LauncherController();
+        launcherController = new LauncherController(this);
         sideMenuController = new SideMenuController(this);
         serviceStateController = new ServiceStateController(this);
         aunthentificationController = new AunthentificationController(this);
         preServiceController = new PreServiceController(this);
         postServiceController = new PostServiceController(this);
         serviceController = new ServiceController(this);
+        welcomeController = new WelcomeController(this);
+        registerController = new RegisterController(this);
 
+    }
+
+    public void register(Restaurant restaurant){
+        model.callCommand("Register",restaurant);
+    }
+    public RegisterController getRegisterController() {
+        return registerController;
+    }
+
+    public WelcomeController getWelcomeController() {
+        return welcomeController;
     }
 
     public ServiceController getServiceController() {

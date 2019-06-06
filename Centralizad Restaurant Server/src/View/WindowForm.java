@@ -18,6 +18,8 @@ public class WindowForm implements Runnable, ProgressListener {
     private PreService preService;
     private PostService postService;
     private Service service;
+    private Welcome welcome;
+    private Register register;
     /**
      * Constructor of the main frame.
      * Uses a UIManager.
@@ -40,7 +42,8 @@ public class WindowForm implements Runnable, ProgressListener {
         //Instructions:
         // These should handle their own component initialization.
         // They should, at least, receive a reference to the listener.
-
+        register = new Register(this,controller.getRegisterController());
+        welcome = new Welcome(this,controller.getWelcomeController());
         launcher = new Launcher(this, controller.getLauncherController());
         sideMenu = new SideMenu(this,controller.getSideMenuController());
         serviceState = new ServiceState(this,controller.getServiceStateController());
@@ -54,7 +57,7 @@ public class WindowForm implements Runnable, ProgressListener {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(600, 400);
         frame.setMinimumSize(new Dimension(500, 300));
-        frame.setContentPane(splitPlane);
+        frame.setContentPane(launcher);
         splitPlane.setSplitSize(500,300);
         frame.pack();
         frame.setLocationRelativeTo(null);
@@ -70,7 +73,7 @@ public class WindowForm implements Runnable, ProgressListener {
     public void progressFrom(AppState window) {
         switch (window) {
             case LAUNCHER:
-                splitPlane.changeCurrentView(launcher);
+                frame.setContentPane(launcher);
                 frame.pack();
                 return;
             case PRESERVICE:
@@ -93,9 +96,17 @@ public class WindowForm implements Runnable, ProgressListener {
                 splitPlane.changeCurrentView(aunthentification);
                 frame.pack();
                 return;
+            case WELCOME:
+                frame.setContentPane(splitPlane);
+                splitPlane.changeCurrentView(welcome);
+                frame.pack();
+                return;
+            case REGISTER:
+                frame.setContentPane(register);
+                frame.pack();
+                return;
             default:
                 System.out.println("Not Existing Window");
-                //ToDo: Crear ventana para este error
                 return;
         }
     }

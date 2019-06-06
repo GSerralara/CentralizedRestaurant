@@ -12,6 +12,9 @@ import java.util.Calendar;
 import java.util.LinkedList;
 
 public class DishDAO {
+    public DishDAO() {
+    }
+
     public void addDish(Dish dish){
         Calendar cal = Calendar.getInstance();
         cal.setTime(dish.getTime());
@@ -20,7 +23,7 @@ public class DishDAO {
         cal.clear(Calendar.DAY_OF_WEEK);
         String query = "INSERT INTO Dish (price, name, units, cooking_time, sold_out) VALUES" +
                 " ("+dish.getPrice()+", \""+dish.getName()+"\", "+dish.getQuantety()+", '"+ts+"', FALSE);";
-        BBDDHelper.getInstance().insertRegister(query);
+        BBDDHelper.getInstance().insertData(query);
     }
     public LinkedList<Dish> getAllDishes(){
         LinkedList<Dish> dishes =  new LinkedList<>();

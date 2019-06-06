@@ -10,7 +10,7 @@ import java.util.LinkedList;
 public class UserDAO {
     public void addUser(User user){
         String query = "INSERT INTO Restaurant VALUES(\""+user.getMail()+"\",\""+user.getUser()+"\",\""+user.getPassword()+"\");";
-        BBDDHelper.getInstance().insertRegister(query);
+        BBDDHelper.getInstance().insertData(query);
     }
     public LinkedList<User> getAllUsers(){
         LinkedList<User> users = new LinkedList<>();

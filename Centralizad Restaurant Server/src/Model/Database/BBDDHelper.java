@@ -1,6 +1,7 @@
 package Model.Database;
 
 
+import java.sql.CallableStatement;
 import java.sql.ResultSet;
 
 public class BBDDHelper {
@@ -13,7 +14,14 @@ public class BBDDHelper {
                 settings.getnameBBDD(), settings.getBBDDPort(),settings.getDirIpBBDD());
         conn.connect();
     }
-    public void insertRegister(String query){
+
+    public boolean isConnected(){
+        return conn.isConnected();
+    }
+    public int insertRegister(String table, Object obj){
+        return conn.callProcedure(table,obj);
+    }
+    public void insertData(String query){
         conn.ddlQuery(query);
     }
     public ResultSet selectTable(String query){

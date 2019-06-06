@@ -64,7 +64,7 @@ public class SideMenu extends JPanel {
                 break;
             case "WELCOME":
                 //System.out.println("WEL");
-                this.listener.progressFrom(ProgressListener.AppState.LAUNCHER);
+                this.listener.progressFrom(ProgressListener.AppState.WELCOME);
                 break;
             case "PRE-SERVICE":
                 //System.out.println("PRE");

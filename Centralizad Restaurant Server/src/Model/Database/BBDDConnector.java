@@ -1,5 +1,7 @@
 package Model.Database;
 
+import Model.Database.Entity.Restaurant;
+
 import java.sql.*;
 
 public class BBDDConnector {
@@ -39,6 +41,10 @@ public class BBDDConnector {
             e.printStackTrace();
         }
 
+    }
+
+    public boolean isConnected(){
+        return conn != null;
     }
 
     public void disconnect(){
@@ -81,5 +87,29 @@ public class BBDDConnector {
             System.out.println("Problema al Recuperar les dades --> " + ex.getSQLState());
         }
         return rs;
+    }
+    public int callProcedure(String tableTarget,Object obj){
+        CallableStatement cStmt = null;
+        ResultSet rs = null;
+        int ok = 0;
+        try {
+            switch (tableTarget){
+                case "Restaurant":
+                    Restaurant res = (Restaurant)obj;
+                    cStmt = conn.prepareCall("{call newRestaurant(?,?,?,?)}");
+                    cStmt.setString(1,res.getMail());
+                    cStmt.setString(2,res.getUser());
+                    cStmt.setString(3,res.getPassword());
+                    cStmt.registerOutParameter(4, Types.INTEGER);
+                    break;
+            }
+            cStmt.execute();
+            ok = cStmt.getInt(4);
+
+
+        }catch (SQLException ex) {
+            System.out.println("Problema al Recuperar les dades --> " + ex.getSQLState());
+        }
+        return ok;
     }
 }

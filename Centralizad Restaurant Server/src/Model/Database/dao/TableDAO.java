@@ -11,7 +11,7 @@ public class TableDAO {
 
     public void addTable(Table table){
         String query = "INSERT INTO tables(usernameRestaurant, emailRestaurant, number_client) VALUES (\"CentralizedRestaurant\", \"LaSalle\",  "+table.getNumberClients()+");";
-        BBDDHelper.getInstance().insertRegister(query);
+        BBDDHelper.getInstance().insertData(query);
     }
     public LinkedList<Table> getAllTables(){
         LinkedList<Table> tables = new LinkedList<>();

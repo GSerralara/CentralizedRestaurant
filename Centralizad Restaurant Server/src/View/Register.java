@@ -5,6 +5,7 @@ import Resources.Pop;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 /**
  * View Register class
@@ -19,7 +20,6 @@ import java.awt.*;
 public class Register extends JPanel {
     // instance variables
     private final ProgressListener listener;
-    private RegisterController controller;
 
     /**
      * Constants for the Buttons and Action Commands
@@ -63,10 +63,10 @@ public class Register extends JPanel {
     public Register(ProgressListener listener, RegisterController controller) {
         // instance attributes with passed parameters
         this.listener = listener;
-        this.controller = controller;
-        this.controller.setRegister(this);
+        controller.setRegister(this);
         // UI configuration of the panel
         windowConfiguration();
+        registerController(controller);
     }
 
     /**
@@ -123,8 +123,7 @@ public class Register extends JPanel {
         form.add(rpw);
         // add Sing Up button to the bottom
         signUp = new JButton(JB_SINGUP);
-        signUp.setActionCommand(AC_REGISTER);//set action command that will get the ActionListener
-        signUp.addActionListener(controller);//set which ActionListener
+
         bottom.add(signUp, FlowLayout.LEFT);//set Flow position for UX purposes
         // add secondary panels (from & bottom) to the main panel
         main.add(form, BorderLayout.CENTER);
@@ -150,13 +149,17 @@ public class Register extends JPanel {
         logIn.setBorderPainted(false);
         logIn.setForeground(Color.BLUE);
         //controller command
-        logIn.setActionCommand(AC_LOGIN);//set action command that will get the ActionListener
-        logIn.addActionListener(controller);//set which ActionListener
+
         bottom.add(logIn, FlowLayout.CENTER);//set Flow position for UX purposes
         // return Statement
         return bottom;
     }
-
+    private void registerController(ActionListener e){
+        logIn.setActionCommand(AC_LOGIN);//set action command that will get the ActionListener
+        logIn.addActionListener(e);//set which ActionListener
+        signUp.setActionCommand(AC_REGISTER);//set action command that will get the ActionListener
+        signUp.addActionListener(e);//set which ActionListener
+    }
     /**
      * Method that will create all the components of the panel.
      *
@@ -196,11 +199,51 @@ public class Register extends JPanel {
         String firstPwd = new String(pw.getPassword());
         String secondPwd = new String(rpw.getPassword());
         if (firstPwd.equals(secondPwd)) {
-            if (firstPwd.length() != 0) return true;
+            if (firstPwd.length() != 0){
+                return true;
+            }
         }
         return false;
     }
-
+    public boolean passCheck(String password){
+        boolean valid = true;
+        if(password.length() < 6){
+            valid = false;
+        }
+        String upperCase = "(.*[A-Z].*)";
+        if(!password.matches(upperCase)){
+            valid = false;
+        }
+        String numbers = "(.*[0-9].*)";
+        if(!password.matches(numbers)){
+            valid = false;
+        }
+        String specialChars = "(.*[ ! # @ $ % ^ & * ( ) - _ = + [ ] ; : ' \" , < . > / ?].*)";
+        if(password.matches(specialChars)){
+            valid = false;
+        }
+        String space = "(.*[   ].*)";
+        if(password.matches(space)){
+            valid = false;
+        }
+        if(!valid){
+            Pop pop = new Pop("<html>" +
+                    "<center>" +
+                    "The password must contain at least:<br>" +
+                    "one alpha character & one numeric character<br>" +
+                    "And Must not contain:<br>" +
+                    "spaces nor special characters" +
+                    "</center>" +
+                    "</html>");
+        }
+        return valid;
+    }
+    public boolean isValidEmailAddress(String email) {
+        String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
+        java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
+        java.util.regex.Matcher m = p.matcher(email);
+        return m.matches();
+    }
     /**
      * Function that will return:
      * -->True: in case all fields are filled

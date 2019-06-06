@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.Database.Entity.Restaurant;
 import Model.Database.Entity.User;
 import Resources.Pop;
 import View.Register;
@@ -49,12 +50,20 @@ public class RegisterController implements ActionListener {
                 //first we check that all camps are filled
                 if(register.allfilled()){
                     //then if passwords match
-                    if(register.samePwd()){
-                        //after that we try to connect to the server
-                        //Todo: SAVE RESTAURANT
-                        register.goToWindow("REGISTER");
-                    }else{
-                        Pop popup = new Pop("Passwords don't match");
+                    if(register.passCheck(register.getPwd())){
+                        if(register.samePwd()){
+                            if(register.isValidEmailAddress(register.getMail())){
+                                //after that we try to connect to the server
+                                //Todo: SAVE RESTAURANT
+                                Restaurant r = new Restaurant(register.getUser(),register.getMail(),register.getPwd());
+                                listener.register(r);
+                                register.goToWindow("REGISTER");
+                            }else{
+                                Pop popup = new Pop("Mail not valid");
+                            }
+                        }else{
+                            Pop popup = new Pop("Passwords don't match");
+                        }
                     }
                 }
                 break;
