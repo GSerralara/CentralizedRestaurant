@@ -12,12 +12,24 @@ public class RestaurantDAO {
 
     public void addRestaurant(Restaurant restaurant){
         String msg = "";
-        int outputValue = BBDDHelper.getInstance().insertRegister("Restaurant",restaurant);
+        int outputValue = BBDDHelper.getInstance().insertRegister("Restaurant-New",restaurant);
         if(outputValue ==1){
             msg = "Registration was Successful!";
         }else{
             msg = "Error, during registration";
         }
         Pop pop = new Pop(msg);
+    }
+
+    public int logRestaurant(Restaurant restaurant){
+        String msg = "";
+        int outputValue = BBDDHelper.getInstance().insertRegister("Restaurant-Log",restaurant);
+        if(outputValue ==1){
+            msg = "Login was Successful!";
+        }else{
+            msg = "Error, during login";
+        }
+        Pop pop = new Pop(msg);
+        return outputValue;
     }
 }

@@ -2,39 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bb069b7-f142-4429-8d46-9d30b44c1cc8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/WelcomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Database/DAOManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Database/Entity/Restaurant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Database/dao/RestaurantDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/Controller/FormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/Controller/FormController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/Controller/LauncherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/Controller/LauncherController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/Model/CentralizedRestaurantServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/Model/CentralizedRestaurantServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/Model/DataBase/BBDDConnector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/Model/DataBase/BBDDConnector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/Model/DataBase/BBDDHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/Model/DataBase/BBDDHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/Model/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/Model/Model.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/View/Launcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/View/Launcher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/View/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/View/Register.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/View/SideMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/View/SideMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/View/Welcome.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/View/Welcome.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/View/WindowForm$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/View/WindowForm$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/View/WindowForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/View/WindowForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/Controller/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/Controller/RegisterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/Model/DataBase/dao/DishDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/Model/DataBase/dao/DishDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/Model/DataBase/dao/TableDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/Model/DataBase/dao/TableDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/Model/DataBase/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/Model/DataBase/dao/UserDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/FormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/LauncherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LauncherController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SideMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SideMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/CentralizedRestaurantServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/CentralizedRestaurantServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Database/BBDDConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Database/BBDDConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Database/BBDDHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Database/BBDDHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Database/dao/DishDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Database/dao/DishDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Database/dao/TableDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Database/dao/TableDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Database/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Database/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Database/DAOManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Database/DAOManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Database/Entity/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Database/Entity/Restaurant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Database/dao/RestaurantDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Database/dao/RestaurantDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/SideMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/SideMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Welcome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Welcome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/WindowForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/WindowForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -167,27 +147,27 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="11377" />
-          <entry key="txt" value="59" />
+          <entry key="java" value="11887" />
+          <entry key="txt" value="91" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="11377" />
-          <entry key="PLAIN_TEXT" value="59" />
+          <entry key="JAVA" value="11887" />
+          <entry key="PLAIN_TEXT" value="91" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="iml" value="1" />
-          <entry key="java" value="268" />
+          <entry key="java" value="280" />
           <entry key="json" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="268" />
+          <entry key="JAVA" value="280" />
           <entry key="JSON" value="4" />
         </counts>
       </usages-collector>
@@ -199,36 +179,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/RegisterController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="61" column="25" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Database/DAOManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="13" column="44" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#364#365#0" expanded="true" />
-                <element signature="e#419#420#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/Database/dao/RestaurantDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+            <state relative-caret-position="347">
+              <caret line="25" column="81" selection-start-line="25" selection-start-column="81" selection-end-line="25" selection-end-column="81" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -237,65 +191,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Database/BBDDHelper.java">
+        <entry file="file://$PROJECT_DIR$/src/Controller/LauncherController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+            <state relative-caret-position="92">
+              <caret line="26" column="52" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#getInstance#0;class#BBDDHelper#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Database/BBDDConnector.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="58">
-              <caret line="96" column="32" lean-forward="true" selection-start-line="96" selection-start-column="22" selection-end-line="96" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#BBDDConnector#0;class#BBDDConnector#0" />
-                <element signature="method#connect#0;class#BBDDConnector#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Model/Database/dao/DishDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-              <folding>
-                <element signature="method#getAllDishes#0;class#DishDAO#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/Register.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="241" column="53" selection-start-line="241" selection-start-column="53" selection-end-line="241" selection-end-column="53" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#bottomPart#0;class#Register#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Model.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="26" column="27" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#regulateConnection#0;class#Model#0" />
               </folding>
             </state>
           </provider>
@@ -304,17 +205,70 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/FormController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="43" column="47" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
+            <state relative-caret-position="59">
+              <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1625#1626#0" expanded="true" />
-                <element signature="e#1660#1661#0" expanded="true" />
-                <element signature="e#2665#2666#0" expanded="true" />
-                <element signature="e#2727#2728#0" expanded="true" />
-                <element signature="e#2757#2758#0" expanded="true" />
-                <element signature="e#2790#2791#0" expanded="true" />
+                <element signature="e#1681#1682#0" expanded="true" />
                 <element signature="method#dishState#0;class#FormController#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Database/Entity/Restaurant.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="268">
+              <caret line="38" selection-start-line="38" selection-end-line="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Model.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="296">
+              <caret line="56" column="38" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#regulateConnection#0;class#Model#0" />
+                <element signature="e#1322#1323#0" expanded="true" />
+                <element signature="e#1356#1357#0" expanded="true" />
+                <element signature="e#1396#1397#0" expanded="true" />
+                <element signature="e#1451#1452#0" expanded="true" />
+                <element signature="e#1577#1578#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Database/DAOManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="16" column="21" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#442#443#0" expanded="true" />
+                <element signature="e#497#498#0" expanded="true" />
+                <element signature="e#553#554#0" expanded="true" />
+                <element signature="e#588#589#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Model/Database/BBDDConnector.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="111" column="26" selection-start-line="111" selection-start-column="26" selection-end-line="111" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#BBDDConnector#0;class#BBDDConnector#0" />
+                <element signature="method#connect#0;class#BBDDConnector#0" />
               </folding>
             </state>
           </provider>
@@ -377,23 +331,23 @@
         <option value="$PROJECT_DIR$/src/Model/CentralizedRestaurantServer.java" />
         <option value="$PROJECT_DIR$/src/Controller/WelcomeController.java" />
         <option value="$PROJECT_DIR$/src/View/Welcome.java" />
-        <option value="$PROJECT_DIR$/src/Controller/LauncherController.java" />
-        <option value="$PROJECT_DIR$/src/Model/Database/Entity/Restaurant.java" />
         <option value="$PROJECT_DIR$/src/View/Launcher.java" />
         <option value="$PROJECT_DIR$/src/View/WindowForm.java" />
         <option value="$PROJECT_DIR$/src/Controller/SideMenuController.java" />
         <option value="$PROJECT_DIR$/src/View/SideMenu.java" />
         <option value="$PROJECT_DIR$/src/Model/Database/dao/TableDAO.java" />
         <option value="$PROJECT_DIR$/src/Model/Database/dao/UserDAO.java" />
-        <option value="$PROJECT_DIR$/src/Model/Model.java" />
-        <option value="$PROJECT_DIR$/src/Controller/FormController.java" />
-        <option value="$PROJECT_DIR$/src/Controller/RegisterController.java" />
-        <option value="$PROJECT_DIR$/src/View/Register.java" />
         <option value="$PROJECT_DIR$/src/Model/Database/BBDDHelper.java" />
-        <option value="$PROJECT_DIR$/src/Model/Database/BBDDConnector.java" />
+        <option value="$PROJECT_DIR$/src/Model/Database/dao/DishDAO.java" />
+        <option value="$PROJECT_DIR$/src/View/Register.java" />
+        <option value="$PROJECT_DIR$/src/Controller/RegisterController.java" />
         <option value="$PROJECT_DIR$/src/Model/Database/DAOManager.java" />
         <option value="$PROJECT_DIR$/src/Model/Database/dao/RestaurantDAO.java" />
-        <option value="$PROJECT_DIR$/src/Model/Database/dao/DishDAO.java" />
+        <option value="$PROJECT_DIR$/src/Controller/LauncherController.java" />
+        <option value="$PROJECT_DIR$/src/Model/Model.java" />
+        <option value="$PROJECT_DIR$/src/Model/Database/Entity/Restaurant.java" />
+        <option value="$PROJECT_DIR$/src/Controller/FormController.java" />
+        <option value="$PROJECT_DIR$/src/Model/Database/BBDDConnector.java" />
       </list>
     </option>
   </component>
@@ -457,7 +411,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
               <item name="Database" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="Entity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Centralizad Restaurant Server" type="b2602c69:ProjectViewProjectNode" />
@@ -475,7 +429,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559843903012" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559846372344" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Server" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -571,7 +525,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558284693321</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="register restaurant properly">
+      <created>1559844075208</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1559844075208</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -623,7 +584,8 @@
     <MESSAGE value="canelar reserva" />
     <MESSAGE value="log reserve" />
     <MESSAGE value="receve dishes request" />
-    <option name="LAST_COMMIT_MESSAGE" value="receve dishes request" />
+    <MESSAGE value="register restaurant properly" />
+    <option name="LAST_COMMIT_MESSAGE" value="register restaurant properly" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Centralizad Restaurant Server.iml">
@@ -722,6 +684,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-34">
           <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#730#731#0" expanded="true" />
+            <element signature="e#774#775#0" expanded="true" />
+            <element signature="e#923#924#0" expanded="true" />
+            <element signature="e#961#962#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -864,20 +832,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/LauncherController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="27" column="20" lean-forward="true" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#301#302#0" expanded="true" />
-            <element signature="e#326#327#0" expanded="true" />
-            <element signature="e#197#198#0" expanded="true" />
-            <element signature="e#237#238#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/Welcome.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -948,13 +902,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Database/dao/UserDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Database/dao/TableDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -962,45 +909,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Database/Entity/Restaurant.java">
+    <entry file="file://$PROJECT_DIR$/src/Model/Database/dao/DishDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/FormController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="43" column="47" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
+        <state relative-caret-position="85">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1625#1626#0" expanded="true" />
-            <element signature="e#1660#1661#0" expanded="true" />
-            <element signature="e#2665#2666#0" expanded="true" />
-            <element signature="e#2727#2728#0" expanded="true" />
-            <element signature="e#2757#2758#0" expanded="true" />
-            <element signature="e#2790#2791#0" expanded="true" />
-            <element signature="method#dishState#0;class#FormController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Model.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="26" column="27" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#regulateConnection#0;class#Model#0" />
+            <element signature="method#getAllDishes#0;class#DishDAO#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/RegisterController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="61" column="25" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
+        <state relative-caret-position="231">
+          <caret line="54" column="81" selection-start-line="54" selection-start-column="81" selection-end-line="54" selection-end-column="81" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1009,8 +931,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/Register.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="241" column="53" selection-start-line="241" selection-start-column="53" selection-end-line="241" selection-end-column="53" />
+        <state relative-caret-position="-38">
+          <caret line="202" column="27" selection-start-line="202" selection-start-column="27" selection-end-line="202" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#bottomPart#0;class#Register#0" />
@@ -1018,15 +940,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Database/BBDDConnector.java">
+    <entry file="file://$PROJECT_DIR$/src/Model/Database/dao/UserDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="96" column="32" lean-forward="true" selection-start-line="96" selection-start-column="22" selection-end-line="96" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#BBDDConnector#0;class#BBDDConnector#0" />
-            <element signature="method#connect#0;class#BBDDConnector#0" />
-          </folding>
+        <state relative-caret-position="114">
+          <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -1043,32 +960,82 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Database/DAOManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="13" column="44" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
+        <state relative-caret-position="221">
+          <caret line="16" column="21" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#364#365#0" expanded="true" />
-            <element signature="e#419#420#0" expanded="true" />
+            <element signature="e#442#443#0" expanded="true" />
+            <element signature="e#497#498#0" expanded="true" />
+            <element signature="e#553#554#0" expanded="true" />
+            <element signature="e#588#589#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="56" column="38" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#regulateConnection#0;class#Model#0" />
+            <element signature="e#1322#1323#0" expanded="true" />
+            <element signature="e#1356#1357#0" expanded="true" />
+            <element signature="e#1396#1397#0" expanded="true" />
+            <element signature="e#1451#1452#0" expanded="true" />
+            <element signature="e#1577#1578#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Database/Entity/Restaurant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/LauncherController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="26" column="52" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/FormController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1625#1626#0" expanded="true" />
+            <element signature="e#1681#1682#0" expanded="true" />
+            <element signature="method#dishState#0;class#FormController#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Database/dao/RestaurantDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+        <state relative-caret-position="347">
+          <caret line="25" column="81" selection-start-line="25" selection-start-column="81" selection-end-line="25" selection-end-column="81" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Database/dao/DishDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/Model/Database/BBDDConnector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+        <state relative-caret-position="126">
+          <caret line="111" column="26" selection-start-line="111" selection-start-column="26" selection-end-line="111" selection-end-column="26" />
           <folding>
-            <element signature="method#getAllDishes#0;class#DishDAO#0" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#BBDDConnector#0;class#BBDDConnector#0" />
+            <element signature="method#connect#0;class#BBDDConnector#0" />
           </folding>
         </state>
       </provider>

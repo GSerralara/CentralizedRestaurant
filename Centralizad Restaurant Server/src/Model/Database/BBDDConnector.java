@@ -88,23 +88,37 @@ public class BBDDConnector {
         }
         return rs;
     }
-    public int callProcedure(String tableTarget,Object obj){
+    public int callProcedure(String tableTargetAction,Object obj){
         CallableStatement cStmt = null;
         ResultSet rs = null;
         int ok = 0;
+        int pos = 0;
         try {
-            switch (tableTarget){
-                case "Restaurant":
+            switch (tableTargetAction){
+                case "Restaurant-New":
                     Restaurant res = (Restaurant)obj;
                     cStmt = conn.prepareCall("{call newRestaurant(?,?,?,?)}");
                     cStmt.setString(1,res.getMail());
                     cStmt.setString(2,res.getUser());
                     cStmt.setString(3,res.getPassword());
                     cStmt.registerOutParameter(4, Types.INTEGER);
+                    pos=4;
+                    break;
+                case "Restaurant-Log":
+                    Restaurant reslog = (Restaurant)obj;
+                    cStmt = conn.prepareCall("{call loginRestaurant(?,?,?)}");
+                    if(reslog.getUser().equals("")){
+                        cStmt.setString(1,reslog.getMail());
+                    }else{
+                        cStmt.setString(1,reslog.getUser());
+                    }
+                    cStmt.setString(2,reslog.getPassword());
+                    cStmt.registerOutParameter(3,Types.INTEGER);
+                    pos = 3;
                     break;
             }
             cStmt.execute();
-            ok = cStmt.getInt(4);
+            ok = cStmt.getInt(pos);
 
 
         }catch (SQLException ex) {

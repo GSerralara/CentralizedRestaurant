@@ -34,4 +34,8 @@ public class Restaurant {
         return password;
     }
 
+    public boolean same(Restaurant obj){
+        return obj.getUser().equals(this.username) && obj.getMail().equals(this.mail) && obj.password.equals(this.password);
+    }
+
 }

@@ -53,8 +53,6 @@ public class RegisterController implements ActionListener {
                     if(register.passCheck(register.getPwd())){
                         if(register.samePwd()){
                             if(register.isValidEmailAddress(register.getMail())){
-                                //after that we try to connect to the server
-                                //Todo: SAVE RESTAURANT
                                 Restaurant r = new Restaurant(register.getUser(),register.getMail(),register.getPwd());
                                 listener.register(r);
                                 register.goToWindow("REGISTER");

@@ -24,8 +24,10 @@ public class LauncherController implements ActionListener {
                 //first we check that all camps are filled
                 if(launcher.allFieldsFilled()){
                     Restaurant r = new Restaurant(launcher.getUserField(),launcher.getPwField());
-                    //ToDo: check if log was successful and kind of log
-                    launcher.goToWindow("SIGN_IN");
+                    //ToDo: log out reset restaurant
+                    if(listener.login(r)){
+                        launcher.goToWindow("SIGN_IN");
+                    }
                 }
                 break;
             case "REGISTER":

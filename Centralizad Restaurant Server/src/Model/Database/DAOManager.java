@@ -16,4 +16,7 @@ public class DAOManager {
     public void registerRestaurant(Restaurant restaurant){
         restaurantDAO.addRestaurant(restaurant);
     }
+    public int loginRestaurant(Restaurant restaurant){
+        return restaurantDAO.logRestaurant(restaurant);
+    }
 }

@@ -43,6 +43,10 @@ public class FormController {
     public void register(Restaurant restaurant){
         model.callCommand("Register",restaurant);
     }
+    public boolean login(Restaurant restaurant){
+        model.callCommand("Login",restaurant);
+        return model.getOnService().same(restaurant);
+    }
     public RegisterController getRegisterController() {
         return registerController;
     }

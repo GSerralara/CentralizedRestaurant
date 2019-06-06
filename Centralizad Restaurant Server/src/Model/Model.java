@@ -8,6 +8,7 @@ public class Model {
     private BBDDHelper database;
     private DAOManager manager;
     private String serverState;
+    private Restaurant onService;
     public Model(){
         manager = new DAOManager();
         this.database = new BBDDHelper();
@@ -28,6 +29,12 @@ public class Model {
                 Restaurant res = (Restaurant)obj;
                 manager.registerRestaurant(res);
                 break;
+            case "Login":
+                Restaurant reslog = (Restaurant)obj;
+                if(manager.loginRestaurant(reslog)==1){
+                    this.onService = reslog;
+                }
+                break;
         }
     }
     private void regulateConnection(){
@@ -45,5 +52,9 @@ public class Model {
     }
     public int getCommuncicationPort(){
         return database.getCommuncicationPort();
+    }
+
+    public Restaurant getOnService() {
+        return onService;
     }
 }
