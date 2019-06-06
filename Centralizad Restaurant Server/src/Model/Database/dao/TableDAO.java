@@ -10,16 +10,17 @@ import java.util.LinkedList;
 public class TableDAO {
 
     public void addTable(Table table){
-        String query = "";
+        String query = "INSERT INTO tables(usernameRestaurant, emailRestaurant, number_client) VALUES (\"CentralizedRestaurant\", \"LaSalle\",  "+table.getNumberClients()+");";
         BBDDHelper.getInstance().insertRegister(query);
     }
     public LinkedList<Table> getAllTables(){
         LinkedList<Table> tables = new LinkedList<>();
-        String query = "";
+        String query = "SELECT * FROM tables;";
         ResultSet resultat = BBDDHelper.getInstance().selectTable(query);
         try {
             while (resultat.next()) {
-                //add
+                Table t = new Table(resultat.getInt("number_client"),resultat.getInt("id_table"));
+                tables.add(t);
             }
         }catch (SQLException e){
             e.printStackTrace();

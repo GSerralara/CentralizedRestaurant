@@ -37,10 +37,6 @@ public class OrderedItem extends JPanel {
     public void hideButton(){
         cancelOrder.setVisible(false);
     }
-    public void updateTime(){
-        //pensar como acceder para cambiar el tiempo
-        //maybe a thread
-    }
     public void updateStatus(String dishState){
         status.setText(dishState);
         if(!dishState.equals("Pedido"))  hideButton();
@@ -48,7 +44,7 @@ public class OrderedItem extends JPanel {
     public void initCountDown(){
 
         try {
-            Date date = new Date();
+            Date date;
             date = new SimpleDateFormat("mm:ss").parse(time.getText());
             Countdown countdown = new Countdown(time,date,status);
             new Thread(countdown).start();

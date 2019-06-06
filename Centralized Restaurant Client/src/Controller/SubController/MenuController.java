@@ -24,10 +24,8 @@ public class MenuController  implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         int times = menu.getCuantity(e.getActionCommand());
         LinkedList<Dish> dishes = listener.getCurrentMenu();
-        System.out.println("Order");
         for(Dish i: dishes){
-            if(i.getQuantety() >= times){
-                System.out.println("ADD");
+            if(i.getQuantety() >= times && i.getName().equals(e.getActionCommand())){
                 for(int j=0;j<times;j++){
                     this.listener.giveCommand("ADD_TO_ORDER",i);
                 }

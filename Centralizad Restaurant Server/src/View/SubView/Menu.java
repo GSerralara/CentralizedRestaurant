@@ -1,6 +1,8 @@
 package View.SubView;
 
 import Controller.SubController.MenuController;
+import Model.Database.Entity.Dish;
+import Model.Database.dao.DishDAO;
 import View.Items.MenuItem;
 
 import javax.swing.*;
@@ -12,6 +14,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.LinkedList;
 
 public class Menu extends JPanel {
     private JPanel items;
@@ -71,11 +74,17 @@ public class Menu extends JPanel {
         menu = new ArrayList<>();
         items.removeAll();
         //get add data
-
+        DishDAO dao = new DishDAO();
+        LinkedList<Dish> dishes = dao.getAllDishes();
+        for(Dish i: dishes){
+            SimpleDateFormat df = new SimpleDateFormat("mm:ss");
+            menu.add(new MenuItem(df.format(i.getTime()),i.getPrice(),i.getQuantety(),i.getName(),menu.size(),controller));
+            items.add(menu.get(menu.size()-1));
+        }
         items.revalidate();
         repaint();
     }
-    public void addItem(){
+    public Dish addItem(){
         int pos = menu.size();
         float price = Float.parseFloat(fieldPrice.getText());
         int units = Integer.parseInt(fieldUnits.getText());
@@ -83,28 +92,17 @@ public class Menu extends JPanel {
         this.items.add(menu.get(menu.size()-1));
         items.revalidate();
         repaint();
-    }
-    public Timestamp getTime(){
+        SimpleDateFormat df = new SimpleDateFormat("mm:ss");
+        Date time = new Date();
         try {
-            DateFormat formatter;
-            String firstFormat = "HH:mm:ss";
-            String secondFormat = "mm:ss";
-            String aux = fieldTime.getText();
-            int count = aux.length() - aux.replaceAll(":","").length();
-            if(count == 2){
-                formatter = new SimpleDateFormat(firstFormat);
-            }else {
-                formatter = new SimpleDateFormat(secondFormat);
-            }
-            Date date = formatter.parse(fieldTime.getText());
-            Timestamp timeStampDate = new Timestamp(date.getTime());
-
-            return timeStampDate;
+            time = df.parse(fieldTime.getText());
         } catch (ParseException e) {
             e.printStackTrace();
-            return null;
         }
+        Dish d = new Dish(units,price,fieldName.getText(),time);
+        return d;
     }
+
     public void cancelItem(String pos){
         int index = Integer.parseInt(pos);
         items.remove(index);
@@ -114,5 +112,20 @@ public class Menu extends JPanel {
         }
         items.revalidate();
         repaint();
+    }
+
+    public Dish getDish(){
+        SimpleDateFormat df = new SimpleDateFormat("mm:ss");
+        Date time = new Date();
+        try {
+            time = df.parse(fieldTime.getText());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        String decimal = fieldPrice.getText()+"f";
+        System.out.println(decimal);
+        float f = Float.parseFloat(fieldPrice.getText());
+        Dish d = new Dish(Integer.parseInt(fieldPrice.getText()),Float.parseFloat(decimal),fieldName.getName(),time);
+        return d;
     }
 }

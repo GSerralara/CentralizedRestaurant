@@ -19,14 +19,16 @@ public class Countdown extends Thread{
     public void run() {
         boolean run = true;
         Calendar c = Calendar.getInstance();
-        while (run){
+        while (state.getText().equals("Cocinando")){
             try {
+                long milis = 1000;
                 SimpleDateFormat df = new SimpleDateFormat("HH:mm");
                 c.setTime(time);
                 c.add(Calendar.SECOND,-1);
-                time.setTime(c.getTimeInMillis());
-                etiqueta.setText(df.format(time));
-                if(c.getTimeInMillis() == 0){
+                //time.setTime(c.getTimeInMillis());
+                time.setTime(time.getTime()-milis);
+                etiqueta.setText(df.format(c.getTime()));
+                if(df.format(time).equals("00:00")){
                     run = false;
                     state.setText("Servido");
                 }else {

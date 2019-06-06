@@ -76,12 +76,7 @@ public class ClientManager extends Thread {
         if(answer.equals("MENU")){
             DishDAO dao = new DishDAO();
             LinkedList<Dish> empty = new LinkedList<>();
-            Calendar c = Calendar.getInstance();
-            Date time = new Date();
-            c.setTime(time);
-            c.set(Calendar.MINUTE,1);
-            c.set(Calendar.SECOND,13);
-            empty.add(new Dish(30,3.5f,"Kebab",time));
+            empty = dao.getAllDishes();
             return empty;//dao.getAllDishes();
         }
         if(answer.equals("STATE")){
@@ -151,25 +146,24 @@ public class ClientManager extends Thread {
 
                 this.client = obj;
                 if(listener.isAReserve(obj)){
-                    System.out.println("Reserve-LOGIN");
                     listener.addClient(client);
                     return "Reserve";
                 }else {
-                    System.out.println("LOGIN");
-                    /*
-                LinkedList<User> users = dao.getAllUsers();
-                for(User i: users){
-                    if (i.getUser().equals(obj.getUser()) && i.getPassword().equals(obj.getPassword())){
-                        System.out.println("Nombres iguales");
-                        return "OK";
+                    LinkedList<User> users = dao.getAllUsers();
+                    for (User i : users) {
+                        if (i.getUser().equals(obj.getUser()) && i.getPassword().equals(obj.getPassword())) {
+                            System.out.println("Nombres iguales");
+                            return "Login";
+                        }
+
                     }
-                */
                 }
                 //int puerto = 5555+1+listener.findUser(obj);
                 //return ""+puerto;
                 return "Login";
             }else{//es un register
                 System.out.println("REGISTER");
+                dao.addUser(obj);
                 //dao.addUser(obj);
                 return "OK";
             }

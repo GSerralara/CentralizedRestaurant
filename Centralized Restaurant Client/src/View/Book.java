@@ -76,7 +76,11 @@ public class Book extends JPanel {
         book.addActionListener(controller);
         content.add(book);
         content.add(Box.createVerticalStrut(20));
-        reserveState = new JLabel("...");
+        reserveState = new JLabel("<html>" +
+                "You can use the same password to Login the reserve.<br>" +
+                "Just when Logging be sure to change the username camp for the name of your reserve.<br>" +
+                "THANK YOU VERY MUCH FOR YOUR ATTENTION"+
+                "</html>");
         reserveState.setSize(150,150);
         reserveState.setBorder(BorderFactory.createLineBorder(Color.black));
         content.add(reserveState);

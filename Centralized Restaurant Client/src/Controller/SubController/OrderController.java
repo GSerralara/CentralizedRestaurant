@@ -12,13 +12,14 @@ import java.util.TimerTask;
 public class OrderController implements ActionListener {
     private Order order;
     private MainTableController listener;
-    private boolean state;
+    private LinkedList<Boolean> previusState;
     public OrderController(MainTableController listener) {
         this.listener = listener;
     }
 
     public void setOrder(Order order) {
         this.order = order;
+        previusState = new LinkedList<>();
         this.listener.setOrderController(this);
     }
 
@@ -31,13 +32,19 @@ public class OrderController implements ActionListener {
         order.addToOrder(name, time);
     }
     public void treatOrder(LinkedList<Boolean> isCooking){
-        System.out.println(""+isCooking.size());
-        for(int i=0;i<isCooking.size();i++){
-            System.out.println(isCooking.get(i));
-            if(isCooking.get(i)){
-                order.updateDishState(i);
+        if(previusState.size()<isCooking.size()) {
+            for (int i = previusState.size(); i < isCooking.size(); i++) {
+                previusState.add(false);
             }
         }
+        for(int i=0;i<isCooking.size();i++){
+            if(isCooking.get(i) && !previusState.get(i)){
+                order.updateDishState(i);
+                previusState.set(i,true);
+            }
+        }
+
+
     }
 
 }

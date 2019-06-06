@@ -9,16 +9,18 @@ import java.util.LinkedList;
 
 public class UserDAO {
     public void addUser(User user){
-        String query = "";
+        String query = "INSERT INTO Restaurant VALUES(\""+user.getMail()+"\",\""+user.getUser()+"\",\""+user.getPassword()+"\");";
         BBDDHelper.getInstance().insertRegister(query);
     }
     public LinkedList<User> getAllUsers(){
         LinkedList<User> users = new LinkedList<>();
-        String query = "";
+        String query = "SELECT * FROM restaurant";
         ResultSet resultat = BBDDHelper.getInstance().selectTable(query);
         try {
             while (resultat.next()) {
                 //add
+                User u = new User(resultat.getString("username"),resultat.getString("email"),resultat.getString("password"));
+                users.add(u);
             }
         }catch (SQLException e){
             e.printStackTrace();

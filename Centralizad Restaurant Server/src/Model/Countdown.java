@@ -17,21 +17,19 @@ public class Countdown extends Thread{
     @Override
     public void run() {
         boolean run = true;
+        Calendar c = Calendar.getInstance();
         while (run){
             try {
                 SimpleDateFormat df = new SimpleDateFormat("mm:ss");
-                Calendar c = Calendar.getInstance();
                 c.setTime(time);
                 c.add(Calendar.SECOND,-1);
                 time.setTime(c.getTimeInMillis());
                 etiqueta.setText(df.format(time));
-                if(c.getTimeInMillis() == 0){
+                if(df.format(time).equals("00:00")){
                     run = false;
                 }else {
                     sleep(1000);
                 }
-
-
             }catch (Exception e){
                 e.printStackTrace();
             }

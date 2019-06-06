@@ -60,4 +60,7 @@ public class Menu extends JPanel {
         }
         return 0;
     }
+    public String getMenuItemName(int pos){
+        return menu.get(pos).getDish();
+    }
 }

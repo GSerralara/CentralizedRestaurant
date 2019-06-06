@@ -1,12 +1,16 @@
 package View.SubView;
 
 import Controller.SubController.TableManagementController;
+import Model.Database.Entity.Table;
+import Model.Database.dao.TableDAO;
 import View.Items.TableItem;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
-//tODO: que si introduzxco letra no pete
+import java.util.LinkedList;
+
+//tODO: que si introduzco letra no pete
 public class TableMangement extends JPanel {
     private JPanel items;
     private ArrayList<TableItem> tables;
@@ -45,7 +49,13 @@ public class TableMangement extends JPanel {
         tables = new ArrayList<>();
         items.removeAll();
         //get add data
-
+        TableDAO dao = new TableDAO();
+        LinkedList<Table> tbs = new LinkedList<>();
+        tbs = dao.getAllTables();
+        for(Table i: tbs) {
+            tables.add(new TableItem(controller, tables.size(), i.getNumberClients()));
+            items.add(tables.get(tables.size() - 1));
+        }
         items.revalidate();
         repaint();
     }
@@ -53,6 +63,8 @@ public class TableMangement extends JPanel {
         int pos = Integer.parseInt(num);
         this.tables.add(new TableItem(controller,tables.size(),pos));
         this.items.add(tables.get(tables.size()-1));
+        TableDAO dao = new TableDAO();
+        dao.addTable(new Table(pos,0));
         items.revalidate();
         repaint();
     }

@@ -38,7 +38,7 @@ public class Bill extends JPanel {
     }
     public void addBill(Dish d){
         items.add(new BilledItem(d));
-        view.add(items.get(items.size()));
+        view.add(items.get(items.size()-1));
         view.revalidate();
         repaint();
     }

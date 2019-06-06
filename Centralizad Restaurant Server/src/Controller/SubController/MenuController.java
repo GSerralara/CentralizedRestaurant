@@ -1,6 +1,7 @@
 package Controller.SubController;
 
 import Controller.PreServiceController;
+import Model.Database.dao.DishDAO;
 import View.SubView.Menu;
 
 import java.awt.event.ActionEvent;
@@ -21,7 +22,8 @@ public class MenuController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getActionCommand().equals("ADD")){
-            menu.addItem();
+            DishDAO dao = new DishDAO();
+            dao.addDish( menu.addItem());
         }else {
             menu.cancelItem(e.getActionCommand());
         }

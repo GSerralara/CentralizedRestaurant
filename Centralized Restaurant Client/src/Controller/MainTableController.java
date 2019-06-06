@@ -59,7 +59,6 @@ public class MainTableController {
             case "ADD_TO_ORDER":
                 boolean pasive = false;
                 if(order.size() != 0){
-                    System.out.println("N add");
                     for(int i=0;i<order.size(); i++){
                         if(order.get(i).getName()==dish.getName()){
                             int q = qOrder.get(i).intValue()+1;
@@ -73,7 +72,6 @@ public class MainTableController {
                         qOrder.add(1);
                     }
                 }else{
-                    System.out.println("First add");
                     initTimerService();
                     order.add(dish);
                     qOrder.add(1);
@@ -103,7 +101,6 @@ public class MainTableController {
     }
     public void updateMenuState(String name){
         Dish dishAdded;
-        System.out.println(order.size());
         for(int i=0;i<order.size(); i++){
             if(order.get(i).getName().equals(name)){
                 dishAdded = order.get(i);
@@ -137,6 +134,9 @@ public class MainTableController {
     public LinkedList<Boolean> requestDishesState(){
         LinkedList<Boolean> dishes = listener.getDishesState();
         return dishes;
+    }
+    public void changeSendRequest(){
+        this.sendRequest =false;
     }
 
 }

@@ -1,118 +1,128 @@
 package View.SubView;
 
+import Model.Database.Entity.DishTable;
+import Model.Database.dao.DishDAO;
+
 import javax.swing.*;
 import java.awt.*;
+import java.util.LinkedList;
 
 /**********************************
 
  */
 
 public class CharBar extends JPanel {
+    private boolean today;
+    public CharBar(boolean bool){
+        today = bool;
+    }
     @Override
     protected void paintComponent(Graphics g) {
+        DishDAO dao = new DishDAO();
         super.paintComponent(g);
         Rectangle r = super.getBounds();
-        int DIM_WIDTH = r.width; //483
-        int DIM_HEIGHT = r.height; //218
-        float grafica = DIM_HEIGHT-(DIM_HEIGHT/10);
-        int intervalo = Math.round(DIM_HEIGHT/20); //11
-        System.out.println("esto es la "+grafica);
+        int DIM_WIDTH = r.width; //we obtain the width of the graphic area
+        int DIM_HEIGHT = r.height; //we obtain the height of the graphic area
+        float graphic = DIM_HEIGHT-(DIM_HEIGHT/10); //the value of the maxium bar
+        int interval = Math.round(DIM_HEIGHT/20); //the division between the up gap in the graphic area
 
-        int top1= 1050;
-        int top2 = 130;
-        int top3 = 30;
-        int top4 = 9;
-        int top5 = 7;
+        LinkedList<DishTable> dishesToday;
+        if(today){
+            dishesToday = dao.getTodayTopFiveDishes();
+        }else {
+            dishesToday = dao.getTopFiveDishes();
+        }
 
-        float corte1 = (float)top1 /10;
-        int cortee = Math.round(corte1);
+        int top[] = {0,0,0,0,0};
+        String name[] = {"","","","",""};
 
-        float total2 = ((float)top2/(float)top1);
-        float total3 = ((float)top3/(float)top1);
-        float total4 = ((float)top4/(float)top1);
-        float total5 = ((float)top5/(float)top1);
-
-        System.out.println("total 5 es:"+total5);
+        for (int i = 0; i < 5; i++){
+            top[i] = dishesToday.get(i).getQuantity();
+            name[i] = dishesToday.get(i).getName();
+        }
 
 
+        int top1=  top[0];
+        int top2 = top[1];
+        int top3 = top[2];
+        int top4 = top[3];
+        int top5 = top[4];
+
+        float cut = (float)top1 /10; //proportional cut parts
 
 
-
-        float prop2 = (grafica*(1-total2));
-        float prop3 = (grafica*(1-total3));
-        float prop4 = (grafica*(1-total4));
-        float prop5 = (grafica*(1-total5));
-
-        //int prop5 = Math.round(total5);
+        float total2 = ((float)top2/(float)top1); //proportions of the dish 2 between the max
+        float total3 = ((float)top3/(float)top1); //proportions of the dish 3 between the max
+        float total4 = ((float)top4/(float)top1); //proportions of the dish 4 between the max
+        float total5 = ((float)top5/(float)top1); //proportions of the dish 5 between the max
 
 
-        g.drawLine(0,(DIM_HEIGHT/20)*19,DIM_WIDTH,(DIM_HEIGHT/20)*19); //eje horizontal n y1 y2 son iguale pq sino tendria inclinacion
+        float prop2 = (graphic*(1-total2)); //the final value of the proportion considering the  distance set.
+        float prop3 = (graphic*(1-total3)); //same
+        float prop4 = (graphic*(1-total4)); //same
+        float prop5 = (graphic*(1-total5)); //same
 
-        g.drawLine(25,(DIM_HEIGHT/200)*181,DIM_WIDTH/190,(DIM_HEIGHT/200)*181);
-        g.drawString(1*cortee+"",(DIM_WIDTH/100)*0,(DIM_HEIGHT/200)*181);
+        float correctionFactor = (1021-Math.round(4.60667*DIM_HEIGHT)); //the correction to match the height of the bar with the horizontal axis
+
+
+        g.drawLine(0,(DIM_HEIGHT/20)*19,DIM_WIDTH,(DIM_HEIGHT/20)*19); //horizontal axis
+
 
         g.drawLine(25,(DIM_HEIGHT/200)*162,DIM_WIDTH/190,(DIM_HEIGHT/200)*162);
-        g.drawString(2*cortee+"",(DIM_WIDTH/100)*0,(DIM_HEIGHT/200)*162);
+        g.drawString(2*cut + "",(DIM_WIDTH/100)*0,(DIM_HEIGHT/200)*162);
 
-        g.drawLine(25,(DIM_HEIGHT/200)*143,DIM_WIDTH/190,(DIM_HEIGHT/200)*143);
-        g.drawString(3* cortee+"",(DIM_WIDTH/10)*0,(DIM_HEIGHT/200)*143);
+
 
         g.drawLine(25,(DIM_HEIGHT/200)*124,DIM_WIDTH/190,(DIM_HEIGHT/200)*124);
-        g.drawString(4* cortee+"",(DIM_WIDTH/10)*0,(DIM_HEIGHT/200)*124);
+        g.drawString(4* cut + "",(DIM_WIDTH/10)*0,(DIM_HEIGHT/200)*124);
 
-        g.drawLine(25,(DIM_HEIGHT/200)*105,DIM_WIDTH/190,(DIM_HEIGHT/200)*105);
-        g.drawString(5* cortee+"",(DIM_WIDTH/10)*0,(DIM_HEIGHT/200)*105);
 
         g.drawLine(25,(DIM_HEIGHT/200)*86,DIM_WIDTH/190,(DIM_HEIGHT/200)*86);
-        g.drawString(6* cortee+"",(DIM_WIDTH/10)*0,(DIM_HEIGHT/200)*86);
+        g.drawString(6* cut + "",(DIM_WIDTH/10)*0,(DIM_HEIGHT/200)*86);
 
-        g.drawLine(25,(DIM_HEIGHT/200)*67,DIM_WIDTH/190,(DIM_HEIGHT/200)*67);
-        g.drawString(7* cortee+"",(DIM_WIDTH/10)*0,(DIM_HEIGHT/200)*67);
+
 
         g.drawLine(25,(DIM_HEIGHT/200)*48,DIM_WIDTH/190,(DIM_HEIGHT/200)*48);
-        g.drawString(8* cortee+"",(DIM_WIDTH/10)*0,(DIM_HEIGHT/200)*48);
-
-        g.drawLine(25,(DIM_HEIGHT/200)*29,DIM_WIDTH/190,(DIM_HEIGHT/200)*29);
-        g.drawString(9* cortee+"",(DIM_WIDTH/10)*0,(DIM_HEIGHT/200)*29);
-
-        g.drawLine(25,(DIM_HEIGHT/200)*10,DIM_WIDTH/190,(DIM_HEIGHT/200)*10);
-        g.drawString(10* cortee+"",(DIM_WIDTH/10)*0,(DIM_HEIGHT/200)*10);
-
-        g.drawLine((DIM_WIDTH/20),0,(DIM_WIDTH/20),DIM_HEIGHT); //eje vertical
+        g.drawString(8*cut+ "",(DIM_WIDTH/10)*0,(DIM_HEIGHT/200)*48);
 
 
+        g.drawLine(25,(DIM_HEIGHT/200)*10,DIM_WIDTH/190,(DIM_HEIGHT/200)*10); //first cut (max number)
+        g.drawString(Math.round(10*cut)+ "",(DIM_WIDTH/10)*0,(DIM_HEIGHT/200)*10);
+
+        g.drawLine((DIM_WIDTH/20),0,(DIM_WIDTH/20),DIM_HEIGHT); //vertical axis
 
 
-        //int prop2 = (1- (top5/top1))*20;
-        //int prop2 = 6;
-        // int prop5 = 14;
+        g.fillRect((DIM_WIDTH/10)*1,interval,(DIM_WIDTH/30),interval*18);
+        g.drawRect((DIM_WIDTH/10)*1,interval,(DIM_WIDTH/30),interval*18); //reference
+        g.drawString(name[0],(DIM_WIDTH/10)*1,interval*20); //we write the first dish
+        g.drawString(top1+"",(DIM_WIDTH/10)*1,(interval*20)+15); //we write the content
+
+        /**
+         Now we start to draw the graph. To do this we distribute in 5 proportional parts in horizontal and we use the proportion plus the gap between the up
+         part and the max representation to set he origin of the rectangle generation. We set the rectangle height by minus the graphic, the proportion and
+         a factor of correction .
+
+         */
+        g.fillRect((DIM_WIDTH/10)*3,Math.round(prop2 + interval),(DIM_WIDTH/30),Math.round(graphic - correctionFactor - prop2));//we paint in black the bar
+        g.drawRect((DIM_WIDTH/10)*3,Math.round(prop2 + interval),(DIM_WIDTH/30),Math.round(graphic - correctionFactor - prop2));
+        g.drawString(name[1],(DIM_WIDTH/10)*3,interval*20);
+        g.drawString(top2 + "",(DIM_WIDTH/10)*3,((DIM_HEIGHT/20)*20)+15);
 
 
-        //provamos 5 barras horizontales
-        g.drawRect((DIM_WIDTH/10)*1,(DIM_HEIGHT/20),(DIM_WIDTH/30),(DIM_HEIGHT/20)*18); //referencia
-        g.drawString("Queso",(DIM_WIDTH/10)*1,(DIM_HEIGHT/20)*20);
-        g.drawString(top1+"",(DIM_WIDTH/10)*1,((DIM_HEIGHT/20)*20)+15);
+        g.fillRect((DIM_WIDTH/10)*5,Math.round(prop3 + interval),(DIM_WIDTH/30),Math.round(graphic - correctionFactor - prop3));
+        g.drawRect((DIM_WIDTH/10)*5,Math.round(prop3 + interval),(DIM_WIDTH/30),Math.round(graphic -correctionFactor - prop3));
+        g.drawString(name[2],(DIM_WIDTH/10)*5,interval*20);
+        g.drawString(top3 + "",(DIM_WIDTH/10)*5,(interval*20)+15);
 
-        g.drawRect((DIM_WIDTH/10)*3,Math.round(prop2 + (DIM_HEIGHT/20)),(DIM_WIDTH/30),Math.round(grafica -(1021-(int)(4.61*DIM_HEIGHT)) - prop2));
-        g.drawString("Macarrone",(DIM_WIDTH/10)*3,(DIM_HEIGHT/20)*20);
-        g.drawString(top2+"",(DIM_WIDTH/10)*3,((DIM_HEIGHT/20)*20)+15);
+        g.drawRect((DIM_WIDTH/10)*7,Math.round(prop4 + interval),(DIM_WIDTH/30),Math.round(graphic - correctionFactor - prop4));
+        g.fillRect((DIM_WIDTH/10)*7,Math.round(prop4 + interval),(DIM_WIDTH/30),Math.round(graphic - correctionFactor - prop4));
+        g.drawString(name[3],(DIM_WIDTH/10)*7,interval*20);
+        g.drawString(top4 + "",(DIM_WIDTH/10)*7,(interval*20)+15);
 
-        System.out.println("GRAFICA POS:"+(grafica*(1-prop2)));
-        System.out.println("GRAFICA POS2:"+intervalo);
-
-        g.drawRect((DIM_WIDTH/10)*5,Math.round(prop3 + (DIM_HEIGHT/20)),(DIM_WIDTH/30),Math.round(grafica -(DIM_HEIGHT/13) - prop3));
-        g.drawString("Pantumaca",(DIM_WIDTH/10)*5,(DIM_HEIGHT/20)*20);
-        g.drawString(top3+"",(DIM_WIDTH/10)*5,((DIM_HEIGHT/20)*20)+15);
-
-        g.drawRect((DIM_WIDTH/10)*7,Math.round(prop4 + (DIM_HEIGHT/20)),(DIM_WIDTH/30),Math.round(grafica -(DIM_HEIGHT/13) - prop4));
-        g.drawString("Mejillone",(DIM_WIDTH/10)*7,(DIM_HEIGHT/20)*20);
-        g.drawString(top4+"",(DIM_WIDTH/10)*7,((DIM_HEIGHT/20)*20)+15);
-
-        g.drawRect((DIM_WIDTH/10)*9,Math.round(prop5 + (DIM_HEIGHT/20)),(DIM_WIDTH/30), Math.round(grafica -(DIM_HEIGHT/13) - prop5));
-        g.drawString("Cocreta",(DIM_WIDTH/10)*9,(DIM_HEIGHT/20)*20);
-        g.drawString(top5+"",(DIM_WIDTH/10)*9,((DIM_HEIGHT/20)*20)+15);
-
-        System.out.println("aprox croqueta:"+(Math.round(prop5)));
+        g.fillRect((DIM_WIDTH/10)*9,Math.round(prop5 + interval),(DIM_WIDTH/30), Math.round(graphic - correctionFactor - prop5));
+        g.drawRect((DIM_WIDTH/10)*9,Math.round(prop5 + interval),(DIM_WIDTH/30), Math.round(graphic - correctionFactor - prop5));
+        g.drawString(name[4],(DIM_WIDTH/10)*9,interval*20);
+        g.drawString(top5 + "",(DIM_WIDTH/10)*9,(interval*20)+15);
 
     }
 }

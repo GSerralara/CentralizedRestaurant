@@ -11,6 +11,7 @@ import java.util.LinkedList;
 public class BillController implements ActionListener {
     private MainTableController listener;
     private Bill bill;
+    LinkedList<Boolean> alreadyOnBill;
 
     public BillController(MainTableController listener) {
         this.listener = listener;
@@ -19,12 +20,14 @@ public class BillController implements ActionListener {
     public void setBill(Bill bill) {
         this.bill = bill;
         this.listener.setBillController(this);
+        alreadyOnBill = new LinkedList<>();
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()){
             case "PAY":
+                listener.changeSendRequest();
                 listener.giveCommand("PAY", null);
                 break;
             default:
@@ -33,9 +36,15 @@ public class BillController implements ActionListener {
         }
     }
     public void addToPay(LinkedList<Boolean> bools, LinkedList<Dish> order){
-        for(int i=0; i<order.size();i++){
-            if(bools.get(i)){
+        if(bools.size()>alreadyOnBill.size()){
+            for(int i=alreadyOnBill.size(); i<bools.size();i++){
+                alreadyOnBill.add(false);
+            }
+        }
+        for(int i=0; i<bools.size();i++){
+            if(bools.get(i) && !alreadyOnBill.get(i)){
                 bill.addBill(order.get(i));
+                alreadyOnBill.set(i,true);
             }
         }
     }
