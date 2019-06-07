@@ -58,7 +58,7 @@ public class LauncherController implements ActionListener {
                         listener.login(user);
                         //ToDo: check if log was successful and kind of log
                         listener.startSession(user);
-                        launcher.goToWindow("SIGN_IN");
+                        launcher.goToWindow(logType);
                     }
                 }
                 break;

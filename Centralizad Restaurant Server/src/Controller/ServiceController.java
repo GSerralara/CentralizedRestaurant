@@ -42,7 +42,7 @@ public class ServiceController implements ActionListener {
         return null;
     }
     public void addClient(User client){
-        System.out.println(client.getUser());
+        System.out.println("Adding user:"+client.getUser());
         this.service.addClient(client);
     }
 

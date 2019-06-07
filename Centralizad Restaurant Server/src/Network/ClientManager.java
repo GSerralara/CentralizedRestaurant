@@ -120,6 +120,7 @@ public class ClientManager extends Thread {
         }
         if(msg.equals("CANCEL")) {
             listener.cancelResere(client);
+            this.client.setReserve("");
             return "OK";
         }
         if(msg.equals("BILLED")){
@@ -136,45 +137,39 @@ public class ClientManager extends Thread {
         return "null";
     }
     private String treatUser(User obj){
+        //instance user data access object
         UserDAO dao = new UserDAO();
-        //Es un login
-        System.out.println(obj.getReserve());
-        if(obj.getReserve().equals("")){
-            if(obj.getMail().equals("")){
-
-                //ToDo: Cuando tengas queries descomenta para agregar
-
-                this.client = obj;
-                if(listener.isAReserve(obj)){
-                    listener.addClient(client);
-                    return "Reserve";
-                }else {
-                    LinkedList<User> users = dao.getAllUsers();
-                    for (User i : users) {
-                        if (i.getUser().equals(obj.getUser()) && i.getPassword().equals(obj.getPassword())) {
-                            System.out.println("Nombres iguales");
-                            return "Login";
-                        }
-
-                    }
+        //check if its a reserve
+        System.out.println("r"+obj.getReserve());
+        if(obj.getReserve().equals("")) {
+            //check if user is already on the system
+            LinkedList<User> users = dao.getAllUsers();
+            for (User i : users) {
+                if (i.getUser().equals(obj.getUser()) && i.getPassword().equals(obj.getPassword())) {
+                    //if exists is a log
+                    System.out.println(i.getUser()+" from server"+ obj.getUser()+"from client");
+                    this.client = obj;
+                    return "Login";
                 }
-                //int puerto = 5555+1+listener.findUser(obj);
-                //return ""+puerto;
-                return "Login";
-            }else{//es un register
-                System.out.println("REGISTER");
-                dao.addUser(obj);
-                //dao.addUser(obj);
-                return "OK";
             }
-        }else{
+            //lastly check that the log was not a reserve log
+            if(listener.isAReserve(obj)){
+                listener.addClient(client);
+                return "Reserve";
+            }{
+                String response = this.listener.getReserveState(client);
+                if(response.equals("UNKNOWN") || response.equals("NO")){
+                    return "OUT";
+                }
+            }
+            //if not exists must be a reserve
+            dao.addUser(obj);
+            return "OK";
+        }else {
             client.setReserve(obj.getReserve());
-            System.out.println("Got Reserve");
             listener.sendReserve(client);
         }
-
         return "OK";
-        //return "null";
     }
 
     public void dropClient(){

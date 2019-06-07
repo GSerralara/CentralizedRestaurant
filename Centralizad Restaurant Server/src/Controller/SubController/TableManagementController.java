@@ -21,6 +21,7 @@ public class TableManagementController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getActionCommand().equals("ADD")){
+            listener.addTable(tableMangement.getNumCustomers());
             tableMangement.addItem(""+tableMangement.getNumCustomers());
         }else {
             tableMangement.cancelItem(e.getActionCommand());

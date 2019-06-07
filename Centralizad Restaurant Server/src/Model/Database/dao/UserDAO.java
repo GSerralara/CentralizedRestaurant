@@ -9,17 +9,17 @@ import java.util.LinkedList;
 
 public class UserDAO {
     public void addUser(User user){
-        String query = "INSERT INTO Restaurant VALUES(\""+user.getMail()+"\",\""+user.getUser()+"\",\""+user.getPassword()+"\");";
+        String query = "INSERT INTO Customer VALUES ('"+user.getUser()+"','"+user.getPassword()+"');";
         BBDDHelper.getInstance().insertData(query);
     }
     public LinkedList<User> getAllUsers(){
         LinkedList<User> users = new LinkedList<>();
-        String query = "SELECT * FROM restaurant";
+        String query = "SELECT * FROM Customer";
         ResultSet resultat = BBDDHelper.getInstance().selectTable(query);
         try {
             while (resultat.next()) {
                 //add
-                User u = new User(resultat.getString("username"),resultat.getString("email"),resultat.getString("password"));
+                User u = new User(resultat.getString("username"),resultat.getString("password"));
                 users.add(u);
             }
         }catch (SQLException e){
@@ -30,5 +30,8 @@ public class UserDAO {
     public void deleteUser(){
         String query = "";
         BBDDHelper.getInstance().deleteRegister(query);
+    }
+    public void addReserve(){
+
     }
 }

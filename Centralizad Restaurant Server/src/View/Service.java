@@ -52,6 +52,8 @@ public class Service extends JPanel {
      */
 
     public void addClient(User user){
+        //ToDo: be able to log reserve and show clients
+        System.out.println("IN SERVICE ADDING");
         ClientOrderController obj = new ClientOrderController(controller);
         controller.addNewController(obj);
         JPanel client = new ClientOrder(user,obj);

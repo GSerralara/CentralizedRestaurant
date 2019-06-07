@@ -53,7 +53,7 @@ public class RegisterController implements ActionListener {
                         //after that we try to connect to the server
                         if(listener.tryConnection()){
                             //send petition
-                            User user = new User(register.getUser(),register.getMail(),register.getPwd());
+                            User user = new User(register.getUser(),register.getPwd());
                             //ToDo: comprobar el registro que vaya bien y luego hacer el go to window
                             listener.register(user);
                             register.goToWindow("REGISTER");

@@ -40,11 +40,6 @@ public class PreService extends JPanel {
         time = new JLabel("HH:MM");
         Time t =  new Time(time);
         new Thread(t).start();
-        // instance JPanels that will from the tabs of the panel
-        //bill = new Bill(new BillController(controller));
-        //menu = new Menu(new MenuController(controller));
-        //menu.init();//We init the menu to have the contents
-        //order = new Order(new OrderController(controller));
         // instance JTabbedPane options that will have JPanels as tabs
         JTabbedPane options = new JTabbedPane();
         //JPanel jp1 = new JPanel();

@@ -5,6 +5,7 @@ import Model.Database.Entity.Restaurant;
 import Resources.Pop;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class RestaurantDAO {
     public RestaurantDAO() {
@@ -31,5 +32,28 @@ public class RestaurantDAO {
         }
         Pop pop = new Pop(msg);
         return outputValue;
+    }
+
+    public Restaurant getRestaurant(Restaurant restaurant){
+        String query = "";
+        Restaurant aux;
+        if(restaurant.getUser().equals("")){
+            query = "SELECT * " +
+                    "FROM restaurant " +
+                    "WHERE email LIKE '"+restaurant.getMail()+"';";
+        }else{
+            query = "SELECT * " +
+                    "FROM restaurant " +
+                    "WHERE username LIKE '"+restaurant.getUser()+"';";
+        }
+        ResultSet rs = BBDDHelper.getInstance().selectTable(query);
+        try {
+            rs.next();
+            aux = new Restaurant(rs.getString(2),rs.getString(1),rs.getString(3));
+            return aux;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

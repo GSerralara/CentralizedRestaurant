@@ -26,6 +26,7 @@ public class AunthentificationController implements ActionListener {
         String[] op = e.getActionCommand().split(":");
         if(e.getActionCommand().charAt(0) == 'A'){
             accepted.add(aunthentification.getUser(e.getActionCommand()));
+            listener.acceptedReserve(aunthentification.getUser(e.getActionCommand()));
             this.listener.changeService();
             aunthentification.cancelItem(e.getActionCommand());
         }else {
@@ -33,19 +34,8 @@ public class AunthentificationController implements ActionListener {
         }
     }
     public void dropReserve(User user){
-        boolean flag= false;
-        for(User i: accepted){
-            if(i.getReserve().equals(user.getUser())){
-                accepted.remove(user);
-                flag = true;
-            }
-        }
-        if(flag) {
-            aunthentification.dropUser(user);
-        }
-    }
-    public LinkedList<User> getAccepted(){
-        return accepted;
+        aunthentification.dropUser(user);
+        accepted.remove(user);
     }
     public void addAuth(User user){
         aunthentification.addItem(user);

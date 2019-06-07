@@ -144,14 +144,11 @@ public class Launcher extends JPanel{
     public void goToWindow(String windowName){
         // List of available views from this one
         switch (windowName){
-            case "SIGN_IN":
-                System.out.println(controller.isLogType());
-                if(controller.isLogType().equals("Login")){
-                    this.listener.progressFrom(ProgressListener.AppState.MENU);
-                }
-                if(controller.isLogType().equals("Reserve")){
-                    this.listener.progressFrom(ProgressListener.AppState.MAINTABLE);
-                }
+            case "Login":
+                this.listener.progressFrom(ProgressListener.AppState.MENU);
+                break;
+            case "Reserve":
+                this.listener.progressFrom(ProgressListener.AppState.MAINTABLE);
                 break;
             case "REGISTER":
                 this.listener.progressFrom(ProgressListener.AppState.REGISTER);

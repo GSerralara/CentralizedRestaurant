@@ -26,10 +26,13 @@ public class Welcome extends JPanel {
     private void windowConfiguration(){
         // We configure the window.
         new BorderLayout();
-        JPanel grid = new JPanel(new GridLayout(0,2));
+        JPanel grid = new JPanel();
+        grid.setLayout(new BoxLayout(grid,BoxLayout.Y_AXIS));
         // We instance the title of the window
         JLabel welcome = new JLabel("Welcome to the Server");
+        grid.add(Box.createVerticalStrut(20));
         grid.add(welcome);
+        grid.add(Box.createVerticalStrut(20));
         logOut = new JButton("LOG OUT");
         grid.add(logOut);
         // We add the content to the window.

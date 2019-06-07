@@ -31,7 +31,9 @@ public class PreServiceController implements ActionListener {
     public MenuController getSubController_2() {
         return subController_2;
     }
-
+    public void addTable(int q){
+        listener.addTable(q);
+    }
     @Override
     public void actionPerformed(ActionEvent e) {
 

@@ -63,8 +63,6 @@ public class TableMangement extends JPanel {
         int pos = Integer.parseInt(num);
         this.tables.add(new TableItem(controller,tables.size(),pos));
         this.items.add(tables.get(tables.size()-1));
-        TableDAO dao = new TableDAO();
-        dao.addTable(new Table(pos,0));
         items.revalidate();
         repaint();
     }

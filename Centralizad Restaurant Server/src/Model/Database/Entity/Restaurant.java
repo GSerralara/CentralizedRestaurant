@@ -3,7 +3,7 @@ package Model.Database.Entity;
 public class Restaurant {
 
 
-    private String username;//It can be username or mail
+    private String username;
     private String mail;
     private String password;
 
@@ -35,7 +35,10 @@ public class Restaurant {
     }
 
     public boolean same(Restaurant obj){
-        return obj.getUser().equals(this.username) && obj.getMail().equals(this.mail) && obj.password.equals(this.password);
+        if(obj.getUser().equals("")){
+            return obj.getMail().equals(this.mail) && obj.password.equals(this.password);
+        }
+        return obj.getUser().equals(this.username) && obj.password.equals(this.password);
     }
 
 }

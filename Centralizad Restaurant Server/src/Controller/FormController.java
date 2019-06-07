@@ -104,6 +104,9 @@ public class FormController {
     public void addReserve(User u){
         aunthentificationController.addAuth(u);
     }
+    public void acceptedReserve(User u){
+        model.callCommand("Reserve",u);
+    }
     public void authResponse(String msg ,User u){
         net.sendMissage(msg, u);
     }
@@ -115,9 +118,11 @@ public class FormController {
     }
     public void reserveCancelation(User u){
         aunthentificationController.dropReserve(u);
+        System.out.println("CANCEL RESERVE");
+        model.callCommand("Cancel",u);
     }
     public LinkedList<User> getReserved(){
-        return aunthentificationController.getAccepted();
+        return model.getReserves();
     }
     public LinkedList<Boolean> dishState(User user){
         LinkedList<Boolean> cook = serviceController.isDishCooked(user);
@@ -125,6 +130,9 @@ public class FormController {
     }
     public void addClientToService(User u){
         serviceController.addClient(u);
+    }
+    public void addTable(int q){
+        model.callCommand("TableAdd",q);
     }
     public void addDishToService(User u, Dish d){
         serviceController.addDishToCommand(d,u);

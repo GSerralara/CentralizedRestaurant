@@ -99,7 +99,6 @@ public class Aunthentification extends JPanel {
                 reserves.remove(i);
                 items.remove(i);
             }
-
         }
         for(int i =0; i< reserves.size();i++){
             reserves.get(i).updatePos(i);

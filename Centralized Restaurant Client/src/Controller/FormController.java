@@ -148,7 +148,6 @@ public class FormController {
     public void login(User user){
         network.sendObject(user);
         Object answer = network.readObject();
-        System.out.println((String)answer);
         launcherController.setLogType((String)answer);
         if(answer.equals("Reserve")){
             network.sendObject("DISHES");

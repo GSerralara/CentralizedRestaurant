@@ -41,7 +41,6 @@ public class Register extends JPanel{
     private static final String USER_LABEL_TEXT = "Username";
     private static final String PW_LABEL_TEXT = "Password";
     private static final String RPW_LABEL_TEXT = "Repeat Password";
-    private static final String MAIL_LABEL_TEXT = "E-Mail";
     private static final String QUESTION_UX_TEXT = "Already have an account?";
 
     /**
@@ -49,7 +48,7 @@ public class Register extends JPanel{
      */
     private JPasswordField pw;
     private JPasswordField rpw;
-    private JTextField username,mail;
+    private JTextField username;
     private JButton signUp, logIn;
     private JLabel title;
 
@@ -99,18 +98,13 @@ public class Register extends JPanel{
         JLabel userLabel = new JLabel(USER_LABEL_TEXT);
         JLabel pwLabel = new JLabel(PW_LABEL_TEXT);
         JLabel rpwLabel = new JLabel(RPW_LABEL_TEXT);
-        JLabel mailLabel = new JLabel(MAIL_LABEL_TEXT);
         // instance attributes
-        mail = new JTextField();
         rpw = new JPasswordField();
         pw = new JPasswordField();
         username = new JTextField();
         // add user camp to the from
         form.add(userLabel);
         form.add(username);
-        // add mal camp to the form
-        form.add(mailLabel);
-        form.add(mail);
         // add password camp to the fom
         form.add(pwLabel);
         form.add(pw);
@@ -197,7 +191,7 @@ public class Register extends JPanel{
      *      -->False:in case not all fields are filled
      */
     public boolean allfilled(){
-        if(username.getText().length() != 0 && mail.getText().length() != 0 && pw.getPassword().length !=0) return true;
+        if(username.getText().length() != 0  && pw.getPassword().length !=0) return true;
         Pop popup = new Pop("All fields must be filled");
         return false;
     }
@@ -208,11 +202,5 @@ public class Register extends JPanel{
     public String getUser(){
         return username.getText();
     }
-    /**
-     * Function that will return the String contained in the mail field.
-     * @return the text in the attribute mail
-     */
-    public String getMail(){
-        return mail.getText();
-    }
+
 }
