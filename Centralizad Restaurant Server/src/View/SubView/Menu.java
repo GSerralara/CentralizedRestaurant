@@ -7,12 +7,15 @@ import View.Items.MenuItem;
 
 import javax.swing.*;
 import java.awt.*;
+import java.math.BigDecimal;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.text.DateFormat;
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.LinkedList;
 
@@ -21,7 +24,8 @@ public class Menu extends JPanel {
     private ArrayList<MenuItem> menu;
     private MenuController controller;
     private JButton add;
-    private TextField fieldTime,fieldPrice,fieldUnits,fieldName;
+    private TextField fieldName;
+    private JSpinner fieldUnits,fieldTime, fieldPrice;
 
     public Menu(MenuController controller) {
         this.controller = controller;
@@ -41,9 +45,25 @@ public class Menu extends JPanel {
         JPanel up = new JPanel(new FlowLayout());
         JPanel middle = new JPanel(new FlowLayout());
         JPanel down = new JPanel(new FlowLayout());
+        Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.MINUTE, 0);
+        cal.set(Calendar.SECOND,0);
 
+        Date startTime = cal.getTime();
+        cal.set(Calendar.MINUTE, 59);
+        cal.set(Calendar.SECOND, 59);
+        Date endTime = cal.getTime();
+
+        System.out.println(startTime);
+        System.out.println(endTime);
+        //default value,lower bound,upper bound,increment by
+        SpinnerModel smUnits = new SpinnerNumberModel(1, 1, 999, 1);
+        SpinnerModel smPrice = new SpinnerNumberModel(1.0, 1.0, 999.99, 0.1);
+        SpinnerDateModel model = new SpinnerDateModel(startTime, null, endTime, Calendar.SECOND);
         fieldName = new TextField(10);
-        fieldTime = new TextField(10);
+        fieldTime = new JSpinner(model);
+        fieldTime.setEditor(new JSpinner.DateEditor(fieldTime, "mm:ss"));
+        fieldTime.setValue(startTime);
         JLabel nameLabel = new JLabel("Name: ");
         JLabel timeLabel = new JLabel("Time: ");
         up.add(nameLabel);
@@ -52,8 +72,8 @@ public class Menu extends JPanel {
         up.add(fieldTime);
         form.add(up);
 
-        fieldPrice = new TextField(10);
-        fieldUnits = new TextField(10);
+        fieldPrice = new JSpinner(smPrice);
+        fieldUnits = new JSpinner(smUnits);
         JLabel priceLabel = new JLabel("Price: ");
         JLabel unitsLabel = new JLabel("Units: ");
         middle.add(unitsLabel);
@@ -86,16 +106,20 @@ public class Menu extends JPanel {
     }
     public Dish addItem(){
         int pos = menu.size();
-        float price = Float.parseFloat(fieldPrice.getText());
-        int units = Integer.parseInt(fieldUnits.getText());
-        this.menu.add(new MenuItem(fieldTime.getText(), price,units, fieldName.getText(),pos,controller));
+        BigDecimal number = new BigDecimal(fieldPrice.getValue().toString());
+        float price = number.floatValue();
+        int units = (int)fieldUnits.getValue();
+        SimpleDateFormat df = new SimpleDateFormat("mm:ss");
+        Date date = (Date)fieldTime.getValue();
+        String strTime = df.format(date);
+        this.menu.add(new MenuItem(strTime,  price,units, fieldName.getText(),pos,controller));
         this.items.add(menu.get(menu.size()-1));
         items.revalidate();
         repaint();
-        SimpleDateFormat df = new SimpleDateFormat("mm:ss");
+
         Date time = new Date();
         try {
-            time = df.parse(fieldTime.getText());
+            time = df.parse(strTime);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -118,14 +142,13 @@ public class Menu extends JPanel {
         SimpleDateFormat df = new SimpleDateFormat("mm:ss");
         Date time = new Date();
         try {
-            time = df.parse(fieldTime.getText());
+            String strTime = (String) fieldTime.getValue();
+            time = df.parse(strTime);
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        String decimal = fieldPrice.getText()+"f";
-        System.out.println(decimal);
-        float f = Float.parseFloat(fieldPrice.getText());
-        Dish d = new Dish(Integer.parseInt(fieldPrice.getText()),Float.parseFloat(decimal),fieldName.getName(),time);
+        float f = (float)fieldPrice.getValue();
+        Dish d = new Dish((int)fieldUnits.getValue(),f,fieldName.getName(),time);
         return d;
     }
 }

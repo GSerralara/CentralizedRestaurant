@@ -14,10 +14,12 @@ public class Model {
     private String serverState;
     private Restaurant onService;
     private LinkedList<User> reserves;
-
+    private LinkedList<Table> tables;
     public Model(){
         manager = new DAOManager();
         reserves = new LinkedList<>();
+        tables = new LinkedList<>();
+        onService = new Restaurant("","","");
         this.database = new BBDDHelper();
         if(database.isConnected()){
             this.serverState = "END";
@@ -40,7 +42,7 @@ public class Model {
                 Restaurant reslog = (Restaurant)obj;
                 if(manager.loginRestaurant(reslog)==1){
                     this.onService = manager.getRestaurant(reslog);
-                    System.out.println(onService.getUser()+" "+onService.getMail());
+                    this.tables = manager.getTables(onService.getUser());
                 }
                 break;
             case "Reserve":
@@ -57,8 +59,26 @@ public class Model {
                 t.setRestaurantMail(this.onService.getMail());
                 t.setRestaurantName(this.onService.getUser());
                 manager.addTable(t);
+                this.tables = manager.getTables(onService.getUser());
+                break;
+            case "TableDelete":
+                int pos = (int)obj;
+                manager.deleteTable(tables.get(pos));
+                this.tables = manager.getTables(onService.getUser());
+                break;
+            case "logout":
+                reserves.clear();
+                //ToDo:drop all users and close their sessions
+                tables.clear();
+                onService.setMail("");
+                onService.setUsername("");
+                onService.setPassword("");
                 break;
         }
+    }
+
+    public LinkedList<Table> getTables() {
+        return tables;
     }
 
     public LinkedList<User> getReserves() {
@@ -70,7 +90,8 @@ public class Model {
             case "INIT":
                 break;
             case "END":
-                this.database.disconnectBBDD();
+                //todo: cuando te conectas enciendes la network y cuando cierras la terminas
+                //this.database.disconnectBBDD();
                 break;
         }
     }

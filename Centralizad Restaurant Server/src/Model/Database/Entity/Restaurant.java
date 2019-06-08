@@ -34,7 +34,23 @@ public class Restaurant {
         return password;
     }
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public boolean same(Restaurant obj){
+        //case not login existing log
+        if(this.mail.equals("") && this.getUser().equals("")){
+            return false;
+        }
         if(obj.getUser().equals("")){
             return obj.getMail().equals(this.mail) && obj.password.equals(this.password);
         }

@@ -31,8 +31,19 @@ public class PreServiceController implements ActionListener {
     public MenuController getSubController_2() {
         return subController_2;
     }
+
     public void addTable(int q){
         listener.addTable(q);
+    }
+    public void addExistingTable(int q){
+        subController_1.addExistingTable(q);
+    }
+    public void removeTable(String pos){
+        int index = Integer.parseInt(pos);
+        listener.removeTable(index);
+    }
+    public void init(){
+        subController_1.init();
     }
     @Override
     public void actionPerformed(ActionEvent e) {

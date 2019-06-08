@@ -12,12 +12,12 @@ public class TableDAO {
     public void addTable(Table table){
         String query = "INSERT INTO tables(usernameRestaurant, emailRestaurant, number_client) " +
                 "VALUES ('"+table.getRestaurantName()+"','"+table.getRestaurantMail()+"',"+table.getNumberClients()+");";
-        System.out.println(query);
         BBDDHelper.getInstance().insertData(query);
     }
-    public LinkedList<Table> getAllTables(){
+    public LinkedList<Table> getAllTables(String restaurantName){
         LinkedList<Table> tables = new LinkedList<>();
-        String query = "SELECT * FROM tables;";
+        String query = "SELECT * FROM tables " +
+                "WHERE usernameRestaurant LIKE '"+restaurantName+"';";
         ResultSet resultat = BBDDHelper.getInstance().selectTable(query);
         try {
             while (resultat.next()) {
@@ -29,8 +29,9 @@ public class TableDAO {
         }
         return tables;
     }
-    public void deleteTable(){
-        String query = "";
+    public void deleteTable(Table delelte){
+        String query = "DELETE FROM tables " +
+                "WHERE id_table = "+delelte.getIdTable()+";";
         BBDDHelper.getInstance().deleteRegister(query);
     }
 }

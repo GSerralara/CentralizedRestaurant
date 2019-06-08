@@ -20,5 +20,6 @@ public class WelcomeController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         welcome.goToWindow("OUT");
+        listener.logout();
     }
 }

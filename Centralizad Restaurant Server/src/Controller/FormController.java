@@ -2,6 +2,7 @@ package Controller;
 
 import Model.Database.Entity.Dish;
 import Model.Database.Entity.Restaurant;
+import Model.Database.Entity.Table;
 import Model.Database.Entity.User;
 import Model.Model;
 import Network.Network;
@@ -45,6 +46,9 @@ public class FormController {
     }
     public boolean login(Restaurant restaurant){
         model.callCommand("Login",restaurant);
+        if(model.getOnService().same(restaurant)){
+            initTable();
+        }
         return model.getOnService().same(restaurant);
     }
     public RegisterController getRegisterController() {
@@ -130,6 +134,22 @@ public class FormController {
     }
     public void addClientToService(User u){
         serviceController.addClient(u);
+    }
+    public void initTable(){
+        //ToDo:add tables to table management, add limit to auth for not having more users than
+        //tables, and lastly change textfield for spinner and a combobox of tables on auth
+        preServiceController.init();
+        LinkedList<Table> aux = model.getTables();
+        for(Table i: aux){
+            System.out.println(i.getNumberClients());
+            preServiceController.addExistingTable(i.getNumberClients());
+        }
+    }
+    public void logout(){
+        model.callCommand("logout",null);
+    }
+    public void removeTable(int pos){
+        model.callCommand("TableDelete",pos);
     }
     public void addTable(int q){
         model.callCommand("TableAdd",q);

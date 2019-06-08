@@ -3,49 +3,27 @@
   <component name="ChangeListManager">
     <list default="true" id="ca63c5d0-5bef-4900-9793-701936304ca4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Controller/AunthentificationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Controller/AunthentificationController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Controller/FormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Controller/FormController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Controller/LauncherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Controller/LauncherController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Model/DataBase/BBDDConnector.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Model/DataBase/BBDDConnector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Model/DataBase/Entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Model/DataBase/Entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Model/DataBase/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Model/DataBase/dao/UserDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Controller/PreServiceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Controller/PreServiceController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Controller/ServiceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Controller/ServiceController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Controller/SubController/TableManagementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Controller/SubController/TableManagementController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Model/DataBase/Entity/Table.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Model/DataBase/Entity/Table.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Model/DataBase/dao/TableDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Model/DataBase/dao/TableDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Model/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Model/Model.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Network/ClientManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Network/ClientManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/View/Aunthentification.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/View/Aunthentification.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/View/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/View/Register.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/View/Welcome.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/View/Welcome.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Controller/AunthentificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Controller/AunthentificationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/View/PreService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/View/PreService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/View/Service.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/View/Service.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/View/SubView/TableMangement.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/View/SubView/TableMangement.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Controller/FormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Controller/FormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Controller/PreServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Controller/PreServiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Controller/ServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Controller/ServiceController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Controller/SubController/TableManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Controller/SubController/TableManagementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Controller/WelcomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Controller/WelcomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Model/Database/DAOManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Model/Database/DAOManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Model/Database/Entity/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Model/Database/Entity/Restaurant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Model/Database/Entity/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Model/Database/Entity/Table.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Model/Database/Entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Model/Database/Entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Model/Database/dao/RestaurantDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Model/Database/dao/RestaurantDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Model/Database/dao/TableDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Model/Database/dao/TableDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Model/Database/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Model/Database/dao/UserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Network/ClientManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Network/ClientManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/Aunthentification.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/Aunthentification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/PreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/PreService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/SubView/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/SubView/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/SubView/TableMangement.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/SubView/TableMangement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/Welcome.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/Welcome.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Centralized Restaurant/Controller/FormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Centralized Restaurant/Controller/FormController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Centralized Restaurant/Controller/LauncherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Centralized Restaurant/Controller/LauncherController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Centralized Restaurant/Controller/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Centralized Restaurant/Controller/RegisterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Centralized Restaurant/Model/Database/Entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Centralized Restaurant/Model/Database/Entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Centralized Restaurant/View/Launcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Centralized Restaurant/View/Launcher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Centralized Restaurant/View/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Centralized Restaurant/View/Register.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/FormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/LauncherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LauncherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Database/Entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Database/Entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Register.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -159,15 +137,15 @@
     <session id="-131582441">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="10" />
+          <entry key="project.closed" value="11" />
           <entry key="project.open.time.1" value="2" />
-          <entry key="project.open.time.11" value="2" />
+          <entry key="project.open.time.11" value="3" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="11" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -199,7 +177,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/LauncherController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
+            <state relative-caret-position="850">
               <caret line="57" selection-start-line="57" selection-end-line="57" />
             </state>
           </provider>
@@ -208,8 +186,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Network/Network.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="73" selection-start-line="73" selection-end-line="73" />
+            <state relative-caret-position="106">
+              <caret line="69" column="5" lean-forward="true" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -234,7 +212,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/FormController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
+            <state relative-caret-position="1377">
               <caret line="149" column="45" selection-start-line="149" selection-start-column="45" selection-end-line="149" selection-end-column="45" />
               <folding>
                 <element signature="method#FormController#0;class#FormController#0" />
@@ -328,7 +306,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1270" />
     <option name="width" value="1302" />
     <option name="height" value="1372" />
@@ -373,8 +351,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -478,10 +456,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1293" height="693" extended-state="7" />
+    <frame x="-6" y="-6" width="1293" height="693" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21538462" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21862349" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -490,7 +468,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3291815" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3291815" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3291815" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39679715" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -556,10 +534,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7">
           <caret line="91" column="37" lean-forward="true" selection-start-line="91" selection-start-column="37" selection-end-line="91" selection-end-column="37" />
-          <folding>
-            <element signature="method#MyForm#0;class#MyForm#0" />
-            <element signature="method#run#0;class#MyForm#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -606,9 +580,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
           <caret line="51" column="38" lean-forward="true" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
-          <folding>
-            <element signature="method#MenuItem#0;class#MenuItem#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -665,10 +636,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
           <caret line="63" column="39" selection-start-line="63" selection-start-column="39" selection-end-line="63" selection-end-column="39" />
-          <folding>
-            <element signature="e#1800#1801#0" expanded="true" />
-            <element signature="e#1846#1847#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -697,12 +664,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="786">
           <caret line="100" column="26" selection-start-line="100" selection-start-column="26" selection-end-line="100" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#goToWindow#0;class#MainTable#0" />
-            <element signature="method#updateTime#0;class#MainTable#0" />
-            <element signature="method#initTime#0;class#MainTable#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -710,12 +671,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="80" column="38" lean-forward="true" selection-start-line="80" selection-start-column="38" selection-end-line="80" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#MainMenu#0;class#MainMenu#0" />
-            <element signature="method#windowConfiguration#0;class#MainMenu#0" />
-            <element signature="method#bottomPart#0;class#MainMenu#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -737,15 +692,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="204" selection-start-line="204" selection-end-line="204" />
-          <folding>
-            <element signature="method#Register#0;class#Register#0" />
-            <element signature="method#windowConfiguration#0;class#Register#0" />
-            <element signature="method#mainPart#0;class#Register#0" />
-            <element signature="method#bottomPart#0;class#Register#0" />
-            <element signature="method#goToWindow#0;class#Register#0" />
-            <element signature="method#getPwd#0;class#Register#0" />
-            <element signature="method#samePwd#0;class#Register#0" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/LauncherController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
         </state>
       </provider>
     </entry>
@@ -766,7 +719,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/FormController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
+        <state relative-caret-position="1377">
           <caret line="149" column="45" selection-start-line="149" selection-start-column="45" selection-end-line="149" selection-end-column="45" />
           <folding>
             <element signature="method#FormController#0;class#FormController#0" />
@@ -787,17 +740,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/LauncherController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="57" selection-start-line="57" selection-end-line="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Network/Network.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
+        <state relative-caret-position="106">
+          <caret line="69" column="5" lean-forward="true" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
         </state>
       </provider>
     </entry>

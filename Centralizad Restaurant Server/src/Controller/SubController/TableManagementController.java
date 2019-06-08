@@ -25,6 +25,13 @@ public class TableManagementController implements ActionListener {
             tableMangement.addItem(""+tableMangement.getNumCustomers());
         }else {
             tableMangement.cancelItem(e.getActionCommand());
+            listener.removeTable(e.getActionCommand());
         }
+    }
+    public void init(){
+        tableMangement.init();
+    }
+    public void addExistingTable(int q){
+        tableMangement.addItem(""+q);
     }
 }

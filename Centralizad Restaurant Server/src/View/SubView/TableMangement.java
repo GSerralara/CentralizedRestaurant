@@ -17,7 +17,7 @@ public class TableMangement extends JPanel {
     private TableManagementController controller;
     private JButton add;
     private JLabel numcoms;
-    private TextField field;
+    private JSpinner field;
     public TableMangement(TableManagementController controller) {
         this.controller = controller;
         this.controller.setTableMangement(this);
@@ -38,8 +38,9 @@ public class TableMangement extends JPanel {
         add.setActionCommand("ADD");
         add.addActionListener(controller);
         numcoms = new JLabel("Numero comensales");
-        field = new TextField();
-
+        //default value,lower bound,upper bound,increment by
+        SpinnerModel sm = new SpinnerNumberModel(1, 1, 999, 1);
+        field = new JSpinner(sm);
         up.add(numcoms);
         up.add(field);
         up.add(add);
@@ -48,6 +49,7 @@ public class TableMangement extends JPanel {
     public void init(){
         tables = new ArrayList<>();
         items.removeAll();
+        /*
         //get add data
         TableDAO dao = new TableDAO();
         LinkedList<Table> tbs = new LinkedList<>();
@@ -55,7 +57,7 @@ public class TableMangement extends JPanel {
         for(Table i: tbs) {
             tables.add(new TableItem(controller, tables.size(), i.getNumberClients()));
             items.add(tables.get(tables.size() - 1));
-        }
+        }*/
         items.revalidate();
         repaint();
     }
@@ -80,6 +82,7 @@ public class TableMangement extends JPanel {
         return tables.size();
     }
     public int getNumCustomers(){
-        return Integer.parseInt(field.getText());
+        int value = (Integer) field.getValue();
+        return value;
     }
 }
