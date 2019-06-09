@@ -1,6 +1,7 @@
 package View;
 
 import Controller.PreServiceController;
+import View.SubView.Carte;
 import View.SubView.TableMangement;
 import View.SubView.Menu;
 import Model.Time;
@@ -17,6 +18,7 @@ public class PreService extends JPanel {
     private JLabel time;
     private TableMangement tableMangement;
     private Menu menu;
+    private Carte carte;
 
     /**
      * Constructor by default of the class.
@@ -45,12 +47,14 @@ public class PreService extends JPanel {
         //JPanel jp1 = new JPanel();
         tableMangement = new TableMangement(controller.getSubController_1());
         menu = new Menu(controller.getSubController_2());
+        carte = new Carte(controller.getSubController_3());
         JPanel top = new JPanel(new FlowLayout());
         top.add(time);
         add(top,BorderLayout.NORTH);
 
         options.addTab("Tables Management", tableMangement);
         options.addTab("Menu", menu);
+        options.addTab("Carte",carte);
         add(options,BorderLayout.CENTER);
 
     }

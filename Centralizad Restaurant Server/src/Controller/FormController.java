@@ -1,9 +1,6 @@
 package Controller;
 
-import Model.Database.Entity.Dish;
-import Model.Database.Entity.Restaurant;
-import Model.Database.Entity.Table;
-import Model.Database.Entity.User;
+import Model.Database.Entity.*;
 import Model.Model;
 import Network.Network;
 import View.WindowForm;
@@ -48,6 +45,7 @@ public class FormController {
         model.callCommand("Login",restaurant);
         if(model.getOnService().same(restaurant)){
             initTable();
+            initMenus();
         }
         return model.getOnService().same(restaurant);
     }
@@ -125,6 +123,16 @@ public class FormController {
         System.out.println("CANCEL RESERVE");
         model.callCommand("Cancel",u);
     }
+    public void addDish(Dish d){
+        model.callCommand("AddDish",d);
+    }
+    public void loadMenu(String menu){
+        model.callCommand("LoadMenu",menu);
+        LinkedList<Dish> aux =model.getDishes();
+        for(Dish i: aux){
+            preServiceController.loadMenuDish(i);
+        }
+    }
     public LinkedList<User> getReserved(){
         return model.getReserves();
     }
@@ -141,9 +149,17 @@ public class FormController {
         preServiceController.init();
         LinkedList<Table> aux = model.getTables();
         for(Table i: aux){
-            System.out.println(i.getNumberClients());
             preServiceController.addExistingTable(i.getNumberClients());
         }
+    }
+    public void initMenus(){
+        LinkedList<Menu> aux = model.getMenus();
+        for(Menu i:aux){
+            preServiceController.addMenu(i.getName());
+        }
+    }
+    public void createMenu(String name){
+        model.callCommand("CreateMenu",name);
     }
     public void logout(){
         model.callCommand("logout",null);

@@ -25,11 +25,12 @@ public class Menu extends JPanel {
     private MenuController controller;
     private JButton add;
     private TextField fieldName;
-    private JSpinner fieldUnits,fieldTime, fieldPrice;
+    private JSpinner fieldUnits, fieldTime, fieldPrice;
 
     public Menu(MenuController controller) {
         this.controller = controller;
         this.controller.setMenu(this);
+        menu = new ArrayList<>();
         setLayout(new BorderLayout());
         items = new JPanel();
         items.setLayout(new BoxLayout(items, BoxLayout.Y_AXIS));
@@ -54,8 +55,6 @@ public class Menu extends JPanel {
         cal.set(Calendar.SECOND, 59);
         Date endTime = cal.getTime();
 
-        System.out.println(startTime);
-        System.out.println(endTime);
         //default value,lower bound,upper bound,increment by
         SpinnerModel smUnits = new SpinnerNumberModel(1, 1, 999, 1);
         SpinnerModel smPrice = new SpinnerNumberModel(1.0, 1.0, 999.99, 0.1);
@@ -90,10 +89,13 @@ public class Menu extends JPanel {
 
         return form;
     }
+    public boolean isNameIntroduced(){
+        return !fieldName.getText().equals("");
+    }
     public void init(){
-        menu = new ArrayList<>();
         items.removeAll();
         //get add data
+        /*
         DishDAO dao = new DishDAO();
         LinkedList<Dish> dishes = dao.getAllDishes();
         for(Dish i: dishes){
@@ -101,6 +103,7 @@ public class Menu extends JPanel {
             menu.add(new MenuItem(df.format(i.getTime()),i.getPrice(),i.getQuantety(),i.getName(),menu.size(),controller));
             items.add(menu.get(menu.size()-1));
         }
+        */
         items.revalidate();
         repaint();
     }
@@ -126,7 +129,21 @@ public class Menu extends JPanel {
         Dish d = new Dish(units,price,fieldName.getText(),time);
         return d;
     }
-
+    public void addDish(Dish d){
+        int pos = menu.size();
+        SimpleDateFormat df = new SimpleDateFormat("mm:ss");
+        Date date = d.getTime();
+        float price = d.getPrice();
+        int units = d.getQuantety();
+        String strTime = df.format(date);
+        this.menu.add(new MenuItem(strTime,price,units, fieldName.getText(),pos,controller));
+        this.items.add(menu.get(menu.size()-1));
+        items.revalidate();
+        repaint();
+    }
+    public void enableButton(Boolean set){
+        add.setEnabled(set);
+    }
     public void cancelItem(String pos){
         int index = Integer.parseInt(pos);
         items.remove(index);

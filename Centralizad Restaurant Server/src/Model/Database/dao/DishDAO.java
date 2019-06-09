@@ -25,16 +25,19 @@ public class DishDAO {
                 " ("+dish.getPrice()+", \""+dish.getName()+"\", "+dish.getQuantety()+", '"+ts+"', FALSE);";
         BBDDHelper.getInstance().insertData(query);
     }
-    public LinkedList<Dish> getAllDishes(){
+    public LinkedList<Dish> getAllDishes(int id_menu){
         LinkedList<Dish> dishes =  new LinkedList<>();
-        String query = "SELECT * FROM Dish;";
+        String query = "SELECT d.* " +
+                "FROM menucontainsdish AS mcd\n" +
+                "JOIN dish AS d\n" +
+                "ON d.id_dish = mcd.id_dish AND mcd.id_menu = "+id_menu+";";
         ResultSet resultat = BBDDHelper.getInstance().selectTable(query);
         try {
             while (resultat.next()) {
                 Timestamp ts = resultat.getTimestamp("cooking_time");
                 Calendar cal = Calendar.getInstance();
                 cal.setTimeInMillis(ts.getTime());
-                Dish d = new Dish(resultat.getInt("units"), resultat.getFloat("price"),
+                Dish d = new Dish(resultat.getInt(1),resultat.getInt("units"), resultat.getFloat("price"),
                         resultat.getString("name"), cal.getTime());
                  dishes.add(d);
             }
@@ -43,7 +46,21 @@ public class DishDAO {
         }
         return dishes;
     }
-
+    public Dish getLastDishAdded(){
+        Dish d;
+        try {
+            String query = "SELECT * FROM Dish " +
+                    "ORDER BY id_dish DESC LIMIT 1;";
+            ResultSet rs = BBDDHelper.getInstance().selectTable(query);
+            rs.next();
+            d = new Dish(rs.getInt(1),rs.getInt(4),
+                    rs.getFloat(2),rs.getString(3),rs.getDate(5));
+            return d;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
     public LinkedList<DishTable> getTodayTopFiveDishes(){
         LinkedList<DishTable> dishes =  new LinkedList<>();
         String query = "SELECT d.name, SUM(t.quantity) AS num_dish FROM TableOrderDish AS t,Dish AS d WHERE d.id_dish = t.id_dish AND t.cur_service = TRUE GROUP BY t.id_dish ORDER BY num_dish DESC LIMIT 5;";

@@ -74,10 +74,14 @@ public class ClientManager extends Thread {
         }
         System.out.println(answer);
         if(answer.equals("MENU")){
+            /*
             DishDAO dao = new DishDAO();
             LinkedList<Dish> empty = new LinkedList<>();
             empty = dao.getAllDishes();
             return empty;//dao.getAllDishes();
+            */
+            //ToDo: get dishes form model
+            return "null";
         }
         if(answer.equals("STATE")){
 
