@@ -26,7 +26,6 @@ public class CarteController implements ActionListener {
                 if(carte.getCarteListSize() == 0){
                     Pop pop = new Pop("You don't have any carte created, try to create one");
                 }else{
-
                     listener.loadMenu(carte.getSelectedMenu());
                 }
                 break;
