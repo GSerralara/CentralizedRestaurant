@@ -154,7 +154,9 @@ public class Model {
     }
 
     public Reserve getReserveNamed(String nameReseve) {
+        System.out.println(reserves.size());
         for (Reserve i: reserves){
+            System.out.println(i.getReserveName());
             if(i.getReserveName().equals(nameReseve)){
                 return i;
             }
@@ -170,5 +172,9 @@ public class Model {
 
     public Restaurant getOnService() {
         return onService;
+    }
+
+    public void setReserves(LinkedList<Reserve> reserves) {
+        this.reserves = reserves;
     }
 }

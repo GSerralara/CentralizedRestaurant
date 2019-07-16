@@ -138,6 +138,9 @@ public class Network implements Runnable {
             }
         }
     }
+    public LinkedList<Dish> getCurrentCarte(){
+        return controller.getDishes();
+    }
     public void addClient(User obj){
         controller.addClientToService(obj);
     }

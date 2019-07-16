@@ -136,15 +136,24 @@ public class FormController {
         return model.getTables();
     }
     public LinkedList<Reserve> getReserved(){
+
         return model.getReserves();
+        //return aunthentificationController.getAccepted();
+    }
+    public LinkedList<Dish> getDishes(){
+        return model.getDishes();
     }
     public LinkedList<Boolean> dishState(User user){
         LinkedList<Boolean> cook = serviceController.isDishCooked(user);
         return cook;
     }
     public void addClientToService(User u){
-
-        serviceController.addClient(model.getReserveNamed(u.getUser()));
+        System.out.println("ADDING TO SERVICE");
+        System.out.println(u.getUser());
+        Reserve r = model.getReserveNamed(u.getUser());
+        System.out.println("Gotten reserve data");
+        //todo: añadir info a la bbdd
+        serviceController.addClient(r);
     }
     public boolean youCanEnter(String name){
         return model.isReservedForNow(name);
@@ -178,5 +187,8 @@ public class FormController {
     }
     public void addDishToService(User u, Dish d){
         serviceController.addDishToCommand(d,u);
+    }
+    public void updateReserves(LinkedList<Reserve> reserves){
+        model.setReserves(reserves);
     }
 }

@@ -162,6 +162,9 @@ public class FormController {
         if(answer.equals("OUT")){
             Pop p = new Pop("Login doesn't exists");
         }
+        if(answer.equals("NOT")){
+            Pop p = new Pop("Not your turn yet");
+        }
     }
 
     public void billed(){

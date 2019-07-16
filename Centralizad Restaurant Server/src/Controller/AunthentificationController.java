@@ -27,8 +27,12 @@ public class AunthentificationController implements ActionListener {
         String[] op = e.getActionCommand().split(":");
         if(e.getActionCommand().charAt(0) == 'A'){
             accepted.add(aunthentification.getReserve(e.getActionCommand()));
+            System.out.println(accepted.get(accepted.size()-1).getReserveName()+" added");
+            System.out.println("id table"+ aunthentification.getTable(e.getActionCommand()));
+            System.out.println("Tenmos "+accepted.size()+" clientes reservados");
             listener.acceptedReserve(aunthentification.getReserve(e.getActionCommand()),aunthentification.getTable(e.getActionCommand()));
             this.listener.changeService();
+            listener.updateReserves(accepted);
             aunthentification.cancelItem(e.getActionCommand());
         }else {
             aunthentification.cancelItem(e.getActionCommand());
@@ -37,6 +41,7 @@ public class AunthentificationController implements ActionListener {
     public void dropReserve(User user){
         for(Reserve i: accepted){
             if(i.getUser().getUser().equals(user.getUser())){
+                System.out.println("DROPING RESERVE");
                 aunthentification.dropUser(i.getUser());
                 accepted.remove(i);
             }
@@ -57,5 +62,9 @@ public class AunthentificationController implements ActionListener {
         }
         if(aunthentification.userIsOnWainting(user)) return "UNKNOWN";
         return "NO";
+    }
+
+    public LinkedList<Reserve> getAccepted() {
+        return accepted;
     }
 }

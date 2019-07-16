@@ -79,14 +79,7 @@ public class ClientManager extends Thread {
         }
         System.out.println(answer);
         if(answer.equals("MENU")){
-            /*
-            DishDAO dao = new DishDAO();
-            LinkedList<Dish> empty = new LinkedList<>();
-            empty = dao.getAllDishes();
-            return empty;//dao.getAllDishes();
-            */
-            //ToDo: get dishes form model
-            return "null";
+            return listener.getCurrentCarte();
         }
         if(answer.equals("STATE")){
 
@@ -176,16 +169,15 @@ public class ClientManager extends Thread {
             }
             //check if reserve
             if(listener.isAReserve(obj)){
-            /*
-            if(listener.isYourTurn(obj.getUser())){
-                listener.addClient(client);
-                return "Reserve";
-            }else{
+
+                if(listener.isYourTurn(obj.getUser())){
+                    listener.addClient(obj);
+                    this.client = obj;
+                    return "Reserve";
+                }
                 return "NOT";
-            }
-            */
-                listener.addClient(client);
-                return "Reserve";
+
+
             }{
                 return "OUT";
             }
