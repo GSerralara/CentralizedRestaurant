@@ -40,7 +40,7 @@ public class ServiceController implements ActionListener {
 
     public LinkedList<Boolean> isDishCooked(User user){
         for (ClientOrderController i: clientsController){
-            if(user.getUser().equals(i.getUser().getUser())){
+            if(user.getUser().equals(i.getUser().getReserveName())){
                return i.dishesState();
             }
         }
@@ -54,7 +54,7 @@ public class ServiceController implements ActionListener {
 
     public void addDishToCommand(Dish d, User u){
         for(ClientOrderController i: clientsController){
-            if(u.getUser().equals(i.getUser().getUser())){
+            if(u.getUser().equals(i.getUser().getReserveName())){
                 i.addDish(d);
             }
         }

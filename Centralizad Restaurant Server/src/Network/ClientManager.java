@@ -79,10 +79,12 @@ public class ClientManager extends Thread {
         }
         System.out.println(answer);
         if(answer.equals("MENU")){
-            return listener.getCurrentCarte();
+            LinkedList<Dish> carte = listener.getCurrentCarte();
+            System.out.println(carte.size()+" dishes");
+            return carte;
         }
         if(answer.equals("STATE")){
-
+            System.out.println("Look to order dishes state");
             LinkedList<Boolean> cooks = listener.getDishStates(client);
             String array = "";
             for(Boolean c :cooks){
@@ -105,8 +107,10 @@ public class ClientManager extends Thread {
         return "Reserve";
     }
     private String treatDish(Dish obj){
+        System.out.println("Gotten dish to order");
         //ToDo: TAKE OUT DISHES AND PUT IT IN SERVICE
         for(int i=0; i<obj.getQuantety();i++){
+            System.out.println("Adding "+obj.getName()+" x"+i);
             listener.addDishToOrder(client,obj);
         }
         return "OK";

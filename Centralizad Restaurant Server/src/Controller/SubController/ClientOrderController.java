@@ -26,6 +26,9 @@ public class ClientOrderController implements ActionListener {
     public Reserve getUser(){
         return clientOrder.getUser();
     }
+    public String getReserveName(){
+        return clientOrder.getUser().getReserveName();
+    }
     public void addDish(Dish dish){
         cooking.add(false);
         clientOrder.addToOrder(dish);
