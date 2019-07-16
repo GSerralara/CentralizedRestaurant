@@ -2,6 +2,7 @@ package Controller.SubController;
 
 import Controller.ServiceController;
 import Model.Database.Entity.Dish;
+import Model.Database.Entity.Reserve;
 import Model.Database.Entity.User;
 import View.SubView.ClientOrder;
 
@@ -22,7 +23,7 @@ public class ClientOrderController implements ActionListener {
     public void setClientOrder(ClientOrder clientOrder) {
         this.clientOrder = clientOrder;
     }
-    public User getUser(){
+    public Reserve getUser(){
         return clientOrder.getUser();
     }
     public void addDish(Dish dish){

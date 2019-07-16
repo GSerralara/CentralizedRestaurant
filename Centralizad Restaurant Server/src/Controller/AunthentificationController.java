@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.Database.Entity.Reserve;
 import Model.Database.Entity.User;
 import View.Aunthentification;
 
@@ -10,7 +11,7 @@ import java.util.LinkedList;
 public class AunthentificationController implements ActionListener {
     private Aunthentification aunthentification;
     private FormController listener;
-    private LinkedList<User> accepted;
+    private LinkedList<Reserve> accepted;
 
     public AunthentificationController(FormController listener) {
         this.listener = listener;
@@ -25,8 +26,8 @@ public class AunthentificationController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String[] op = e.getActionCommand().split(":");
         if(e.getActionCommand().charAt(0) == 'A'){
-            accepted.add(aunthentification.getUser(e.getActionCommand()));
-            listener.acceptedReserve(aunthentification.getUser(e.getActionCommand()));
+            accepted.add(aunthentification.getReserve(e.getActionCommand()));
+            listener.acceptedReserve(aunthentification.getReserve(e.getActionCommand()),aunthentification.getTable(e.getActionCommand()));
             this.listener.changeService();
             aunthentification.cancelItem(e.getActionCommand());
         }else {
@@ -34,15 +35,23 @@ public class AunthentificationController implements ActionListener {
         }
     }
     public void dropReserve(User user){
-        aunthentification.dropUser(user);
-        accepted.remove(user);
+        for(Reserve i: accepted){
+            if(i.getUser().getUser().equals(user.getUser())){
+                aunthentification.dropUser(i.getUser());
+                accepted.remove(i);
+            }
+        }
+        if(accepted.size()==0){
+            this.listener.changeService();
+        }
+
     }
-    public void addAuth(User user){
-        aunthentification.addItem(user);
+    public void addAuth(Reserve user){
+        aunthentification.addItem(user, listener.getTables());
     }
     public String getIfWasAccepted(User user){
-        for(User i:accepted){
-            if(user.getUser().equals(i.getUser())){
+        for(Reserve i:accepted){
+            if(user.getUser().equals(i.getUser().getUser())){
                 return "YES";
             }
         }

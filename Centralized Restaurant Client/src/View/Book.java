@@ -35,6 +35,7 @@ public class Book extends JPanel {
      * Attributes of the UI
      */
     private JTextField reserveName;
+    private JSpinner bookNumber;
     private JLabel reserveState;
     private JButton back,book;
 
@@ -68,9 +69,13 @@ public class Book extends JPanel {
         content.add(title);
         content.add(Box.createVerticalStrut(20));
         content.add(bookLabel);
+
+        SpinnerModel smComnesals = new SpinnerNumberModel(1, 1, 999, 1);
+        bookNumber = new JSpinner(smComnesals);
         reserveName = new JTextField();
         content.add(reserveName);
         content.add(reserveStateLabel);
+        content.add(bookNumber);
         book = new JButton(JB_BOOK);
         book.setActionCommand(AC_BOOK);
         book.addActionListener(controller);
@@ -108,6 +113,10 @@ public class Book extends JPanel {
 
     public String getReserveName(){
         return reserveName.getText();
+    }
+
+    public int getNumberBook(){
+        return (int)bookNumber.getValue();
     }
 
 }

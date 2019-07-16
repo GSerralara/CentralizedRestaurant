@@ -2,6 +2,7 @@ package Network;
 
 import Controller.FormController;
 import Model.Database.Entity.Dish;
+import Model.Database.Entity.Reserve;
 import Model.Database.Entity.User;
 
 import java.awt.event.ActionListener;
@@ -16,7 +17,6 @@ public class Network implements Runnable {
     private FormController controller;
     private ServerSocket serverSocket;
     private LinkedList<ClientManager> clients;
-    private WaitingRoom waitingRoom;
     private boolean active;
     private boolean paused;
     private final Object pauseLock = new Object();
@@ -26,7 +26,6 @@ public class Network implements Runnable {
         active = true;
         paused = false;
         clients = new LinkedList<>();
-        waitingRoom = new WaitingRoom();
     }
 
     public void registerController(FormController c) {
@@ -88,7 +87,7 @@ public class Network implements Runnable {
         paused = false;
     }
 
-    public void sendReserve(User u){
+    public void sendReserve(Reserve u){
         controller.addReserve(u);
     }
 
@@ -107,22 +106,34 @@ public class Network implements Runnable {
     public String getReserveState(User u){
         return this.controller.reserveState(u);
     }
-    public void cancelResere(User u){
+    public void cancelReserve(User u){
         controller.reserveCancelation(u);
     }
+
     public boolean isAReserve(User instance){
-        LinkedList<User> reserves = controller.getReserved();
-        for(User i: reserves){
-            if(i.getReserve().equals(instance.getUser())&&i.getPassword().equals(instance.getPassword())){
+        LinkedList<Reserve> reserves = controller.getReserved();
+        System.out.println(reserves.size()+"<-reservas");
+        for(Reserve i: reserves){
+            System.out.println(i.getReserveName()+" == "+ instance.getUser());
+            if(i.getReserveName().equals(instance.getUser())&&i.getUser().getPassword().equals(instance.getPassword()))
+            {
                 return true;
             }
         }
         return false;
     }
+    public boolean isActiveServer(){
+        String answer = controller.getState();
+        if(answer.equals("END")) return false;
+        return true;
+    }
+    public boolean isYourTurn(String reservaName){
+        return  controller.youCanEnter(reservaName);
+    }
     public void billedReserve(User instance){
-        LinkedList<User> reserves = controller.getReserved();
-        for(User i: reserves){
-            if(i.getReserve().equals(instance.getUser())){
+        LinkedList<Reserve> reserves = controller.getReserved();
+        for(Reserve i: reserves){
+            if(i.getUser().equals(instance.getUser())){
                 controller.reserveCancelation(instance);
             }
         }

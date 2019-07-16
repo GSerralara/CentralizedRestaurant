@@ -5,14 +5,14 @@ import java.io.Serializable;
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    private String reserve;
     private String user;
     private String password;
+    private boolean regiser;
 
     public User(String user, String password) {
         this.user = user;
         this.password = password;
-        this.reserve = "";
+        regiser = false;
     }
 
     public String getUser() {
@@ -24,11 +24,12 @@ public class User implements Serializable {
         return password;
     }
 
-    public String getReserve() {
-        return reserve;
+    public void isRegister(){
+        regiser=true;
     }
 
-    public void setReserve(String reserve) {
-        this.reserve = reserve;
+    public boolean getRegiser() {
+        return regiser;
     }
+
 }

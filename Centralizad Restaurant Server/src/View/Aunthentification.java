@@ -1,12 +1,15 @@
 package View;
 
 import Controller.AunthentificationController;
+import Model.Database.Entity.Reserve;
+import Model.Database.Entity.Table;
 import Model.Database.Entity.User;
 import View.Items.AuthItem;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Aunthentification extends JPanel {
     private JPanel items;
@@ -60,11 +63,11 @@ public class Aunthentification extends JPanel {
      *
      * @param user it's a parameter that have all information about the User.
      */
-    public void addItem(User user){
+    public void addItem(Reserve user, LinkedList<Table> list){
 
         //AuthItem item2 = new AuthItem(user);
         //item2.prepareUI(controller,reserves.size());
-        AuthItem item = new AuthItem(user,controller,reserves.size());
+        AuthItem item = new AuthItem(user,controller,reserves.size(),list);
         this.reserves.add(item);
         this.items.add(reserves.get(reserves.size()-1));
         items.revalidate();
@@ -105,19 +108,34 @@ public class Aunthentification extends JPanel {
         }
         items.revalidate();
         repaint();
-    } /**
+    }
+    /**
      *
      * @param pos it's parameter that used to search for the product name inside the array and remove it.
      * @return this method return a the user exactly that you want.
      */
 
-    public User getUser(String pos){
+    public Reserve getReserve(String pos){
         String num ="";
         for(int i =2; i< pos.length();i++){
             num += ""+pos.charAt(i);
         }
         int index = Integer.parseInt(num);
-        return reserves.get(index).getUser();
+        return reserves.get(index).getReserve();
+    }
+    public int getTable(String pos){
+        String num ="";
+        for(int i =2; i< pos.length();i++){
+            num += ""+pos.charAt(i);
+        }
+        int index = Integer.parseInt(num);
+        String table =  reserves.get(index).getTable();
+        num ="";
+        for(int i = 5; i< table.length() && table.charAt(i) != ' ' ;i++){
+            num += ""+table.charAt(i);
+        }
+        int id = Integer.parseInt(num);
+        return id;
     }
 
     public boolean userIsOnWainting(User u){

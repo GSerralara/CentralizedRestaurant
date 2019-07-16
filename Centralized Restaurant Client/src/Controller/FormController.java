@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.Database.Entity.Dish;
+import Model.Database.Entity.Reserve;
 import Model.Database.Entity.User;
 import Model.ModelClient;
 import Model.Time;
@@ -40,6 +41,7 @@ public class FormController {
         mainMenuController = new MainMenuController(this);
         bookController = new BookController(this);
     }
+
     /**
      * Function that will return a controller.
      * It's responsible for returning mainTableController.
@@ -98,6 +100,10 @@ public class FormController {
         network.disconnect();
     }
 
+    public User getuser(){
+        return model.getUser();
+    }
+
     public void closeSession(){
         network.sendObject("CLOSE");
         Object answer = network.readObject();
@@ -108,13 +114,12 @@ public class FormController {
         }
     }
 
-    public void sendReserve(String reseveName){
-        User u = new User(model.getUser().getUser(),model.getUser().getPassword());
-        System.out.println(u.getReserve());
-        u.setReserve(reseveName);
-        System.out.println(u.getReserve());
-        network.sendObject(u);
+    public void sendReserve(Reserve reserve){
+        System.out.println("Enviando reserva");
+        network.sendObject(reserve);
+        System.out.println("Reserva enviada");
         Object answer = network.readObject();
+        System.out.println(answer);
     }
 
     public boolean askForReserveState(String reason){
@@ -153,6 +158,9 @@ public class FormController {
             network.sendObject("DISHES");
             Object list = network.readObject();
             mainTableController.updateMenu((LinkedList<Dish>) list);
+        }
+        if(answer.equals("OUT")){
+            Pop p = new Pop("Login doesn't exists");
         }
     }
 

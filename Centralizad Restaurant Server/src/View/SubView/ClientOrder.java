@@ -2,6 +2,7 @@ package View.SubView;
 
 import Controller.SubController.ClientOrderController;
 import Model.Database.Entity.Dish;
+import Model.Database.Entity.Reserve;
 import Model.Database.Entity.User;
 import View.Items.OrderedItem;
 
@@ -10,19 +11,19 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class ClientOrder extends JPanel {
-    private User user;
+    private Reserve user;
     private JPanel clientOrders;
     private ArrayList<OrderedItem> currentOrder;
     private ClientOrderController controller;
 
-    public ClientOrder(User user, ClientOrderController controller) {
+    public ClientOrder(Reserve user, ClientOrderController controller) {
         this.user = user;
         this.controller = controller;
         this.controller.setClientOrder(this);
         windowConfiguration();
     }
 
-    public User getUser() {
+    public Reserve getUser() {
         return user;
     }
 

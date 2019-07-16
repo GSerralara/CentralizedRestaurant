@@ -1,5 +1,7 @@
 package Model.Database.Entity;
 
+import java.util.LinkedList;
+
 public class Table {
     private static final long serialVersionUID = 2L;
 
@@ -7,12 +9,18 @@ public class Table {
     private String restaurantName;
     private String restaurantMail;
     private int numberClients;
+    private LinkedList<Reserve> reserves;
 
     public Table(int numberClients, int id) {
         this.numberClients = numberClients;
         this.idTable = id;
         restaurantName = "";
         restaurantMail = "";
+        reserves = new LinkedList<>();
+    }
+
+    public LinkedList<Reserve> getReserves() {
+        return reserves;
     }
 
     public String getRestaurantName() {
@@ -45,5 +53,9 @@ public class Table {
 
     public void setNumberClients(int numberClients) {
         this.numberClients = numberClients;
+    }
+
+    public void addClient(Reserve client){
+        reserves.add(client);
     }
 }

@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.Database.Entity.Reserve;
 import View.Book;
 
 import java.awt.event.ActionEvent;
@@ -28,7 +29,10 @@ public class BookController implements ActionListener {
                 book.goToWindow(e.getActionCommand());
                 break;
             case "BOOK":
-                listener.sendReserve(book.getReserveName());
+
+                Reserve reserve = new Reserve(listener.getuser(),book.getNumberBook(),book.getReserveName());
+                System.out.println(reserve.getUser().getUser()+" "+reserve.getReserveName()+" "+reserve.getBookNumber());
+                listener.sendReserve(reserve);
                 serviceState = true;
                 Timer timer = new Timer();
                 TimerTask task = new TimerTask() {

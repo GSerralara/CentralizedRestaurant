@@ -103,11 +103,11 @@ public class FormController {
     public void resumeServer(){
         net.resume();
     }
-    public void addReserve(User u){
+    public void addReserve(Reserve u){
         aunthentificationController.addAuth(u);
     }
-    public void acceptedReserve(User u){
-        model.callCommand("Reserve",u);
+    public void acceptedReserve(Reserve u, int idTable){
+        model.addReserve(idTable,u);
     }
     public void authResponse(String msg ,User u){
         net.sendMissage(msg, u);
@@ -120,7 +120,6 @@ public class FormController {
     }
     public void reserveCancelation(User u){
         aunthentificationController.dropReserve(u);
-        System.out.println("CANCEL RESERVE");
         model.callCommand("Cancel",u);
     }
     public void addDish(Dish d){
@@ -133,7 +132,10 @@ public class FormController {
             preServiceController.loadMenuDish(i);
         }
     }
-    public LinkedList<User> getReserved(){
+    public LinkedList<Table> getTables(){
+        return model.getTables();
+    }
+    public LinkedList<Reserve> getReserved(){
         return model.getReserves();
     }
     public LinkedList<Boolean> dishState(User user){
@@ -141,7 +143,11 @@ public class FormController {
         return cook;
     }
     public void addClientToService(User u){
-        serviceController.addClient(u);
+
+        serviceController.addClient(model.getReserveNamed(u.getUser()));
+    }
+    public boolean youCanEnter(String name){
+        return model.isReservedForNow(name);
     }
     public void initTable(){
         //ToDo:add tables to table management, add limit to auth for not having more users than

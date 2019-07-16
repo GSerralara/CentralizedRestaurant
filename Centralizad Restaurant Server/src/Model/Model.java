@@ -12,7 +12,7 @@ public class Model {
     private String serverState;
     private Restaurant onService;
     private Menu curentMenu;
-    private LinkedList<User> reserves;
+    private LinkedList<Reserve> reserves;
     private LinkedList<Table> tables;
     private LinkedList<Menu> menus;
     private LinkedList<Dish> dishes;
@@ -51,12 +51,16 @@ public class Model {
                 }
                 break;
             case "Reserve":
-                User reserve = (User)obj;
+                Reserve reserve = (Reserve) obj;
                 reserves.add(reserve);
                 break;
             case "Cancel":
                 User cancelation = (User)obj;
-                reserves.remove(cancelation);
+                for(Reserve i: reserves){
+                    if(cancelation.getUser().equals(i.getUser().getUser())){
+                        reserves.remove(i);
+                    }
+                }
                 break;
             case "TableAdd":
                 int q = (int)obj;
@@ -102,6 +106,8 @@ public class Model {
                     }
                 }
                 break;
+            case "AssignTable":
+                break;
         }
     }
 
@@ -113,7 +119,7 @@ public class Model {
         return tables;
     }
 
-    public LinkedList<User> getReserves() {
+    public LinkedList<Reserve> getReserves() {
         return reserves;
     }
 
@@ -121,6 +127,14 @@ public class Model {
         return menus;
     }
 
+    public boolean isReservedForNow(String nameReseve){
+        for(Table i: tables){
+            if(i.getReserves().get(0).getReserveName().equals(nameReseve)){
+                return true;
+            }
+        }
+        return false;
+    }
     private void regulateConnection(){
         switch (this.serverState){
             case "INIT":
@@ -131,7 +145,22 @@ public class Model {
                 break;
         }
     }
+    public void addReserve(int id, Reserve client){
+        for(Table i:tables){
+            if(i.getIdTable() == id){
+                i.addClient(client);
+            }
+        }
+    }
 
+    public Reserve getReserveNamed(String nameReseve) {
+        for (Reserve i: reserves){
+            if(i.getReserveName().equals(nameReseve)){
+                return i;
+            }
+        }
+        return null;
+    }
     public String getServerState() {
         return serverState;
     }

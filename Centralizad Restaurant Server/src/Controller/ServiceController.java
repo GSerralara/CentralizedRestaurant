@@ -2,6 +2,7 @@ package Controller;
 
 import Controller.SubController.ClientOrderController;
 import Model.Database.Entity.Dish;
+import Model.Database.Entity.Reserve;
 import Model.Database.Entity.User;
 import View.Service;
 
@@ -22,17 +23,21 @@ public class ServiceController implements ActionListener {
     public void setService(Service service) {
         this.service = service;
     }
+
     public ClientOrderController getNewClientController(){
         clientsController.add(new ClientOrderController(this));
         return clientsController.get(clientsController.size());
     }
+
     public void addNewController(ClientOrderController obj){
         clientsController.add(obj);
     }
+
     @Override
     public void actionPerformed(ActionEvent e) {
 
     }
+
     public LinkedList<Boolean> isDishCooked(User user){
         for (ClientOrderController i: clientsController){
             if(user.getUser().equals(i.getUser().getUser())){
@@ -41,8 +46,9 @@ public class ServiceController implements ActionListener {
         }
         return null;
     }
-    public void addClient(User client){
-        System.out.println("Adding user:"+client.getUser());
+
+    public void addClient(Reserve client){
+        System.out.println("Adding user:"+client.getReserveName());
         this.service.addClient(client);
     }
 

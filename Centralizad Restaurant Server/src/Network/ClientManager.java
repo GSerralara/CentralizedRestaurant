@@ -22,10 +22,13 @@ public class ClientManager extends Thread {
     private ObjectOutputStream os;
     private Network listener;
     private User client;
+    private Reserve reserve;
+    private Boolean goingToRegister;
 
     private Object clientRequest;
     private Object clientAnswer;
     public ClientManager(Socket cSocket , Network listener) throws IOException {
+        this.goingToRegister = false;
         this.listener = listener;
         this.serverStoped = false;
         this.cSocket = cSocket;
@@ -62,9 +65,11 @@ public class ClientManager extends Thread {
     }
     private Object treatObject(Object obj){
         String answer = "";
-
         if(obj instanceof User){
            answer =  treatUser((User) obj);
+        }
+        if(obj instanceof Reserve){
+            answer = treatReserve((Reserve) obj);
         }
         if(obj instanceof Dish){
             answer = treatDish((Dish) obj);
@@ -96,6 +101,16 @@ public class ClientManager extends Thread {
 
         return answer;
     }
+    private String treatReserve(Reserve obj){
+        //client.setReserve(obj.getReserve());
+        reserve = obj;
+        listener.sendReserve(reserve);
+        System.out.println("Reserve Input");
+        System.out.println(reserve.getUser().getUser()+" == "+obj.getUser().getUser());
+        System.out.println(reserve.getReserveName()+" ReserveName "+obj.getReserveName());
+        System.out.println(obj.getBookNumber()+" "+reserve.getBookNumber());
+        return "Reserve";
+    }
     private String treatDish(Dish obj){
         //ToDo: TAKE OUT DISHES AND PUT IT IN SERVICE
         for(int i=0; i<obj.getQuantety();i++){
@@ -110,6 +125,10 @@ public class ClientManager extends Thread {
             SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
             return sdf.format(d);
         }
+        if(msg.equals("Register")){
+            goingToRegister = true;
+            return "Ok";
+        }
         if(msg.equals("STATE")){
             //ToDO: que se genere una pwd para el user y se vea algo en el service
             String response = this.listener.getReserveState(client);
@@ -123,8 +142,8 @@ public class ClientManager extends Thread {
             }
         }
         if(msg.equals("CANCEL")) {
-            listener.cancelResere(client);
-            this.client.setReserve("");
+            listener.cancelReserve(client);
+            this.reserve = null;
             return "OK";
         }
         if(msg.equals("BILLED")){
@@ -143,10 +162,9 @@ public class ClientManager extends Thread {
     private String treatUser(User obj){
         //instance user data access object
         UserDAO dao = new UserDAO();
-        //check if its a reserve
-        System.out.println("r"+obj.getReserve());
-        if(obj.getReserve().equals("")) {
-            //check if user is already on the system
+        if(!obj.getRegiser()){
+
+            //check if user is already on the system (LOG IN)
             LinkedList<User> users = dao.getAllUsers();
             for (User i : users) {
                 if (i.getUser().equals(obj.getUser()) && i.getPassword().equals(obj.getPassword())) {
@@ -156,23 +174,26 @@ public class ClientManager extends Thread {
                     return "Login";
                 }
             }
-            //lastly check that the log was not a reserve log
+            //check if reserve
             if(listener.isAReserve(obj)){
+            /*
+            if(listener.isYourTurn(obj.getUser())){
+                listener.addClient(client);
+                return "Reserve";
+            }else{
+                return "NOT";
+            }
+            */
                 listener.addClient(client);
                 return "Reserve";
             }{
-                String response = this.listener.getReserveState(client);
-                if(response.equals("UNKNOWN") || response.equals("NO")){
-                    return "OUT";
-                }
+                return "OUT";
             }
-            //if not exists must be a reserve
+        }else{
+            //if not exists its a register
             dao.addUser(obj);
-            return "OK";
-        }else {
-            client.setReserve(obj.getReserve());
-            listener.sendReserve(client);
         }
+
         return "OK";
     }
 
@@ -197,3 +218,4 @@ public class ClientManager extends Thread {
         }
     }
 }
+

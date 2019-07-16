@@ -2,6 +2,7 @@ package View;
 
 import Controller.ServiceController;
 import Controller.SubController.ClientOrderController;
+import Model.Database.Entity.Reserve;
 import Model.Database.Entity.User;
 import Model.Time;
 import View.SubView.ClientOrder;
@@ -51,13 +52,13 @@ public class Service extends JPanel {
      * @param user it's a parameter that have all the facts of each client.
      */
 
-    public void addClient(User user){
+    public void addClient(Reserve user){
         //ToDo: be able to log reserve and show clients
         System.out.println("IN SERVICE ADDING");
         ClientOrderController obj = new ClientOrderController(controller);
         controller.addNewController(obj);
         JPanel client = new ClientOrder(user,obj);
-        clients.addTab(user.getUser(),client);
+        clients.addTab(user.getReserveName(),client);
         revalidate();
         repaint();
     }
