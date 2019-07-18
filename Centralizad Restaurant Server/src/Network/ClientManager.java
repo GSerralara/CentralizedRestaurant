@@ -110,7 +110,7 @@ public class ClientManager extends Thread {
         System.out.println("Gotten dish to order");
         //ToDo: TAKE OUT DISHES AND PUT IT IN SERVICE
         for(int i=0; i<obj.getQuantety();i++){
-            System.out.println("Adding "+obj.getName()+" x"+i);
+            System.out.println("Adding "+obj.getName()+" x"+obj.getQuantety());
             listener.addDishToOrder(client,obj);
         }
         return "OK";
@@ -144,7 +144,6 @@ public class ClientManager extends Thread {
             return "OK";
         }
         if(msg.equals("BILLED")){
-            //ToDo: that billed remove actually the reserve
             listener.billedReserve(client);
             return "BILLED";
         }

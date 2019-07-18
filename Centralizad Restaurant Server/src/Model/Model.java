@@ -201,9 +201,14 @@ public class Model {
         return onService;
     }
     public void addDishToReserve(User client,Dish dish){
+        int id_d = dish.getId();
+        int id_t;
+        int q = dish.getQuantety();
         for(Reserve i: reserves){
             if(client.getUser().equals(i.getReserveName())){
-                manager.addDishToReserve(dish.getId(),getReserveTableId(i),dish.getQuantety());
+                id_t=getReserveTableId(i);
+                System.out.println("table "+id_t+" gets "+id_d+" per x"+q);
+                manager.addDishToReserve(id_d,id_t,q);
             }
         }
 
@@ -215,6 +220,14 @@ public class Model {
             }
         }
         return 0;
+    }
+    public Reserve getReserveFromReserveName(String reserveName){
+        for(Reserve i: reserves){
+            if(i.getReserveName().equals(reserveName)){
+                return i;
+            }
+        }
+        return null;
     }
     public void setReserves(LinkedList<Reserve> reserves) {
         this.reserves = reserves;

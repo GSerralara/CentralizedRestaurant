@@ -127,8 +127,8 @@ public class BBDDConnector {
         return ok;
     }
     public void addDish(int id_d,int id_t,int q){
+        System.out.println("table "+id_t+" gets "+id_d+" per x"+q);
         CallableStatement cStmt = null;
-        ResultSet rs = null;
         try {
             cStmt = conn.prepareCall("{call orderDish(?,?,?)}");
             cStmt.setInt(id_t,1);

@@ -121,14 +121,15 @@ public class FormController {
         return this.aunthentificationController.getIfWasAccepted(u);
     }
     public void reserveCancelation(User u){
-        model.callCommand("DropReserve",u);
-        if(aunthentificationController.getIfWasAccepted(u).equals("YES")){
-            aunthentificationController.dropReserve(u);
+        Reserve r = model.getReserveFromReserveName(u.getUser());
+        if(aunthentificationController.getIfWasAccepted(r.getUser()).equals("YES")){
+            aunthentificationController.dropReserve(r.getUser());
+            model.callCommand("DropReserve",u);
             if(model.numeberOfReserves()==0){
                 changeService();
             }
         }else{
-            aunthentificationController.dropReserve(u);
+            aunthentificationController.dropReserve(r.getUser());
         }
 
     }

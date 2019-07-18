@@ -36,6 +36,7 @@ public class AunthentificationController implements ActionListener {
     }
     public void dropReserve(User user){
         for(Reserve i: accepted){
+            System.out.println("DROPING "+i.getReserveName()+" "+user.getUser());
             if(i.getUser().getUser().equals(user.getUser())){
                 System.out.println("DROPING RESERVE");
                 aunthentification.dropUser(i.getUser());

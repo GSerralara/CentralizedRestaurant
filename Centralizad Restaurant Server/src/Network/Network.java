@@ -133,7 +133,7 @@ public class Network implements Runnable {
     public void billedReserve(User instance){
         LinkedList<Reserve> reserves = controller.getReserved();
         for(Reserve i: reserves){
-            if(i.getUser().equals(instance.getUser())){
+            if(i.getReserveName().equals(instance.getUser())){
                 controller.reserveCancelation(instance);
             }
         }

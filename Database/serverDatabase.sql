@@ -65,7 +65,6 @@ CREATE TABLE CustomerBookTable(
     id_table INT,
     date DATETIME,
     name VARCHAR(255),
-    PRIMARY KEY (usernameCustomer, id_table),
     FOREIGN KEY (usernameCustomer) REFERENCES Customer(username),
     FOREIGN KEY (id_table) REFERENCES Tables(id_table)
 );
@@ -78,7 +77,6 @@ CREATE TABLE TableOrderDish(
 	cooking BOOL,
     served BOOL,
     paid BOOL,
-    PRIMARY KEY (id_table, id_dish),
     FOREIGN KEY (id_table) REFERENCES Tables(id_table),
 	FOREIGN KEY (id_dish) REFERENCES Dish(id_dish)
 );
