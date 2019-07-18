@@ -51,4 +51,5 @@ public class AuthItem extends JPanel {
         String aux = String.valueOf(combo.getSelectedItem());
         return aux;
     }
+
 }

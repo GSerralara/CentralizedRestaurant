@@ -136,7 +136,7 @@ public class Menu extends JPanel {
         float price = d.getPrice();
         int units = d.getQuantety();
         String strTime = df.format(date);
-        this.menu.add(new MenuItem(strTime,price,units, fieldName.getText(),pos,controller));
+        this.menu.add(new MenuItem(strTime,price,units,d.getName(),pos,controller));
         this.items.add(menu.get(menu.size()-1));
         items.revalidate();
         repaint();

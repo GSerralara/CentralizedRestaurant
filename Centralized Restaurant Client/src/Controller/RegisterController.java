@@ -50,14 +50,16 @@ public class RegisterController implements ActionListener {
                 if(register.allfilled()){
                     //then if passwords match
                     if(register.samePwd()){
-                        //after that we try to connect to the server
-                        if(listener.tryConnection()){
-                            //send petition
-                            User user = new User(register.getUser(),register.getPwd());
-                            user.isRegister();
-                            //ToDo: comprobar el registro que vaya bien y luego hacer el go to window
-                            listener.register(user);
-                            register.goToWindow("REGISTER");
+                        if(register.passCheck(register.getPwd())){
+                            //after that we try to connect to the server
+                            if(listener.tryConnection()){
+                                //send petition
+                                User user = new User(register.getUser(),register.getPwd());
+                                user.isRegister();
+                                //ToDo: comprobar el registro que vaya bien y luego hacer el go to window
+                                listener.register(user);
+                                register.goToWindow("REGISTER");
+                            }
                         }
                     }else{
                         Pop popup = new Pop("Passwords don't match");

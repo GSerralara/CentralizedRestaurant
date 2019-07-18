@@ -163,6 +163,39 @@ public class Register extends JPanel{
                 break;
         }
     }
+    public boolean passCheck(String password){
+        boolean valid = true;
+        if(password.length() < 6){
+            valid = false;
+        }
+        String upperCase = "(.*[A-Z].*)";
+        if(!password.matches(upperCase)){
+            valid = false;
+        }
+        String numbers = "(.*[0-9].*)";
+        if(!password.matches(numbers)){
+            valid = false;
+        }
+        String specialChars = "(.*[ ! # @ $ % ^ & * ( ) - _ = + [ ] ; : ' \" , < . > / ?].*)";
+        if(password.matches(specialChars)){
+            valid = false;
+        }
+        String space = "(.*[   ].*)";
+        if(password.matches(space)){
+            valid = false;
+        }
+        if(!valid){
+            Pop pop = new Pop("<html>" +
+                    "<center>" +
+                    "The password must contain at least:<br>" +
+                    "one alpha character & one numeric character<br>" +
+                    "And Must not contain:<br>" +
+                    "spaces nor special characters" +
+                    "</center>" +
+                    "</html>");
+        }
+        return valid;
+    }
     /**
      * Function that will return the String contained in the password field.
      */

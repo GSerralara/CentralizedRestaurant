@@ -10,6 +10,7 @@ public class MenuItem extends JPanel {
     private JButton cancel;
     public MenuItem(String time, float price, int units, String name, int pos, ActionListener listener) {
         super();
+        System.out.println(name);
         setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
         JPanel up = new JPanel(new FlowLayout());
         JPanel middle = new JPanel(new FlowLayout());

@@ -30,7 +30,9 @@ public class DishDAO {
         String query = "SELECT d.* " +
                 "FROM menucontainsdish AS mcd\n" +
                 "JOIN dish AS d\n" +
-                "ON d.id_dish = mcd.id_dish AND mcd.id_menu = "+id_menu+";";
+                "ON d.id_dish = mcd.id_dish AND mcd.id_menu = "+id_menu+"" +
+                " WHERE d.units <> 0;";
+        System.out.println(query);
         ResultSet resultat = BBDDHelper.getInstance().selectTable(query);
         try {
             while (resultat.next()) {
@@ -40,6 +42,7 @@ public class DishDAO {
                 Dish d = new Dish(resultat.getInt(1),resultat.getInt("units"), resultat.getFloat("price"),
                         resultat.getString("name"), cal.getTime());
                  dishes.add(d);
+                System.out.println(d.getName()+" "+d.getQuantety()+" "+d.getPrice());
             }
         }catch (SQLException e){
             e.printStackTrace();

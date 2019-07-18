@@ -3,22 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="ca63c5d0-5bef-4900-9793-701936304ca4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Controller/AunthentificationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Controller/AunthentificationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Controller/FormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Controller/FormController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Model/DataBase/BBDDConnector.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Model/DataBase/BBDDConnector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Model/DataBase/BBDDHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Model/DataBase/BBDDHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Model/DataBase/Entity/Table.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Model/DataBase/Entity/Table.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Model/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Model/Model.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Network/ClientManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Network/ClientManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Controller/AunthentificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Controller/AunthentificationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Controller/FormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Controller/FormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Model/Database/BBDDConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Model/Database/BBDDConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Network/ClientManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Network/ClientManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Network/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Network/Network.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Network/Network.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Network/Network.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Model/Database/dao/DishDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Model/Database/dao/DishDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/Items/AuthItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/Items/AuthItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/Items/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/Items/MenuItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Centralized Restaurant/Model/Countdown.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Centralized Restaurant/Model/Countdown.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Database/serverDatabase.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Database/serverDatabase.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Register.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -132,49 +123,49 @@
     <session id="-131582441">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="19" />
+          <entry key="project.closed" value="20" />
           <entry key="project.open.time.1" value="5" />
           <entry key="project.open.time.11" value="3" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="5" />
-          <entry key="project.open.time.8" value="2" />
+          <entry key="project.open.time.8" value="3" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="20" />
+          <entry key="project.opened" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="211" />
+          <entry key="java" value="213" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="211" />
+          <entry key="JAVA" value="213" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="10972" />
-          <entry key="txt" value="243" />
+          <entry key="java" value="10993" />
+          <entry key="txt" value="265" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="10972" />
-          <entry key="PLAIN_TEXT" value="243" />
+          <entry key="JAVA" value="10993" />
+          <entry key="PLAIN_TEXT" value="265" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/FormController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="169" column="25" selection-start-line="169" selection-start-column="25" selection-end-line="169" selection-end-column="25" />
+            <state relative-caret-position="191">
+              <caret line="176" column="22" lean-forward="true" selection-start-line="176" selection-start-column="22" selection-end-line="176" selection-end-column="22" />
               <folding>
                 <element signature="method#getMainTableController#0;class#FormController#0" />
                 <element signature="method#getBookController#0;class#FormController#0" />
@@ -187,6 +178,24 @@
                 <element signature="method#runTime#0;class#FormController#0" />
                 <element signature="method#getDishesState#0;class#FormController#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/View/Register.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="531">
+              <caret line="197" column="5" selection-start-line="197" selection-start-column="5" selection-end-line="197" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/RegisterController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="333">
+              <caret line="58" column="105" lean-forward="true" selection-start-line="58" selection-start-column="105" selection-end-line="58" selection-end-column="105" />
             </state>
           </provider>
         </entry>
@@ -250,17 +259,17 @@
         <option value="$PROJECT_DIR$/src/Controller/SubController/MenuController.java" />
         <option value="$PROJECT_DIR$/src/Controller/MainTableController.java" />
         <option value="$PROJECT_DIR$/src/Controller/SubController/OrderController.java" />
-        <option value="$PROJECT_DIR$/src/View/Register.java" />
         <option value="$PROJECT_DIR$/src/View/Launcher.java" />
         <option value="$PROJECT_DIR$/src/Controller/LauncherController.java" />
         <option value="$PROJECT_DIR$/src/View/Book.java" />
         <option value="$PROJECT_DIR$/src/Controller/BookController.java" />
         <option value="$PROJECT_DIR$/src/Model/Database/Entity/Reserve.java" />
-        <option value="$PROJECT_DIR$/src/Controller/RegisterController.java" />
         <option value="$PROJECT_DIR$/src/Model/Database/Entity/User.java" />
         <option value="$PROJECT_DIR$/src/Controller/FormController.java" />
         <option value="$PROJECT_DIR$/src/Model/Time.java" />
         <option value="$PROJECT_DIR$/src/Model/Countdown.java" />
+        <option value="$PROJECT_DIR$/src/View/Register.java" />
+        <option value="$PROJECT_DIR$/src/Controller/RegisterController.java" />
       </list>
     </option>
   </component>
@@ -275,8 +284,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -337,6 +344,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -455,7 +464,14 @@
       <option name="project" value="LOCAL" />
       <updated>1563310597112</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="properly billing out">
+      <created>1563450061565</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1563450061565</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView">
@@ -469,8 +485,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1293" height="693" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24858299" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25263157" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -513,7 +530,8 @@
     <MESSAGE value="not autherid log checked" />
     <MESSAGE value="passing dishes" />
     <MESSAGE value="more or less working" />
-    <option name="LAST_COMMIT_MESSAGE" value="more or less working" />
+    <MESSAGE value="properly billing out" />
+    <option name="LAST_COMMIT_MESSAGE" value="properly billing out" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/View/MyLoginPanel.java" />
@@ -661,13 +679,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/RegisterController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="56" column="46" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/Launcher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1513">
@@ -748,13 +759,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Register.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="194" column="55" selection-start-line="194" selection-start-column="55" selection-end-line="194" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Resources/Pop.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -771,8 +775,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/FormController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="169" column="25" selection-start-line="169" selection-start-column="25" selection-end-line="169" selection-end-column="25" />
+        <state relative-caret-position="191">
+          <caret line="176" column="22" lean-forward="true" selection-start-line="176" selection-start-column="22" selection-end-line="176" selection-end-column="22" />
           <folding>
             <element signature="method#getMainTableController#0;class#FormController#0" />
             <element signature="method#getBookController#0;class#FormController#0" />
@@ -785,6 +789,20 @@
             <element signature="method#runTime#0;class#FormController#0" />
             <element signature="method#getDishesState#0;class#FormController#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/RegisterController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="58" column="105" lean-forward="true" selection-start-line="58" selection-start-column="105" selection-end-line="58" selection-end-column="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Register.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="531">
+          <caret line="197" column="5" selection-start-line="197" selection-start-column="5" selection-end-line="197" selection-end-column="5" />
         </state>
       </provider>
     </entry>
