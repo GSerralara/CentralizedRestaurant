@@ -24,6 +24,9 @@ public class BBDDHelper {
     public void insertData(String query){
         conn.ddlQuery(query);
     }
+    public void callAddDish(int id_d,int id_t,int q){
+        conn.addDish(id_d,id_t,q);
+    }
     public ResultSet selectTable(String query){
         return this.conn.selectQuery(query);
     }

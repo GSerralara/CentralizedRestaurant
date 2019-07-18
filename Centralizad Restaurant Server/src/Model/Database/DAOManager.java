@@ -1,13 +1,7 @@
 package Model.Database;
 
-import Model.Database.Entity.Dish;
-import Model.Database.Entity.Menu;
-import Model.Database.Entity.Restaurant;
-import Model.Database.Entity.Table;
-import Model.Database.dao.DishDAO;
-import Model.Database.dao.MenuDAO;
-import Model.Database.dao.RestaurantDAO;
-import Model.Database.dao.TableDAO;
+import Model.Database.Entity.*;
+import Model.Database.dao.*;
 
 import java.util.LinkedList;
 
@@ -16,12 +10,14 @@ public class DAOManager {
     private RestaurantDAO restaurantDAO;
     private TableDAO tableDAO;
     private MenuDAO menuDAO;
+    private ReserveDAO reserveDAO;
 
     public DAOManager() {
         dishDAO = new DishDAO();
         restaurantDAO = new RestaurantDAO();
         tableDAO = new TableDAO();
         menuDAO = new MenuDAO();
+        reserveDAO = new ReserveDAO();
     }
     public void registerRestaurant(Restaurant restaurant){
         restaurantDAO.addRestaurant(restaurant);
@@ -58,6 +54,12 @@ public class DAOManager {
     }
     public void deleteTable(Table t){
         tableDAO.deleteTable(t);
+    }
+    public void addReserve(Reserve r, int id){
+        reserveDAO.addBookingTable(r,id);
+    }
+    public void addDishToReserve(int id_d,int id_t,int q){
+        reserveDAO.addDishToReserve(id_d,id_t,q);
     }
 
 }

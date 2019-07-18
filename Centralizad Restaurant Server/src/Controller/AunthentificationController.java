@@ -26,13 +26,8 @@ public class AunthentificationController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String[] op = e.getActionCommand().split(":");
         if(e.getActionCommand().charAt(0) == 'A'){
-            accepted.add(aunthentification.getReserve(e.getActionCommand()));
-            System.out.println(accepted.get(accepted.size()-1).getReserveName()+" added");
-            System.out.println("id table"+ aunthentification.getTable(e.getActionCommand()));
-            System.out.println("Tenmos "+accepted.size()+" clientes reservados");
             listener.acceptedReserve(aunthentification.getReserve(e.getActionCommand()),aunthentification.getTable(e.getActionCommand()));
             this.listener.changeService();
-            listener.updateReserves(accepted);
             aunthentification.cancelItem(e.getActionCommand());
         }else {
             aunthentification.cancelItem(e.getActionCommand());

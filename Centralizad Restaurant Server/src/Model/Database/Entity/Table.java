@@ -58,4 +58,8 @@ public class Table {
     public void addClient(Reserve client){
         reserves.add(client);
     }
+
+    public void removeClient(Reserve r){
+        reserves.remove(r);
+    }
 }

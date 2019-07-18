@@ -106,7 +106,15 @@ public class Model {
                     }
                 }
                 break;
-            case "AssignTable":
+            case "DropReserve":
+                User user = (User) obj;
+                for(Reserve i: reserves){
+                    if(i.getUser().getUser().equals(user.getUser())){
+                        System.out.println("DROPING RESERVE");
+                        removeReserveTable(i);
+                        reserves.remove(i);
+                    }
+                }
                 break;
         }
     }
@@ -126,7 +134,12 @@ public class Model {
     public LinkedList<Menu> getMenus() {
         return menus;
     }
+    public void removeReserveTable(Reserve var){
 
+        for(Table i: tables){
+            i.removeClient(var);
+        }
+    }
     public boolean isReservedForNow(String nameReseve){
         for(Table i: tables){
             if(i.getReserves().get(0).getReserveName().equals(nameReseve)){
@@ -145,10 +158,14 @@ public class Model {
                 break;
         }
     }
+    public void addReserve(Reserve client){
+        reserves.add(client);
+    }
     public void addReserve(int id, Reserve client){
         for(Table i:tables){
             if(i.getIdTable() == id){
                 i.addClient(client);
+                manager.addReserve(client,id);
             }
         }
     }

@@ -126,4 +126,17 @@ public class BBDDConnector {
         }
         return ok;
     }
+    public void addDish(int id_d,int id_t,int q){
+        CallableStatement cStmt = null;
+        ResultSet rs = null;
+        try {
+            cStmt = conn.prepareCall("{call orderDish(?,?,?)}");
+            cStmt.setInt(id_t,1);
+            cStmt.setInt(id_d,2);
+            cStmt.setInt(q,3);
+            cStmt.execute();
+        }catch (SQLException e){
+            System.out.println("Problema al Recuperar les dades --> " + e.getSQLState());
+        }
+    }
 }

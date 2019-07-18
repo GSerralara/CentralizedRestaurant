@@ -103,8 +103,10 @@ public class FormController {
     public void resumeServer(){
         net.resume();
     }
+
     public void addReserve(Reserve u){
         aunthentificationController.addAuth(u);
+        model.addReserve(u);
     }
     public void acceptedReserve(Reserve u, int idTable){
         model.addReserve(idTable,u);
@@ -120,7 +122,7 @@ public class FormController {
     }
     public void reserveCancelation(User u){
         aunthentificationController.dropReserve(u);
-        model.callCommand("Cancel",u);
+        model.callCommand("DropReserve",u);
     }
     public void addDish(Dish d){
         model.callCommand("AddDish",d);
