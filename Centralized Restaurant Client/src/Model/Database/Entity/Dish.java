@@ -5,10 +5,11 @@ import java.util.Date;
 
 public class Dish implements Serializable {
     private static final long serialVersionUID = 3L;
-
+    private int id;
     private int quantety;
     private float price;
     private String name;
+    //ToDo: MIRA LOS TIPOS DE TIEMPOS QUE YO NI IDEA DE COMO LOS HAS PUESTO EN LA BBDD
     private Date time;
 
     public Dish(int quantety, float price, String name, Date time) {
@@ -16,6 +17,18 @@ public class Dish implements Serializable {
         this.price = price;
         this.name = name;
         this.time = time;
+    }
+
+    public Dish(int id, int quantety, float price, String name, Date time) {
+        this.id = id;
+        this.quantety = quantety;
+        this.price = price;
+        this.name = name;
+        this.time = time;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public int getQuantety() {
@@ -50,3 +63,4 @@ public class Dish implements Serializable {
         this.time = time;
     }
 }
+

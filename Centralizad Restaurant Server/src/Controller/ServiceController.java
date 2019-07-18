@@ -48,7 +48,7 @@ public class ServiceController implements ActionListener {
     }
 
     public void addClient(Reserve client){
-        System.out.println("Adding user:"+client.getReserveName());
+
         this.service.addClient(client);
     }
 
@@ -59,5 +59,8 @@ public class ServiceController implements ActionListener {
             }
         }
         service.redraw();
+    }
+    public void deleteClient(Reserve client){
+
     }
 }

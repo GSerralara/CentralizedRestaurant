@@ -11,6 +11,7 @@ public class DAOManager {
     private TableDAO tableDAO;
     private MenuDAO menuDAO;
     private ReserveDAO reserveDAO;
+    private RankingDAO rankingDAO;
 
     public DAOManager() {
         dishDAO = new DishDAO();
@@ -18,6 +19,7 @@ public class DAOManager {
         tableDAO = new TableDAO();
         menuDAO = new MenuDAO();
         reserveDAO = new ReserveDAO();
+        rankingDAO = new RankingDAO();
     }
     public void registerRestaurant(Restaurant restaurant){
         restaurantDAO.addRestaurant(restaurant);
@@ -60,6 +62,15 @@ public class DAOManager {
     }
     public void addDishToReserve(int id_d,int id_t,int q){
         reserveDAO.addDishToReserve(id_d,id_t,q);
+    }
+    public LinkedList<Ranking> getTop5(){
+        return rankingDAO.getTop5();
+    }
+    public LinkedList<Ranking> getTopActual5(){
+        return rankingDAO.getTopActual5();
+    }
+    public void updateState(){
+        dishDAO.dishUpadate();
     }
 
 }

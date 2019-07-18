@@ -42,7 +42,7 @@ public class DishDAO {
                 Dish d = new Dish(resultat.getInt(1),resultat.getInt("units"), resultat.getFloat("price"),
                         resultat.getString("name"), cal.getTime());
                  dishes.add(d);
-                System.out.println(d.getName()+" "+d.getQuantety()+" "+d.getPrice());
+                System.out.println(d.getName()+" "+d.getQuantety()+" "+d.getId());
             }
         }catch (SQLException e){
             e.printStackTrace();
@@ -100,5 +100,11 @@ public class DishDAO {
     public void deleteDish(){
         String query = "";
         BBDDHelper.getInstance().deleteRegister(query);
+    }
+    public void dishUpadate(){
+        String query = "UPDATE tableorderdish " +
+                "SET cur_service = FALSE " +
+                "WHERE id_table >= 1 AND id_dish >= 1;";
+        BBDDHelper.getInstance().updateQuery(query);
     }
 }

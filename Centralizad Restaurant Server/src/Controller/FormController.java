@@ -96,9 +96,12 @@ public class FormController {
     }
     public void shutServer(){
         net.stopService();
+        model.closeService();
     }
     public void pauseServer(){
         net.pause();
+        postServiceController.addPanel("Service",model.actual5());
+        postServiceController.addPanel("Inauguration",model.top5());
     }
     public void resumeServer(){
         net.resume();
@@ -187,6 +190,7 @@ public class FormController {
         model.callCommand("CreateMenu",name);
     }
     public void logout(){
+        model.closeService();
         model.callCommand("logout",null);
     }
     public void removeTable(int pos){

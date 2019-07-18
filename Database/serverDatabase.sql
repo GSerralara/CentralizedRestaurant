@@ -77,6 +77,7 @@ CREATE TABLE TableOrderDish(
 	cooking BOOL,
     served BOOL,
     paid BOOL,
+	cur_service BOOL DEFAULT 0,
     FOREIGN KEY (id_table) REFERENCES Tables(id_table),
 	FOREIGN KEY (id_dish) REFERENCES Dish(id_dish)
 );

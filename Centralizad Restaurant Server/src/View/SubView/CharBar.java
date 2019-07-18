@@ -1,6 +1,8 @@
 package View.SubView;
 
+import Model.Database.Entity.Dish;
 import Model.Database.Entity.DishTable;
+import Model.Database.Entity.Ranking;
 import Model.Database.dao.DishDAO;
 
 import javax.swing.*;
@@ -12,13 +14,12 @@ import java.util.LinkedList;
  */
 
 public class CharBar extends JPanel {
-    private boolean today;
-    public CharBar(boolean bool){
-        today = bool;
+    private LinkedList<Ranking> list;
+    public CharBar(LinkedList<Ranking> list){
+        this.list = list;
     }
     @Override
     protected void paintComponent(Graphics g) {
-        DishDAO dao = new DishDAO();
         super.paintComponent(g);
         Rectangle r = super.getBounds();
         int DIM_WIDTH = r.width; //we obtain the width of the graphic area
@@ -26,19 +27,18 @@ public class CharBar extends JPanel {
         float graphic = DIM_HEIGHT-(DIM_HEIGHT/10); //the value of the maxium bar
         int interval = Math.round(DIM_HEIGHT/20); //the division between the up gap in the graphic area
 
-        LinkedList<DishTable> dishesToday;
-        if(today){
-            dishesToday = dao.getTodayTopFiveDishes();
-        }else {
-            dishesToday = dao.getTopFiveDishes();
-        }
+
 
         int top[] = {0,0,0,0,0};
         String name[] = {"","","","",""};
 
-        for (int i = 0; i < 5; i++){
-            top[i] = dishesToday.get(i).getQuantity();
-            name[i] = dishesToday.get(i).getName();
+
+        int i=0;
+        for(Ranking aux: list){
+            System.out.println(aux.getName()+" "+aux.getServed());
+            top[i]= aux.getServed();
+            name[i] = aux.getName();
+            i++;
         }
 
 

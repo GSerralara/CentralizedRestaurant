@@ -131,9 +131,9 @@ public class BBDDConnector {
         CallableStatement cStmt = null;
         try {
             cStmt = conn.prepareCall("{call orderDish(?,?,?)}");
-            cStmt.setInt(id_t,1);
-            cStmt.setInt(id_d,2);
-            cStmt.setInt(q,3);
+            cStmt.setInt(1,id_t);
+            cStmt.setInt(2,id_d);
+            cStmt.setInt(3,q);
             cStmt.execute();
         }catch (SQLException e){
             System.out.println("Problema al Recuperar les dades --> " + e.getSQLState());

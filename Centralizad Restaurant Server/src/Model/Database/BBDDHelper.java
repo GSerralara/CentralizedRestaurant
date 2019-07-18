@@ -41,6 +41,9 @@ public class BBDDHelper {
         return settings.getClientPort();
     }
 
+    public void updateQuery(String query){
+        conn.ddlQuery(query);
+    }
     public static synchronized BBDDHelper getInstance( ){
         if(instance == null){
             instance = new BBDDHelper();

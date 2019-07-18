@@ -9,7 +9,6 @@ public class Dish implements Serializable {
    private int quantety;
    private float price;
    private String name;
-   //ToDo: MIRA LOS TIPOS DE TIEMPOS QUE YO NI IDEA DE COMO LOS HAS PUESTO EN LA BBDD
    private Date time;
 
     public Dish(int quantety, float price, String name, Date time) {

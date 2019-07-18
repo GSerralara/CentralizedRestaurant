@@ -130,7 +130,10 @@ public class Model {
         return reserves.size();
     }
     public LinkedList<Dish> getDishes() {
-        return dishes;
+        if(curentMenu == null){
+            return dishes;
+        }
+        return manager.getMenuDishes(curentMenu.getId());
     }
 
     public LinkedList<Table> getTables() {
@@ -231,5 +234,14 @@ public class Model {
     }
     public void setReserves(LinkedList<Reserve> reserves) {
         this.reserves = reserves;
+    }
+    public LinkedList<Ranking> top5(){
+        return manager.getTop5();
+    }
+    public LinkedList<Ranking> actual5(){
+        return manager.getTopActual5();
+    }
+    public void closeService(){
+        manager.updateState();
     }
 }

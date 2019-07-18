@@ -103,6 +103,7 @@ END LOOP trobar_email;
 END $$
 
 DELIMITER ;
+
 -- Stored procedure per demanar plat
 DELIMITER $$
 
@@ -110,43 +111,42 @@ DROP PROCEDURE IF EXISTS orderDish $$
 
 CREATE PROCEDURE orderDish (IN id_t INT, IN id_p INT, IN quantitat INT)
 BEGIN
-	DECLARE done INT DEFAULT 0;
-	DECLARE trobat_dish BOOLEAN DEFAULT FALSE;
-	DECLARE id_taula INT DEFAULT 0;
-	DECLARE id_plat INT;
-	DECLARE taula_trobada INT;
-	DECLARE cur1 CURSOR FOR SELECT id_table FROM tableorderdish;
-	DECLARE cur2 CURSOR FOR SELECT id_dish FROM tableorderdish;
-	DECLARE CONTINUE HANDLER FOR NOT FOUND SET done=1;
-	
-	OPEN cur1;
-	OPEN cur2;
-	
-	trobar_taula:LOOP
-	
-		FETCH cur2 INTO id_plat;
-		FETCH cur1 INTO id_taula;
-		
-		IF done = 1 THEN 
-			LEAVE trobar_taula;
-		END IF;
-		
-		IF id_taula = id_t AND id_plat = id_p AND NOT (SELECT cur_service FROM tableorderdish WHERE id_table = id_t AND id_dish = id_p ORDER BY date DESC LIMIT 1) != TRUE THEN 
-			SET taula_trobada = 1;
-			UPDATE tableorderdish SET quantity = quantity + quantitat, date = now() WHERE id_table = id_t AND cur_service = TRUE AND id_dish = id_p;
-			LEAVE trobar_taula;
-		ELSE 
-			SET taula_trobada = 0;
-		END IF;
-		
-	END LOOP;
-	
-	CLOSE cur1;
-	CLOSE cur2;
+DECLARE done INT DEFAULT 0;
+DECLARE trobat_dish BOOLEAN DEFAULT FALSE;
+DECLARE id_taula INT DEFAULT 0;
+DECLARE id_plat INT;
+DECLARE taula_trobada INT;
+DECLARE cur1 CURSOR FOR SELECT id_table FROM tableorderdish;
+DECLARE cur2 CURSOR FOR SELECT id_dish FROM tableorderdish;
+DECLARE CONTINUE HANDLER FOR NOT FOUND SET done=1;
+OPEN cur1;
+OPEN cur2;
 
-	IF taula_trobada = 0 THEN 
-		INSERT INTO tableorderdish VALUES (id_t,id_p,quantitat,now(),FALSE,FALSE,FALSE,TRUE);
+IF ((SELECT sold_out FROM dish WHERE id_dish = id_p) = FALSE) THEN 
+	IF ((SELECT units FROM dish WHERE id_dish = id_p) - quantitat) >= 0 THEN 
+		UPDATE dish SET units = units - quantitat WHERE id_dish = id_p;
 	END IF;
-	
+	IF ((SELECT units FROM dish WHERE id_dish = id_p) <= 0) THEN 
+		UPDATE dish SET sold_out = TRUE WHERE id_dish = id_p;
+	END IF;
+END IF;
+trobar_taula:LOOP
+	FETCH cur2 INTO id_plat;
+	FETCH cur1 INTO id_taula;
+	IF done = 1 THEN 
+		SET taula_trobada = 0;
+		LEAVE trobar_taula;
+	END IF;
+	IF ((SELECT units FROM dish WHERE id_dish = id_p) >= 0) AND id_taula = id_t AND id_plat = id_p AND NOT (SELECT cur_service FROM tableorderdish WHERE id_table = id_t AND id_dish = id_p ORDER BY date DESC LIMIT 1) != TRUE THEN 
+        SET taula_trobada = 1;
+		UPDATE tableorderdish SET quantity = quantity + quantitat, date = now() WHERE id_table = id_t AND cur_service = TRUE AND id_dish = id_p;
+		LEAVE trobar_taula;
+	END IF;
+END LOOP;
+CLOSE cur1;
+CLOSE cur2;
+IF taula_trobada = 0 AND ((SELECT units FROM dish WHERE id_dish = id_p) > 0) THEN 
+	INSERT INTO tableorderdish VALUES (id_t,id_p,quantitat,now(),FALSE,FALSE,FALSE,TRUE);
+END IF;
 END $$
 DELIMITER ;

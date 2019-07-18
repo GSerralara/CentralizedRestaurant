@@ -1,9 +1,11 @@
 package Controller;
 
+import Model.Database.Entity.Ranking;
 import View.PostService;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.LinkedList;
 
 public class PostServiceController implements ActionListener {
     private FormController listener;
@@ -20,5 +22,8 @@ public class PostServiceController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
+    }
+    public void addPanel(String name, LinkedList<Ranking> ranking){
+        postService.addTab(name,ranking);
     }
 }
