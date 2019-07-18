@@ -121,8 +121,16 @@ public class FormController {
         return this.aunthentificationController.getIfWasAccepted(u);
     }
     public void reserveCancelation(User u){
-        aunthentificationController.dropReserve(u);
         model.callCommand("DropReserve",u);
+        if(aunthentificationController.getIfWasAccepted(u).equals("YES")){
+            aunthentificationController.dropReserve(u);
+            if(model.numeberOfReserves()==0){
+                changeService();
+            }
+        }else{
+            aunthentificationController.dropReserve(u);
+        }
+
     }
     public void addDish(Dish d){
         model.callCommand("AddDish",d);
@@ -140,7 +148,7 @@ public class FormController {
     public LinkedList<Reserve> getReserved(){
 
         return model.getReserves();
-        //return aunthentificationController.getAccepted();
+
     }
     public LinkedList<Dish> getDishes(){
         return model.getDishes();
@@ -154,7 +162,6 @@ public class FormController {
         System.out.println(u.getUser());
         Reserve r = model.getReserveNamed(u.getUser());
         System.out.println("Gotten reserve data");
-        //todo: añadir info a la bbdd
         serviceController.addClient(r);
     }
     public boolean youCanEnter(String name){
@@ -189,8 +196,7 @@ public class FormController {
     }
     public void addDishToService(User u, Dish d){
         serviceController.addDishToCommand(d,u);
+        model.addDishToReserve(u,d);
     }
-    public void updateReserves(LinkedList<Reserve> reserves){
-        model.setReserves(reserves);
-    }
+
 }

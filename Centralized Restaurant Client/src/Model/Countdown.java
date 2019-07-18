@@ -22,7 +22,7 @@ public class Countdown extends Thread{
         while (state.getText().equals("Cocinando")){
             try {
                 long milis = 1000;
-                SimpleDateFormat df = new SimpleDateFormat("HH:mm");
+                SimpleDateFormat df = new SimpleDateFormat("mm:ss");
                 c.setTime(time);
                 c.add(Calendar.SECOND,-1);
                 //time.setTime(c.getTimeInMillis());

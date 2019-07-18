@@ -115,10 +115,20 @@ public class Model {
                         reserves.remove(i);
                     }
                 }
-                break;
+            case "Billed":
+                User logReserve = (User) obj;
+                for(Reserve i: reserves){
+                    if(i.getReserveName().equals(logReserve.getUser())){
+                        System.out.println("DROPING RESERVE");
+                        removeReserveTable(i);
+                        reserves.remove(i);
+                    }
+                }
         }
     }
-
+    public int numeberOfReserves(){
+        return reserves.size();
+    }
     public LinkedList<Dish> getDishes() {
         return dishes;
     }
@@ -190,7 +200,22 @@ public class Model {
     public Restaurant getOnService() {
         return onService;
     }
+    public void addDishToReserve(User client,Dish dish){
+        for(Reserve i: reserves){
+            if(client.getUser().equals(i.getReserveName())){
+                manager.addDishToReserve(dish.getId(),getReserveTableId(i),dish.getQuantety());
+            }
+        }
 
+    }
+    public int getReserveTableId(Reserve r){
+        for(Table i: tables){
+            if(i.isClientAssocietedWithThisTable(r)){
+                return i.getIdTable();
+            }
+        }
+        return 0;
+    }
     public void setReserves(LinkedList<Reserve> reserves) {
         this.reserves = reserves;
     }

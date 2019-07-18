@@ -28,6 +28,7 @@ public class AunthentificationController implements ActionListener {
         if(e.getActionCommand().charAt(0) == 'A'){
             listener.acceptedReserve(aunthentification.getReserve(e.getActionCommand()),aunthentification.getTable(e.getActionCommand()));
             this.listener.changeService();
+            accepted.add(aunthentification.getReserve(e.getActionCommand()));
             aunthentification.cancelItem(e.getActionCommand());
         }else {
             aunthentification.cancelItem(e.getActionCommand());

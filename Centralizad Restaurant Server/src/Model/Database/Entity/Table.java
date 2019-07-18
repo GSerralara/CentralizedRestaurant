@@ -62,4 +62,12 @@ public class Table {
     public void removeClient(Reserve r){
         reserves.remove(r);
     }
+    public boolean isClientAssocietedWithThisTable(Reserve r){
+        for(Reserve i: reserves){
+            if(r.getReserveName().equals(r.getReserveName())){
+                return true;
+            }
+        }
+        return false;
+    }
 }
