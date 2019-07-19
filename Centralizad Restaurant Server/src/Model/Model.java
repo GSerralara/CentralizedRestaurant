@@ -122,6 +122,7 @@ public class Model {
                         System.out.println("DROPING RESERVE");
                         removeReserveTable(i);
                         reserves.remove(i);
+                        System.out.println(numeberOfReserves());
                     }
                 }
         }

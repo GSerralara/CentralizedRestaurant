@@ -43,9 +43,6 @@ public class AunthentificationController implements ActionListener {
                 accepted.remove(i);
             }
         }
-        if(accepted.size()==0){
-            this.listener.changeService();
-        }
 
     }
     public void addAuth(Reserve user){
