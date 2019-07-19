@@ -70,4 +70,14 @@ public class Table {
         }
         return false;
     }
+    public boolean isFirst(String nameReserve){
+        if(reserves.size()==0){
+            return false;
+        }else {
+            if(reserves.get(0).getReserveName().equals(nameReserve)){
+                return true;
+            }
+        }
+        return false;
+    }
 }

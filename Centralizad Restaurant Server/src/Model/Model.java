@@ -155,7 +155,7 @@ public class Model {
     }
     public boolean isReservedForNow(String nameReseve){
         for(Table i: tables){
-            if(i.getReserves().get(0).getReserveName().equals(nameReseve)){
+            if(i.isFirst(nameReseve)){
                 return true;
             }
         }
@@ -206,12 +206,10 @@ public class Model {
     public void addDishToReserve(User client,Dish dish){
         int id_d = dish.getId();
         int id_t;
-        int q = dish.getQuantety();
         for(Reserve i: reserves){
             if(client.getUser().equals(i.getReserveName())){
                 id_t=getReserveTableId(i);
-                System.out.println("table "+id_t+" gets "+id_d+" per x"+q);
-                manager.addDishToReserve(id_d,id_t,q);
+                manager.addDishToReserve(id_d,id_t,1);
             }
         }
 
