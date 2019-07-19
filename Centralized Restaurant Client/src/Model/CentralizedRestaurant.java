@@ -34,7 +34,7 @@ public class CentralizedRestaurant {
         //We create the model
         ModelClient model = new ModelClient();
         //We create the access to the Server
-        Network net = new Network();
+        Network net = new Network(model.getSettings());
         //We create the controller passing him the view, the model and the access to the Server.
         FormController c = new FormController(view, model, net);
         //We register the controller with the view

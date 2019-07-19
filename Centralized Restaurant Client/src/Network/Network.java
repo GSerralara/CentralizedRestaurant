@@ -1,6 +1,7 @@
 package Network;
 
 import Controller.FormController;
+import Model.Settings;
 import Resources.Pop;
 
 
@@ -12,8 +13,8 @@ import java.util.Date;
 
 public class Network{
 
-    private static final int PORT = 55555;
-    private static final String IP = "localhost";
+    private int PORT;
+    private String IP;
 
     private Socket socket;
 
@@ -27,7 +28,10 @@ public class Network{
     /**
      * Empty constructor by default of the class.
      * */
-    public Network() { }
+    public Network(Settings set) {
+        this.IP = set.getIp();
+        this.PORT = set.getPort();
+    }
     /**
      * Function that will return 1 if it connection was successful. 0 if not.
      * It's responsible for creating a connection with the server.

@@ -14,10 +14,15 @@ import Model.Database.Entity.User;
 public class ModelClient {
     private String login;
     private User user;
+    private Settings settings;
     public ModelClient() {
         login = "LogOut";
+        settings = new Settings();
     }
 
+    public Settings getSettings() {
+        return settings;
+    }
 
     public String getLogin() {
         return login;
