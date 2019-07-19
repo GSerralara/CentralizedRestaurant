@@ -72,7 +72,7 @@ public class ClientManager extends Thread {
             answer = treatReserve((Reserve) obj);
         }
         if(obj instanceof Dish){
-            answer = treatDish((Dish) obj);
+            return treatDish((Dish) obj);
         }
         if(obj instanceof String){
             answer = treatString((String) obj);
@@ -106,14 +106,13 @@ public class ClientManager extends Thread {
         System.out.println(obj.getBookNumber()+" "+reserve.getBookNumber());
         return "Reserve";
     }
-    private String treatDish(Dish obj){
+    private Object treatDish(Dish obj){
         System.out.println("Gotten dish to order");
         //ToDo: TAKE OUT DISHES AND PUT IT IN SERVICE
         for(int i=0; i<obj.getQuantety();i++){
-            System.out.println("Adding "+obj.getName()+" x"+obj.getQuantety());
             listener.addDishToOrder(client,obj);
         }
-        return "OK";
+        return listener.getCurrentCarte();
     }
     private String treatString(String msg){
         System.out.println(msg);

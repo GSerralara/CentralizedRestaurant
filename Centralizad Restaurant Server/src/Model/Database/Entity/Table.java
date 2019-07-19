@@ -64,7 +64,7 @@ public class Table {
     }
     public boolean isClientAssocietedWithThisTable(Reserve r){
         for(Reserve i: reserves){
-            if(r.getReserveName().equals(r.getReserveName())){
+            if(i.getReserveName().equals(r.getReserveName())){
                 return true;
             }
         }

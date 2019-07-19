@@ -93,12 +93,7 @@ public class FormController {
         return connectionDone;
     }
 
-    public void sendObject(Object obj){
-        System.out.println(obj.getClass().getName());
-        network.sendObject(obj);
-        Object answer = network.readObject();
-        network.disconnect();
-    }
+
 
     public User getuser(){
         return model.getUser();
@@ -148,6 +143,8 @@ public class FormController {
     public void updateMenu(Dish dish){
         network.sendObject(dish);
         Object answer = network.readObject();
+        LinkedList<Dish> carte = (LinkedList<Dish>)answer;
+        mainTableController.updateMenu(carte);
     }
 
     public void login(User user){
