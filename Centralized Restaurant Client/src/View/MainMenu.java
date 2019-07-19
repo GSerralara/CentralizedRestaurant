@@ -4,11 +4,12 @@ import Controller.MainMenuController;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class MainMenu extends JPanel {
     // instance variables
     private final ProgressListener listener;
-    private MainMenuController controller;
+
 
     /**
      * Constants for the Buttons and Action Commands
@@ -41,13 +42,13 @@ public class MainMenu extends JPanel {
      * @param listener it's a ProgressListener that the class will use to move to other views
      * @param controller it's the respective controller of this view
      * */
-    public MainMenu(ProgressListener listener, MainMenuController controller) {
+    MainMenu(ProgressListener listener, MainMenuController controller) {
         // instance attributes with passed parameters
         this.listener = listener;
-        this.controller = controller;
-        this.controller.setMainMenu(this);
+        controller.setMainMenu(this);
         // UI configuration of the panel
         windowConfiguration();
+        registerController(controller);
     }
     /**
      * Method that will create all the components of the panel.
@@ -93,10 +94,7 @@ public class MainMenu extends JPanel {
         form.add(cancelBooking);
         form.add(Box.createVerticalStrut(20));
         // add Sing In button to the bottom
-        book.setActionCommand(AC_BOOK);//set action command that will get the ActionListener
-        book.addActionListener(controller);//set which ActionListener
-        cancelBooking.setActionCommand(AC_CANCEL);//set action command that will get the ActionListener
-        cancelBooking.addActionListener(controller);//set which ActionListener
+
         // return Statement
         return form;
     }
@@ -110,8 +108,6 @@ public class MainMenu extends JPanel {
         // Register option Button
         logout = new JButton(JB_LOGOUT);
         // controller command
-        logout.setActionCommand(AC_LOGOUT);//set action command that will get the ActionListener
-        logout.addActionListener(controller);//set which ActionListener
         bottom.add(logout);//set Flow position for UX purposes
         // return Statement
         return bottom;
@@ -133,5 +129,13 @@ public class MainMenu extends JPanel {
                 System.err.println("Unknown window name MainMenu");
                 break;
         }
+    }
+    private void registerController(ActionListener e){
+        logout.setActionCommand(AC_LOGOUT);//set action command that will get the ActionListener
+        logout.addActionListener(e);//set which ActionListener
+        book.setActionCommand(AC_BOOK);//set action command that will get the ActionListener
+        book.addActionListener(e);//set which ActionListener
+        cancelBooking.setActionCommand(AC_CANCEL);//set action command that will get the ActionListener
+        cancelBooking.addActionListener(e);//set which ActionListener
     }
 }

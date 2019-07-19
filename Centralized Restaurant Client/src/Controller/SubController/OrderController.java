@@ -6,8 +6,6 @@ import View.SubView.Order;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.LinkedList;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class OrderController implements ActionListener {
     private Order order;
@@ -29,7 +27,7 @@ public class OrderController implements ActionListener {
 
     }
     public void addToOrder(String name, String time){
-        order.addToOrder(name, time);
+        order.addToOrder(name, time,this);
     }
     public void treatOrder(LinkedList<Boolean> isCooking){
         if(previusState.size()<isCooking.size()) {

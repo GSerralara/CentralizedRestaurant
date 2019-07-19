@@ -27,7 +27,7 @@ public class RegisterController implements ActionListener {
      * Constructor by default of the class.
      * @param listener it's the controller father that manages all petitions
      * */
-    public RegisterController(FormController listener) {
+    RegisterController(FormController listener) {
         this.listener = listener;
     }
     /**
@@ -54,9 +54,9 @@ public class RegisterController implements ActionListener {
                             //after that we try to connect to the server
                             if(listener.tryConnection()){
                                 //send petition
-                                User user = new User(register.getUser(),register.getPwd());
+                                User user = new User(register.getUser(),
+                                        MD5(register.getPwd()));
                                 user.isRegister();
-                                //ToDo: comprobar el registro que vaya bien y luego hacer el go to window
                                 listener.register(user);
                                 register.goToWindow("REGISTER");
                             }
@@ -73,5 +73,18 @@ public class RegisterController implements ActionListener {
                 System.err.println("Unknown Button register");
                 break;
         }
+    }
+    public String MD5(String md5) {
+        try {
+            java.security.MessageDigest md = java.security.MessageDigest.getInstance("MD5");
+            byte[] array = md.digest(md5.getBytes());
+            StringBuffer sb = new StringBuffer();
+            for (int i = 0; i < array.length; ++i) {
+                sb.append(Integer.toHexString((array[i] & 0xFF) | 0x100).substring(1,3));
+            }
+            return sb.toString();
+        } catch (java.security.NoSuchAlgorithmException e) {
+        }
+        return null;
     }
 }

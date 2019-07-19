@@ -15,7 +15,7 @@ public class BookController implements ActionListener {
     private FormController listener;
 
 
-    public BookController(FormController listener) {
+    BookController(FormController listener) {
         this.listener = listener;
     }
 
@@ -52,10 +52,10 @@ public class BookController implements ActionListener {
                 break;
         }
     }
-    public void reserveState(){
+    private void reserveState(){
         serviceState = listener.askForReserveState("STATE");
     }
-    public void cancelReserve(){
+    void cancelReserve(){
         serviceState = false;
 
     }

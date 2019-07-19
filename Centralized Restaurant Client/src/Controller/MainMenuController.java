@@ -10,7 +10,7 @@ public class MainMenuController implements ActionListener {
     private FormController listener;
     private MainMenu mainMenu;
 
-    public MainMenuController(FormController listener) {
+    MainMenuController(FormController listener) {
         this.listener = listener;
     }
 

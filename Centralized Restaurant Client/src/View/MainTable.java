@@ -15,7 +15,6 @@ import java.awt.*;
 public class MainTable extends JPanel{
     // instance variables
     private final ProgressListener listener;
-    private MainTableController controller;
     /**
      * Constants for the UI
      */
@@ -30,36 +29,33 @@ public class MainTable extends JPanel{
      */
     private String strTime;
     private JLabel time;
-    private Bill bill;
-    private Menu menu;
-    private Order order;
+
     /**
      * Constructor by default of the class.
      * @param listener it's a ProgressListener that the class will use to move to other views
      * @param controller it's the respective controller of this view
      * */
-    public MainTable(ProgressListener listener, MainTableController controller) {
+    MainTable(ProgressListener listener, MainTableController controller) {
         // instance attributes with passed parameters
         this.listener = listener;
-        this.controller = controller;
         controller.setMainTable(this);
         // UI configuration of the panel
-        windowConfiguration();
+        windowConfiguration(controller);
     }
     /**
      * Method that will create all the components of the panel.
      */
-    private void windowConfiguration(){
+    private void windowConfiguration(MainTableController controller){
         // We configure the window.
         setLayout(new BorderLayout());
         // instance label of time of the view
         this.strTime = TIME_LABEL_TEXT;
         time = new JLabel(strTime);
         // instance JPanels that will from the tabs of the panel
-        bill = new Bill(new BillController(controller));
-        menu = new Menu(new MenuController(controller));
+        Bill bill = new Bill(new BillController(controller));
+        Menu menu = new Menu(new MenuController(controller));
         menu.init();//We init the menu to have the contents
-        order = new Order(new OrderController(controller));
+        Order order = new Order(new OrderController(controller));
         // instance JTabbedPane options that will have JPanels as tabs
         JTabbedPane options = new JTabbedPane();
         // instance JPanel that will go to the top of the view
@@ -98,7 +94,7 @@ public class MainTable extends JPanel{
         this.time.setText(strTime);
     }
 
-    public void initTime(){
+    void initTime(MainTableController controller){
         controller.currentTime(strTime);
         Time t = new Time(this.time);
         new Thread(t).start();

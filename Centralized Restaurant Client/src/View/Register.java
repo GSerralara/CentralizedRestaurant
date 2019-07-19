@@ -5,6 +5,8 @@ import Resources.Pop;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
+
 /**
  * View Register class
  * Extends from JPanel
@@ -18,18 +20,16 @@ import java.awt.*;
 public class Register extends JPanel{
     // instance variables
     private final ProgressListener listener;
-    private RegisterController controller;
-
     /**
      * Constants for the Buttons and Action Commands
      */
     // Constants of the buttons
-    public static final String JB_SINGUP = "SIGN UP";
-    public static final String JB_LOGIN = "Login here";
+    private static final String JB_SINGUP = "SIGN UP";
+    private static final String JB_LOGIN = "Login here";
 
     // Constants of the Action Commands
-    public static final String AC_REGISTER = "REGISTER";
-    public static final String AC_LOGIN = "SIGN_IN";
+    private static final String AC_REGISTER = "REGISTER";
+    private static final String AC_LOGIN = "SIGN_IN";
 
     /**
      * Constants for the UI
@@ -50,27 +50,27 @@ public class Register extends JPanel{
     private JPasswordField rpw;
     private JTextField username;
     private JButton signUp, logIn;
-    private JLabel title;
+
 
     /**
      * Constructor by default of the class.
      * @param listener it's a ProgressListener that the class will use to move to other views
      * @param controller it's the respective controller of this view
      * */
-    public Register(ProgressListener listener, RegisterController controller) {
+    Register(ProgressListener listener, RegisterController controller) {
         // instance attributes with passed parameters
         this.listener = listener;
-        this.controller = controller;
-        this.controller.setRegister(this);
+        controller.setRegister(this);
         // UI configuration of the panel
         windowConfiguration();
+        registerController(controller);
     }
     /**
      * Method that will create all the components of the panel.
      */
     private void windowConfiguration(){
         // We instance the title of the window
-        title = new JLabel(WINDOW_TITLE);
+        JLabel title = new JLabel(WINDOW_TITLE);
         // We instance the panel body of the window
         JPanel content = new JPanel(new BorderLayout());
         // We create the different parts of the window.
@@ -113,8 +113,7 @@ public class Register extends JPanel{
         form.add(rpw);
         // add Sing Up button to the bottom
         signUp = new JButton(JB_SINGUP);
-        signUp.setActionCommand(AC_REGISTER);//set action command that will get the ActionListener
-        signUp.addActionListener(controller);//set which ActionListener
+
         bottom.add(signUp,FlowLayout.LEFT);//set Flow position for UX purposes
         // add secondary panels (from & bottom) to the main panel
         main.add(form,BorderLayout.CENTER);
@@ -139,8 +138,6 @@ public class Register extends JPanel{
         logIn.setBorderPainted(false);
         logIn.setForeground(Color.BLUE);
         //controller command
-        logIn.setActionCommand(AC_LOGIN);//set action command that will get the ActionListener
-        logIn.addActionListener(controller);//set which ActionListener
         bottom.add(logIn,FlowLayout.CENTER);//set Flow position for UX purposes
         // return Statement
         return bottom;
@@ -200,10 +197,8 @@ public class Register extends JPanel{
      * Function that will return the String contained in the password field.
      */
     public String getPwd(){
-        // instance String that will be return
-        String pwd = new String(pw.getPassword());
         // return Statement
-        return pwd;
+        return new String(pw.getPassword());
     }
     /**
      * Function that will return:
@@ -214,7 +209,7 @@ public class Register extends JPanel{
         String firstPwd = new String(pw.getPassword());
         String secondPwd = new String(rpw.getPassword());
         if(firstPwd.equals(secondPwd)){
-            if(firstPwd.length() != 0) return true;
+            return firstPwd.length() != 0;
         }
         return false;
     }
@@ -234,6 +229,13 @@ public class Register extends JPanel{
      */
     public String getUser(){
         return username.getText();
+    }
+
+    private void registerController(ActionListener e){
+        signUp.setActionCommand(AC_REGISTER);//set action command that will get the ActionListener
+        signUp.addActionListener(e);//set which ActionListener
+        logIn.setActionCommand(AC_LOGIN);//set action command that will get the ActionListener
+        logIn.addActionListener(e);//set which ActionListener
     }
 
 }

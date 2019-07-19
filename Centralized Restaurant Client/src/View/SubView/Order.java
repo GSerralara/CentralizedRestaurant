@@ -10,15 +10,14 @@ import java.util.ArrayList;
 public class Order extends JPanel {
     private JPanel orderedItems;
     private ArrayList<OrderedItem> currentOrder;
-    private OrderController controller;
     /**
      * Constructor by default of the class.
      * @param controller it's the respective controller of this view
      * */
     public Order(OrderController controller) {
         // instance attributes with passed parameters
-        this.controller = controller;
-        this.controller.setOrder(this);
+
+        controller.setOrder(this);
         // UI configuration of the panel
         windowConfiguration();
     }
@@ -51,7 +50,7 @@ public class Order extends JPanel {
     /**
      * Method that will add a new item to the panel list.
      */
-    public void addToOrder(String name, String time){
+    public void addToOrder(String name, String time, OrderController controller){
         this.currentOrder.add(new OrderedItem(name,time,controller,currentOrder.size()));
         this.orderedItems.add(currentOrder.get(currentOrder.size()-1));
         orderedItems.revalidate();

@@ -5,6 +5,8 @@ import Resources.Pop;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
+
 /**
  * View Launcher class
  * Extends from JPanel
@@ -18,22 +20,21 @@ import java.awt.*;
  * @since 1.3
  */
 
-//ToDo: Funciones que den la informcion de los campos
+
 public class Launcher extends JPanel{
     // instance variables
     private final ProgressListener listener;
-    private LauncherController controller;
 
     /**
      * Constants for the Buttons and Action Commands
      */
     // Constants of the buttons
-    public static final String JB_SINGIN = "Sing In";
-    public static final String JB_REGISTER = "Register now";
+    private static final String JB_SINGIN = "Sing In";
+    private static final String JB_REGISTER = "Register now";
 
     // Constants of the Action Commands
-    public static final String AC_REGISTER = "REGISTER";
-    public static final String AC_SIGNIN= "SIGN_IN";
+    private static final String AC_REGISTER = "REGISTER";
+    private static final String AC_SIGNIN= "SIGN_IN";
     /**
      * Constants for the UI
      */
@@ -47,7 +48,7 @@ public class Launcher extends JPanel{
     /**
      * Attributes of the UI
      */
-    private JLabel msg;
+
     private JPasswordField pw;
     private JTextField username;
     private JButton signIn,register;
@@ -56,13 +57,13 @@ public class Launcher extends JPanel{
      * @param listener it's a ProgressListener that the class will use to move to other views
      * @param controller it's the respective controller of this view
      * */
-    public Launcher(ProgressListener listener,LauncherController controller) {
+    Launcher(ProgressListener listener,LauncherController controller) {
         // instance attributes with passed parameters
         this.listener = listener;
-        this.controller = controller;
-        this.controller.setLauncher(this);
+        controller.setLauncher(this);
         // UI configuration of the panel
         windowConfiguration();
+        registerController(controller);
     }
     /**
      * Method that will create all the components of the panel.
@@ -107,8 +108,6 @@ public class Launcher extends JPanel{
         form.add(pw);
         // add Sing In button to the bottom
         signIn = new JButton(JB_SINGIN);
-        signIn.setActionCommand(AC_SIGNIN);//set action command that will get the ActionListener
-        signIn.addActionListener(controller);//set which ActionListener
         bottom.add(signIn,FlowLayout.LEFT);//set Flow position for UX purposes
         // add secondary panels (from & bottom) to the main panel
         main.add(form,BorderLayout.CENTER);
@@ -130,9 +129,7 @@ public class Launcher extends JPanel{
         register = new JButton(JB_REGISTER);
         register.setBorderPainted(false);
         register.setForeground(Color.BLUE);
-        // controller command
-        register.setActionCommand(AC_REGISTER);//set action command that will get the ActionListener
-        register.addActionListener(controller);//set which ActionListener
+
         bottom.add(register,FlowLayout.CENTER);//set Flow position for UX purposes
         // return Statement
         return bottom;
@@ -169,10 +166,9 @@ public class Launcher extends JPanel{
      * Function that will return the String of the pw PasswordField.
      */
     public String getPwField(){
-        // instance String that will be return
-        String pwd = new String(pw.getPassword());
+
         // return Statement
-        return pwd;
+        return new String(pw.getPassword());
     }
     /**
      * Function that will return:
@@ -180,8 +176,18 @@ public class Launcher extends JPanel{
      *      -->False:in case not all fields are filled
      */
     public boolean allFieldsFilled(){
-        if(username.getText().length() != 0 && pw.getPassword().length != 0) return true;
+        if(username.getText().length() != 0 && pw.getPassword().length != 0){
+            return true;
+        }
         Pop popup = new Pop("All fields must be filled");
         return false;
+    }
+
+    private void registerController(ActionListener e){
+        // controller command
+        register.setActionCommand(AC_REGISTER);//set action command that will get the ActionListener
+        register.addActionListener(e);//set which ActionListener
+        signIn.setActionCommand(AC_SIGNIN);//set action command that will get the ActionListener
+        signIn.addActionListener(e);//set which ActionListener
     }
 }

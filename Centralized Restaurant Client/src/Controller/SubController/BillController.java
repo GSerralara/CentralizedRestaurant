@@ -11,7 +11,7 @@ import java.util.LinkedList;
 public class BillController implements ActionListener {
     private MainTableController listener;
     private Bill bill;
-    LinkedList<Boolean> alreadyOnBill;
+    private LinkedList<Boolean> alreadyOnBill;
 
     public BillController(MainTableController listener) {
         this.listener = listener;

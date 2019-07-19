@@ -8,21 +8,19 @@ import View.Items.BilledItem;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.VolatileImage;
 import java.util.ArrayList;
 
 public class Bill extends JPanel {
-    private BillController controller;
-    private JButton pay;
+
+
     private ArrayList<BilledItem> items;
     private JPanel view;
 
     public Bill(BillController controller) {
 
-        this.controller = controller;
-        this.controller.setBill(this);
+        controller.setBill(this);
         setLayout(new BorderLayout());
-        pay = new JButton("Pay Bill");
+        JButton pay = new JButton("Pay Bill");
         pay.setActionCommand("PAY");
         pay.addActionListener(controller);
         add(pay,BorderLayout.SOUTH);

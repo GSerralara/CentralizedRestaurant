@@ -158,7 +158,6 @@ public class ClientManager extends Thread {
         //instance user data access object
         UserDAO dao = new UserDAO();
         if(!obj.getRegiser()){
-
             //check if user is already on the system (LOG IN)
             LinkedList<User> users = dao.getAllUsers();
             for (User i : users) {

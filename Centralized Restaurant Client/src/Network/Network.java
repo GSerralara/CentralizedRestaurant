@@ -1,6 +1,6 @@
 package Network;
 
-import Controller.FormController;
+
 import Model.Settings;
 import Resources.Pop;
 
@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.util.Date;
+
 
 public class Network{
 
@@ -21,10 +21,7 @@ public class Network{
     private ObjectInputStream is;
     private ObjectOutputStream os;
 
-    private  Object serverRequest = new Object();
-    private  Object serverAnswer = new Object();
 
-    private FormController controller;
     /**
      * Empty constructor by default of the class.
      * */
@@ -60,11 +57,6 @@ public class Network{
         }
     }
 
-    public void treatResponse(Object obj){
-        if(obj instanceof String){
-            Pop pop=new Pop((String) obj);
-        }
-    }
     public void sendObject(Object toSend){
         try {
           os.writeObject(toSend);
@@ -84,9 +76,6 @@ public class Network{
        return null;
     }
 
-    public void registerController(FormController c){
-        this.controller = c;
-    }
 
 
 

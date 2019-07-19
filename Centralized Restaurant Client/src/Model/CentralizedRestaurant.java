@@ -4,14 +4,6 @@ import Controller.FormController;
 import Network.Network;
 import View.MyForm;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Timer;
-import java.util.TimerTask;
-
-import static java.lang.Thread.sleep;
 
 /**
  * @author Guillermo Serraclara
@@ -39,8 +31,6 @@ public class CentralizedRestaurant {
         FormController c = new FormController(view, model, net);
         //We register the controller with the view
         view.registerController(c);
-        //We register the controller with the net
-        net.registerController(c);
         //We init the view
         view.go();
 

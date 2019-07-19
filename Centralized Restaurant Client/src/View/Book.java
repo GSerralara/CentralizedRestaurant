@@ -4,13 +4,13 @@ import Controller.BookController;
 
 
 import javax.swing.*;
-import javax.swing.border.BevelBorder;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class Book extends JPanel {
     // instance variables
     private final ProgressListener listener;
-    private BookController controller;
+
 
     /**
      * Constants for the Buttons and Action Commands
@@ -36,7 +36,6 @@ public class Book extends JPanel {
      */
     private JTextField reserveName;
     private JSpinner bookNumber;
-    private JLabel reserveState;
     private JButton back,book;
 
     /**
@@ -44,18 +43,18 @@ public class Book extends JPanel {
      * @param listener it's a ProgressListener that the class will use to move to other views
      * @param controller it's the respective controller of this view
      * */
-    public Book(ProgressListener listener, BookController controller) {
+    Book(ProgressListener listener, BookController controller) {
         // instance attributes with passed parameters
         this.listener = listener;
-        this.controller = controller;
-        this.controller.setBook(this);
+        controller.setBook(this);
         // UI configuration of the panel
         windowConfiguration();
+        registerController(controller);
     }
     /**
      * Method that will create all the components of the panel.
      */
-    public void windowConfiguration(){
+    private void windowConfiguration(){
         // We configure the window.
         new BorderLayout();
         // We instance the title of the window
@@ -77,11 +76,10 @@ public class Book extends JPanel {
         content.add(reserveStateLabel);
         content.add(bookNumber);
         book = new JButton(JB_BOOK);
-        book.setActionCommand(AC_BOOK);
-        book.addActionListener(controller);
+
         content.add(book);
         content.add(Box.createVerticalStrut(20));
-        reserveState = new JLabel("<html>" +
+        JLabel reserveState = new JLabel("<html>" +
                 "You can use the same password to Login the reserve.<br>" +
                 "Just when Logging be sure to change the username camp for the name of your reserve.<br>" +
                 "THANK YOU VERY MUCH FOR YOUR ATTENTION"+
@@ -90,8 +88,7 @@ public class Book extends JPanel {
         reserveState.setBorder(BorderFactory.createLineBorder(Color.black));
         content.add(reserveState);
         back = new JButton(JB_BACK);
-        back.setActionCommand(AC_BACK);
-        back.addActionListener(controller);
+
         content.add(back);
         add(content,BorderLayout.CENTER);
     }
@@ -117,6 +114,13 @@ public class Book extends JPanel {
 
     public int getNumberBook(){
         return (int)bookNumber.getValue();
+    }
+
+    private void registerController(ActionListener e){
+        back.setActionCommand(AC_BACK);
+        back.addActionListener(e);
+        book.setActionCommand(AC_BOOK);
+        book.addActionListener(e);
     }
 
 }

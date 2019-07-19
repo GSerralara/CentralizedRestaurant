@@ -6,8 +6,6 @@ import Controller.SubController.OrderController;
 import Model.Database.Entity.Dish;
 import View.MainTable;
 
-import java.net.Inet4Address;
-import java.security.spec.DSAGenParameterSpec;
 import java.text.SimpleDateFormat;
 import java.util.LinkedList;
 import java.util.Timer;
@@ -25,7 +23,7 @@ public class MainTableController {
     private LinkedList<Integer> qOrder;
     private boolean sendRequest;
 
-    public MainTableController(FormController controller) {
+    MainTableController(FormController controller) {
         this.listener = controller;
         order =  new LinkedList<>();
         qOrder = new LinkedList<>();
@@ -60,7 +58,7 @@ public class MainTableController {
                 boolean pasive = false;
                 if(order.size() != 0){
                     for(int i=0;i<order.size(); i++){
-                        if(order.get(i).getName()==dish.getName()){
+                        if(order.get(i).getName().equals(dish.getName())){
                             int q = qOrder.get(i).intValue()+1;
                             qOrder.set(i,q);
                             i =order.size();
@@ -91,7 +89,7 @@ public class MainTableController {
         this.currentMenu = listener.getCurrentMenu();
         return this.currentMenu;
     }
-    public void updateMenu(LinkedList<Dish> menu){
+     void updateMenu(LinkedList<Dish> menu){
         this.currentMenu = menu;
         menuController.removeDishes();
         for(Dish i:menu){
@@ -113,7 +111,7 @@ public class MainTableController {
             menuController.addDishes(i);
         }
     }
-    public void initTimerService(){
+    private void initTimerService(){
         sendRequest = true;
         Timer timer = new Timer();
         TimerTask task = new TimerTask() {
@@ -131,9 +129,8 @@ public class MainTableController {
         };
         timer.schedule(task,0,5000);
     }
-    public LinkedList<Boolean> requestDishesState(){
-        LinkedList<Boolean> dishes = listener.getDishesState();
-        return dishes;
+    private LinkedList<Boolean> requestDishesState(){
+        return listener.getDishesState();
     }
     public void changeSendRequest(){
         this.sendRequest =false;

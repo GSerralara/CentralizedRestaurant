@@ -22,11 +22,11 @@ import java.util.ArrayList;
 public class Menu extends JPanel {
     private JPanel menuItems;
     private ArrayList<View.Items.MenuItem> menu;
-    private MenuController controller;
+
 
     public Menu(MenuController controller) {
-        this.controller = controller;
-        this.controller.setMenu(this);
+
+        controller.setMenu(this);
         //list = new JList<MenuItem>();
         setLayout(new BorderLayout());
         menuItems = new JPanel();
@@ -45,22 +45,19 @@ public class Menu extends JPanel {
         menuItems.revalidate();
         repaint();
     }
-    public void addItem(String name, int q){
+    public void addItem(String name, int q,MenuController controller){
         this.menu.add(new MenuItem(name,controller,q));
-        //this.list.add(menu.get(menu.size()-1));
         this.menuItems.add(menu.get(menu.size()-1));
         menuItems.revalidate();
         repaint();
     }
     public int getCuantity(String name){
-        for(int i=0;i<menu.size();i++){
-            if(menu.get(i).getDish()==name){
-                return menu.get(i).getQuantity();
+        for(MenuItem i: menu){
+            if(i.getDish().equals(name)){
+                return i.getQuantity();
             }
         }
         return 0;
     }
-    public String getMenuItemName(int pos){
-        return menu.get(pos).getDish();
-    }
+
 }

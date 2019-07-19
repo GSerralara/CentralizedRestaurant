@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 
 public class MenuItem extends JPanel {
     private JLabel dish;
-    private JButton order;
     private JComboBox quantity;
 
     public MenuItem(String name, ActionListener listener, int quantety) {
@@ -24,7 +23,7 @@ public class MenuItem extends JPanel {
         for(int i=1; i<=quantety;i++){
             quantity.addItem(i);
         }
-        order = new JButton("Order");
+        JButton order = new JButton("Order");
         order.setActionCommand(name);//the name of the dishes will be primary key
         order.addActionListener(listener);
 
@@ -32,8 +31,6 @@ public class MenuItem extends JPanel {
         form.add(qLabel);
         form.add(quantity);
         information.add(form,BorderLayout.CENTER);
-        //information.add(quantity,BorderLayout.EAST);
-
         jpButton.add(order);
 
         //We set the general layout.
@@ -52,7 +49,6 @@ public class MenuItem extends JPanel {
         if (!aux.matches("^[0-9]*$")){
             //it does not contains numbers
             return 0;
-            //print error
         }
         return Integer.parseInt(aux);
     }

@@ -15,18 +15,16 @@ public class ModelClient {
     private String login;
     private User user;
     private Settings settings;
-    public ModelClient() {
-        login = "LogOut";
+    ModelClient() {
+        this.login = "LogOut";
         settings = new Settings();
     }
 
-    public Settings getSettings() {
+    Settings getSettings() {
         return settings;
     }
 
-    public String getLogin() {
-        return login;
-    }
+
 
     public void setUser(User user) {
         this.user = user;
@@ -36,7 +34,7 @@ public class ModelClient {
         setLogin("LogOut");
         user = null;
     }
-    public void setLogin(String login) {
+    private void setLogin(String login) {
         this.login = login;
     }
 

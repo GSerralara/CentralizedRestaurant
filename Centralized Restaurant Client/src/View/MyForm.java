@@ -89,7 +89,7 @@ public class MyForm implements Runnable, ProgressListener {
                 return;
             case MAINTABLE:
                 frame.setContentPane(mainTable);
-                mainTable.initTime();
+                mainTable.initTime(controller.getMainTableController());
                 frame.pack();
                 frame.setSize(new Dimension(300,250));
                 return;
@@ -103,8 +103,6 @@ public class MyForm implements Runnable, ProgressListener {
                 return;
             default:
                 System.out.println("Not Existing Window");
-                //ToDo: Crear ventana para este error
-                return;
         }
     }
     /**

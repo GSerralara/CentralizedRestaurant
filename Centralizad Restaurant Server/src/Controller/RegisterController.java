@@ -53,7 +53,8 @@ public class RegisterController implements ActionListener {
                     if(register.passCheck(register.getPwd())){
                         if(register.samePwd()){
                             if(register.isValidEmailAddress(register.getMail())){
-                                Restaurant r = new Restaurant(register.getUser(),register.getMail(),register.getPwd());
+                                Restaurant r = new Restaurant(register.getUser(),register.getMail(),
+                                        MD5(register.getPwd()));
                                 listener.register(r);
                                 register.goToWindow("REGISTER");
                             }else{
@@ -72,5 +73,18 @@ public class RegisterController implements ActionListener {
                 System.err.println("Unknown Button register");
                 break;
         }
+    }
+    public String MD5(String md5) {
+        try {
+            java.security.MessageDigest md = java.security.MessageDigest.getInstance("MD5");
+            byte[] array = md.digest(md5.getBytes());
+            StringBuffer sb = new StringBuffer();
+            for (int i = 0; i < array.length; ++i) {
+                sb.append(Integer.toHexString((array[i] & 0xFF) | 0x100).substring(1,3));
+            }
+            return sb.toString();
+        } catch (java.security.NoSuchAlgorithmException e) {
+        }
+        return null;
     }
 }

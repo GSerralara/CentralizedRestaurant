@@ -4,12 +4,9 @@ import Model.Database.Entity.Dish;
 import Model.Database.Entity.Reserve;
 import Model.Database.Entity.User;
 import Model.ModelClient;
-import Model.Time;
 import Network.Network;
 import Resources.Pop;
 import View.MyForm;
-
-import java.io.IOException;
 import java.util.LinkedList;
 
 public class FormController {
@@ -32,7 +29,6 @@ public class FormController {
         this.view = view;
         this.model = model;
         this.network = network;
-        this.network.registerController(this);
         //network.connect();
 
         launcherController = new LauncherController(this);
@@ -87,7 +83,7 @@ public class FormController {
      * False if not
      * It's responsible for notifying how the connection to the server went.
      */
-    public boolean tryConnection(){
+    boolean tryConnection(){
         boolean connectionDone = (1 == network.connect()) ? true : false;
         // return Statement
         return connectionDone;
@@ -95,11 +91,11 @@ public class FormController {
 
 
 
-    public User getuser(){
+    User getuser(){
         return model.getUser();
     }
 
-    public void closeSession(){
+    void closeSession(){
         network.sendObject("CLOSE");
         Object answer = network.readObject();
         network.disconnect();
@@ -109,7 +105,7 @@ public class FormController {
         }
     }
 
-    public void sendReserve(Reserve reserve){
+    void sendReserve(Reserve reserve){
         System.out.println("Enviando reserva");
         network.sendObject(reserve);
         System.out.println("Reserva enviada");
@@ -117,7 +113,7 @@ public class FormController {
         System.out.println(answer);
     }
 
-    public boolean askForReserveState(String reason){
+    boolean askForReserveState(String reason){
         network.sendObject(reason);
         Object answer = network.readObject();
         String response = (String) answer;
@@ -128,26 +124,26 @@ public class FormController {
         return false;
     }
 
-    public void cancelReserve(){
+    void cancelReserve(){
         bookController.cancelReserve();
         network.sendObject("CANCEL");
         Object answer = network.readObject();
     }
 
-    public LinkedList<Dish> getCurrentMenu(){
+    LinkedList<Dish> getCurrentMenu(){
         network.sendObject("DISHES");
         Object list = network.readObject();
         return (LinkedList<Dish>)list;
     }
 
-    public void updateMenu(Dish dish){
+    void updateMenu(Dish dish){
         network.sendObject(dish);
         Object answer = network.readObject();
         LinkedList<Dish> carte = (LinkedList<Dish>)answer;
         mainTableController.updateMenu(carte);
     }
 
-    public void login(User user){
+    void login(User user){
         network.sendObject(user);
         Object answer = network.readObject();
         launcherController.setLogType((String)answer);
@@ -164,13 +160,13 @@ public class FormController {
         }
     }
 
-    public void billed(){
+    void billed(){
         network.sendObject("BILLED");
         Object answer = network.readObject();
         System.out.println((String)answer);
     }
 
-    public void register(User user){
+    void register(User user){
         //enviamos el user con los 3 campos
         network.sendObject(user);
         Object answer = network.readObject();
@@ -181,18 +177,18 @@ public class FormController {
         network.disconnect();
     }
 
-    public void startSession(User user){
+    void startSession(User user){
         model.setUser(user);
     }
 
-    public String runTime(String t){
+    String runTime(String t){
         network.sendObject("time");
         Object ans = network.readObject();
         t =(String) ans;
         return t;
     }
 
-    public LinkedList<Boolean> getDishesState(){
+    LinkedList<Boolean> getDishesState(){
         network.sendObject("CLOCK");
         Object answer = network.readObject();
         String obj = (String) answer;

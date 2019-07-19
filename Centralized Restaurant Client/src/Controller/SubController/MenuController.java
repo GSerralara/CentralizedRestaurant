@@ -35,7 +35,7 @@ public class MenuController  implements ActionListener {
     }
 
     public void addDishes(Dish dish){
-           menu.addItem(dish.getName(),dish.getQuantety());
+           menu.addItem(dish.getName(),dish.getQuantety(),this);
     }
 
     public void removeDishes(){

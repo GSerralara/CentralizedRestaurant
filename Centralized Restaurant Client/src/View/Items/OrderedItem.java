@@ -10,12 +10,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class OrderedItem extends JPanel {
-    private JLabel dish,status, time;
+    private JLabel status, time;
     private JButton cancelOrder;
     public OrderedItem(String nameDish, String preparationTime,  ActionListener listener, int pos) {
         //We create the JPanel.
         super();
-        this.dish = new JLabel(nameDish);
+        JLabel dish = new JLabel(nameDish);
         this.time = new JLabel(preparationTime);
         this.status = new JLabel("Pedido");
         this.cancelOrder = new JButton("Cancel");
@@ -34,7 +34,7 @@ public class OrderedItem extends JPanel {
     public void updatePos(int pos){
         this.cancelOrder.setActionCommand(""+pos);
     }
-    public void hideButton(){
+    private void hideButton(){
         cancelOrder.setVisible(false);
     }
     public void updateStatus(String dishState){

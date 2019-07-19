@@ -17,7 +17,7 @@ public class Countdown extends Thread{
 
     @Override
     public void run() {
-        boolean run = true;
+
         Calendar c = Calendar.getInstance();
         while (state.getText().equals("Cocinando")){
             try {
@@ -29,7 +29,6 @@ public class Countdown extends Thread{
                 time.setTime(time.getTime()-milis);
                 etiqueta.setText(df.format(c.getTime()));
                 if(df.format(time).equals("00:00")){
-                    run = false;
                     state.setText("Servido");
                 }else {
                     sleep(1000);
