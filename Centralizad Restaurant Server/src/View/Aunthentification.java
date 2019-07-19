@@ -14,7 +14,6 @@ import java.util.LinkedList;
 public class Aunthentification extends JPanel {
     private JPanel items;
     private ArrayList<AuthItem> reserves;
-    private AunthentificationController controller;
     private final ProgressListener listener;
 
     /**
@@ -26,8 +25,7 @@ public class Aunthentification extends JPanel {
     public Aunthentification(ProgressListener listener,AunthentificationController controller) {
         // instance attributes with passed parameters
         this.listener = listener;
-        this.controller = controller;
-        this.controller.setAunthentification(this);
+        controller.setAunthentification(this);
         // UI configuration of the panel
         windowConfiguration();
     }
@@ -63,7 +61,7 @@ public class Aunthentification extends JPanel {
      *
      * @param user it's a parameter that have all information about the User.
      */
-    public void addItem(Reserve user, LinkedList<Table> list){
+    public void addItem(Reserve user, LinkedList<Table> list, AunthentificationController controller){
 
         //AuthItem item2 = new AuthItem(user);
         //item2.prepareUI(controller,reserves.size());

@@ -14,7 +14,6 @@ import java.awt.event.ActionListener;
 
 public class PreService extends JPanel {
     private final ProgressListener listener;
-    private PreServiceController controller;
     private JLabel time;
     private TableMangement tableMangement;
     private Menu menu;
@@ -28,14 +27,13 @@ public class PreService extends JPanel {
 
     public PreService(ProgressListener listener, PreServiceController controller) {
         this.listener = listener;
-        this.controller = controller;
-        this.controller.setPreService(this);
-        windowConfiguration();
+        controller.setPreService(this);
+        windowConfiguration(controller);
     }
     /**
      * Method that will create all the components of the panel.
      */
-    private void windowConfiguration(){
+    private void windowConfiguration(PreServiceController controller){
         // We configure the window.
         setLayout(new BorderLayout());
         // instance label of time of the view

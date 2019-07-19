@@ -3,12 +3,26 @@
   <component name="ChangeListManager">
     <list default="true" id="ca63c5d0-5bef-4900-9793-701936304ca4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Controller/AunthentificationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Controller/AunthentificationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Controller/SideMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Controller/SideMenuController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Model/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/out/production/Centralizad Restaurant Server/Model/Model.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Controller/AunthentificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Controller/AunthentificationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Controller/ServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Controller/ServiceController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Controller/SideMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Controller/SideMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Controller/SubController/ClientOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Controller/SubController/ClientOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Controller/SubController/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Controller/SubController/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Controller/SubController/TableManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/Controller/SubController/TableManagementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/Aunthentification.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/Aunthentification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/PreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/PreService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/ReserveItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/ServiceState.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/ServiceState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/SideMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/SideMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/SubView/ClientOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/SubView/ClientOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/SubView/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/SubView/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/SubView/TableMangement.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralizad Restaurant Server/src/View/SubView/TableMangement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Centralized Restaurant/Controller/FormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Centralized Restaurant/Controller/FormController.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -355,7 +369,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563554919837" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563557042901" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/gson-2.8.2.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />

@@ -4,11 +4,11 @@ package View;
 import Controller.SideMenuController;
 
 import javax.swing.*;
+import java.awt.event.ActionListener;
 
 public class SideMenu extends JPanel {
     // instance variables
     private final ProgressListener listener;
-    private SideMenuController controller;
     private JButton changeState;
     private JButton toCurrentSerice;
     private JButton authentication;
@@ -20,10 +20,10 @@ public class SideMenu extends JPanel {
     public SideMenu(ProgressListener listener, SideMenuController controller) {
         // instance attributes with passed parameters
         this.listener = listener;
-        this.controller = controller;
-        this.controller.setSideMenu(this);
+        controller.setSideMenu(this);
         // UI configuration of the panel
         windowConfiguration();
+        registerController(controller);
     }
     /**
      * Method that will create all the components of the panel.
@@ -32,16 +32,10 @@ public class SideMenu extends JPanel {
         JPanel listScrollPane = new JPanel();
         listScrollPane.setLayout(new BoxLayout(listScrollPane,BoxLayout.Y_AXIS));
         changeState = new JButton("Change State");
-        changeState.setActionCommand("CHANGE");
-        changeState.addActionListener(controller);
         changeState.setBorderPainted(false);
         toCurrentSerice = new JButton("To Current Service");
-        toCurrentSerice.setActionCommand("CURRENT");
-        toCurrentSerice.addActionListener(controller);
         toCurrentSerice.setBorderPainted(false);
         authentication = new JButton("authentication");
-        authentication.setActionCommand("AUTH");
-        authentication.addActionListener(controller);
         authentication.setBorderPainted(false);
         listScrollPane.add(changeState);
         listScrollPane.add(toCurrentSerice);
@@ -80,5 +74,14 @@ public class SideMenu extends JPanel {
                 System.err.println("Unknown window name Launcher");
                 break;
         }
+    }
+
+    private void registerController(ActionListener e){
+        changeState.setActionCommand("CHANGE");
+        changeState.addActionListener(e);
+        toCurrentSerice.setActionCommand("CURRENT");
+        toCurrentSerice.addActionListener(e);
+        authentication.setActionCommand("AUTH");
+        authentication.addActionListener(e);
     }
 }

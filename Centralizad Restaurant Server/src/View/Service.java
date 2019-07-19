@@ -9,10 +9,10 @@ import View.SubView.ClientOrder;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class Service extends JPanel {
     private final ProgressListener listener;
-    private ServiceController controller;
     private JLabel time;
     private JTabbedPane clients;
 
@@ -25,8 +25,7 @@ public class Service extends JPanel {
 
     public Service(ProgressListener listener, ServiceController controller) {
         this.listener = listener;
-        this.controller = controller;
-        this.controller.setService(this);
+        controller.setService(this);
         windowConfiguration();
     }
 
@@ -52,7 +51,7 @@ public class Service extends JPanel {
      * @param user it's a parameter that have all the facts of each client.
      */
 
-    public void addClient(Reserve user){
+    public void addClient(Reserve user, ServiceController controller){
         System.out.println("IN SERVICE ADDING");
         ClientOrderController obj = new ClientOrderController(controller);
         controller.addNewController(obj);
@@ -65,9 +64,5 @@ public class Service extends JPanel {
         revalidate();
         repaint();
     }
-    public void removeClient(Reserve user){
-        //clients.remove(user);
-        revalidate();
-        repaint();
-    }
+
 }

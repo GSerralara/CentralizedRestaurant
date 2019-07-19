@@ -7,6 +7,7 @@ import View.Items.MenuItem;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.math.BigDecimal;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -22,14 +23,13 @@ import java.util.LinkedList;
 public class Menu extends JPanel {
     private JPanel items;
     private ArrayList<MenuItem> menu;
-    private MenuController controller;
     private JButton add;
     private TextField fieldName;
     private JSpinner fieldUnits, fieldTime, fieldPrice;
 
     public Menu(MenuController controller) {
-        this.controller = controller;
-        this.controller.setMenu(this);
+
+        controller.setMenu(this);
         menu = new ArrayList<>();
         setLayout(new BorderLayout());
         items = new JPanel();
@@ -39,6 +39,7 @@ public class Menu extends JPanel {
         add(southPart(),BorderLayout.SOUTH);
         add(list, BorderLayout.CENTER);
         init();
+        registerController(controller);
     }
     public JPanel southPart(){
         JPanel form = new JPanel();
@@ -82,8 +83,7 @@ public class Menu extends JPanel {
         form.add(middle);
 
         add = new JButton("Add Dish");
-        add.setActionCommand("ADD");
-        add.addActionListener(controller);
+
         down.add(add);
         form.add(down);
 
@@ -94,20 +94,10 @@ public class Menu extends JPanel {
     }
     public void init(){
         items.removeAll();
-        //get add data
-        /*
-        DishDAO dao = new DishDAO();
-        LinkedList<Dish> dishes = dao.getAllDishes();
-        for(Dish i: dishes){
-            SimpleDateFormat df = new SimpleDateFormat("mm:ss");
-            menu.add(new MenuItem(df.format(i.getTime()),i.getPrice(),i.getQuantety(),i.getName(),menu.size(),controller));
-            items.add(menu.get(menu.size()-1));
-        }
-        */
         items.revalidate();
         repaint();
     }
-    public Dish addItem(){
+    public Dish addItem(MenuController controller){
         int pos = menu.size();
         BigDecimal number = new BigDecimal(fieldPrice.getValue().toString());
         float price = number.floatValue();
@@ -129,7 +119,7 @@ public class Menu extends JPanel {
         Dish d = new Dish(units,price,fieldName.getText(),time);
         return d;
     }
-    public void addDish(Dish d){
+    public void addDish(Dish d,MenuController controller){
         int pos = menu.size();
         SimpleDateFormat df = new SimpleDateFormat("mm:ss");
         Date date = d.getTime();
@@ -167,5 +157,9 @@ public class Menu extends JPanel {
         float f = (float)fieldPrice.getValue();
         Dish d = new Dish((int)fieldUnits.getValue(),f,fieldName.getName(),time);
         return d;
+    }
+    public void registerController(ActionListener e){
+        add.setActionCommand("ADD");
+        add.addActionListener(e);
     }
 }

@@ -46,7 +46,7 @@ public class AunthentificationController implements ActionListener {
 
     }
     public void addAuth(Reserve user){
-        aunthentification.addItem(user, listener.getTables());
+        aunthentification.addItem(user, listener.getTables(),this);
     }
     public String getIfWasAccepted(User user){
         for(Reserve i:accepted){

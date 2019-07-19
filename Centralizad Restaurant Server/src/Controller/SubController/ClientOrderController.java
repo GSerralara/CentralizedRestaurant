@@ -31,7 +31,7 @@ public class ClientOrderController implements ActionListener {
     }
     public void addDish(Dish dish){
         cooking.add(false);
-        clientOrder.addToOrder(dish);
+        clientOrder.addToOrder(dish,this);
     }
     public LinkedList<Boolean> dishesState(){
         return cooking;

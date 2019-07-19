@@ -20,10 +20,8 @@ public class SideMenuController implements ActionListener {
 
     public void changeWindowState() {
         if(this.windowName.equals("PRE-SERVICE")){
-            System.out.println("changing to service");
             this.windowName = "SERVICE";
         }else{
-            System.out.println("changing to preservice");
             this.windowName ="PRE-SERVICE";
         }
     }

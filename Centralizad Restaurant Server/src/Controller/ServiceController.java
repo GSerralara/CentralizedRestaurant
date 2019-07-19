@@ -49,7 +49,7 @@ public class ServiceController implements ActionListener {
 
     public void addClient(Reserve client){
 
-        this.service.addClient(client);
+        this.service.addClient(client, this);
     }
 
     public void addDishToCommand(Dish d, User u){

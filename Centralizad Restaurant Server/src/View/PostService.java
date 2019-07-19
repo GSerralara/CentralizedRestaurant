@@ -11,7 +11,6 @@ import java.util.LinkedList;
 
 public class PostService extends JPanel {
     private final ProgressListener listener;
-    private PostServiceController controller;
     private JLabel time;
     private JTabbedPane options;
     /**
@@ -21,8 +20,7 @@ public class PostService extends JPanel {
      */
     public PostService(ProgressListener listener, PostServiceController controller) {
         this.listener = listener;
-        this.controller = controller;
-        this.controller.setPostService(this);
+        controller.setPostService(this);
         windowConfiguration();
     }
     /**

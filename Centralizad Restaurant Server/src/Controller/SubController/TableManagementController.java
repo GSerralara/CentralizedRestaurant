@@ -22,7 +22,7 @@ public class TableManagementController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getActionCommand().equals("ADD")){
             listener.addTable(tableMangement.getNumCustomers());
-            tableMangement.addItem(""+tableMangement.getNumCustomers());
+            tableMangement.addItem(""+tableMangement.getNumCustomers(),this);
         }else {
             tableMangement.cancelItem(e.getActionCommand());
             listener.removeTable(e.getActionCommand());
@@ -32,6 +32,6 @@ public class TableManagementController implements ActionListener {
         tableMangement.init();
     }
     public void addExistingTable(int q){
-        tableMangement.addItem(""+q);
+        tableMangement.addItem(""+q,this);
     }
 }

@@ -4,11 +4,11 @@ import Controller.ServiceStateController;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class ServiceState extends JPanel {
     // instance variables
     private final ProgressListener listener;
-    private ServiceStateController controller;
     private JButton init;
     private JButton stop;
     private JButton halt;
@@ -21,10 +21,10 @@ public class ServiceState extends JPanel {
     public ServiceState(ProgressListener listener,ServiceStateController controller) {
         // instance attributes with passed parameters
         this.listener = listener;
-        this.controller = controller;
-        this.controller.setServiceState(this);
+        controller.setServiceState(this);
         // UI configuration of the panel
         windowConfiguration();
+        registerController(controller);
     }
     /**
      * Method that will create all the components of the panel.
@@ -35,18 +35,16 @@ public class ServiceState extends JPanel {
         JLabel title = new JLabel("Service State");
         JPanel listScrollPane = new JPanel();
         listScrollPane.setLayout(new BoxLayout(listScrollPane,BoxLayout.Y_AXIS));
+
         init = new JButton("Init Service");
-        init.setActionCommand("INIT");
         init.setForeground(Color.GREEN);
-        init.addActionListener(controller);
+
         stop = new JButton("Stop Service");
-        stop.setActionCommand("STOP");
         stop.setForeground(Color.ORANGE);
-        stop.addActionListener(controller);
+
         halt = new JButton("End Service");
-        halt.setActionCommand("END");
         halt.setForeground(Color.RED);
-        halt.addActionListener(controller);
+
         listScrollPane.add(title);
         listScrollPane.add(Box.createVerticalStrut(20));
         listScrollPane.add(init);
@@ -63,6 +61,15 @@ public class ServiceState extends JPanel {
     }
     public String getCurrentState(){
         return currentState.getText();
+    }
+
+    private void registerController(ActionListener e){
+        init.setActionCommand("INIT");
+        init.addActionListener(e);
+        stop.setActionCommand("STOP");
+        stop.addActionListener(e);
+        halt.setActionCommand("END");
+        halt.addActionListener(e);
     }
 
 }

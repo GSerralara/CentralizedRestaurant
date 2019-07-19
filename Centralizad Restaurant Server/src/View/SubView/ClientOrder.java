@@ -14,12 +14,11 @@ public class ClientOrder extends JPanel {
     private Reserve user;
     private JPanel clientOrders;
     private ArrayList<OrderedItem> currentOrder;
-    private ClientOrderController controller;
+
 
     public ClientOrder(Reserve user, ClientOrderController controller) {
         this.user = user;
-        this.controller = controller;
-        this.controller.setClientOrder(this);
+        controller.setClientOrder(this);
         windowConfiguration();
     }
 
@@ -46,7 +45,7 @@ public class ClientOrder extends JPanel {
         clientOrders.revalidate();
         repaint();
     }
-    public void addToOrder(Dish dish){
+    public void addToOrder(Dish dish, ClientOrderController controller){
         this.currentOrder.add(new OrderedItem(dish,controller,currentOrder.size()));
         this.clientOrders.add(currentOrder.get(currentOrder.size()-1));
         clientOrders.revalidate();

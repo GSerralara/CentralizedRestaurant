@@ -25,7 +25,7 @@ public class MenuController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getActionCommand().equals("ADD")){
             if(menu.isNameIntroduced()){
-                listener.addDish(menu.addItem());
+                listener.addDish(menu.addItem(this));
             }else{
                 Pop pop = new Pop("At least introduce a dish name");
             }
@@ -35,7 +35,7 @@ public class MenuController implements ActionListener {
         }
     }
     public void addDish(Dish d){
-        menu.addDish(d);
+        menu.addDish(d,this);
     }
     public void enableAddoption(boolean state){
         menu.enableButton(state);
