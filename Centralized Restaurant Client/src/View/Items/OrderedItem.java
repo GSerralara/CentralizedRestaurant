@@ -14,7 +14,7 @@ import java.util.Date;
  */
 
 public class OrderedItem extends JPanel {
-    private JLabel status, time;
+    private JLabel status, time,dish;
     private JButton cancelOrder;
 
     /**
@@ -27,14 +27,12 @@ public class OrderedItem extends JPanel {
     public OrderedItem(String nameDish, String preparationTime,  ActionListener listener, int pos) {
         //We create the JPanel.
         super();
-        JLabel dish = new JLabel(nameDish);
+        dish = new JLabel(nameDish);
         this.time = new JLabel(preparationTime);
         this.status = new JLabel("Pedido");
         this.cancelOrder = new JButton("Cancel");
         this.cancelOrder.setActionCommand(""+pos);
         this.cancelOrder.addActionListener(listener);
-
-
         JPanel form = new JPanel(new FlowLayout());
         form.add(dish,FlowLayout.LEFT);
         form.add(time,FlowLayout.CENTER);
@@ -81,5 +79,13 @@ public class OrderedItem extends JPanel {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * getter name dish
+     * @return string
+     */
+    public String getDishName(){
+        return this.dish.getText();
     }
 }

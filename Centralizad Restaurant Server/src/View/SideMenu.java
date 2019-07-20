@@ -76,6 +76,11 @@ public class SideMenu extends JPanel {
         }
     }
 
+    /**
+     * In this function we will create the setActionCommand and the addActionListener.
+     * @param e it's a variable that contains the ActionListener.
+     */
+
     private void registerController(ActionListener e){
         changeState.setActionCommand("CHANGE");
         changeState.addActionListener(e);

@@ -7,6 +7,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+/**
+ * View Launcher class
+ * Extends from JPanel
+ *
+ * @author Guillermo Serraclara
+ * @author Aleix Olle
+ * @author David Diego
+ * @author Victor Salvador
+ */
 public class Launcher extends JPanel {
     // instance variables
     private final ProgressListener listener;
@@ -118,12 +127,17 @@ public class Launcher extends JPanel {
         return bottom;
     }
 
+    /**
+     * In this function we will create the setActionCommand and the addActionListener.
+     * @param e it's a variable that contains the ActionListener.
+     */
     private void registerController(ActionListener e){
         register.setActionCommand(AC_REGISTER);//set action command that will get the ActionListener
         register.addActionListener(e);//set which ActionListener
         signIn.setActionCommand(AC_SIGNIN);//set action command that will get the ActionListener
         signIn.addActionListener(e);//set which ActionListener
     }
+
     /**
      * Method that will create all the components of the panel.
      * @param windowName that indicate which window will target and change into.

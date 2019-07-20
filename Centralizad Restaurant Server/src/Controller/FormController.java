@@ -232,15 +232,28 @@ public class FormController {
      * @param u user
      */
     public void reserveCancelation(User u){
+        System.out.println(u == null);
         Reserve r = model.getReserveFromReserveName(u.getUser());
-        if(aunthentificationController.getIfWasAccepted(r.getUser()).equals("YES")){
+        if(r == null){
+            r = model.getReserveFromUser(u);
+
             aunthentificationController.dropReserve(r.getUser());
             model.callCommand("DropReserve",u);
             if(model.numeberOfReserves()==0){
                 changeService();
             }
+
+
         }else{
-            aunthentificationController.dropReserve(r.getUser());
+            if(aunthentificationController.getIfWasAccepted(r.getUser()).equals("YES")){
+                aunthentificationController.dropReserve(r.getUser());
+                model.callCommand("DropReserve",u);
+                if(model.numeberOfReserves()==0){
+                    changeService();
+                }
+            }else{
+                aunthentificationController.dropReserve(r.getUser());
+            }
         }
 
     }
@@ -383,6 +396,16 @@ public class FormController {
     public void addDishToService(User u, Dish d){
         serviceController.addDishToCommand(d,u);
         model.addDishToReserve(u,d);
+    }
+
+    /**
+     * removes a dish from order
+     * @param u user
+     * @param name dish name
+     */
+    public void removeDishOrder(User u, String name){
+        serviceController.deleteDish(u,name);
+
     }
 
 }

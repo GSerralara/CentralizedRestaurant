@@ -81,4 +81,13 @@ public class Order extends JPanel {
         currentOrder.get(index).updateStatus("Cocinando");
         currentOrder.get(index).initCountDown();
     }
+
+    /**
+     * getter of a dish name
+     * @param pos int of arraay pos
+     * @return string name
+     */
+    public String getNamedish(int pos){
+        return currentOrder.get(pos).getDishName();
+    }
 }

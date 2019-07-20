@@ -11,6 +11,11 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
+/**
+ * TableManagement class
+ * extends of JPanel
+ * serves as manager of the tables of the restaurant
+ */
 public class TableMangement extends JPanel {
     private JPanel items;
     private ArrayList<TableItem> tables;
@@ -18,6 +23,12 @@ public class TableMangement extends JPanel {
     private JButton add;
     private JLabel numcoms;
     private JSpinner field;
+
+    /**
+     * This function is the class constructor. In if this class has as objective to manage the tables.
+     * @param controller it's the respective controller of this view.
+     */
+
     public TableMangement(TableManagementController controller) {
 
         controller.setTableMangement(this);
@@ -33,6 +44,10 @@ public class TableMangement extends JPanel {
         registerController(controller);
     }
 
+    /**
+     * This function creates the view of the upper part.
+     * @return a JPanel.
+     */
     public JPanel northPart(){
         JPanel up = new JPanel(new FlowLayout());
         add = new JButton("Add Table");
@@ -46,12 +61,22 @@ public class TableMangement extends JPanel {
         up.add(add);
         return up;
     }
+
+    /**
+     * Function that start the view.
+     */
     public void init(){
         tables = new ArrayList<>();
         items.removeAll();
         items.revalidate();
         repaint();
     }
+
+    /**
+     *Function that adds an item in view.
+     * @param num it's a variable that have the number in one String.
+     * @param controller it's the respective controller of this view.
+     */
     public void addItem(String num,TableManagementController controller){
         int pos = Integer.parseInt(num);
         this.tables.add(new TableItem(controller,tables.size(),pos));
@@ -59,6 +84,11 @@ public class TableMangement extends JPanel {
         items.revalidate();
         repaint();
     }
+
+    /**
+     * Function that cancel an item in view.
+     * @param pos it's a variable that have the number in one String.
+     */
     public void cancelItem(String pos){
         int index = Integer.parseInt(pos);
         items.remove(index);
@@ -69,13 +99,28 @@ public class TableMangement extends JPanel {
         items.revalidate();
         repaint();
     }
+
+    /**
+     * function that gives you the number of tables
+     * @return number of tables
+     */
     public int listSize(){
         return tables.size();
     }
+
+    /**
+     * function that gives you the numeber of max customers per table
+     * @return number of max customers
+     */
     public int getNumCustomers(){
         int value = (Integer) field.getValue();
         return value;
     }
+
+    /**
+     * In this function we will create the setActionCommand and the addActionListener.
+     * @param e it's a variable that contains the ActionListener.
+     */
     public void registerController(ActionListener e){
         add.setActionCommand("ADD");
         add.addActionListener(e);

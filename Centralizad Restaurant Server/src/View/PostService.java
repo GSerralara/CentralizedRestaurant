@@ -9,6 +9,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.LinkedList;
 
+/**
+ * PostService class
+ * extends JPanel
+ * serves the porpuse of admin postservice state
+ */
 public class PostService extends JPanel {
     private final ProgressListener listener;
     private JLabel time;
@@ -39,8 +44,13 @@ public class PostService extends JPanel {
         top.add(time);
         add(top,BorderLayout.NORTH);
         add(options,BorderLayout.CENTER);
-
     }
+
+    /**
+     * This class does is add a new option for the statistics.
+     * @param name it's a variable that contains the name of tab.
+     * @param ranking it's a variable that have all the information.
+     */
     public void addTab(String name, LinkedList<Ranking> ranking){
         JPanel tab = new CharBar(ranking);
         options.addTab(name,tab);

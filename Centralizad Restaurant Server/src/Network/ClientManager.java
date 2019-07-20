@@ -197,6 +197,13 @@ public class ClientManager extends Thread {
         if(msg.equals("CLOCK")){
             return "STATE";
         }
+        if(msg.charAt(0)=='C' && msg.charAt(1)=='L'){
+            String dish = "";
+            for(int i= 2;i< msg.length();i++){
+                dish += msg.charAt(i);
+            }
+            listener.removeDishToOrder(client,dish);
+        }
         return "null";
     }
 

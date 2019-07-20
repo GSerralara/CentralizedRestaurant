@@ -8,6 +8,16 @@ import java.sql.Time;
 public class MenuItem extends JPanel {
     private JLabel fieldTime,fieldPrice,fieldUnits,fieldName;
     private JButton cancel;
+
+    /**
+     *
+     * @param time
+     * @param price
+     * @param units
+     * @param name
+     * @param pos
+     * @param listener
+     */
     public MenuItem(String time, float price, int units, String name, int pos, ActionListener listener) {
         super();
         System.out.println(name);
@@ -35,6 +45,11 @@ public class MenuItem extends JPanel {
         down.add(cancel);
         add(down);
     }
+
+    /**
+     *
+     * @param pos it's a integer that save the position.
+     */
     public void updatePos(int pos){
         this.cancel.setActionCommand(""+pos);
     }

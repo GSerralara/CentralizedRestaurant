@@ -11,6 +11,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+/**
+ * Service class of the view
+ * extends JPanel
+ * serves as manager of the view
+ */
 public class Service extends JPanel {
     private final ProgressListener listener;
     private JLabel time;
@@ -22,7 +27,6 @@ public class Service extends JPanel {
      * @param controller it's the respective controller of this view.
      */
 
-
     public Service(ProgressListener listener, ServiceController controller) {
         this.listener = listener;
         controller.setService(this);
@@ -32,7 +36,6 @@ public class Service extends JPanel {
     /**
      * Method that will create all the components of the panel.
      */
-
     public void windowConfiguration(){
         // We configure the window.
         setLayout(new BorderLayout());
@@ -46,11 +49,11 @@ public class Service extends JPanel {
         top.add(time);
         add(top,BorderLayout.NORTH);
     }
+
     /**
      *This method makes that the different clients are being cumulated.
      * @param user it's a parameter that have all the facts of each client.
      */
-
     public void addClient(Reserve user, ServiceController controller){
         System.out.println("IN SERVICE ADDING");
         ClientOrderController obj = new ClientOrderController(controller);
@@ -60,9 +63,15 @@ public class Service extends JPanel {
         revalidate();
         repaint();
     }
+
+    /**
+     * procedure that redraws the view
+     */
     public void redraw(){
         revalidate();
         repaint();
     }
+
+
 
 }

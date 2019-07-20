@@ -39,6 +39,8 @@ public class OrderController implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
+        // int index = Integer.parseInt(e.getActionCommand());
+       // listener.cancelDish(order.getNamedish(index));
         order.cancelItem(e.getActionCommand());
 
     }

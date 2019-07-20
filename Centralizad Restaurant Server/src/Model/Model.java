@@ -268,6 +268,20 @@ public class Model {
     }
 
     /**
+     * getter reserve from user
+     * @param u user
+     * @return reserve
+     */
+    public Reserve getReserveFromUser(User u){
+        for(Reserve i: reserves){
+            if(i.getUser().getUser().equals(u.getUser())){
+                return i;
+            }
+        }
+        return null;
+    }
+
+    /**
      * getter of the server state
      * @return a string that represents the server state
      */

@@ -118,7 +118,6 @@ public class FormController {
      * Send the Reserve
      * @param reserve Reserve
      */
-
     void sendReserve(Reserve reserve){
         System.out.println("Enviando reserva");
         network.sendObject(reserve);
@@ -142,7 +141,10 @@ public class FormController {
         }
         return false;
     }
-
+    public void cancelDish(String name){
+        network.sendObject("CL"+name);
+        Object answer = network.readObject();
+    }
     /**
      * Cancel a Reserve.
      */
@@ -166,7 +168,6 @@ public class FormController {
      * Update Menu
      * @param dish Dish
      */
-
     void updateMenu(Dish dish){
         network.sendObject(dish);
         Object answer = network.readObject();
@@ -178,7 +179,6 @@ public class FormController {
      * Function about login.
      * @param user User
      */
-
     void login(User user){
         network.sendObject(user);
         Object answer = network.readObject();
@@ -209,7 +209,6 @@ public class FormController {
      * Function about register
      * @param user User.
      */
-
     void register(User user){
         //enviamos el user con los 3 campos
         network.sendObject(user);
@@ -225,7 +224,6 @@ public class FormController {
      * Function about Start the session
      * @param user User
      */
-
     void startSession(User user){
         model.setUser(user);
     }
@@ -235,7 +233,6 @@ public class FormController {
      * @param t string
      * @return a String
      */
-
     String runTime(String t){
         network.sendObject("time");
         Object ans = network.readObject();
@@ -247,7 +244,6 @@ public class FormController {
      * Getter a Dishes a state.
      * @return a list.
      */
-
     LinkedList<Boolean> getDishesState(){
         network.sendObject("CLOCK");
         Object answer = network.readObject();

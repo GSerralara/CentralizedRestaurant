@@ -9,15 +9,28 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.LinkedList;
 
-/**********************************
-
+/**
+ * CharBar Class
+ * extends JPanel
+ * generates the bar of the stadistics
  */
 
 public class CharBar extends JPanel {
+
     private LinkedList<Ranking> list;
+
+    /**
+     * Default Constructor of the class
+     * @param list of rankings
+     */
     public CharBar(LinkedList<Ranking> list){
         this.list = list;
     }
+
+    /**
+     * override fucntion that paints the bar
+     * @param g variable
+     */
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);

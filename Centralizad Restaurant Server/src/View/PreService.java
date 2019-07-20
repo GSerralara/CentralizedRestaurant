@@ -9,9 +9,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-
-
-
+/**
+ * PreService class
+ * extends JPanel
+ * serves the purpose to admin the presevice state
+ */
 public class PreService extends JPanel {
     private final ProgressListener listener;
     private JLabel time;
@@ -30,6 +32,7 @@ public class PreService extends JPanel {
         controller.setPreService(this);
         windowConfiguration(controller);
     }
+
     /**
      * Method that will create all the components of the panel.
      */

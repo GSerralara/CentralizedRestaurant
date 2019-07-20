@@ -234,7 +234,14 @@ public class Network implements Runnable {
     public void addDishToOrder(User client, Dish plate){
         controller.addDishToService(client,plate);
     }
-
+    /**
+     * procedure that removes a client order
+     * @param client that makes the order
+     * @param plate that has to be registered in the bbdd
+     */
+    public void removeDishToOrder(User client, String plate){
+        controller.removeDishOrder(client, plate);
+    }
     /**
      * function that gets if the dishes are cooking or not
      * @param client that refers its comands

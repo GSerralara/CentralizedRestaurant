@@ -97,7 +97,19 @@ public class ServiceController implements ActionListener {
         }
         service.redraw();
     }
-    public void deleteClient(Reserve client){
+
+    /**
+     * deletes a dish of the service
+     * @param client client
+     * @param dishname name
+     */
+    public void deleteDish(User client, String dishname){
+        for(ClientOrderController i: clientsController){
+            if(client.getUser().equals(i.getUser().getReserveName())){
+                i.removeDish(dishname);
+            }
+        }
+        service.redraw();
 
     }
 }

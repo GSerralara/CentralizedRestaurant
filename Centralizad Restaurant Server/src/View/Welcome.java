@@ -7,12 +7,24 @@ import Controller.WelcomeController;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
-
+/**
+ * View Launcher class
+ * Extends from JPanel
+ *
+ * @author Guillermo Serraclara
+ * @author Aleix Olle
+ * @author David Diego
+ * @author Victor Salvador
+ */
 public class Welcome extends JPanel {
     // instance variables
     private final ProgressListener listener;
     private JButton logOut;
-
+    /**
+     * Constructor by default of the class.
+     * @param listener it's a ProgressListener that the class will use to move to other views
+     * @param controller it's the respective controller of this view
+     * */
     public Welcome(ProgressListener listener, WelcomeController controller) {
         this.listener = listener;
         controller.setWelcome(this);
@@ -39,6 +51,10 @@ public class Welcome extends JPanel {
         add(grid,BorderLayout.CENTER);
     }
 
+    /**
+     * In this function we will create the setActionCommand and the addActionListener.
+     * @param e it's a variable that contains the ActionListener.
+     */
     private void registerController(ActionListener e){
         logOut.setActionCommand("LOGOUT");
         logOut.addActionListener(e);

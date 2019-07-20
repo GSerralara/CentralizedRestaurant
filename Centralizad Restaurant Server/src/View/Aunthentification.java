@@ -91,12 +91,22 @@ public class Aunthentification extends JPanel {
     }
 
     /**
+     * redraws the view
+     */
+    public void redraw(){
+        items.revalidate();
+        repaint();
+    }
+
+    /**
      * This method remove the user in the different list.
      * @param user it's a parameter that have all information about the User.
      */
     public void dropUser(User user){
+        System.out.println("Items number "+ reserves.size());
         for(int i=0;i<reserves.size();i++){
-            if(reserves.get(i).getUser()==user){
+            System.out.println("dropping funciton");
+            if(reserves.get(i).getUser().getUser().equals(user.getUser())){
                 reserves.remove(i);
                 items.remove(i);
             }
@@ -106,6 +116,15 @@ public class Aunthentification extends JPanel {
         }
         items.revalidate();
         repaint();
+    }
+
+    /**
+     * remove
+     */
+    public void removeAccept(int index){
+        System.out.println(index);
+        System.out.println(reserves.size());
+        reserves.get(index).removeButton();
     }
     /**
      *
@@ -121,6 +140,13 @@ public class Aunthentification extends JPanel {
         int index = Integer.parseInt(num);
         return reserves.get(index).getReserve();
     }
+
+    /**
+     * This function gives you the id of the table.
+     * @param pos it's a variable that parses the id
+     * @return returns the number
+     */
+
     public int getTable(String pos){
         String num ="";
         for(int i =2; i< pos.length();i++){
@@ -136,6 +162,11 @@ public class Aunthentification extends JPanel {
         return id;
     }
 
+    /**
+     * This function checks if the user exists inside the queue.
+     * @param u it's a variable that contains user information.
+     * @return returns true or false.
+     */
     public boolean userIsOnWainting(User u){
         for(int i=0;i<reserves.size();i++){
             if(reserves.get(i).getUser()==u){

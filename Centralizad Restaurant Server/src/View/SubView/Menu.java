@@ -20,6 +20,11 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.LinkedList;
 
+/**
+ * Menu class
+ * extends JPanel
+ * serves as admin of the list of dishes
+ */
 public class Menu extends JPanel {
     private JPanel items;
     private ArrayList<MenuItem> menu;
@@ -27,6 +32,10 @@ public class Menu extends JPanel {
     private TextField fieldName;
     private JSpinner fieldUnits, fieldTime, fieldPrice;
 
+    /**
+     * This function shows the plates and offers the function of adding plates.
+     * @param controller it's the respective controller of this view.
+     */
     public Menu(MenuController controller) {
 
         controller.setMenu(this);
@@ -41,6 +50,11 @@ public class Menu extends JPanel {
         init();
         registerController(controller);
     }
+
+    /**
+     * It creates the interface at the bottom of the view and is just the part where the dishes are managed.
+     * @return return a Jpanel.
+     */
     public JPanel southPart(){
         JPanel form = new JPanel();
         form.setLayout(new BoxLayout(form,BoxLayout.Y_AXIS));
@@ -89,14 +103,29 @@ public class Menu extends JPanel {
 
         return form;
     }
+
+    /**
+     * This function See that in that field there is a name.
+     * @return true or false.
+     */
     public boolean isNameIntroduced(){
         return !fieldName.getText().equals("");
     }
+
+    /**
+     * Function that starts the view.
+     */
     public void init(){
         items.removeAll();
         items.revalidate();
         repaint();
     }
+
+    /**
+     * Function that adds an item.
+     * @param controller it's the respective controller of this view.
+     * @return a dish.
+     */
     public Dish addItem(MenuController controller){
         int pos = menu.size();
         BigDecimal number = new BigDecimal(fieldPrice.getValue().toString());
@@ -119,6 +148,12 @@ public class Menu extends JPanel {
         Dish d = new Dish(units,price,fieldName.getText(),time);
         return d;
     }
+
+    /**
+     * Function that adds a dish.
+     * @param d it's a variable that contains all information about dish.
+     * @param controller it's the respective controller of this view.
+     */
     public void addDish(Dish d,MenuController controller){
         int pos = menu.size();
         SimpleDateFormat df = new SimpleDateFormat("mm:ss");
@@ -131,9 +166,19 @@ public class Menu extends JPanel {
         items.revalidate();
         repaint();
     }
+
+    /**
+     * Function that activates or deactivates the buttons.
+     * @param set it's a variable that contains a boolean.
+     */
     public void enableButton(Boolean set){
         add.setEnabled(set);
     }
+
+    /**
+     * Function that cancel a Item.
+     * @param pos it's a variable that have the position.
+     */
     public void cancelItem(String pos){
         int index = Integer.parseInt(pos);
         items.remove(index);
@@ -145,6 +190,10 @@ public class Menu extends JPanel {
         repaint();
     }
 
+    /**
+     * Function that return the dish.
+     * @return a dish.
+     */
     public Dish getDish(){
         SimpleDateFormat df = new SimpleDateFormat("mm:ss");
         Date time = new Date();
@@ -158,6 +207,11 @@ public class Menu extends JPanel {
         Dish d = new Dish((int)fieldUnits.getValue(),f,fieldName.getName(),time);
         return d;
     }
+
+    /**
+     * In this function we will create the setActionCommand and the addActionListener.
+     * @param e it's a variable that contains the ActionListener.
+     */
     public void registerController(ActionListener e){
         add.setActionCommand("ADD");
         add.addActionListener(e);

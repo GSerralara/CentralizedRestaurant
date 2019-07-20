@@ -68,6 +68,13 @@ public class ClientOrderController implements ActionListener {
     }
 
     /**
+     * deletes a dish
+     * @param name name
+     */
+    public void removeDish(String name){
+        clientOrder.deleteItem(name);
+    }
+    /**
      * override function
      * @param e event
      */
