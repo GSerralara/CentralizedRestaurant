@@ -7,11 +7,24 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedList;
 
+/**
+ * UserDao class.
+ */
+
 public class UserDAO {
+    /**
+     * Add a User
+     * @param user User.
+     */
     public void addUser(User user){
         String query = "INSERT INTO Customer VALUES ('"+user.getUser()+"','"+user.getPassword()+"');";
         BBDDHelper.getInstance().insertData(query);
     }
+
+    /**
+     * Getter a list of Users
+     * @return a list.
+     */
     public LinkedList<User> getAllUsers(){
         LinkedList<User> users = new LinkedList<>();
         String query = "SELECT * FROM Customer";

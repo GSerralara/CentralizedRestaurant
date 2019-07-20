@@ -7,10 +7,18 @@ import Resources.Pop;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * RestaurantDao class.
+ */
+
 public class RestaurantDAO {
     public RestaurantDAO() {
     }
 
+    /**
+     * Add a restaurant
+     * @param restaurant Restaurant.
+     */
     public void addRestaurant(Restaurant restaurant){
         String msg = "";
         int outputValue = BBDDHelper.getInstance().insertRegister("Restaurant-New",restaurant);
@@ -22,6 +30,11 @@ public class RestaurantDAO {
         Pop pop = new Pop(msg);
     }
 
+    /**
+     * Log a restaurant.
+     * @param restaurant Restaurant.
+     * @return a integer
+     */
     public int logRestaurant(Restaurant restaurant){
         String msg = "";
         int outputValue = BBDDHelper.getInstance().insertRegister("Restaurant-Log",restaurant);
@@ -33,6 +46,12 @@ public class RestaurantDAO {
         Pop pop = new Pop(msg);
         return outputValue;
     }
+
+    /**
+     * Getter Restaurant
+     * @param restaurant restaurant
+     * @return a restaurant
+     */
 
     public Restaurant getRestaurant(Restaurant restaurant){
         String query = "";

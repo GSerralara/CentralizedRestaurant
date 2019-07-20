@@ -6,17 +6,33 @@ import View.Launcher;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * LauncherController class
+ */
 public class LauncherController implements ActionListener {
     private Launcher launcher;
     private FormController listener;
+
+    /**
+     * Default class constructor
+     * @param listener controller
+     */
     public LauncherController(FormController listener) {
         this.listener = listener;
     }
 
+    /**
+     *  view setter
+     * @param launcher view
+     */
     public void setLauncher(Launcher launcher) {
         this.launcher = launcher;
     }
 
+    /**
+     * override function
+     * @param e event
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()){
@@ -39,6 +55,12 @@ public class LauncherController implements ActionListener {
                 break;
         }
     }
+
+    /**
+     * crypt string
+     * @param md5 string to encrypt
+     * @return string
+     */
     public String MD5(String md5) {
         try {
             java.security.MessageDigest md = java.security.MessageDigest.getInstance("MD5");

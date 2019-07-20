@@ -56,12 +56,29 @@ public class ServiceState extends JPanel {
         listScrollPane.add(currentState);
         add(listScrollPane,BorderLayout.CENTER);
     }
+
+    /**
+     * In this function we change the current state from a String.
+     * @param state it's a variable of type String that contains the information of state.
+     */
     public void changeCurrentState(String state){
+
         currentState.setText(state);
     }
+
+    /**
+     *
+     * @return  In this function we obtain the current state from a String that the program returns to us.
+     */
     public String getCurrentState(){
+
         return currentState.getText();
     }
+
+    /**
+     * In this function we will create the setActionCommand and the addActionListener.
+     * @param e it's a variable that contains the ActionListener.
+     */
 
     private void registerController(ActionListener e){
         init.setActionCommand("INIT");

@@ -8,20 +8,35 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.LinkedList;
 
+/**
+ * AunthentificationController class
+ */
 public class AunthentificationController implements ActionListener {
     private Aunthentification aunthentification;
     private FormController listener;
     private LinkedList<Reserve> accepted;
 
+    /**
+     * default constructor
+     * @param listener controller
+     */
     public AunthentificationController(FormController listener) {
         this.listener = listener;
         accepted = new LinkedList<>();
     }
 
+    /**
+     * view setter
+     * @param aunthentification view
+     */
     public void setAunthentification(Aunthentification aunthentification) {
         this.aunthentification = aunthentification;
     }
 
+    /**
+     * override function
+     * @param e event
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         String[] op = e.getActionCommand().split(":");
@@ -34,6 +49,11 @@ public class AunthentificationController implements ActionListener {
             aunthentification.cancelItem(e.getActionCommand());
         }
     }
+
+    /**
+     * drop reserve
+     * @param user user
+     */
     public void dropReserve(User user){
         for(Reserve i: accepted){
             System.out.println("DROPING "+i.getReserveName()+" "+user.getUser());
@@ -45,9 +65,20 @@ public class AunthentificationController implements ActionListener {
         }
 
     }
+
+    /**
+     * add auth item
+     * @param user reserve
+     */
     public void addAuth(Reserve user){
         aunthentification.addItem(user, listener.getTables(),this);
     }
+
+    /**
+     * getter of auth state
+     * @param user user
+     * @return string
+     */
     public String getIfWasAccepted(User user){
         for(Reserve i:accepted){
             if(user.getUser().equals(i.getUser().getUser())){
@@ -58,6 +89,10 @@ public class AunthentificationController implements ActionListener {
         return "NO";
     }
 
+    /**
+     * getter accepted
+     * @return list
+     */
     public LinkedList<Reserve> getAccepted() {
         return accepted;
     }

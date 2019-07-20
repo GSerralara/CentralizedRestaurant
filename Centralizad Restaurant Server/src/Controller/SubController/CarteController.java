@@ -7,18 +7,33 @@ import View.SubView.Carte;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * CarteController class
+ */
 public class CarteController implements ActionListener {
     private Carte carte;
     private PreServiceController listener;
 
+    /**
+     * Default constructor
+     * @param listener controller
+     */
     public CarteController(PreServiceController listener) {
         this.listener = listener;
     }
 
+    /**
+     * view setter
+     * @param carte view
+     */
     public void setCarte(Carte carte) {
         this.carte = carte;
     }
 
+    /**
+     * override function
+     * @param e event
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()){
@@ -39,9 +54,18 @@ public class CarteController implements ActionListener {
                 break;
         }
     }
+
+    /**
+     * init
+     */
     public void init(){
         carte.init();
     }
+
+    /**
+     * add a menu
+     * @param name of menu
+     */
     public void addMenu(String name){
         carte.addCarteOption(name);
     }

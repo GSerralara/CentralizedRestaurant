@@ -4,6 +4,9 @@ import Model.Database.Entity.Restaurant;
 
 import java.sql.*;
 
+/**
+ * BBDD Conector class.
+ */
 public class BBDDConnector {
     static String userName;
     static String password;
@@ -12,6 +15,15 @@ public class BBDDConnector {
     static String url = "jdbc:mysql://";
     static Connection conn;
     static Statement s;
+
+    /**
+     * This method is used to conect our BBDD in our System.
+     * @param usr it's a parameter the type of String.
+     * @param pass it's a parameter the type of String.
+     * @param db it's a parameter the type of String.
+     * @param port it's a parameter the type of Integer.
+     * @param dirIp it's a parameter the type of String.
+     */
 
     public BBDDConnector(String usr, String pass, String db, int port, String dirIp) {
        this.userName = usr;
@@ -22,6 +34,11 @@ public class BBDDConnector {
        this.url += ":"+port+"/";
        this.url += db;
     }
+
+    /**
+     * This method is based in connect the BBDD and if it detects any connectivity problem it will launch an error message thanks to try catch.
+     */
+
     public void connect() {
         try {
             Class.forName("com.mysql.jdbc.Connection");
@@ -46,6 +63,10 @@ public class BBDDConnector {
     public boolean isConnected(){
         return conn != null;
     }
+
+    /**
+     * This method is based in disconnect the BBDD and if it detects any connectivity problem it will launch an error message thanks to try catch.
+     */
 
     public void disconnect(){
         try {

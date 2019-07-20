@@ -4,8 +4,23 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+/**
+ * Pop-Up Window class
+ * Extends from JFrame and implements ActionListener
+ *
+ * @author Guillermo Serraclara
+ * @author Aleix Olle
+ * @author David Diego
+ * @author Pablo Nogueras
+ * @author Victor Salvador
+ */
+
 
 public class Pop extends JFrame implements ActionListener {
+    /**
+     * Constructor by default of the class.
+     * @param msg it's a String that will display the Pop-Up Window
+     * */
     public Pop(String msg)
     {
         // create a frame
@@ -30,6 +45,12 @@ public class Pop extends JFrame implements ActionListener {
         setVisible(true);
     }
 
+    /**
+     * Override Method from ActionListener that activates when a Swing element,
+     * with this class as an ActionListener, is interacted with.
+     * @param e ActionEvent that will get the method.
+     * In this case the calling of this method destroys the frame
+     * */
     // if the button is pressed
     public void actionPerformed(ActionEvent e)
     {

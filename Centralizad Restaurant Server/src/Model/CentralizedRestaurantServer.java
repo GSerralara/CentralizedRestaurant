@@ -5,7 +5,22 @@ import Resources.Pop;
 import View.WindowForm;
 
 import java.sql.*;
+/**
+ * @author Guillermo Serraclara
+ * @author Aleix Olle
+ * @author David Diego
+ * @author Victor Salvador
+ * @version 1.0
+ *
+ * Centralized Restaurant(MVC) DPOO - 2018/19
+ *
+ * Main class of the program.
+ */
 public class CentralizedRestaurantServer {
+    /**
+     * entry point
+     * @param args of the function
+     */
     public static void main(String[] args) {
         //We create the model
         Model model = new Model();

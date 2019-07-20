@@ -154,12 +154,18 @@ public class Register extends JPanel {
         // return Statement
         return bottom;
     }
+
+    /**
+     * In this function we will create the setActionCommand and the addActionListener.
+     * @param e it's a variable that contains the ActionListener.
+     */
     private void registerController(ActionListener e){
         logIn.setActionCommand(AC_LOGIN);//set action command that will get the ActionListener
         logIn.addActionListener(e);//set which ActionListener
         signUp.setActionCommand(AC_REGISTER);//set action command that will get the ActionListener
         signUp.addActionListener(e);//set which ActionListener
     }
+
     /**
      * Method that will create all the components of the panel.
      *
@@ -205,6 +211,12 @@ public class Register extends JPanel {
         }
         return false;
     }
+
+    /**
+     * check that the password respects the std patron
+     * @param password string that has to check
+     * @return true in case it a valid password
+     */
     public boolean passCheck(String password){
         boolean valid = true;
         if(password.length() < 6){
@@ -238,12 +250,19 @@ public class Register extends JPanel {
         }
         return valid;
     }
+
+    /**
+     * check if the mail respects the std patron
+     * @param email string that has to check
+     * @return true in case is a good mail
+     */
     public boolean isValidEmailAddress(String email) {
         String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
         java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
         java.util.regex.Matcher m = p.matcher(email);
         return m.matches();
     }
+
     /**
      * Function that will return:
      * -->True: in case all fields are filled

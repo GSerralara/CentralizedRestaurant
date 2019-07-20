@@ -8,12 +8,20 @@ import java.awt.event.ActionListener;
 public class ServiceStateController implements ActionListener {
     private ServiceState serviceState;
     private FormController listener;
+
     public ServiceStateController(FormController listener){
+
         this.listener=listener;
     }
     public void setServiceState(ServiceState serviceState) {
         this.serviceState = serviceState;
     }
+
+    /**
+     * Override Method from ActionListener that activates when a Swing element,
+     * with this class as an ActionListener, is interacted with.
+     * @param e ActionEvent that will get the method.
+     */
 
     @Override
     public void actionPerformed(ActionEvent e) {

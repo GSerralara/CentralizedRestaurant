@@ -5,6 +5,14 @@ import Controller.FormController;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Frame that will be the main window of the GUI.
+ *
+ * @author Guillermo Serraclara
+ * @author Aleix Olle
+ * @author David Diego
+ * @author Victor Salvador
+ */
 public class WindowForm implements Runnable, ProgressListener {
     // instance variables
     private JFrame frame;

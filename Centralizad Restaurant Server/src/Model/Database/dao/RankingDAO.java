@@ -7,10 +7,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedList;
 
+/**
+ * Ranking Dao class.
+ */
 public class RankingDAO {
     public RankingDAO(){
 
     }
+
+    /**
+     * Getter to 5.
+     * @return a list.
+     */
 
     public LinkedList<Ranking> getTop5(){
        String query = "SELECT d.name, SUM(t.quantity) AS num_dish \n" +
@@ -31,6 +39,10 @@ public class RankingDAO {
         return rankings;
     }
 
+    /**
+     * Getter the Top 5
+     * @return a list.
+     */
     public LinkedList<Ranking> getTopActual5(){
         String query = "SELECT d.name, SUM(t.quantity) AS num_dish " +
                 "FROM TableOrderDish AS t,Dish AS d " +

@@ -1,5 +1,9 @@
 package Model.Database.Entity;
 
+/**
+ * Menu class.
+ */
+
 public class Menu {
     private int id;
     private String name;
@@ -10,6 +14,13 @@ public class Menu {
         this.name = name;
     }
 
+    /**
+     * Default constructor.
+     * @param id Id
+     * @param name Name
+     * @param usernameRestaurant User Owner
+     * @param emailRestaurant email.
+     */
     public Menu(int id, String name, String usernameRestaurant, String emailRestaurant) {
         this.id = id;
         this.name = name;
@@ -18,7 +29,10 @@ public class Menu {
     }
 
 
-
+    /**
+     * Setter a Username.
+     * @param usernameRestaurant Username.
+     */
     public void setUsernameRestaurant(String usernameRestaurant) {
         this.usernameRestaurant = usernameRestaurant;
     }
@@ -27,13 +41,22 @@ public class Menu {
         this.emailRestaurant = emailRestaurant;
     }
 
+    /**
+     * Getter id
+     * @return a integer.
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * Getter a name
+     * @return a String.
+     */
     public String getName() {
         return name;
     }
+
 
     public String getUsernameRestaurant() {
         return usernameRestaurant;

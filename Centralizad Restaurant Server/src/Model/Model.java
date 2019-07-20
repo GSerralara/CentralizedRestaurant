@@ -6,6 +6,10 @@ import Model.Database.Entity.*;
 
 import java.util.LinkedList;
 
+/**
+ * Model class
+ * serves as main model of the app
+ */
 public class Model {
     private BBDDHelper database;
     private DAOManager manager;
@@ -16,6 +20,10 @@ public class Model {
     private LinkedList<Table> tables;
     private LinkedList<Menu> menus;
     private LinkedList<Dish> dishes;
+
+    /**
+     * Default class Constructor
+     */
     public Model(){
         curentMenu = null;
         dishes =  new LinkedList<>();
@@ -31,11 +39,22 @@ public class Model {
             this.serverState = "OUT";
         }
     }
+
+    /**
+     * setter of the string of server state
+     * @param state string of the server state
+     */
     public void setServerState(String state){
         this.serverState = state;
         regulateConnection();
 
     }
+
+    /**
+     * function that takes a comannd an based of that treats a object
+     * @param command string that takes an order
+     * @param obj to treat
+     */
     public void callCommand(String command,Object obj){
         switch (command){
             case "Register":
@@ -127,9 +146,19 @@ public class Model {
                 }
         }
     }
+
+    /**
+     * getter of number of reserves made
+     * @return number of reserves
+     */
     public int numeberOfReserves(){
         return reserves.size();
     }
+
+    /**
+     * getter of list of dishes
+     * @return list of dishes
+     */
     public LinkedList<Dish> getDishes() {
         if(curentMenu == null){
             return dishes;
@@ -137,23 +166,46 @@ public class Model {
         return manager.getMenuDishes(curentMenu.getId());
     }
 
+    /**
+     * getter of list of tables
+     * @return list of tables
+     */
     public LinkedList<Table> getTables() {
         return tables;
     }
 
+    /**
+     * getter of list of reserves
+     * @return list of reserves
+     */
     public LinkedList<Reserve> getReserves() {
         return reserves;
     }
 
+    /**
+     * getter of list of Menus
+     * @return list of menus
+     */
     public LinkedList<Menu> getMenus() {
         return menus;
     }
+
+    /**
+     * remove a table reserved
+     * @param var Reserve to remove
+     */
     public void removeReserveTable(Reserve var){
 
         for(Table i: tables){
             i.removeClient(var);
         }
     }
+
+    /**
+     * getter of boolean that tells if is a reserve now or not
+     * @param nameReseve name of reserve
+     * @return true in case is a reserve
+     */
     public boolean isReservedForNow(String nameReseve){
         for(Table i: tables){
             if(i.isFirst(nameReseve)){
@@ -162,6 +214,10 @@ public class Model {
         }
         return false;
     }
+
+    /**
+     * procedure regulates the connection based on the state
+     */
     private void regulateConnection(){
         switch (this.serverState){
             case "INIT":
@@ -172,9 +228,20 @@ public class Model {
                 break;
         }
     }
+
+    /**
+     * adds a reserve to the list
+     * @param client to add
+     */
     public void addReserve(Reserve client){
         reserves.add(client);
     }
+
+    /**
+     * add a reserve into the table
+     * @param id of tale
+     * @param client to add
+     */
     public void addReserve(int id, Reserve client){
         for(Table i:tables){
             if(i.getIdTable() == id){
@@ -184,6 +251,11 @@ public class Model {
         }
     }
 
+    /**
+     * getter of reserve based on a reserve name
+     * @param nameReseve name of reserve
+     * @return a reserve
+     */
     public Reserve getReserveNamed(String nameReseve) {
         System.out.println(reserves.size());
         for (Reserve i: reserves){
@@ -194,16 +266,36 @@ public class Model {
         }
         return null;
     }
+
+    /**
+     * getter of the server state
+     * @return a string that represents the server state
+     */
     public String getServerState() {
         return serverState;
     }
+
+    /**
+     * getter communication Port
+     * @return integer of port
+     */
     public int getCommuncicationPort(){
         return database.getCommuncicationPort();
     }
 
+    /**
+     * getter of the current restaurant
+     * @return current restaurant
+     */
     public Restaurant getOnService() {
         return onService;
     }
+
+    /**
+     * adding dish to bbdd
+     * @param client to add to the bbdd
+     * @param dish to add to the bbdd
+     */
     public void addDishToReserve(User client,Dish dish){
         int id_d = dish.getId();
         int id_t;
@@ -215,6 +307,12 @@ public class Model {
         }
 
     }
+
+    /**
+     * getter of the table id from reserve
+     * @param r reserve
+     * @return table id
+     */
     public int getReserveTableId(Reserve r){
         for(Table i: tables){
             if(i.isClientAssocietedWithThisTable(r)){
@@ -223,6 +321,12 @@ public class Model {
         }
         return 0;
     }
+
+    /**
+     * getter of reserve from a reserve name
+     * @param reserveName string of reserve name
+     * @return reserve asossociated with param
+     */
     public Reserve getReserveFromReserveName(String reserveName){
         for(Reserve i: reserves){
             if(i.getReserveName().equals(reserveName)){
@@ -231,15 +335,34 @@ public class Model {
         }
         return null;
     }
+
+    /**
+     * setter of the reserves list
+     * @param reserves list of reserves
+     */
     public void setReserves(LinkedList<Reserve> reserves) {
         this.reserves = reserves;
     }
+
+    /**
+     * get the stats
+     * @return the stats
+     */
     public LinkedList<Ranking> top5(){
         return manager.getTop5();
     }
+
+    /**
+     * get the stats of the current service
+     * @return stats of the current service
+     */
     public LinkedList<Ranking> actual5(){
         return manager.getTopActual5();
     }
+
+    /**
+     * close service
+     */
     public void closeService(){
         manager.updateState();
     }

@@ -11,9 +11,18 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.LinkedList;
 
+/**
+ * Dish Dao class.
+ */
+
 public class DishDAO {
     public DishDAO() {
     }
+
+    /**
+     * Add a dish
+     * @param dish Dish.
+     */
 
     public void addDish(Dish dish){
         Calendar cal = Calendar.getInstance();
@@ -25,6 +34,12 @@ public class DishDAO {
                 " ("+dish.getPrice()+", \""+dish.getName()+"\", "+dish.getQuantety()+", '"+ts+"', FALSE);";
         BBDDHelper.getInstance().insertData(query);
     }
+
+    /**
+     * Getter all dishes.
+     * @param id_menu menu
+     * @return list.
+     */
     public LinkedList<Dish> getAllDishes(int id_menu){
         LinkedList<Dish> dishes =  new LinkedList<>();
         String query = "SELECT d.* " +
@@ -49,6 +64,11 @@ public class DishDAO {
         }
         return dishes;
     }
+
+    /**
+     * Getter the last dish.
+     * @return a dish.
+     */
     public Dish getLastDishAdded(){
         Dish d;
         try {
@@ -101,6 +121,10 @@ public class DishDAO {
         String query = "";
         BBDDHelper.getInstance().deleteRegister(query);
     }
+
+    /**
+     * Update a dish.
+     */
     public void dishUpadate(){
         String query = "UPDATE tableorderdish " +
                 "SET cur_service = FALSE " +

@@ -15,6 +15,12 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.function.DoubleUnaryOperator;
 
+/**
+ * Client manager class
+ * that manages the client requests
+ * extends Thread class
+ */
+
 public class ClientManager extends Thread {
     private Socket cSocket;
     private boolean serverStoped;// true -> paused, false -> active
@@ -27,6 +33,13 @@ public class ClientManager extends Thread {
 
     private Object clientRequest;
     private Object clientAnswer;
+
+    /**
+     * contructor of the class
+     * @param cSocket that serves the purpose of channel of comunication with the client
+     * @param listener thats the network with the program through the controller to get the data and send it
+     * @throws IOException
+     */
     public ClientManager(Socket cSocket , Network listener) throws IOException {
         this.goingToRegister = false;
         this.listener = listener;
@@ -37,10 +50,18 @@ public class ClientManager extends Thread {
 
         new Thread(this).start();
     }
+
+    /**
+     * setter of server state
+     * @param statusState that tells if the server is stoped or not
+     */
     public void setSatus(boolean statusState){
         this.serverStoped = statusState;
     }
 
+    /**
+     * In this method what we will do is that the client is listening and can send and receive objects.
+     */
     @Override
     public void run() {
         super.run();
@@ -63,6 +84,12 @@ public class ClientManager extends Thread {
         }
 
     }
+
+    /**
+     * function that treats the info gotten by the client
+     * @param obj represent the request of the client
+     * @return a generic answer
+     */
     private Object treatObject(Object obj){
         String answer = "";
         if(obj instanceof User){
@@ -96,6 +123,12 @@ public class ClientManager extends Thread {
 
         return answer;
     }
+
+    /**
+     * function that treats the Reserve gotten by the client
+     * @param obj represent the reserve request of the client
+     * @return a generic answer
+     */
     private String treatReserve(Reserve obj){
         //client.setReserve(obj.getReserve());
         reserve = obj;
@@ -106,6 +139,12 @@ public class ClientManager extends Thread {
         System.out.println(obj.getBookNumber()+" "+reserve.getBookNumber());
         return "Reserve";
     }
+
+    /**
+     * function that treats the info gotten by the client
+     * @param obj represent the request of the client
+     * @return a generic answer
+     */
     private Object treatDish(Dish obj){
         System.out.println("Gotten dish to order");
         //ToDo: TAKE OUT DISHES AND PUT IT IN SERVICE
@@ -114,6 +153,12 @@ public class ClientManager extends Thread {
         }
         return listener.getCurrentCarte();
     }
+
+    /**
+     * function that treats the info gotten by the client
+     * @param msg represent the request of the client
+     * @return a generic answer
+     */
     private String treatString(String msg){
         System.out.println(msg);
         if(msg.equals("time")){
@@ -154,6 +199,12 @@ public class ClientManager extends Thread {
         }
         return "null";
     }
+
+    /**
+     * function that treats the info gotten by the client
+     * @param obj represent the request of the client
+     * @return a generic answer
+     */
     private String treatUser(User obj){
         //instance user data access object
         UserDAO dao = new UserDAO();
@@ -190,6 +241,9 @@ public class ClientManager extends Thread {
         return "OK";
     }
 
+    /**
+     * procedure that drops the client
+     */
     public void dropClient(){
         try {
             os.close();
@@ -200,9 +254,18 @@ public class ClientManager extends Thread {
         }
     }
 
+    /**
+     * getter of the client
+     * @return the current client
+     */
     public User getClient() {
         return client;
     }
+
+    /**
+     * procedure that sends an object to the client
+     * @param toSend object that is sent
+     */
     public void sendObject(Object toSend){
         try {
             os.writeObject(toSend);
