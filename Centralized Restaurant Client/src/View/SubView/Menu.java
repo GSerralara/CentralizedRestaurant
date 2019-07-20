@@ -24,6 +24,11 @@ public class Menu extends JPanel {
     private ArrayList<View.Items.MenuItem> menu;
 
 
+    /**
+     * In this class we will make the graphical window of the menu where the user will be able
+     * to see the different plates that there are in the current moment.
+     * @param controller it's the respective controller of this view.
+     */
     public Menu(MenuController controller) {
 
         controller.setMenu(this);

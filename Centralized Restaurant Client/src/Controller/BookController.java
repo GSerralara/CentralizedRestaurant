@@ -8,20 +8,35 @@ import java.awt.event.ActionListener;
 import java.util.Timer;
 import java.util.TimerTask;
 
+/**
+ * BookController class
+ */
 public class BookController implements ActionListener {
 
     private boolean serviceState = true;
     private Book book;
     private FormController listener;
 
-
+    /**
+     * Default constructor
+     * @param listener controller
+     */
     BookController(FormController listener) {
         this.listener = listener;
     }
 
+    /**
+     * view setter
+     * @param book view
+     */
     public void setBook(Book book) {
         this.book = book;
     }
+
+    /**
+     * override function
+     * @param e event
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()){
@@ -52,9 +67,17 @@ public class BookController implements ActionListener {
                 break;
         }
     }
+
+    /**
+     * reserveState asker
+     */
     private void reserveState(){
         serviceState = listener.askForReserveState("STATE");
     }
+
+    /**
+     * cancel reserve
+     */
     void cancelReserve(){
         serviceState = false;
 

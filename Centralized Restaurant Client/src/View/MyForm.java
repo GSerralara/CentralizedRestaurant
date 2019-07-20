@@ -9,10 +9,7 @@ import javax.swing.*;
  * @author Guillermo Serraclara
  * @author Aleix Olle
  * @author David Diego
- * @author Pablo Nogueras
  * @author Victor Salvador
- * @version 1.3
- * @since 1.0
  */
 public class MyForm implements Runnable, ProgressListener {
     // instance variables

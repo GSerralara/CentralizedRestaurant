@@ -9,6 +9,9 @@ import Resources.Pop;
 import View.MyForm;
 import java.util.LinkedList;
 
+/**
+ * FormController class
+ */
 public class FormController {
     private MyForm view;
     private ModelClient model;
@@ -90,11 +93,17 @@ public class FormController {
     }
 
 
-
+    /**
+     * Getter the User
+     * @return User.
+     */
     User getuser(){
         return model.getUser();
     }
 
+    /**
+     * Close the Session
+     */
     void closeSession(){
         network.sendObject("CLOSE");
         Object answer = network.readObject();
@@ -105,6 +114,11 @@ public class FormController {
         }
     }
 
+    /**
+     * Send the Reserve
+     * @param reserve Reserve
+     */
+
     void sendReserve(Reserve reserve){
         System.out.println("Enviando reserva");
         network.sendObject(reserve);
@@ -113,6 +127,11 @@ public class FormController {
         System.out.println(answer);
     }
 
+    /**
+     * Function that ask for reserve State
+     * @param reason String
+     * @return a String.
+     */
     boolean askForReserveState(String reason){
         network.sendObject(reason);
         Object answer = network.readObject();
@@ -124,17 +143,29 @@ public class FormController {
         return false;
     }
 
+    /**
+     * Cancel a Reserve.
+     */
     void cancelReserve(){
         bookController.cancelReserve();
         network.sendObject("CANCEL");
         Object answer = network.readObject();
     }
 
+    /**
+     * Getter a Current Menu
+     * @return a list.
+     */
     LinkedList<Dish> getCurrentMenu(){
         network.sendObject("DISHES");
         Object list = network.readObject();
         return (LinkedList<Dish>)list;
     }
+
+    /**
+     * Update Menu
+     * @param dish Dish
+     */
 
     void updateMenu(Dish dish){
         network.sendObject(dish);
@@ -142,6 +173,11 @@ public class FormController {
         LinkedList<Dish> carte = (LinkedList<Dish>)answer;
         mainTableController.updateMenu(carte);
     }
+
+    /**
+     * Function about login.
+     * @param user User
+     */
 
     void login(User user){
         network.sendObject(user);
@@ -160,11 +196,19 @@ public class FormController {
         }
     }
 
+    /**
+     * Function about billed.
+     */
     void billed(){
         network.sendObject("BILLED");
         Object answer = network.readObject();
         System.out.println((String)answer);
     }
+
+    /**
+     * Function about register
+     * @param user User.
+     */
 
     void register(User user){
         //enviamos el user con los 3 campos
@@ -177,9 +221,20 @@ public class FormController {
         network.disconnect();
     }
 
+    /**
+     * Function about Start the session
+     * @param user User
+     */
+
     void startSession(User user){
         model.setUser(user);
     }
+
+    /**
+     * Function about run
+     * @param t string
+     * @return a String
+     */
 
     String runTime(String t){
         network.sendObject("time");
@@ -187,6 +242,11 @@ public class FormController {
         t =(String) ans;
         return t;
     }
+
+    /**
+     * Getter a Dishes a state.
+     * @return a list.
+     */
 
     LinkedList<Boolean> getDishesState(){
         network.sendObject("CLOCK");

@@ -160,6 +160,12 @@ public class Register extends JPanel{
                 break;
         }
     }
+
+    /**
+     * Check the password
+     * @param password Patrom
+     * @return a boolean
+     */
     public boolean passCheck(String password){
         boolean valid = true;
         if(password.length() < 6){
@@ -231,6 +237,10 @@ public class Register extends JPanel{
         return username.getText();
     }
 
+    /**
+     * Register The controller
+     * @param e Action Listener
+     */
     private void registerController(ActionListener e){
         signUp.setActionCommand(AC_REGISTER);//set action command that will get the ActionListener
         signUp.addActionListener(e);//set which ActionListener

@@ -5,9 +5,20 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+
+/**
+ * The main function of this type is to carry out the countdown operation.
+ */
 public class Countdown extends Thread{
     private JLabel etiqueta,state;
     private Date time;
+
+    /**
+     * This function is the class constructor countdown.
+     * @param etiqueta it's a variable that have the string of time of each dish.
+     * @param time it's a variable that have the time.
+     * @param state it's a variable that have the state of each dish.
+     */
 
     public Countdown(JLabel etiqueta, Date time, JLabel state) {
         this.etiqueta = etiqueta;
@@ -15,6 +26,10 @@ public class Countdown extends Thread{
         this.time = time;
     }
 
+
+    /**
+     * Here in this run is where we'll do the countdown.
+     */
     @Override
     public void run() {
 
@@ -36,7 +51,6 @@ public class Countdown extends Thread{
             }catch (Exception e){
                 e.printStackTrace();
             }
-
         }
     }
 }

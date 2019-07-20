@@ -9,9 +9,21 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * Order Item class.
+ */
+
 public class OrderedItem extends JPanel {
     private JLabel status, time;
     private JButton cancelOrder;
+
+    /**
+     * Default constructor.
+     * @param nameDish Name Dish.
+     * @param preparationTime Preparation Time
+     * @param listener Listener.
+     * @param pos Position.
+     */
     public OrderedItem(String nameDish, String preparationTime,  ActionListener listener, int pos) {
         //We create the JPanel.
         super();
@@ -31,16 +43,34 @@ public class OrderedItem extends JPanel {
         this.add(form);
         this.add(cancelOrder);
     }
+
+    /**
+     * Update Pos
+     * @param pos Integer.
+     */
     public void updatePos(int pos){
         this.cancelOrder.setActionCommand(""+pos);
     }
+
+    /**
+     * Hide Button
+     */
     private void hideButton(){
         cancelOrder.setVisible(false);
     }
+
+    /**
+     * Update Status
+     * @param dishState String
+     */
     public void updateStatus(String dishState){
         status.setText(dishState);
         if(!dishState.equals("Pedido"))  hideButton();
     }
+
+    /**
+     * Countdown
+     */
     public void initCountDown(){
 
         try {

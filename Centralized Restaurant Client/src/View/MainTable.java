@@ -12,6 +12,10 @@ import View.SubView.Order;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Main Table class.
+ */
+
 public class MainTable extends JPanel{
     // instance variables
     private final ProgressListener listener;
@@ -94,6 +98,9 @@ public class MainTable extends JPanel{
         this.time.setText(strTime);
     }
 
+    /**
+     * Function that starts the time in this view.
+     */
     void initTime(MainTableController controller){
         controller.currentTime(strTime);
         Time t = new Time(this.time);

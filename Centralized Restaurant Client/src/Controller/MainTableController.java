@@ -11,7 +11,9 @@ import java.util.LinkedList;
 import java.util.Timer;
 import java.util.TimerTask;
 
-
+/**
+ * MainTableController class
+ */
 public class MainTableController {
     private MainTable mainTable;
     private FormController listener;
@@ -23,28 +25,53 @@ public class MainTableController {
     private LinkedList<Integer> qOrder;
     private boolean sendRequest;
 
+    /**
+     * default controller
+     * @param controller controller
+     */
     MainTableController(FormController controller) {
         this.listener = controller;
         order =  new LinkedList<>();
         qOrder = new LinkedList<>();
     }
 
+    /**
+     * setter billController
+     * @param billController c
+     */
     public void setBillController(BillController billController) {
         this.billController = billController;
     }
 
+    /**
+     * setter OrderController
+     * @param orderController c
+     */
     public void setOrderController(OrderController orderController) {
         this.orderController = orderController;
     }
 
+    /**
+     * setter MenuController
+     * @param menuController c
+     */
     public void setMenuController(MenuController menuController) {
         this.menuController = menuController;
     }
 
+    /**
+     * view setter
+     * @param mainTable view
+     */
     public void setMainTable(MainTable mainTable) {
         this.mainTable = mainTable;
     }
 
+    /**
+     * function acts based on a command on call
+     * @param command string
+     * @param dish d
+     */
     public void giveCommand(String command, Dish dish){
         //Take menu items, request time, give data ...
         switch (command){
@@ -82,13 +109,27 @@ public class MainTableController {
 
     }
 
+    /**
+     *  update time label
+     * @param time timer
+     */
     public void currentTime(String time){
         mainTable.updateTime(listener.runTime(time));
     }
+
+    /**
+     * getter currentMenu
+     * @return list
+     */
     public LinkedList<Dish> getCurrentMenu(){
         this.currentMenu = listener.getCurrentMenu();
         return this.currentMenu;
     }
+
+    /**
+     * update menu
+     * @param menu list
+     */
      void updateMenu(LinkedList<Dish> menu){
         this.currentMenu = menu;
         menuController.removeDishes();
@@ -97,6 +138,11 @@ public class MainTableController {
         }
 
     }
+
+    /**
+     * update menu state
+     * @param name name
+     */
     public void updateMenuState(String name){
         Dish dishAdded;
         for(int i=0;i<order.size(); i++){
@@ -111,6 +157,10 @@ public class MainTableController {
             menuController.addDishes(i);
         }
     }
+
+    /**
+     * init timer
+     */
     private void initTimerService(){
         sendRequest = true;
         Timer timer = new Timer();
@@ -129,9 +179,18 @@ public class MainTableController {
         };
         timer.schedule(task,0,5000);
     }
+
+    /**
+     * request dishes states
+     * @return list
+     */
     private LinkedList<Boolean> requestDishesState(){
         return listener.getDishesState();
     }
+
+    /**
+     * change request bool
+     */
     public void changeSendRequest(){
         this.sendRequest =false;
     }

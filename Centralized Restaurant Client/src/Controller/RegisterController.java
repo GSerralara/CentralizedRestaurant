@@ -74,6 +74,12 @@ public class RegisterController implements ActionListener {
                 break;
         }
     }
+
+    /**
+     * Encyptation function
+     * @param md5 String
+     * @return a string.
+     */
     public String MD5(String md5) {
         try {
             java.security.MessageDigest md = java.security.MessageDigest.getInstance("MD5");

@@ -10,6 +10,10 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
+/**
+ * Network class.
+ */
+
 
 public class Network{
 
@@ -49,6 +53,10 @@ public class Network{
         return 1;
     }
 
+    /**
+     * You will be disconnected from the server.
+     */
+
     public void disconnect(){
         try {
             if (!socket.isClosed()) socket.close();
@@ -57,6 +65,11 @@ public class Network{
         }
     }
 
+    /**
+     * Send an object to the server.
+     * @param toSend it's a respective variable that use to send the information.
+     */
+
     public void sendObject(Object toSend){
         try {
           os.writeObject(toSend);
@@ -64,6 +77,11 @@ public class Network{
             e.printStackTrace();
         }
     }
+
+    /**
+     * Receive server information.
+     * @return will return null if the operation was not correct.
+     */
 
     public Object readObject(){
         try {

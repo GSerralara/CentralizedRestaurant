@@ -71,9 +71,19 @@ public class LauncherController implements ActionListener {
         }
     }
 
+    /**
+     * setter type log
+     * @param state string
+     */
     void setLogType(String state){
         this.logType = state;
     }
+
+    /**
+     * encrypt md5
+     * @param md5 string
+     * @return string
+     */
     public String MD5(String md5) {
         try {
             java.security.MessageDigest md = java.security.MessageDigest.getInstance("MD5");

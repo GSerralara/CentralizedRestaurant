@@ -4,9 +4,19 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+/**
+ * Menu Item class.
+ */
 public class MenuItem extends JPanel {
     private JLabel dish;
     private JComboBox quantity;
+
+    /**
+     * Default Constructor
+     * @param name Name
+     * @param listener listener
+     * @param quantety Quantity.
+     */
 
     public MenuItem(String name, ActionListener listener, int quantety) {
         //We create the JPanel.
@@ -40,10 +50,18 @@ public class MenuItem extends JPanel {
         this.add(jpButton);
     }
 
+    /**
+     * Getter a dish
+     * @return a String
+     */
     public String getDish() {
         return dish.getText();
     }
 
+    /**
+     * Getter a Quantity
+     * @return a integer.
+     */
     public int getQuantity() {
         String aux = quantity.getSelectedItem().toString();
         if (!aux.matches("^[0-9]*$")){

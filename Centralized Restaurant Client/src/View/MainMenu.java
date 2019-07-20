@@ -6,6 +6,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+/**
+ * Main Menu class.
+ */
+
 public class MainMenu extends JPanel {
     // instance variables
     private final ProgressListener listener;
@@ -130,6 +134,11 @@ public class MainMenu extends JPanel {
                 break;
         }
     }
+
+    /**
+     * Register Controller
+     * @param e ActionListener.
+     */
     private void registerController(ActionListener e){
         logout.setActionCommand(AC_LOGOUT);//set action command that will get the ActionListener
         logout.addActionListener(e);//set which ActionListener

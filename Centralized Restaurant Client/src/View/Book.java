@@ -3,9 +3,14 @@ package View;
 import Controller.BookController;
 
 
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+
+/**
+ * Book class.
+ */
 
 public class Book extends JPanel {
     // instance variables
@@ -108,14 +113,28 @@ public class Book extends JPanel {
         }
     }
 
+    /**
+     * Getter name Reserve
+     * @return a String.
+     */
+
     public String getReserveName(){
         return reserveName.getText();
     }
+
+    /**
+     * Getter Number of Book
+     * @return a Integer.
+     */
 
     public int getNumberBook(){
         return (int)bookNumber.getValue();
     }
 
+    /**
+     * Register Controller
+     * @param e ActionListener.
+     */
     private void registerController(ActionListener e){
         back.setActionCommand(AC_BACK);
         back.addActionListener(e);

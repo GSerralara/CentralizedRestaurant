@@ -182,7 +182,10 @@ public class Launcher extends JPanel{
         Pop popup = new Pop("All fields must be filled");
         return false;
     }
-
+    /**
+     * Register Controller
+     * @param e ActionListener.
+     */
     private void registerController(ActionListener e){
         // controller command
         register.setActionCommand(AC_REGISTER);//set action command that will get the ActionListener

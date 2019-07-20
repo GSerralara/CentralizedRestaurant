@@ -7,6 +7,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
+/**
+ * Order class.
+ */
 public class Order extends JPanel {
     private JPanel orderedItems;
     private ArrayList<OrderedItem> currentOrder;
@@ -70,6 +73,10 @@ public class Order extends JPanel {
         repaint();
     }
 
+    /**
+     * Update Dish
+     * @param index Index.
+     */
     public void updateDishState(int index){
         currentOrder.get(index).updateStatus("Cocinando");
         currentOrder.get(index).initCountDown();
