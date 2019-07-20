@@ -33,6 +33,7 @@ public class Network{
         this.IP = set.getIp();
         this.PORT = set.getPort();
     }
+
     /**
      * Function that will return 1 if it connection was successful. 0 if not.
      * It's responsible for creating a connection with the server.
@@ -56,7 +57,6 @@ public class Network{
     /**
      * You will be disconnected from the server.
      */
-
     public void disconnect(){
         try {
             if (!socket.isClosed()) socket.close();
@@ -69,7 +69,6 @@ public class Network{
      * Send an object to the server.
      * @param toSend it's a respective variable that use to send the information.
      */
-
     public void sendObject(Object toSend){
         try {
           os.writeObject(toSend);
@@ -82,7 +81,6 @@ public class Network{
      * Receive server information.
      * @return will return null if the operation was not correct.
      */
-
     public Object readObject(){
         try {
             return is.readObject();

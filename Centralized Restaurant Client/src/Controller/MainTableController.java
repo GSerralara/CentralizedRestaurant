@@ -184,17 +184,21 @@ public class MainTableController {
      * cancel a dish by name
      * @param name name dish
      */
-    public void cancelDish(String name){
-        listener.cancelDish(name);
+    public void cancelDish(String name,int index){
+        listener.cancelDish(name, index);
         for(int i=0; i<order.size();i++){
+            System.out.println("actual order size "+order.size());
             if(order.get(i).getName().equals(name)){
+
                 int q = qOrder.get(i).intValue() - 1;
                 qOrder.set(i,q);
+                System.out.println(q);
                 if(q==0){
                     qOrder.remove(i);
                     order.remove(i);
                     if(order.size()==0){
                         sendRequest = false;
+                        System.out.println("CLOSING");
                     }
                 }
             }

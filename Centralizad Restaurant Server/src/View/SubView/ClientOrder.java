@@ -8,6 +8,7 @@ import View.Items.OrderedItem;
 
 import javax.swing.*;
 import java.awt.*;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
@@ -19,7 +20,7 @@ import java.util.LinkedList;
 public class ClientOrder extends JPanel {
     private Reserve user;
     private JPanel clientOrders;
-    private LinkedList<OrderedItem> currentOrder;
+    private ArrayList<OrderedItem> currentOrder;
 
 
     /**
@@ -63,7 +64,7 @@ public class ClientOrder extends JPanel {
      * Function that starts the view.
      */
     public void init(){
-        currentOrder = new LinkedList<>();
+        currentOrder = new ArrayList<>();
         clientOrders.removeAll();
         clientOrders.revalidate();
         repaint();
@@ -93,20 +94,38 @@ public class ClientOrder extends JPanel {
      * delete a item
      * @param nameDish name a dish
      */
-    public void deleteItem(String nameDish){
+    public void deleteItem(String nameDish, int num){
+        int j=0;
         for(OrderedItem i: currentOrder){
             System.out.println(i.getDish()+" == "+nameDish+" "+i.getDish().equals(nameDish));
             System.out.println(i.isFlag());
-            if(i.getDish().equals(nameDish) && !i.isFlag()){
-                currentOrder.remove(i);
-                clientOrders.removeAll();
-
+            if(i.getDish().equals(nameDish) && !i.isFlag() && j==num){
+                i.removeButton();
             }
-        }
-        for(OrderedItem i: currentOrder){
-            clientOrders.add(i);
+            j++;
         }
         clientOrders.revalidate();
         repaint();
     }
+
+    /**
+     * generates states of dishes
+     * @return list of boolean
+     */
+    public LinkedList<Boolean> dishesState(){
+        LinkedList<Boolean> states = new LinkedList<>();
+        for(OrderedItem i: currentOrder){
+            if(!i.isCanceled()){
+                if(i.isFlag()){
+                    states.add(true);
+                }else{
+                    states.add(false);
+                }
+            }
+        }
+        return states;
+    }
+
+
 }
+

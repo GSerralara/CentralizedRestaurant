@@ -16,6 +16,7 @@ public class ClientOrderController implements ActionListener {
     private ServiceController listener;
     private ClientOrder clientOrder;
     private LinkedList<Boolean> cooking;
+    private int dishes;
 
     /**
      * Default contructor
@@ -24,6 +25,7 @@ public class ClientOrderController implements ActionListener {
     public ClientOrderController(ServiceController listener) {
         this.listener = listener;
         cooking = new LinkedList<>();
+        dishes=0;
     }
 
     /**
@@ -55,6 +57,7 @@ public class ClientOrderController implements ActionListener {
      * @param dish dish
      */
     public void addDish(Dish dish){
+        dishes++;
         cooking.add(false);
         clientOrder.addToOrder(dish,this);
     }
@@ -64,16 +67,21 @@ public class ClientOrderController implements ActionListener {
      * @return list of boolean
      */
     public LinkedList<Boolean> dishesState(){
-        return cooking;
+        System.out.println("number of dishes"+dishes);
+        return clientOrder.dishesState();
     }
 
     /**
      * deletes a dish
      * @param name name
+     * @param num index in array
      */
-    public void removeDish(String name){
-        clientOrder.deleteItem(name);
+    public void removeDish(String name, int num){
+        dishes--;
+        clientOrder.deleteItem(name,num);
+        cooking.remove(num);
     }
+
     /**
      * override function
      * @param e event

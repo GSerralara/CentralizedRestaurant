@@ -141,8 +141,14 @@ public class FormController {
         }
         return false;
     }
-    public void cancelDish(String name){
-        network.sendObject("CL"+name);
+
+    /**
+     * cancel dish procedure
+     * @param name dish name
+     * @param index pos in the array
+     */
+    public void cancelDish(String name, int index){
+        network.sendObject("CN"+name+":"+index);
         Object answer = network.readObject();
     }
     /**
@@ -248,6 +254,8 @@ public class FormController {
         network.sendObject("CLOCK");
         Object answer = network.readObject();
         String obj = (String) answer;
+        System.out.println("is null clock");
+        System.out.println(obj == null);
         String []array = obj.split(":");
         LinkedList<Boolean> bools = new LinkedList<>();
         for(int i=0;i<array.length;i++){

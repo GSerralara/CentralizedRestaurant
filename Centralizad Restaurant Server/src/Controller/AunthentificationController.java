@@ -56,7 +56,6 @@ public class AunthentificationController implements ActionListener {
      */
     public void dropReserve(User user){
         int j = 0;
-
         if(accepted.size()!=0){
             for(Reserve i: accepted){
                 System.out.println("DROPING "+i.getReserveName()+" "+user.getUser());
@@ -64,7 +63,6 @@ public class AunthentificationController implements ActionListener {
                     System.out.println("DROPING RESERVE" +j);
                     aunthentification.dropUser(i.getUser());
                     accepted.remove(i);
-                    aunthentification.removeAccept(j);
                 }
                 j++;
             }
@@ -73,7 +71,6 @@ public class AunthentificationController implements ActionListener {
             aunthentification.dropUser(user);
 
         }
-
         aunthentification.redraw();
     }
 

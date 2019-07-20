@@ -238,9 +238,10 @@ public class Network implements Runnable {
      * procedure that removes a client order
      * @param client that makes the order
      * @param plate that has to be registered in the bbdd
+     * @param num pos in the array
      */
-    public void removeDishToOrder(User client, String plate){
-        controller.removeDishOrder(client, plate);
+    public void removeDishToOrder(User client, String plate, int num){
+        controller.removeDishOrder(client, plate,num);
     }
     /**
      * function that gets if the dishes are cooking or not

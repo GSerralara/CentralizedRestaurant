@@ -113,11 +113,13 @@ public class ClientManager extends Thread {
         if(answer.equals("STATE")){
             System.out.println("Look to order dishes state");
             LinkedList<Boolean> cooks = listener.getDishStates(client);
+            System.out.println(cooks.size()+" lol");
             String array = "";
             for(Boolean c :cooks){
                 System.out.println(c);
                 array += c+""+":";
             }
+            System.out.println(array==null);
             return array;
         }
 
@@ -197,12 +199,21 @@ public class ClientManager extends Thread {
         if(msg.equals("CLOCK")){
             return "STATE";
         }
-        if(msg.charAt(0)=='C' && msg.charAt(1)=='L'){
+        if(msg.charAt(0)=='C' && msg.charAt(1)=='N'){
             String dish = "";
-            for(int i= 2;i< msg.length();i++){
+            int j =2;
+            for(int i= 2;i< msg.length() && msg.charAt(i) != ':';i++){
                 dish += msg.charAt(i);
+                j++;
             }
-            listener.removeDishToOrder(client,dish);
+            j++;
+            String number = "";
+            for (int i=j;i<msg.length();i++){
+                number += msg.charAt(i);
+            }
+            int num = Integer.parseInt(number);
+            listener.removeDishToOrder(client,dish,num);
+            return "OK";
         }
         return "null";
     }

@@ -31,7 +31,6 @@ public class FormController {
      * @param model it's the respective model of the client app
      * @param net it's the class responsable with the comunnication with the server
      */
-
     public FormController(WindowForm view, Model model, Network net) {
         this.view = view;
         this.model = model;
@@ -402,9 +401,10 @@ public class FormController {
      * removes a dish from order
      * @param u user
      * @param name dish name
+     * @param num index array
      */
-    public void removeDishOrder(User u, String name){
-        serviceController.deleteDish(u,name);
+    public void removeDishOrder(User u, String name, int num){
+        serviceController.deleteDish(u,name,num);
 
     }
 

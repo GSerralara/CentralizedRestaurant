@@ -16,7 +16,7 @@ import java.text.SimpleDateFormat;
 public class OrderedItem extends JPanel {
     private Dish dish;
     private JButton startCooking;
-    private boolean flag;
+    private boolean flag,canceled;
     private JLabel time;
 
     /**
@@ -28,6 +28,7 @@ public class OrderedItem extends JPanel {
     public OrderedItem(Dish dish, ActionListener listener, int pos) {
         this.dish = dish;
         flag = false;
+        canceled=false;
         startCooking = new JButton("StartCooking");
         startCooking.setActionCommand(""+pos);
         startCooking.addActionListener(listener);
@@ -70,10 +71,26 @@ public class OrderedItem extends JPanel {
     }
 
     /**
+     * sets not visible the button
+     */
+    public void removeButton(){
+        canceled = true;
+        this.startCooking.setVisible(false);
+    }
+
+    /**
      * getter dish name
      * @return name
      */
     public String getDish(){
         return dish.getName();
+    }
+
+    /**
+     * getter to know if button was hidden or not
+     * @return true if its canceled
+     */
+    public boolean isCanceled() {
+        return canceled;
     }
 }
