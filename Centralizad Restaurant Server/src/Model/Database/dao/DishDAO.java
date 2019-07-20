@@ -117,9 +117,17 @@ public class DishDAO {
         }
         return dishes;
     }
-    public void deleteDish(){
-        String query = "";
-        BBDDHelper.getInstance().deleteRegister(query);
+    /**
+     * increase the units in dish plus one
+     * @param id_menu id of menu
+     * @param dishName name of dish
+     */
+    public void increseDishQuantity(int id_menu, String dishName){
+        String query = "update dish " +
+                "natural join menucontainsdish " +
+                "set units = units +1 " +
+                "where id_menu = "+id_menu+" and name like '"+dishName+"';";
+        BBDDHelper.getInstance().updateQuery(query);
     }
 
     /**

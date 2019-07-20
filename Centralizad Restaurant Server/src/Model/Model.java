@@ -134,6 +134,7 @@ public class Model {
                         reserves.remove(i);
                     }
                 }
+                break;
             case "Billed":
                 User logReserve = (User) obj;
                 for(Reserve i: reserves){
@@ -144,6 +145,11 @@ public class Model {
                         System.out.println(numeberOfReserves());
                     }
                 }
+                break;
+            case "restock":
+                String name = (String)obj;
+                manager.restockDish(curentMenu.getId(),name);
+                break;
         }
     }
 

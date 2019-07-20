@@ -405,7 +405,7 @@ public class FormController {
      */
     public void removeDishOrder(User u, String name, int num){
         serviceController.deleteDish(u,name,num);
-
+        model.callCommand("restock",name);
     }
 
 }

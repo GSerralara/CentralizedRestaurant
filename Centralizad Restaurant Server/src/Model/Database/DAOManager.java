@@ -174,4 +174,13 @@ public class DAOManager {
         dishDAO.dishUpadate();
     }
 
+    /**
+     * restocks a dish when is canceled order
+     * @param idmenu id of menu
+     * @param name name of dish
+     */
+    public void restockDish(int idmenu, String name){
+        dishDAO.increseDishQuantity(idmenu,name);
+    }
+
 }
