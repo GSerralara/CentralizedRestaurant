@@ -22,8 +22,8 @@ public class CharBar extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         Rectangle r = super.getBounds();
-        int DIM_WIDTH = r.width; //we obtain the width of the graphic area
-        int DIM_HEIGHT = r.height; //we obtain the height of the graphic area
+        int DIM_WIDTH =483; //r.width; //we obtain the width of the graphic area
+        int DIM_HEIGHT = 218;//r.height; //we obtain the height of the graphic area
         float graphic = DIM_HEIGHT-(DIM_HEIGHT/10); //the value of the maxium bar
         int interval = Math.round(DIM_HEIGHT/20); //the division between the up gap in the graphic area
 
