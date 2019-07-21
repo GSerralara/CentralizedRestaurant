@@ -235,22 +235,28 @@ public class FormController {
         Reserve r = model.getReserveFromReserveName(u.getUser());
         if(r == null){
             r = model.getReserveFromUser(u);
-
+            System.out.println("DROP WITHOUT RESERVE");
             aunthentificationController.dropReserve(r.getUser());
             model.callCommand("DropReserve",u);
             if(model.numeberOfReserves()==0){
                 changeService();
             }
-
-
         }else{
+            System.out.println("DROP RESERVE ssass");
             if(aunthentificationController.getIfWasAccepted(r.getUser()).equals("YES")){
+                System.out.println("YES");
                 aunthentificationController.dropReserve(r.getUser());
-                model.callCommand("DropReserve",u);
+                if(u.getUser().equals(r.getReserveName())){
+                    model.callCommand("Billed",u);
+                }else{
+                    model.callCommand("DropReserve",u);
+                }
+
                 if(model.numeberOfReserves()==0){
                     changeService();
                 }
             }else{
+                System.out.println("NO");
                 aunthentificationController.dropReserve(r.getUser());
             }
         }
