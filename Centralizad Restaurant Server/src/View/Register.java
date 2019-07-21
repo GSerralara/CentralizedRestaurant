@@ -198,8 +198,7 @@ public class Register extends JPanel {
 
     /**
      * Function that will return:
-     * -->True: in case both password fields matches
-     * -->False:in case both password fields are different
+     * @return True: in case both password fields matched or False:in case both password fields are different
      */
     public boolean samePwd() {
         String firstPwd = new String(pw.getPassword());
@@ -265,8 +264,7 @@ public class Register extends JPanel {
 
     /**
      * Function that will return:
-     * -->True: in case all fields are filled
-     * -->False:in case not all fields are filled
+     * @return True: in case all fields are filled or False:in case not all fields are filled
      */
     public boolean allfilled() {
         if (username.getText().length() != 0 && mail.getText().length() != 0 && pw.getPassword().length != 0)

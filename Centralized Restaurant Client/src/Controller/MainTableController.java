@@ -183,6 +183,7 @@ public class MainTableController {
     /**
      * cancel a dish by name
      * @param name name dish
+     * @param index position in array
      */
     public void cancelDish(String name,int index){
         listener.cancelDish(name, index);

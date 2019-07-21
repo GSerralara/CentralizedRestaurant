@@ -3,9 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="2bb069b7-f142-4429-8d46-9d30b44c1cc8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/Model/DataBase/dao/DishDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Centralizad Restaurant Server/Model/DataBase/dao/DishDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/FormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/Controller/MainTableController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/Controller/MainTableController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/Model/Database/Entity/Dish.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/Model/Database/Entity/Dish.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/View/Launcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/View/Launcher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/View/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/out/production/Centralized Restaurant/View/Register.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Controller/BookController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Controller/FormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Controller/FormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Controller/LauncherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Controller/LauncherController.java" afterDir="false" />
@@ -15,6 +20,9 @@
       <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Controller/SubController/BillController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Controller/SubController/BillController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Controller/SubController/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Controller/SubController/MenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Controller/SubController/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Controller/SubController/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Model/Database/Entity/Dish.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/Model/Database/Entity/Dish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/View/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/View/Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Centralized Restaurant Client/src/View/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Centralized Restaurant Client/src/View/Register.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -132,8 +140,8 @@
     <session id="-744021064">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="29" />
-          <entry key="project.open.time.0" value="5" />
+          <entry key="project.closed" value="30" />
+          <entry key="project.open.time.0" value="6" />
           <entry key="project.open.time.1" value="13" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.2" value="2" />
@@ -142,26 +150,26 @@
           <entry key="project.open.time.6" value="3" />
           <entry key="project.open.time.7" value="4" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="32" />
+          <entry key="project.opened" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="2" />
-          <entry key="java" value="26811" />
+          <entry key="java" value="26840" />
           <entry key="txt" value="423" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="26811" />
+          <entry key="JAVA" value="26840" />
           <entry key="PLAIN_TEXT" value="425" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="iml" value="2" />
-          <entry key="java" value="606" />
+          <entry key="java" value="608" />
           <entry key="json" value="7" />
           <entry key="xml" value="1" />
         </counts>
@@ -169,7 +177,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="IDEA_MODULE" value="2" />
-          <entry key="JAVA" value="606" />
+          <entry key="JAVA" value="608" />
           <entry key="JSON" value="7" />
           <entry key="XML" value="1" />
         </counts>
@@ -209,7 +217,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/FormController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="160">
@@ -217,22 +225,35 @@
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#815#1809#0" />
-                <element signature="e#7511#7512#0" expanded="true" />
-                <element signature="e#7557#7558#0" expanded="true" />
-                <element signature="e#7953#7954#0" expanded="true" />
-                <element signature="e#7993#7994#0" expanded="true" />
-                <element signature="e#8108#8109#0" expanded="true" />
-                <element signature="e#8150#8151#0" expanded="true" />
-                <element signature="e#8262#8263#0" expanded="true" />
-                <element signature="e#8302#8303#0" expanded="true" />
-                <element signature="e#9041#9042#0" expanded="true" />
-                <element signature="e#9092#9093#0" expanded="true" />
-                <element signature="e#9861#9862#0" expanded="true" />
-                <element signature="e#9913#9914#0" expanded="true" />
-                <element signature="e#10150#10151#0" expanded="true" />
-                <element signature="e#10202#10203#0" expanded="true" />
-                <element signature="e#10293#10294#0" expanded="true" />
-                <element signature="e#10340#10341#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/View/Register.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-177">
+              <caret line="266" column="53" selection-start-line="266" selection-start-column="53" selection-end-line="266" selection-end-column="53" />
+              <folding>
+                <element signature="method#Register#0;class#Register#0" />
+                <element signature="method#windowConfiguration#0;class#Register#0" />
+                <element signature="method#mainPart#0;class#Register#0" />
+                <element signature="method#bottomPart#0;class#Register#0" />
+                <element signature="method#passCheck#0;class#Register#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/Launcher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1673">
+              <caret line="176" column="55" selection-start-line="176" selection-start-column="55" selection-end-line="176" selection-end-column="55" />
+              <folding>
+                <element signature="method#mainPart#0;class#Launcher#0" />
+                <element signature="method#bottomPart#0;class#Launcher#0" />
               </folding>
             </state>
           </provider>
@@ -241,8 +262,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/AunthentificationController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="67" column="13" lean-forward="true" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
+            <state relative-caret-position="1037">
+              <caret line="67" column="13" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -250,12 +271,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Network/ClientManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="653">
-              <caret line="211" column="32" lean-forward="true" selection-start-line="211" selection-start-column="32" selection-end-line="211" selection-end-column="32" />
-              <folding>
-                <element signature="e#8603#8604#0" expanded="true" />
-                <element signature="e#8632#8633#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="3332">
+              <caret line="211" column="32" selection-start-line="211" selection-start-column="32" selection-end-line="211" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -263,7 +280,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/Model.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
+            <state relative-caret-position="2023">
               <caret line="137" column="18" selection-start-line="137" selection-start-column="18" selection-end-line="137" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -286,7 +303,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/SubController/ClientOrderController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="670">
+            <state relative-caret-position="1088">
               <caret line="70" column="40" selection-start-line="70" selection-start-column="40" selection-end-line="70" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -298,7 +315,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/SubView/ClientOrder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
+            <state relative-caret-position="1496">
               <caret line="112" column="30" selection-start-line="112" selection-start-column="30" selection-end-line="112" selection-end-column="30" />
               <folding>
                 <element signature="method#deleteItem#0;class#ClientOrder#0" />
@@ -333,8 +350,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/View/PostService.java" />
-        <option value="$PROJECT_DIR$/src/View/SubView/CharBar.java" />
         <option value="$PROJECT_DIR$/src/View/SubView/Menu.java" />
         <option value="$PROJECT_DIR$/src/View/Items/MenuItem.java" />
         <option value="$PROJECT_DIR$/src/Resources/Pop.java" />
@@ -384,6 +399,8 @@
         <option value="$PROJECT_DIR$/src/Model/Database/dao/DishDAO.java" />
         <option value="$PROJECT_DIR$/src/Model/Model.java" />
         <option value="$PROJECT_DIR$/src/Controller/FormController.java" />
+        <option value="$PROJECT_DIR$/src/View/Launcher.java" />
+        <option value="$PROJECT_DIR$/src/View/Register.java" />
       </list>
     </option>
   </component>
@@ -410,8 +427,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -491,12 +506,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563667893418" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563668144104" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -694,7 +711,7 @@
     <frame x="-6" y="-6" width="1293" height="693" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4965612" visible="true" weight="0.26882592" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4965612" visible="true" weight="0.2728745" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -703,7 +720,7 @@
       <window_info id="Favorites" order="6" sideWeight="0.5034388" side_tool="true" weight="0.25250357" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32740214" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32740214" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32740214" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39679715" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -783,20 +800,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="drop reserve properly" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/View/SubView/Carte.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="66" column="4" selection-start-line="66" selection-start-column="4" selection-end-line="66" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/SubView/TableMangement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/SubView/Menu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-144">
@@ -850,30 +853,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="395">
           <caret line="135" column="22" selection-start-line="135" selection-start-column="22" selection-end-line="135" selection-end-column="22" />
-          <folding>
-            <element signature="e#759#760#0" expanded="true" />
-            <element signature="e#790#791#0" expanded="true" />
-            <element signature="e#911#912#0" expanded="true" />
-            <element signature="e#948#949#0" expanded="true" />
-            <element signature="e#1099#1100#0" expanded="true" />
-            <element signature="e#1151#1152#0" expanded="true" />
-            <element signature="e#1274#1275#0" expanded="true" />
-            <element signature="e#1311#1312#0" expanded="true" />
-            <element signature="e#1450#1451#0" expanded="true" />
-            <element signature="e#1502#1503#0" expanded="true" />
-            <element signature="e#1593#1594#0" expanded="true" />
-            <element signature="e#1623#1624#0" expanded="true" />
-            <element signature="e#1666#1667#0" expanded="true" />
-            <element signature="e#1704#1705#0" expanded="true" />
-            <element signature="e#1809#1810#0" expanded="true" />
-            <element signature="e#1845#1846#0" expanded="true" />
-            <element signature="e#1900#1901#0" expanded="true" />
-            <element signature="e#1950#1951#0" expanded="true" />
-            <element signature="e#2077#2078#0" expanded="true" />
-            <element signature="e#2113#2114#0" expanded="true" />
-            <element signature="e#2217#2218#0" expanded="true" />
-            <element signature="e#2251#2252#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1168,16 +1147,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/SubView/ClientOrder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="112" column="30" selection-start-line="112" selection-start-column="30" selection-end-line="112" selection-end-column="30" />
-          <folding>
-            <element signature="method#deleteItem#0;class#ClientOrder#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Database/dao/DishDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
@@ -1204,37 +1173,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/SubController/ClientOrderController.java">
+    <entry file="file://$PROJECT_DIR$/src/Controller/FormController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="670">
-          <caret line="70" column="40" selection-start-line="70" selection-start-column="40" selection-end-line="70" selection-end-column="40" />
+        <state relative-caret-position="160">
+          <caret line="249" column="45" selection-start-line="249" selection-start-column="45" selection-end-line="249" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Network/ClientManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="653">
-          <caret line="211" column="32" lean-forward="true" selection-start-line="211" selection-start-column="32" selection-end-line="211" selection-end-column="32" />
-          <folding>
-            <element signature="e#8603#8604#0" expanded="true" />
-            <element signature="e#8632#8633#0" expanded="true" />
+            <element signature="e#815#1809#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/AunthentificationController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="67" column="13" lean-forward="true" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
+        <state relative-caret-position="1037">
+          <caret line="67" column="13" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Network/ClientManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3332">
+          <caret line="211" column="32" selection-start-line="211" selection-start-column="32" selection-end-line="211" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Model.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
+        <state relative-caret-position="2023">
           <caret line="137" column="18" selection-start-line="137" selection-start-column="18" selection-end-line="137" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1253,29 +1219,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/FormController.java">
+    <entry file="file://$PROJECT_DIR$/src/Controller/SubController/ClientOrderController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="249" column="45" selection-start-line="249" selection-start-column="45" selection-end-line="249" selection-end-column="45" />
+        <state relative-caret-position="1088">
+          <caret line="70" column="40" selection-start-line="70" selection-start-column="40" selection-end-line="70" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#815#1809#0" />
-            <element signature="e#7511#7512#0" expanded="true" />
-            <element signature="e#7557#7558#0" expanded="true" />
-            <element signature="e#7953#7954#0" expanded="true" />
-            <element signature="e#7993#7994#0" expanded="true" />
-            <element signature="e#8108#8109#0" expanded="true" />
-            <element signature="e#8150#8151#0" expanded="true" />
-            <element signature="e#8262#8263#0" expanded="true" />
-            <element signature="e#8302#8303#0" expanded="true" />
-            <element signature="e#9041#9042#0" expanded="true" />
-            <element signature="e#9092#9093#0" expanded="true" />
-            <element signature="e#9861#9862#0" expanded="true" />
-            <element signature="e#9913#9914#0" expanded="true" />
-            <element signature="e#10150#10151#0" expanded="true" />
-            <element signature="e#10202#10203#0" expanded="true" />
-            <element signature="e#10293#10294#0" expanded="true" />
-            <element signature="e#10340#10341#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/SubView/ClientOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1496">
+          <caret line="112" column="30" selection-start-line="112" selection-start-column="30" selection-end-line="112" selection-end-column="30" />
+          <folding>
+            <element signature="method#deleteItem#0;class#ClientOrder#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Launcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1673">
+          <caret line="176" column="55" selection-start-line="176" selection-start-column="55" selection-end-line="176" selection-end-column="55" />
+          <folding>
+            <element signature="method#mainPart#0;class#Launcher#0" />
+            <element signature="method#bottomPart#0;class#Launcher#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Register.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-177">
+          <caret line="266" column="53" selection-start-line="266" selection-start-column="53" selection-end-line="266" selection-end-column="53" />
+          <folding>
+            <element signature="method#Register#0;class#Register#0" />
+            <element signature="method#windowConfiguration#0;class#Register#0" />
+            <element signature="method#mainPart#0;class#Register#0" />
+            <element signature="method#bottomPart#0;class#Register#0" />
+            <element signature="method#passCheck#0;class#Register#0" />
           </folding>
         </state>
       </provider>

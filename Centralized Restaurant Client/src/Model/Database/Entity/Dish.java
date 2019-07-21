@@ -36,7 +36,6 @@ public class Dish implements Serializable {
      * @param name Name
      * @param time Time.
      */
-
     public Dish(int id, int quantety, float price, String name, Date time) {
         this.id = id;
         this.quantety = quantety;
@@ -67,8 +66,6 @@ public class Dish implements Serializable {
      * Getter Price
      * @return a float.
      */
-
-
     public float getPrice() {
         return price;
     }
@@ -88,17 +85,19 @@ public class Dish implements Serializable {
      * Setter of name.
      * @param name Name.
      */
-
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * getter of time
+     * @return time in date format
+     */
     public Date getTime() {
         return time;
     }
     /**
-     * Getter of time
-     * @return Date.
+     * Setter of time
      */
     public void setTime(Date time) {
         this.time = time;

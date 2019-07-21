@@ -174,8 +174,7 @@ public class Launcher extends JPanel {
     }
     /**
      * Function that will return:
-     *      -->True: in case all fields are filled
-     *      -->False:in case not all fields are filled
+     * @return  True: in case all fields are filled or False:in case not all fields are filled
      */
     public boolean allFieldsFilled(){
         if(username.getText().length() != 0 && pw.getPassword().length != 0) return true;

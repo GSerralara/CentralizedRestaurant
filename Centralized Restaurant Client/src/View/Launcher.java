@@ -16,8 +16,6 @@ import java.awt.event.ActionListener;
  * @author David Diego
  * @author Pablo Nogueras
  * @author Victor Salvador
- * @version 1.3
- * @since 1.3
  */
 
 
@@ -85,6 +83,7 @@ public class Launcher extends JPanel{
     /**
      * Function that will return a JPanel.
      * It's responsible for creating the components of the center of the Layout.
+     * @return panel in the center
      */
     private JPanel mainPart(){
         // instance JPanel that will be return
@@ -118,6 +117,7 @@ public class Launcher extends JPanel{
     /**
      * Function that will return a JPanel.
      * It's responsible for creating the components of the bottom of the Layout.
+     * @return panel at the bottom
      */
     private JPanel bottomPart(){
         // instance JPanel that will be return
@@ -172,8 +172,7 @@ public class Launcher extends JPanel{
     }
     /**
      * Function that will return:
-     *      -->True: in case all fields are filled
-     *      -->False:in case not all fields are filled
+     *  @return True: in case all fields are filled or False:in case not all fields are filled
      */
     public boolean allFieldsFilled(){
         if(username.getText().length() != 0 && pw.getPassword().length != 0){
