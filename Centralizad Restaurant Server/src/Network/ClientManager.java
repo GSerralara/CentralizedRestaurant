@@ -3,6 +3,7 @@ package Network;
 import Model.Database.Entity.*;
 import Model.Database.dao.DishDAO;
 import Model.Database.dao.UserDAO;
+import Resources.Pop;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -135,10 +136,7 @@ public class ClientManager extends Thread {
         //client.setReserve(obj.getReserve());
         reserve = obj;
         listener.sendReserve(reserve);
-        System.out.println("Reserve Input");
-        System.out.println(reserve.getUser().getUser()+" == "+obj.getUser().getUser());
-        System.out.println(reserve.getReserveName()+" ReserveName "+obj.getReserveName());
-        System.out.println(obj.getBookNumber()+" "+reserve.getBookNumber());
+        Pop pop = new Pop("Authorization gotten");
         return "Reserve";
     }
 
@@ -149,7 +147,6 @@ public class ClientManager extends Thread {
      */
     private Object treatDish(Dish obj){
         System.out.println("Gotten dish to order");
-        //ToDo: TAKE OUT DISHES AND PUT IT IN SERVICE
         for(int i=0; i<obj.getQuantety();i++){
             listener.addDishToOrder(client,obj);
         }

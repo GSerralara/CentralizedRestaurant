@@ -119,9 +119,7 @@ public class FormController {
      * @param reserve Reserve
      */
     void sendReserve(Reserve reserve){
-        System.out.println("Enviando reserva");
         network.sendObject(reserve);
-        System.out.println("Reserva enviada");
         Object answer = network.readObject();
         System.out.println(answer);
     }
